@@ -1,0 +1,12 @@
+# GroupUpdate422ResponseBodyError
+
+Standard error response object containing error code, message, and request ID
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 | Example                                                                                     |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `code`                                                                                      | [models.ErrorCode](../models/errorcode.md)                                                  | :heavy_check_mark:                                                                          | The specific error code indicating the type of error                                        |                                                                                             |
+| `message`                                                                                   | *str*                                                                                       | :heavy_check_mark:                                                                          | Human-readable error message providing additional details                                   | example                                                                                     |
+| `request_id`                                                                                | *str*                                                                                       | :heavy_check_mark:                                                                          | Unique identifier for the request that generated this error, used for logging and debugging | 550e8400-e29b-41d4-a716-446655440000                                                        |

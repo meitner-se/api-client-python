@@ -1,0 +1,667 @@
+# Employees
+(*employees*)
+
+## Overview
+
+### Available Operations
+
+* [list](#list) - List Employees
+* [create](#create) - Create a new Employee
+* [search](#search) - Search Employees
+* [get](#get) - Get a Employee
+* [delete](#delete) - Delete a Employee
+* [update](#update) - Update a Employee
+
+## list
+
+Returns a paginated list of all `Employees` in your organization.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeeList" method="get" path="/employee" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.list(limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+
+### Parameters
+
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `limit`                                                                                               | *Optional[int]*                                                                                       | :heavy_minus_sign:                                                                                    | The maximum number of Employees to return (default: 50) when listing Employees                        | 1                                                                                                     |
+| `offset`                                                                                              | *Optional[int]*                                                                                       | :heavy_minus_sign:                                                                                    | The number of Employees to skip before starting to return results (default: 0) when listing Employees | 0                                                                                                     |
+| `retries`                                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                      | :heavy_minus_sign:                                                                                    | Configuration to override the default retry behavior of the client.                                   |                                                                                                       |
+
+### Response
+
+**[models.EmployeeListResponse](../../models/employeelistresponse.md)**
+
+### Errors
+
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.Error400ResponseBody | 400                         | application/json            |
+| errors.Error401ResponseBody | 401                         | application/json            |
+| errors.Error403ResponseBody | 403                         | application/json            |
+| errors.Error404ResponseBody | 404                         | application/json            |
+| errors.Error409ResponseBody | 409                         | application/json            |
+| errors.Error429ResponseBody | 429                         | application/json            |
+| errors.Error500ResponseBody | 500                         | application/json            |
+| errors.MeitnerDefaultError  | 4XX, 5XX                    | \*/\*                       |
+
+## create
+
+Create a new Employee
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeeCreate" method="post" path="/employee" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                               | Type                                                                                                                                                                                                                                                    | Required                                                                                                                                                                                                                                                | Description                                                                                                                                                                                                                                             | Example                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `identity_number`                                                                                                                                                                                                                                       | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The identity number of the employee, must be unique within the organization.                                                                                                                                                                            | 20191216-1234                                                                                                                                                                                                                                           |
+| `first_name`                                                                                                                                                                                                                                            | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The first name of the employee                                                                                                                                                                                                                          | Lise                                                                                                                                                                                                                                                    |
+| `last_name`                                                                                                                                                                                                                                             | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The last name of the employee                                                                                                                                                                                                                           | Meitner                                                                                                                                                                                                                                                 |
+| `external`                                                                                                                                                                                                                                              | [Optional[models.EmployeeCreateExternal]](../../models/employeecreateexternal.md)                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                      | ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.                                                              | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                                                                                                      |
+| `gender`                                                                                                                                                                                                                                                | [OptionalNullable[models.EmployeeCreateGender]](../../models/employeecreategender.md)                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                      | The gender of the employee                                                                                                                                                                                                                              | Female                                                                                                                                                                                                                                                  |
+| `identity_temporary`                                                                                                                                                                                                                                    | *Optional[bool]*                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | If the identity number is temporary for the employee                                                                                                                                                                                                    | true                                                                                                                                                                                                                                                    |
+| `date_of_birth`                                                                                                                                                                                                                                         | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                      | The date of birth of the employee                                                                                                                                                                                                                       | 2019-12-16                                                                                                                                                                                                                                              |
+| `address`                                                                                                                                                                                                                                               | [Optional[models.EmployeeCreateAddress]](../../models/employeecreateaddress.md)                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                      | The address of the employee                                                                                                                                                                                                                             | {<br/>"postalAddress": "Dalvägen 14",<br/>"postalCode": "169 56",<br/>"postalCity": "Solna",<br/>"countryCode": "SWE",<br/>"municipalityCode": "0184"<br/>}                                                                                             |
+| `email_address1`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | lise@meitner.se                                                                                                                                                                                                                                         |
+| `email_address2`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                         | lise@gmail.com                                                                                                                                                                                                                                          |
+| `phone_number1`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.                                                                                                  | +46701234567                                                                                                                                                                                                                                            |
+| `phone_number2`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                          | +46701234567                                                                                                                                                                                                                                            |
+| `retries`                                                                                                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                                                                                                     |                                                                                                                                                                                                                                                         |
+
+### Response
+
+**[models.Employee](../../models/employee.md)**
+
+### Errors
+
+| Error Type                                | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.Error400ResponseBody               | 400                                       | application/json                          |
+| errors.Error401ResponseBody               | 401                                       | application/json                          |
+| errors.Error403ResponseBody               | 403                                       | application/json                          |
+| errors.Error404ResponseBody               | 404                                       | application/json                          |
+| errors.Error409ResponseBody               | 409                                       | application/json                          |
+| errors.EmployeeCreate422ResponseBodyError | 422                                       | application/json                          |
+| errors.Error429ResponseBody               | 429                                       | application/json                          |
+| errors.Error500ResponseBody               | 500                                       | application/json                          |
+| errors.MeitnerDefaultError                | 4XX, 5XX                                  | \*/\*                                     |
+
+## search
+
+Search for `Employees` with filtering capabilities.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeeSearch" method="post" path="/employee/_search" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.search(limit=1, offset=0, employee_filter={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "or_condition": True,
+    })
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+
+### Parameters
+
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             | Example                                                                                                 |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `limit`                                                                                                 | *Optional[int]*                                                                                         | :heavy_minus_sign:                                                                                      | The maximum number of Employees to return (default: 50) when searching Employees                        | 1                                                                                                       |
+| `offset`                                                                                                | *Optional[int]*                                                                                         | :heavy_minus_sign:                                                                                      | The number of Employees to skip before starting to return results (default: 0) when searching Employees | 0                                                                                                       |
+| `employee_filter`                                                                                       | [Optional[models.EmployeeFilter]](../../models/employeefilter.md)                                       | :heavy_minus_sign:                                                                                      | Request body                                                                                            |                                                                                                         |
+| `retries`                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                        | :heavy_minus_sign:                                                                                      | Configuration to override the default retry behavior of the client.                                     |                                                                                                         |
+
+### Response
+
+**[models.EmployeeSearchResponse](../../models/employeesearchresponse.md)**
+
+### Errors
+
+| Error Type                                | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.Error400ResponseBody               | 400                                       | application/json                          |
+| errors.Error401ResponseBody               | 401                                       | application/json                          |
+| errors.Error403ResponseBody               | 403                                       | application/json                          |
+| errors.Error404ResponseBody               | 404                                       | application/json                          |
+| errors.Error409ResponseBody               | 409                                       | application/json                          |
+| errors.EmployeeSearch422ResponseBodyError | 422                                       | application/json                          |
+| errors.Error429ResponseBody               | 429                                       | application/json                          |
+| errors.Error500ResponseBody               | 500                                       | application/json                          |
+| errors.MeitnerDefaultError                | 4XX, 5XX                                  | \*/\*                                     |
+
+## get
+
+Retrieves the `Employee` with the given ID.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeeGet" method="get" path="/employee/{id}" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.get(id="123e4567-e89b-12d3-a456-426614174000")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the Employee to retrieve                   | 123e4567-e89b-12d3-a456-426614174000                                |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.Employee](../../models/employee.md)**
+
+### Errors
+
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.Error400ResponseBody | 400                         | application/json            |
+| errors.Error401ResponseBody | 401                         | application/json            |
+| errors.Error403ResponseBody | 403                         | application/json            |
+| errors.Error404ResponseBody | 404                         | application/json            |
+| errors.Error409ResponseBody | 409                         | application/json            |
+| errors.Error429ResponseBody | 429                         | application/json            |
+| errors.Error500ResponseBody | 500                         | application/json            |
+| errors.MeitnerDefaultError  | 4XX, 5XX                    | \*/\*                       |
+
+## delete
+
+Delete a Employee
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeeDelete" method="delete" path="/employee/{id}" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    m_client.employees.delete(id="123e4567-e89b-12d3-a456-426614174000")
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the Employee to delete                     | 123e4567-e89b-12d3-a456-426614174000                                |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Errors
+
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.Error400ResponseBody | 400                         | application/json            |
+| errors.Error401ResponseBody | 401                         | application/json            |
+| errors.Error403ResponseBody | 403                         | application/json            |
+| errors.Error404ResponseBody | 404                         | application/json            |
+| errors.Error409ResponseBody | 409                         | application/json            |
+| errors.Error429ResponseBody | 429                         | application/json            |
+| errors.Error500ResponseBody | 500                         | application/json            |
+| errors.MeitnerDefaultError  | 4XX, 5XX                    | \*/\*                       |
+
+## update
+
+Update a Employee
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeeUpdate" method="patch" path="/employee/{id}" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                               | Type                                                                                                                                                                                                                                                    | Required                                                                                                                                                                                                                                                | Description                                                                                                                                                                                                                                             | Example                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                                                                                    | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The unique identifier of the Employee to update                                                                                                                                                                                                         | 123e4567-e89b-12d3-a456-426614174000                                                                                                                                                                                                                    |
+| `identity_number`                                                                                                                                                                                                                                       | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The identity number of the employee, must be unique within the organization.                                                                                                                                                                            | 20191216-1234                                                                                                                                                                                                                                           |
+| `first_name`                                                                                                                                                                                                                                            | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The first name of the employee                                                                                                                                                                                                                          | Lise                                                                                                                                                                                                                                                    |
+| `last_name`                                                                                                                                                                                                                                             | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The last name of the employee                                                                                                                                                                                                                           | Meitner                                                                                                                                                                                                                                                 |
+| `external`                                                                                                                                                                                                                                              | [Optional[models.EmployeeUpdateExternal]](../../models/employeeupdateexternal.md)                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                      | ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.                                                              | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                                                                                                      |
+| `gender`                                                                                                                                                                                                                                                | [OptionalNullable[models.EmployeeUpdateGender]](../../models/employeeupdategender.md)                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                      | The gender of the employee                                                                                                                                                                                                                              | Female                                                                                                                                                                                                                                                  |
+| `identity_temporary`                                                                                                                                                                                                                                    | *Optional[bool]*                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | If the identity number is temporary for the employee                                                                                                                                                                                                    | true                                                                                                                                                                                                                                                    |
+| `date_of_birth`                                                                                                                                                                                                                                         | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                      | The date of birth of the employee                                                                                                                                                                                                                       | 2019-12-16                                                                                                                                                                                                                                              |
+| `address`                                                                                                                                                                                                                                               | [Optional[models.EmployeeUpdateAddress]](../../models/employeeupdateaddress.md)                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                      | The address of the employee                                                                                                                                                                                                                             | {<br/>"postalAddress": "Dalvägen 14",<br/>"postalCode": "169 56",<br/>"postalCity": "Solna",<br/>"countryCode": "SWE",<br/>"municipalityCode": "0184"<br/>}                                                                                             |
+| `email_address1`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | lise@meitner.se                                                                                                                                                                                                                                         |
+| `email_address2`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                         | lise@gmail.com                                                                                                                                                                                                                                          |
+| `phone_number1`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.                                                                                                  | +46701234567                                                                                                                                                                                                                                            |
+| `phone_number2`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                          | +46701234567                                                                                                                                                                                                                                            |
+| `retries`                                                                                                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                                                                                                     |                                                                                                                                                                                                                                                         |
+
+### Response
+
+**[models.Employee](../../models/employee.md)**
+
+### Errors
+
+| Error Type                                | Status Code                               | Content Type                              |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| errors.Error400ResponseBody               | 400                                       | application/json                          |
+| errors.Error401ResponseBody               | 401                                       | application/json                          |
+| errors.Error403ResponseBody               | 403                                       | application/json                          |
+| errors.Error404ResponseBody               | 404                                       | application/json                          |
+| errors.Error409ResponseBody               | 409                                       | application/json                          |
+| errors.EmployeeUpdate422ResponseBodyError | 422                                       | application/json                          |
+| errors.Error429ResponseBody               | 429                                       | application/json                          |
+| errors.Error500ResponseBody               | 500                                       | application/json                          |
+| errors.MeitnerDefaultError                | 4XX, 5XX                                  | \*/\*                                     |

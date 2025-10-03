@@ -1,0 +1,559 @@
+# EmployeePlacements
+(*employee_placements*)
+
+## Overview
+
+### Available Operations
+
+* [list](#list) - List EmployeePlacements
+* [create](#create) - Create a new EmployeePlacement
+* [search](#search) - Search EmployeePlacements
+* [get](#get) - Get a EmployeePlacement
+* [delete](#delete) - Delete a EmployeePlacement
+* [update](#update) - Update a EmployeePlacement
+
+## list
+
+Returns a paginated list of all `EmployeePlacements` in your organization.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeePlacementList" method="get" path="/employee-placement" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employee_placements.list(limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+
+### Parameters
+
+| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             | Example                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `limit`                                                                                                                 | *Optional[int]*                                                                                                         | :heavy_minus_sign:                                                                                                      | The maximum number of EmployeePlacements to return (default: 50) when listing EmployeePlacements                        | 1                                                                                                                       |
+| `offset`                                                                                                                | *Optional[int]*                                                                                                         | :heavy_minus_sign:                                                                                                      | The number of EmployeePlacements to skip before starting to return results (default: 0) when listing EmployeePlacements | 0                                                                                                                       |
+| `retries`                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                        | :heavy_minus_sign:                                                                                                      | Configuration to override the default retry behavior of the client.                                                     |                                                                                                                         |
+
+### Response
+
+**[models.EmployeePlacementListResponse](../../models/employeeplacementlistresponse.md)**
+
+### Errors
+
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.Error400ResponseBody | 400                         | application/json            |
+| errors.Error401ResponseBody | 401                         | application/json            |
+| errors.Error403ResponseBody | 403                         | application/json            |
+| errors.Error404ResponseBody | 404                         | application/json            |
+| errors.Error409ResponseBody | 409                         | application/json            |
+| errors.Error429ResponseBody | 429                         | application/json            |
+| errors.Error500ResponseBody | 500                         | application/json            |
+| errors.MeitnerDefaultError  | 4XX, 5XX                    | \*/\*                       |
+
+## create
+
+Create a new EmployeePlacement
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeePlacementCreate" method="post" path="/employee-placement" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employee_placements.create(employee_id="123e4567-e89b-12d3-a456-426614174000", school_id="123e4567-e89b-12d3-a456-426614174000", start_date=date.fromisoformat("2024-08-01"), external={
+        "source_id": "12345678",
+    }, signature="LM", title="Principal", roles=[
+        "Admin",
+    ], end_date=date.fromisoformat("2024-08-01"))
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                 | Type                                                                                                                                                                      | Required                                                                                                                                                                  | Description                                                                                                                                                               | Example                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `employee_id`                                                                                                                                                             | *str*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                        | The ID of the employee the placement belongs to                                                                                                                           | 123e4567-e89b-12d3-a456-426614174000                                                                                                                                      |
+| `school_id`                                                                                                                                                               | *str*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                        | The ID of the school the placement belongs to                                                                                                                             | 123e4567-e89b-12d3-a456-426614174000                                                                                                                                      |
+| `start_date`                                                                                                                                                              | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                              | :heavy_check_mark:                                                                                                                                                        | The start date of the placement for the employee                                                                                                                          | 2024-08-01                                                                                                                                                                |
+| `external`                                                                                                                                                                | [Optional[models.EmployeePlacementCreateExternal]](../../models/employeeplacementcreateexternal.md)                                                                       | :heavy_minus_sign:                                                                                                                                                        | External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included. | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                        |
+| `signature`                                                                                                                                                               | *OptionalNullable[str]*                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                        | The signature of the employee                                                                                                                                             | LM                                                                                                                                                                        |
+| `title`                                                                                                                                                                   | *OptionalNullable[str]*                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                        | The title of the employee                                                                                                                                                 | Principal                                                                                                                                                                 |
+| `roles`                                                                                                                                                                   | List[[models.EmployeePlacementRole](../../models/employeeplacementrole.md)]                                                                                               | :heavy_minus_sign:                                                                                                                                                        | The roles of the employee                                                                                                                                                 | [<br/>"Admin"<br/>]                                                                                                                                                       |
+| `end_date`                                                                                                                                                                | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                              | :heavy_minus_sign:                                                                                                                                                        | The end date of the placement for the employee                                                                                                                            | 2024-08-01                                                                                                                                                                |
+| `retries`                                                                                                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                          | :heavy_minus_sign:                                                                                                                                                        | Configuration to override the default retry behavior of the client.                                                                                                       |                                                                                                                                                                           |
+
+### Response
+
+**[models.EmployeePlacement](../../models/employeeplacement.md)**
+
+### Errors
+
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.Error400ResponseBody                        | 400                                                | application/json                                   |
+| errors.Error401ResponseBody                        | 401                                                | application/json                                   |
+| errors.Error403ResponseBody                        | 403                                                | application/json                                   |
+| errors.Error404ResponseBody                        | 404                                                | application/json                                   |
+| errors.Error409ResponseBody                        | 409                                                | application/json                                   |
+| errors.EmployeePlacementCreate422ResponseBodyError | 422                                                | application/json                                   |
+| errors.Error429ResponseBody                        | 429                                                | application/json                                   |
+| errors.Error500ResponseBody                        | 500                                                | application/json                                   |
+| errors.MeitnerDefaultError                         | 4XX, 5XX                                           | \*/\*                                              |
+
+## search
+
+Search for `EmployeePlacements` with filtering capabilities.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeePlacementSearch" method="post" path="/employee-placement/_search" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employee_placements.search(limit=1, offset=0, employee_placement_filter={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "employee_id": "123e4567-e89b-12d3-a456-426614174000",
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "signature": "example",
+            "title": "example",
+            "start_date": date.fromisoformat("2024-01-15"),
+            "end_date": date.fromisoformat("2024-01-15"),
+            "archive_year": "example",
+            "archived_at": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "employee_id": "123e4567-e89b-12d3-a456-426614174000",
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "signature": "example",
+            "title": "example",
+            "start_date": date.fromisoformat("2024-01-15"),
+            "end_date": date.fromisoformat("2024-01-15"),
+            "archive_year": "example",
+            "archived_at": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "start_date": date.fromisoformat("2024-01-15"),
+            "end_date": date.fromisoformat("2024-01-15"),
+            "archived_at": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "start_date": date.fromisoformat("2024-01-15"),
+            "end_date": date.fromisoformat("2024-01-15"),
+            "archived_at": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "start_date": date.fromisoformat("2024-01-15"),
+            "end_date": date.fromisoformat("2024-01-15"),
+            "archived_at": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "start_date": date.fromisoformat("2024-01-15"),
+            "end_date": date.fromisoformat("2024-01-15"),
+            "archived_at": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "employee_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "signature": [
+                "example",
+            ],
+            "title": [
+                "example",
+            ],
+            "start_date": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "end_date": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "archive_year": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "employee_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "signature": [
+                "example",
+            ],
+            "title": [
+                "example",
+            ],
+            "start_date": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "end_date": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "archive_year": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "signature": "example",
+            "title": "example",
+            "archive_year": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "signature": "example",
+            "title": "example",
+            "archive_year": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "signature": True,
+            "title": True,
+            "roles": True,
+            "end_date": True,
+            "archive_year": True,
+            "archived_at": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "signature": True,
+            "title": True,
+            "roles": True,
+            "end_date": True,
+            "archive_year": True,
+            "archived_at": True,
+        },
+        "or_condition": True,
+    })
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                 | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               | Example                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `limit`                                                                                                                   | *Optional[int]*                                                                                                           | :heavy_minus_sign:                                                                                                        | The maximum number of EmployeePlacements to return (default: 50) when searching EmployeePlacements                        | 1                                                                                                                         |
+| `offset`                                                                                                                  | *Optional[int]*                                                                                                           | :heavy_minus_sign:                                                                                                        | The number of EmployeePlacements to skip before starting to return results (default: 0) when searching EmployeePlacements | 0                                                                                                                         |
+| `employee_placement_filter`                                                                                               | [Optional[models.EmployeePlacementFilter]](../../models/employeeplacementfilter.md)                                       | :heavy_minus_sign:                                                                                                        | Request body                                                                                                              |                                                                                                                           |
+| `retries`                                                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                          | :heavy_minus_sign:                                                                                                        | Configuration to override the default retry behavior of the client.                                                       |                                                                                                                           |
+
+### Response
+
+**[models.EmployeePlacementSearchResponse](../../models/employeeplacementsearchresponse.md)**
+
+### Errors
+
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.Error400ResponseBody                        | 400                                                | application/json                                   |
+| errors.Error401ResponseBody                        | 401                                                | application/json                                   |
+| errors.Error403ResponseBody                        | 403                                                | application/json                                   |
+| errors.Error404ResponseBody                        | 404                                                | application/json                                   |
+| errors.Error409ResponseBody                        | 409                                                | application/json                                   |
+| errors.EmployeePlacementSearch422ResponseBodyError | 422                                                | application/json                                   |
+| errors.Error429ResponseBody                        | 429                                                | application/json                                   |
+| errors.Error500ResponseBody                        | 500                                                | application/json                                   |
+| errors.MeitnerDefaultError                         | 4XX, 5XX                                           | \*/\*                                              |
+
+## get
+
+Retrieves the `EmployeePlacement` with the given ID.
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeePlacementGet" method="get" path="/employee-placement/{id}" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employee_placements.get(id="123e4567-e89b-12d3-a456-426614174000")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the EmployeePlacement to retrieve          | 123e4567-e89b-12d3-a456-426614174000                                |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.EmployeePlacement](../../models/employeeplacement.md)**
+
+### Errors
+
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.Error400ResponseBody | 400                         | application/json            |
+| errors.Error401ResponseBody | 401                         | application/json            |
+| errors.Error403ResponseBody | 403                         | application/json            |
+| errors.Error404ResponseBody | 404                         | application/json            |
+| errors.Error409ResponseBody | 409                         | application/json            |
+| errors.Error429ResponseBody | 429                         | application/json            |
+| errors.Error500ResponseBody | 500                         | application/json            |
+| errors.MeitnerDefaultError  | 4XX, 5XX                    | \*/\*                       |
+
+## delete
+
+Delete a EmployeePlacement
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeePlacementDelete" method="delete" path="/employee-placement/{id}" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    m_client.employee_placements.delete(id="123e4567-e89b-12d3-a456-426614174000")
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the EmployeePlacement to delete            | 123e4567-e89b-12d3-a456-426614174000                                |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Errors
+
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| errors.Error400ResponseBody | 400                         | application/json            |
+| errors.Error401ResponseBody | 401                         | application/json            |
+| errors.Error403ResponseBody | 403                         | application/json            |
+| errors.Error404ResponseBody | 404                         | application/json            |
+| errors.Error409ResponseBody | 409                         | application/json            |
+| errors.Error429ResponseBody | 429                         | application/json            |
+| errors.Error500ResponseBody | 500                         | application/json            |
+| errors.MeitnerDefaultError  | 4XX, 5XX                    | \*/\*                       |
+
+## update
+
+Update a EmployeePlacement
+
+### Example Usage
+
+<!-- UsageSnippet language="python" operationID="EmployeePlacementUpdate" method="patch" path="/employee-placement/{id}" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employee_placements.update(id="123e4567-e89b-12d3-a456-426614174000", start_date=date.fromisoformat("2024-08-01"), external={
+        "source_id": "12345678",
+    }, signature="LM", title="Principal", roles=[
+        "Admin",
+    ], end_date=date.fromisoformat("2024-08-01"))
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                 | Type                                                                                                                                                                      | Required                                                                                                                                                                  | Description                                                                                                                                                               | Example                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                      | *str*                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                        | The unique identifier of the EmployeePlacement to update                                                                                                                  | 123e4567-e89b-12d3-a456-426614174000                                                                                                                                      |
+| `start_date`                                                                                                                                                              | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                              | :heavy_check_mark:                                                                                                                                                        | The start date of the placement for the employee                                                                                                                          | 2024-08-01                                                                                                                                                                |
+| `external`                                                                                                                                                                | [Optional[models.EmployeePlacementUpdateExternal]](../../models/employeeplacementupdateexternal.md)                                                                       | :heavy_minus_sign:                                                                                                                                                        | External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included. | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                        |
+| `signature`                                                                                                                                                               | *OptionalNullable[str]*                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                        | The signature of the employee                                                                                                                                             | LM                                                                                                                                                                        |
+| `title`                                                                                                                                                                   | *OptionalNullable[str]*                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                        | The title of the employee                                                                                                                                                 | Principal                                                                                                                                                                 |
+| `roles`                                                                                                                                                                   | List[[models.EmployeePlacementRole](../../models/employeeplacementrole.md)]                                                                                               | :heavy_minus_sign:                                                                                                                                                        | The roles of the employee                                                                                                                                                 | [<br/>"Admin"<br/>]                                                                                                                                                       |
+| `end_date`                                                                                                                                                                | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                              | :heavy_minus_sign:                                                                                                                                                        | The end date of the placement for the employee                                                                                                                            | 2024-08-01                                                                                                                                                                |
+| `retries`                                                                                                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                          | :heavy_minus_sign:                                                                                                                                                        | Configuration to override the default retry behavior of the client.                                                                                                       |                                                                                                                                                                           |
+
+### Response
+
+**[models.EmployeePlacement](../../models/employeeplacement.md)**
+
+### Errors
+
+| Error Type                                         | Status Code                                        | Content Type                                       |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| errors.Error400ResponseBody                        | 400                                                | application/json                                   |
+| errors.Error401ResponseBody                        | 401                                                | application/json                                   |
+| errors.Error403ResponseBody                        | 403                                                | application/json                                   |
+| errors.Error404ResponseBody                        | 404                                                | application/json                                   |
+| errors.Error409ResponseBody                        | 409                                                | application/json                                   |
+| errors.EmployeePlacementUpdate422ResponseBodyError | 422                                                | application/json                                   |
+| errors.Error429ResponseBody                        | 429                                                | application/json                                   |
+| errors.Error500ResponseBody                        | 500                                                | application/json                                   |
+| errors.MeitnerDefaultError                         | 4XX, 5XX                                           | \*/\*                                              |

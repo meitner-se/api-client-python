@@ -1,0 +1,37 @@
+speakeasyVersion: 1.634.1
+sources:
+    Directory API:
+        sourceNamespace: directory-api
+        sourceRevisionDigest: sha256:c9e6e80468591ecaf9c4e719de2c7bcc5a842d694d6bb8c4fdf15421428fb260
+        sourceBlobDigest: sha256:84178e18e0d36650dfe35b4c6d202e1a64f38c990f96798e78bd3d46eef698fd
+        tags:
+            - latest
+            - v1
+targets:
+    meitner:
+        source: Directory API
+        sourceNamespace: directory-api
+        sourceRevisionDigest: sha256:c9e6e80468591ecaf9c4e719de2c7bcc5a842d694d6bb8c4fdf15421428fb260
+        sourceBlobDigest: sha256:84178e18e0d36650dfe35b4c6d202e1a64f38c990f96798e78bd3d46eef698fd
+        codeSamplesNamespace: directory-api-python-code-samples
+        codeSamplesRevisionDigest: sha256:aab85d94f951b6163fde011ab60958ea6d50fa89f34336b47fbff9dad1c79397
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Directory API:
+            inputs:
+                - location: https://api.staging.meitner.se/directory/v1/openapi.json
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/meitner-2u8/api/directory-api
+    targets:
+        meitner:
+            target: python
+            source: Directory API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/meitner-2u8/api/directory-api-python-code-samples
+                labelOverride:
+                    fixedValue: Python (SDK)
+                blocking: false

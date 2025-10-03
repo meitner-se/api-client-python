@@ -1,0 +1,19 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Directory API:
+        inputs:
+            - location: https://api.staging.meitner.se/directory/v1/openapi.json
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/meitner-2u8/api/directory-api
+targets:
+    meitner:
+        target: python
+        source: Directory API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/meitner-2u8/api/directory-api-python-code-samples
+            labelOverride:
+                fixedValue: Python (SDK)
+            blocking: false

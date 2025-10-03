@@ -1,0 +1,8 @@
+# SchoolSearchResponse
+
+
+## Fields
+
+| Field                                            | Type                                             | Required                                         | Description                                      |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| `result`                                         | [models.SchoolSearch](../models/schoolsearch.md) | :heavy_check_mark:                               | N/A                                              |
