@@ -11,6 +11,9 @@ targets:
     meitner:
         target: python
         source: Directory API
+        publish:
+            pypi:
+                token: $pypi_token
         codeSamples:
             registry:
                 location: registry.speakeasyapi.dev/meitner-2u8/api/directory-api-python-code-samples
