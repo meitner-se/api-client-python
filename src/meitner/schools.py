@@ -687,10 +687,59 @@ class Schools(BaseSDK):
     def search(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        school_filter: Optional[
-            Union[models.SchoolFilter, models.SchoolFilterTypedDict]
+        equals: OptionalNullable[
+            Union[models.SchoolFilterEquals, models.SchoolFilterEqualsTypedDict]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[models.SchoolFilterNotEquals, models.SchoolFilterNotEqualsTypedDict]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.SchoolFilterGreaterThan, models.SchoolFilterGreaterThanTypedDict
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.SchoolFilterSmallerThan, models.SchoolFilterSmallerThanTypedDict
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.SchoolFilterGreaterOrEqual,
+                models.SchoolFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.SchoolFilterSmallerOrEqual,
+                models.SchoolFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[models.SchoolFilterContains, models.SchoolFilterContainsTypedDict]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.SchoolFilterNotContains, models.SchoolFilterNotContainsTypedDict
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[models.SchoolFilterLike, models.SchoolFilterLikeTypedDict]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[models.SchoolFilterNotLike, models.SchoolFilterNotLikeTypedDict]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[models.SchoolFilterNull, models.SchoolFilterNullTypedDict]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[models.SchoolFilterNotNull, models.SchoolFilterNotNullTypedDict]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[List[models.SchoolFilter], List[models.SchoolFilterTypedDict]]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -701,9 +750,22 @@ class Schools(BaseSDK):
 
         Search for `Schools` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of Schools to return (default: 50) when searching Schools
         :param offset: The number of Schools to skip before starting to return results (default: 0) when searching Schools
-        :param school_filter: Request body
+        :param equals: Equality filters for School
+        :param not_equals: Inequality filters for School
+        :param greater_than: Greater than filters for School
+        :param smaller_than: Smaller than filters for School
+        :param greater_or_equal: Greater than or equal filters for School
+        :param smaller_or_equal: Smaller than or equal filters for School
+        :param contains: Contains filters for School
+        :param not_contains: Not contains filters for School
+        :param like: LIKE filters for School
+        :param not_like: NOT LIKE filters for School
+        :param null: Null filters for School
+        :param not_null: Not null filters for School
+        :param nested_filters: NestedFilters of the School, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -725,8 +787,49 @@ class Schools(BaseSDK):
         request = models.SchoolSearchRequest(
             limit=limit,
             offset=offset,
-            school_filter=utils.get_pydantic_model(
-                school_filter, Optional[models.SchoolFilter]
+            school_filter=models.SchoolFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.SchoolFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals, OptionalNullable[models.SchoolFilterNotEquals]
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than, OptionalNullable[models.SchoolFilterGreaterThan]
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than, OptionalNullable[models.SchoolFilterSmallerThan]
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.SchoolFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.SchoolFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.SchoolFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains, OptionalNullable[models.SchoolFilterNotContains]
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.SchoolFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.SchoolFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.SchoolFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.SchoolFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.SchoolFilter]]
+                ),
             ),
         )
 
@@ -736,7 +839,7 @@ class Schools(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -744,11 +847,7 @@ class Schools(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.school_filter,
-                False,
-                True,
-                "json",
-                Optional[models.SchoolFilter],
+                request.school_filter, False, False, "json", models.SchoolFilter
             ),
             timeout_ms=timeout_ms,
         )
@@ -807,24 +906,22 @@ class Schools(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                school_filter=models.SchoolFilter(
-                    equals=request.school_filter.equals,
-                    not_equals=request.school_filter.not_equals,
-                    greater_than=request.school_filter.greater_than,
-                    smaller_than=request.school_filter.smaller_than,
-                    greater_or_equal=request.school_filter.greater_or_equal,
-                    smaller_or_equal=request.school_filter.smaller_or_equal,
-                    contains=request.school_filter.contains,
-                    not_contains=request.school_filter.not_contains,
-                    like=request.school_filter.like,
-                    not_like=request.school_filter.not_like,
-                    null=request.school_filter.null,
-                    not_null=request.school_filter.not_null,
-                    or_condition=request.school_filter.or_condition,
-                    nested_filters=request.school_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 
@@ -890,10 +987,59 @@ class Schools(BaseSDK):
     async def search_async(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        school_filter: Optional[
-            Union[models.SchoolFilter, models.SchoolFilterTypedDict]
+        equals: OptionalNullable[
+            Union[models.SchoolFilterEquals, models.SchoolFilterEqualsTypedDict]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[models.SchoolFilterNotEquals, models.SchoolFilterNotEqualsTypedDict]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.SchoolFilterGreaterThan, models.SchoolFilterGreaterThanTypedDict
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.SchoolFilterSmallerThan, models.SchoolFilterSmallerThanTypedDict
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.SchoolFilterGreaterOrEqual,
+                models.SchoolFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.SchoolFilterSmallerOrEqual,
+                models.SchoolFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[models.SchoolFilterContains, models.SchoolFilterContainsTypedDict]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.SchoolFilterNotContains, models.SchoolFilterNotContainsTypedDict
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[models.SchoolFilterLike, models.SchoolFilterLikeTypedDict]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[models.SchoolFilterNotLike, models.SchoolFilterNotLikeTypedDict]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[models.SchoolFilterNull, models.SchoolFilterNullTypedDict]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[models.SchoolFilterNotNull, models.SchoolFilterNotNullTypedDict]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[List[models.SchoolFilter], List[models.SchoolFilterTypedDict]]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -904,9 +1050,22 @@ class Schools(BaseSDK):
 
         Search for `Schools` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of Schools to return (default: 50) when searching Schools
         :param offset: The number of Schools to skip before starting to return results (default: 0) when searching Schools
-        :param school_filter: Request body
+        :param equals: Equality filters for School
+        :param not_equals: Inequality filters for School
+        :param greater_than: Greater than filters for School
+        :param smaller_than: Smaller than filters for School
+        :param greater_or_equal: Greater than or equal filters for School
+        :param smaller_or_equal: Smaller than or equal filters for School
+        :param contains: Contains filters for School
+        :param not_contains: Not contains filters for School
+        :param like: LIKE filters for School
+        :param not_like: NOT LIKE filters for School
+        :param null: Null filters for School
+        :param not_null: Not null filters for School
+        :param nested_filters: NestedFilters of the School, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -928,8 +1087,49 @@ class Schools(BaseSDK):
         request = models.SchoolSearchRequest(
             limit=limit,
             offset=offset,
-            school_filter=utils.get_pydantic_model(
-                school_filter, Optional[models.SchoolFilter]
+            school_filter=models.SchoolFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.SchoolFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals, OptionalNullable[models.SchoolFilterNotEquals]
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than, OptionalNullable[models.SchoolFilterGreaterThan]
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than, OptionalNullable[models.SchoolFilterSmallerThan]
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.SchoolFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.SchoolFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.SchoolFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains, OptionalNullable[models.SchoolFilterNotContains]
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.SchoolFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.SchoolFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.SchoolFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.SchoolFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.SchoolFilter]]
+                ),
             ),
         )
 
@@ -939,7 +1139,7 @@ class Schools(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -947,11 +1147,7 @@ class Schools(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.school_filter,
-                False,
-                True,
-                "json",
-                Optional[models.SchoolFilter],
+                request.school_filter, False, False, "json", models.SchoolFilter
             ),
             timeout_ms=timeout_ms,
         )
@@ -1013,24 +1209,22 @@ class Schools(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                school_filter=models.SchoolFilter(
-                    equals=request.school_filter.equals,
-                    not_equals=request.school_filter.not_equals,
-                    greater_than=request.school_filter.greater_than,
-                    smaller_than=request.school_filter.smaller_than,
-                    greater_or_equal=request.school_filter.greater_or_equal,
-                    smaller_or_equal=request.school_filter.smaller_or_equal,
-                    contains=request.school_filter.contains,
-                    not_contains=request.school_filter.not_contains,
-                    like=request.school_filter.like,
-                    not_like=request.school_filter.not_like,
-                    null=request.school_filter.null,
-                    not_null=request.school_filter.not_null,
-                    or_condition=request.school_filter.or_condition,
-                    nested_filters=request.school_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 

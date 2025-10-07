@@ -716,10 +716,86 @@ class StudentPlacements(BaseSDK):
     def search(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        student_placement_filter: Optional[
-            Union[models.StudentPlacementFilter, models.StudentPlacementFilterTypedDict]
+        equals: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterEquals,
+                models.StudentPlacementFilterEqualsTypedDict,
+            ]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotEquals,
+                models.StudentPlacementFilterNotEqualsTypedDict,
+            ]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterGreaterThan,
+                models.StudentPlacementFilterGreaterThanTypedDict,
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterSmallerThan,
+                models.StudentPlacementFilterSmallerThanTypedDict,
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterGreaterOrEqual,
+                models.StudentPlacementFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterSmallerOrEqual,
+                models.StudentPlacementFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterContains,
+                models.StudentPlacementFilterContainsTypedDict,
+            ]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotContains,
+                models.StudentPlacementFilterNotContainsTypedDict,
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterLike,
+                models.StudentPlacementFilterLikeTypedDict,
+            ]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotLike,
+                models.StudentPlacementFilterNotLikeTypedDict,
+            ]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNull,
+                models.StudentPlacementFilterNullTypedDict,
+            ]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotNull,
+                models.StudentPlacementFilterNotNullTypedDict,
+            ]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[
+                List[models.StudentPlacementFilter],
+                List[models.StudentPlacementFilterTypedDict],
+            ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -730,9 +806,22 @@ class StudentPlacements(BaseSDK):
 
         Search for `StudentPlacements` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of StudentPlacements to return (default: 50) when searching StudentPlacements
         :param offset: The number of StudentPlacements to skip before starting to return results (default: 0) when searching StudentPlacements
-        :param student_placement_filter: Request body
+        :param equals: Equality filters for StudentPlacement
+        :param not_equals: Inequality filters for StudentPlacement
+        :param greater_than: Greater than filters for StudentPlacement
+        :param smaller_than: Smaller than filters for StudentPlacement
+        :param greater_or_equal: Greater than or equal filters for StudentPlacement
+        :param smaller_or_equal: Smaller than or equal filters for StudentPlacement
+        :param contains: Contains filters for StudentPlacement
+        :param not_contains: Not contains filters for StudentPlacement
+        :param like: LIKE filters for StudentPlacement
+        :param not_like: NOT LIKE filters for StudentPlacement
+        :param null: Null filters for StudentPlacement
+        :param not_null: Not null filters for StudentPlacement
+        :param nested_filters: NestedFilters of the StudentPlacement, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -754,8 +843,52 @@ class StudentPlacements(BaseSDK):
         request = models.StudentPlacementSearchRequest(
             limit=limit,
             offset=offset,
-            student_placement_filter=utils.get_pydantic_model(
-                student_placement_filter, Optional[models.StudentPlacementFilter]
+            student_placement_filter=models.StudentPlacementFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.StudentPlacementFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals, OptionalNullable[models.StudentPlacementFilterNotEquals]
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than,
+                    OptionalNullable[models.StudentPlacementFilterGreaterThan],
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than,
+                    OptionalNullable[models.StudentPlacementFilterSmallerThan],
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.StudentPlacementFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.StudentPlacementFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.StudentPlacementFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains,
+                    OptionalNullable[models.StudentPlacementFilterNotContains],
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.StudentPlacementFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.StudentPlacementFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.StudentPlacementFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.StudentPlacementFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.StudentPlacementFilter]]
+                ),
             ),
         )
 
@@ -765,7 +898,7 @@ class StudentPlacements(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -775,9 +908,9 @@ class StudentPlacements(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.student_placement_filter,
                 False,
-                True,
+                False,
                 "json",
-                Optional[models.StudentPlacementFilter],
+                models.StudentPlacementFilter,
             ),
             timeout_ms=timeout_ms,
         )
@@ -836,24 +969,22 @@ class StudentPlacements(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                student_placement_filter=models.StudentPlacementFilter(
-                    equals=request.student_placement_filter.equals,
-                    not_equals=request.student_placement_filter.not_equals,
-                    greater_than=request.student_placement_filter.greater_than,
-                    smaller_than=request.student_placement_filter.smaller_than,
-                    greater_or_equal=request.student_placement_filter.greater_or_equal,
-                    smaller_or_equal=request.student_placement_filter.smaller_or_equal,
-                    contains=request.student_placement_filter.contains,
-                    not_contains=request.student_placement_filter.not_contains,
-                    like=request.student_placement_filter.like,
-                    not_like=request.student_placement_filter.not_like,
-                    null=request.student_placement_filter.null,
-                    not_null=request.student_placement_filter.not_null,
-                    or_condition=request.student_placement_filter.or_condition,
-                    nested_filters=request.student_placement_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 
@@ -921,10 +1052,86 @@ class StudentPlacements(BaseSDK):
     async def search_async(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        student_placement_filter: Optional[
-            Union[models.StudentPlacementFilter, models.StudentPlacementFilterTypedDict]
+        equals: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterEquals,
+                models.StudentPlacementFilterEqualsTypedDict,
+            ]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotEquals,
+                models.StudentPlacementFilterNotEqualsTypedDict,
+            ]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterGreaterThan,
+                models.StudentPlacementFilterGreaterThanTypedDict,
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterSmallerThan,
+                models.StudentPlacementFilterSmallerThanTypedDict,
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterGreaterOrEqual,
+                models.StudentPlacementFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterSmallerOrEqual,
+                models.StudentPlacementFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterContains,
+                models.StudentPlacementFilterContainsTypedDict,
+            ]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotContains,
+                models.StudentPlacementFilterNotContainsTypedDict,
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterLike,
+                models.StudentPlacementFilterLikeTypedDict,
+            ]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotLike,
+                models.StudentPlacementFilterNotLikeTypedDict,
+            ]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNull,
+                models.StudentPlacementFilterNullTypedDict,
+            ]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[
+                models.StudentPlacementFilterNotNull,
+                models.StudentPlacementFilterNotNullTypedDict,
+            ]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[
+                List[models.StudentPlacementFilter],
+                List[models.StudentPlacementFilterTypedDict],
+            ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -935,9 +1142,22 @@ class StudentPlacements(BaseSDK):
 
         Search for `StudentPlacements` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of StudentPlacements to return (default: 50) when searching StudentPlacements
         :param offset: The number of StudentPlacements to skip before starting to return results (default: 0) when searching StudentPlacements
-        :param student_placement_filter: Request body
+        :param equals: Equality filters for StudentPlacement
+        :param not_equals: Inequality filters for StudentPlacement
+        :param greater_than: Greater than filters for StudentPlacement
+        :param smaller_than: Smaller than filters for StudentPlacement
+        :param greater_or_equal: Greater than or equal filters for StudentPlacement
+        :param smaller_or_equal: Smaller than or equal filters for StudentPlacement
+        :param contains: Contains filters for StudentPlacement
+        :param not_contains: Not contains filters for StudentPlacement
+        :param like: LIKE filters for StudentPlacement
+        :param not_like: NOT LIKE filters for StudentPlacement
+        :param null: Null filters for StudentPlacement
+        :param not_null: Not null filters for StudentPlacement
+        :param nested_filters: NestedFilters of the StudentPlacement, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -959,8 +1179,52 @@ class StudentPlacements(BaseSDK):
         request = models.StudentPlacementSearchRequest(
             limit=limit,
             offset=offset,
-            student_placement_filter=utils.get_pydantic_model(
-                student_placement_filter, Optional[models.StudentPlacementFilter]
+            student_placement_filter=models.StudentPlacementFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.StudentPlacementFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals, OptionalNullable[models.StudentPlacementFilterNotEquals]
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than,
+                    OptionalNullable[models.StudentPlacementFilterGreaterThan],
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than,
+                    OptionalNullable[models.StudentPlacementFilterSmallerThan],
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.StudentPlacementFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.StudentPlacementFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.StudentPlacementFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains,
+                    OptionalNullable[models.StudentPlacementFilterNotContains],
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.StudentPlacementFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.StudentPlacementFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.StudentPlacementFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.StudentPlacementFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.StudentPlacementFilter]]
+                ),
             ),
         )
 
@@ -970,7 +1234,7 @@ class StudentPlacements(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -980,9 +1244,9 @@ class StudentPlacements(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.student_placement_filter,
                 False,
-                True,
+                False,
                 "json",
-                Optional[models.StudentPlacementFilter],
+                models.StudentPlacementFilter,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1044,24 +1308,22 @@ class StudentPlacements(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                student_placement_filter=models.StudentPlacementFilter(
-                    equals=request.student_placement_filter.equals,
-                    not_equals=request.student_placement_filter.not_equals,
-                    greater_than=request.student_placement_filter.greater_than,
-                    smaller_than=request.student_placement_filter.smaller_than,
-                    greater_or_equal=request.student_placement_filter.greater_or_equal,
-                    smaller_or_equal=request.student_placement_filter.smaller_or_equal,
-                    contains=request.student_placement_filter.contains,
-                    not_contains=request.student_placement_filter.not_contains,
-                    like=request.student_placement_filter.like,
-                    not_like=request.student_placement_filter.not_like,
-                    null=request.student_placement_filter.null,
-                    not_null=request.student_placement_filter.not_null,
-                    or_condition=request.student_placement_filter.or_condition,
-                    nested_filters=request.student_placement_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 

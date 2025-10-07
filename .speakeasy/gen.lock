@@ -1,12 +1,14 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: d7d43acd5dc0e4dd78a45823e699ff81
+  docChecksum: f3c34db98a45a33d8bd72c357f47d7f7
   docVersion: v1
-  speakeasyVersion: 1.634.1
-  generationVersion: 2.721.0
-  releaseVersion: 0.0.1
-  configChecksum: b655b290e87b1c07b9251d388efcc9f8
+  speakeasyVersion: 1.635.1
+  generationVersion: 2.722.2
+  releaseVersion: 0.0.2
+  configChecksum: fae77b8214f668c0c9c697983847a9ae
+  repoURL: https://github.com/meitner-se/api-client-python.git
+  installationURL: https://github.com/meitner-se/api-client-python.git
 features:
   python:
     additionalDependencies: 1.0.0
@@ -625,6 +627,7 @@ generatedFiles:
   - py.typed
   - pylintrc
   - pyproject.toml
+  - scripts/prepare_readme.py
   - scripts/publish.sh
   - src/meitner/__init__.py
   - src/meitner/_hooks/__init__.py
@@ -2825,3 +2828,13 @@ examples:
         "500":
           application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
+releaseNotes: |
+  ## Python SDK Changes Detected:
+  * `meitner.schools.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.groups.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.employees.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.employee_placements.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.guardians.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.students.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.student_placements.search()`:  `request` **Changed** **Breaking** :warning:
+  * `meitner.audit_events.search()`:  `request` **Changed** **Breaking** :warning:

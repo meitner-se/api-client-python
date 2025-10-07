@@ -20,7 +20,7 @@ class Security(BaseModel):
                 scheme=True,
                 scheme_type="apiKey",
                 sub_type="header",
-                field_name="ClientID",
+                field_name="Client-ID",
             )
         ),
     ] = None
@@ -32,7 +32,7 @@ class Security(BaseModel):
                 scheme=True,
                 scheme_type="apiKey",
                 sub_type="header",
-                field_name="ClientSecret",
+                field_name="Client-Secret",
             )
         ),
     ] = None

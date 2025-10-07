@@ -127,6 +127,7 @@
         "operationId": "SchoolCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/SchoolCreate"
         },
         "responses": {
@@ -208,6 +209,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/SchoolSearch"
         },
         "responses": {
@@ -353,6 +355,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/SchoolUpdate"
         },
         "responses": {
@@ -497,6 +500,7 @@
         "operationId": "GroupCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/GroupCreate"
         },
         "responses": {
@@ -578,6 +582,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/GroupSearch"
         },
         "responses": {
@@ -781,6 +786,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/GroupUpdate"
         },
         "responses": {
@@ -925,6 +931,7 @@
         "operationId": "EmployeeCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/EmployeeCreate"
         },
         "responses": {
@@ -1006,6 +1013,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/EmployeeSearch"
         },
         "responses": {
@@ -1209,6 +1217,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/EmployeeUpdate"
         },
         "responses": {
@@ -1353,6 +1362,7 @@
         "operationId": "EmployeePlacementCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/EmployeePlacementCreate"
         },
         "responses": {
@@ -1434,6 +1444,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/EmployeePlacementSearch"
         },
         "responses": {
@@ -1637,6 +1648,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/EmployeePlacementUpdate"
         },
         "responses": {
@@ -1781,6 +1793,7 @@
         "operationId": "GuardianCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/GuardianCreate"
         },
         "responses": {
@@ -1862,6 +1875,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/GuardianSearch"
         },
         "responses": {
@@ -2065,6 +2079,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/GuardianUpdate"
         },
         "responses": {
@@ -2209,6 +2224,7 @@
         "operationId": "StudentCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/StudentCreate"
         },
         "responses": {
@@ -2290,6 +2306,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/StudentSearch"
         },
         "responses": {
@@ -2493,6 +2510,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/StudentUpdate"
         },
         "responses": {
@@ -2637,6 +2655,7 @@
         "operationId": "StudentPlacementCreate",
         "parameters": [],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/StudentPlacementCreate"
         },
         "responses": {
@@ -2718,6 +2737,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/StudentPlacementSearch"
         },
         "responses": {
@@ -2921,6 +2941,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/StudentPlacementUpdate"
         },
         "responses": {
@@ -3214,6 +3235,7 @@
           }
         ],
         "requestBody": {
+          "required": true,
           "$ref": "#/components/requestBodies/AuditEventSearch"
         },
         "responses": {
@@ -19105,7 +19127,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "GroupCreate": {
         "description": "Request body",
@@ -19514,7 +19536,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "EmployeeCreate": {
         "description": "Request body",
@@ -20168,7 +20190,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "EmployeePlacementCreate": {
         "description": "Request body",
@@ -20622,7 +20644,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "GuardianCreate": {
         "description": "Request body",
@@ -21252,7 +21274,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "StudentCreate": {
         "description": "Request body",
@@ -21906,7 +21928,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "StudentPlacementCreate": {
         "description": "Request body",
@@ -22370,7 +22392,7 @@
             }
           }
         },
-        "required": false
+        "required": true
       },
       "AuditEventSearch": {
         "description": "Request body",
@@ -22490,18 +22512,18 @@
             }
           }
         },
-        "required": false
+        "required": true
       }
     },
     "securitySchemes": {
       "ClientCredentials": {
         "type": "apiKey",
-        "name": "ClientID",
+        "name": "Client-ID",
         "in": "header"
       },
       "ClientSecret": {
         "type": "apiKey",
-        "name": "ClientSecret",
+        "name": "Client-Secret",
         "in": "header"
       }
     }

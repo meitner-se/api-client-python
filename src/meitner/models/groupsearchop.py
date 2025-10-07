@@ -10,15 +10,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GroupSearchRequestTypedDict(TypedDict):
+    group_filter: GroupFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of Groups to return (default: 50) when searching Groups"""
     offset: NotRequired[int]
     r"""The number of Groups to skip before starting to return results (default: 0) when searching Groups"""
-    group_filter: NotRequired[GroupFilterTypedDict]
-    r"""Request body"""
 
 
 class GroupSearchRequest(BaseModel):
+    group_filter: Annotated[
+        GroupFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -30,12 +36,6 @@ class GroupSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of Groups to skip before starting to return results (default: 0) when searching Groups"""
-
-    group_filter: Annotated[
-        Optional[GroupFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class GroupSearchResponseTypedDict(TypedDict):
