@@ -10,15 +10,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GuardianSearchRequestTypedDict(TypedDict):
+    guardian_filter: GuardianFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of Guardians to return (default: 50) when searching Guardians"""
     offset: NotRequired[int]
     r"""The number of Guardians to skip before starting to return results (default: 0) when searching Guardians"""
-    guardian_filter: NotRequired[GuardianFilterTypedDict]
-    r"""Request body"""
 
 
 class GuardianSearchRequest(BaseModel):
+    guardian_filter: Annotated[
+        GuardianFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -30,12 +36,6 @@ class GuardianSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of Guardians to skip before starting to return results (default: 0) when searching Guardians"""
-
-    guardian_filter: Annotated[
-        Optional[GuardianFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class GuardianSearchResponseTypedDict(TypedDict):

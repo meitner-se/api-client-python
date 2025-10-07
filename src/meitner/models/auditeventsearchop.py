@@ -10,15 +10,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AuditEventSearchRequestTypedDict(TypedDict):
+    audit_event_filter: AuditEventFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of AuditEvents to return (default: 50) when searching AuditEvents"""
     offset: NotRequired[int]
     r"""The number of AuditEvents to skip before starting to return results (default: 0) when searching AuditEvents"""
-    audit_event_filter: NotRequired[AuditEventFilterTypedDict]
-    r"""Request body"""
 
 
 class AuditEventSearchRequest(BaseModel):
+    audit_event_filter: Annotated[
+        AuditEventFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -30,12 +36,6 @@ class AuditEventSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of AuditEvents to skip before starting to return results (default: 0) when searching AuditEvents"""
-
-    audit_event_filter: Annotated[
-        Optional[AuditEventFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class AuditEventSearchResponseTypedDict(TypedDict):

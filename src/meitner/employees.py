@@ -732,10 +732,64 @@ class Employees(BaseSDK):
     def search(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        employee_filter: Optional[
-            Union[models.EmployeeFilter, models.EmployeeFilterTypedDict]
+        equals: OptionalNullable[
+            Union[models.EmployeeFilterEquals, models.EmployeeFilterEqualsTypedDict]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[
+                models.EmployeeFilterNotEquals, models.EmployeeFilterNotEqualsTypedDict
+            ]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.EmployeeFilterGreaterThan,
+                models.EmployeeFilterGreaterThanTypedDict,
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.EmployeeFilterSmallerThan,
+                models.EmployeeFilterSmallerThanTypedDict,
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.EmployeeFilterGreaterOrEqual,
+                models.EmployeeFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.EmployeeFilterSmallerOrEqual,
+                models.EmployeeFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[models.EmployeeFilterContains, models.EmployeeFilterContainsTypedDict]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.EmployeeFilterNotContains,
+                models.EmployeeFilterNotContainsTypedDict,
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[models.EmployeeFilterLike, models.EmployeeFilterLikeTypedDict]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[models.EmployeeFilterNotLike, models.EmployeeFilterNotLikeTypedDict]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[models.EmployeeFilterNull, models.EmployeeFilterNullTypedDict]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[models.EmployeeFilterNotNull, models.EmployeeFilterNotNullTypedDict]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[List[models.EmployeeFilter], List[models.EmployeeFilterTypedDict]]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -746,9 +800,22 @@ class Employees(BaseSDK):
 
         Search for `Employees` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of Employees to return (default: 50) when searching Employees
         :param offset: The number of Employees to skip before starting to return results (default: 0) when searching Employees
-        :param employee_filter: Request body
+        :param equals: Equality filters for Employee
+        :param not_equals: Inequality filters for Employee
+        :param greater_than: Greater than filters for Employee
+        :param smaller_than: Smaller than filters for Employee
+        :param greater_or_equal: Greater than or equal filters for Employee
+        :param smaller_or_equal: Smaller than or equal filters for Employee
+        :param contains: Contains filters for Employee
+        :param not_contains: Not contains filters for Employee
+        :param like: LIKE filters for Employee
+        :param not_like: NOT LIKE filters for Employee
+        :param null: Null filters for Employee
+        :param not_null: Not null filters for Employee
+        :param nested_filters: NestedFilters of the Employee, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -770,8 +837,49 @@ class Employees(BaseSDK):
         request = models.EmployeeSearchRequest(
             limit=limit,
             offset=offset,
-            employee_filter=utils.get_pydantic_model(
-                employee_filter, Optional[models.EmployeeFilter]
+            employee_filter=models.EmployeeFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.EmployeeFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals, OptionalNullable[models.EmployeeFilterNotEquals]
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than, OptionalNullable[models.EmployeeFilterGreaterThan]
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than, OptionalNullable[models.EmployeeFilterSmallerThan]
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.EmployeeFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.EmployeeFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.EmployeeFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains, OptionalNullable[models.EmployeeFilterNotContains]
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.EmployeeFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.EmployeeFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.EmployeeFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.EmployeeFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.EmployeeFilter]]
+                ),
             ),
         )
 
@@ -781,7 +889,7 @@ class Employees(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -789,11 +897,7 @@ class Employees(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.employee_filter,
-                False,
-                True,
-                "json",
-                Optional[models.EmployeeFilter],
+                request.employee_filter, False, False, "json", models.EmployeeFilter
             ),
             timeout_ms=timeout_ms,
         )
@@ -852,24 +956,22 @@ class Employees(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                employee_filter=models.EmployeeFilter(
-                    equals=request.employee_filter.equals,
-                    not_equals=request.employee_filter.not_equals,
-                    greater_than=request.employee_filter.greater_than,
-                    smaller_than=request.employee_filter.smaller_than,
-                    greater_or_equal=request.employee_filter.greater_or_equal,
-                    smaller_or_equal=request.employee_filter.smaller_or_equal,
-                    contains=request.employee_filter.contains,
-                    not_contains=request.employee_filter.not_contains,
-                    like=request.employee_filter.like,
-                    not_like=request.employee_filter.not_like,
-                    null=request.employee_filter.null,
-                    not_null=request.employee_filter.not_null,
-                    or_condition=request.employee_filter.or_condition,
-                    nested_filters=request.employee_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 
@@ -935,10 +1037,64 @@ class Employees(BaseSDK):
     async def search_async(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        employee_filter: Optional[
-            Union[models.EmployeeFilter, models.EmployeeFilterTypedDict]
+        equals: OptionalNullable[
+            Union[models.EmployeeFilterEquals, models.EmployeeFilterEqualsTypedDict]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[
+                models.EmployeeFilterNotEquals, models.EmployeeFilterNotEqualsTypedDict
+            ]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.EmployeeFilterGreaterThan,
+                models.EmployeeFilterGreaterThanTypedDict,
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.EmployeeFilterSmallerThan,
+                models.EmployeeFilterSmallerThanTypedDict,
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.EmployeeFilterGreaterOrEqual,
+                models.EmployeeFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.EmployeeFilterSmallerOrEqual,
+                models.EmployeeFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[models.EmployeeFilterContains, models.EmployeeFilterContainsTypedDict]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.EmployeeFilterNotContains,
+                models.EmployeeFilterNotContainsTypedDict,
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[models.EmployeeFilterLike, models.EmployeeFilterLikeTypedDict]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[models.EmployeeFilterNotLike, models.EmployeeFilterNotLikeTypedDict]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[models.EmployeeFilterNull, models.EmployeeFilterNullTypedDict]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[models.EmployeeFilterNotNull, models.EmployeeFilterNotNullTypedDict]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[List[models.EmployeeFilter], List[models.EmployeeFilterTypedDict]]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -949,9 +1105,22 @@ class Employees(BaseSDK):
 
         Search for `Employees` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of Employees to return (default: 50) when searching Employees
         :param offset: The number of Employees to skip before starting to return results (default: 0) when searching Employees
-        :param employee_filter: Request body
+        :param equals: Equality filters for Employee
+        :param not_equals: Inequality filters for Employee
+        :param greater_than: Greater than filters for Employee
+        :param smaller_than: Smaller than filters for Employee
+        :param greater_or_equal: Greater than or equal filters for Employee
+        :param smaller_or_equal: Smaller than or equal filters for Employee
+        :param contains: Contains filters for Employee
+        :param not_contains: Not contains filters for Employee
+        :param like: LIKE filters for Employee
+        :param not_like: NOT LIKE filters for Employee
+        :param null: Null filters for Employee
+        :param not_null: Not null filters for Employee
+        :param nested_filters: NestedFilters of the Employee, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -973,8 +1142,49 @@ class Employees(BaseSDK):
         request = models.EmployeeSearchRequest(
             limit=limit,
             offset=offset,
-            employee_filter=utils.get_pydantic_model(
-                employee_filter, Optional[models.EmployeeFilter]
+            employee_filter=models.EmployeeFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.EmployeeFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals, OptionalNullable[models.EmployeeFilterNotEquals]
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than, OptionalNullable[models.EmployeeFilterGreaterThan]
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than, OptionalNullable[models.EmployeeFilterSmallerThan]
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.EmployeeFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.EmployeeFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.EmployeeFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains, OptionalNullable[models.EmployeeFilterNotContains]
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.EmployeeFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.EmployeeFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.EmployeeFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.EmployeeFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.EmployeeFilter]]
+                ),
             ),
         )
 
@@ -984,7 +1194,7 @@ class Employees(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -992,11 +1202,7 @@ class Employees(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.employee_filter,
-                False,
-                True,
-                "json",
-                Optional[models.EmployeeFilter],
+                request.employee_filter, False, False, "json", models.EmployeeFilter
             ),
             timeout_ms=timeout_ms,
         )
@@ -1058,24 +1264,22 @@ class Employees(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                employee_filter=models.EmployeeFilter(
-                    equals=request.employee_filter.equals,
-                    not_equals=request.employee_filter.not_equals,
-                    greater_than=request.employee_filter.greater_than,
-                    smaller_than=request.employee_filter.smaller_than,
-                    greater_or_equal=request.employee_filter.greater_or_equal,
-                    smaller_or_equal=request.employee_filter.smaller_or_equal,
-                    contains=request.employee_filter.contains,
-                    not_contains=request.employee_filter.not_contains,
-                    like=request.employee_filter.like,
-                    not_like=request.employee_filter.not_like,
-                    null=request.employee_filter.null,
-                    not_null=request.employee_filter.not_null,
-                    or_condition=request.employee_filter.or_condition,
-                    nested_filters=request.employee_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 
