@@ -23,9 +23,9 @@ class SchoolCreateExternal(BaseModel):
 
 
 SchoolCreateSchoolType = Literal[
-    "Grundskola",
-    "Gymnasieskola",
-    "Förskola",
+    "GR",
+    "GY",
+    "FS",
 ]
 r"""Type of schooling provided at the school"""
 

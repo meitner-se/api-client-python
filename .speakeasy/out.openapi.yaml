@@ -3438,9 +3438,9 @@
       "SchoolType": {
         "type": "string",
         "enum": [
-          "Grundskola",
-          "Gymnasieskola",
-          "Förskola"
+          "GR",
+          "GY",
+          "FS"
         ],
         "description": "The type of schooling provided at the school"
       },
@@ -3756,7 +3756,7 @@
               }
             ],
             "examples": [
-              "Grundskola"
+              "GR"
             ],
             "description": "Type of schooling provided at the school"
           }
@@ -14875,7 +14875,7 @@
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
-                  "schoolType": "Grundskola"
+                  "schoolType": "GR"
                 }
               }
             }
@@ -14953,7 +14953,7 @@
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
-                  "schoolType": "Grundskola"
+                  "schoolType": "GR"
                 }
               }
             }
@@ -15031,7 +15031,7 @@
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
-                  "schoolType": "Grundskola"
+                  "schoolType": "GR"
                 }
               }
             }
@@ -15065,7 +15065,7 @@
                         "unitCode": "12345678",
                         "csnSchoolCode": "12345",
                         "municipalityCode": "0184",
-                        "schoolType": "Grundskola"
+                        "schoolType": "GR"
                       }
                     ]
                   ],
@@ -15116,7 +15116,7 @@
                       "unitCode": "12345678",
                       "csnSchoolCode": "12345",
                       "municipalityCode": "0184",
-                      "schoolType": "Grundskola"
+                      "schoolType": "GR"
                     }
                   ],
                   "pagination": {
@@ -15157,7 +15157,7 @@
                         "unitCode": "12345678",
                         "csnSchoolCode": "12345",
                         "municipalityCode": "0184",
-                        "schoolType": "Grundskola"
+                        "schoolType": "GR"
                       }
                     ]
                   ],
@@ -15208,7 +15208,7 @@
                       "unitCode": "12345678",
                       "csnSchoolCode": "12345",
                       "municipalityCode": "0184",
-                      "schoolType": "Grundskola"
+                      "schoolType": "GR"
                     }
                   ],
                   "pagination": {
@@ -18827,7 +18827,7 @@
                     }
                   ],
                   "examples": [
-                    "Grundskola"
+                    "GR"
                   ],
                   "description": "Type of schooling provided at the school"
                 }
@@ -18848,7 +18848,7 @@
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
-                  "schoolType": "Grundskola"
+                  "schoolType": "GR"
                 }
               }
             }
