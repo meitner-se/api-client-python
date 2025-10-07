@@ -1,14 +1,15 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: f3c34db98a45a33d8bd72c357f47d7f7
+  docChecksum: 8cb74e406d862442ba1e9b98591fada1
   docVersion: v1
   speakeasyVersion: 1.635.1
   generationVersion: 2.722.2
-  releaseVersion: 0.0.2
-  configChecksum: fae77b8214f668c0c9c697983847a9ae
+  releaseVersion: 0.0.3
+  configChecksum: 0e41bb591c584dd834cecaf86ac65897
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
+  published: true
 features:
   python:
     additionalDependencies: 1.0.0
@@ -835,7 +836,7 @@ examples:
           offset: 0
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -859,10 +860,10 @@ examples:
   SchoolCreate:
     requestExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
         "401":
@@ -881,13 +882,13 @@ examples:
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
     responseExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
     errorExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
       responses:
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -905,7 +906,7 @@ examples:
           application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
     validationError:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+        application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
       responses:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for School Create endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -919,7 +920,7 @@ examples:
         application/json: {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "title": ["example"], "unitCode": ["example"], "csnSchoolCode": ["example"], "municipalityCode": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "title": ["example"], "unitCode": ["example"], "csnSchoolCode": ["example"], "municipalityCode": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "unitCode": true, "csnSchoolCode": true, "municipalityCode": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "unitCode": true, "csnSchoolCode": true, "municipalityCode": true}, "orCondition": true}
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
         "401":
@@ -945,7 +946,7 @@ examples:
         application/json: {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "title": ["example"], "unitCode": ["example"], "csnSchoolCode": ["example"], "municipalityCode": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "title": ["example"], "unitCode": ["example"], "csnSchoolCode": ["example"], "municipalityCode": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "unitCode": true, "csnSchoolCode": true, "municipalityCode": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "unitCode": true, "csnSchoolCode": true, "municipalityCode": true}, "orCondition": true, "nestedFilters": [{"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "title": ["example"], "unitCode": ["example"], "csnSchoolCode": ["example"], "municipalityCode": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "title": ["example"], "unitCode": ["example"], "csnSchoolCode": ["example"], "municipalityCode": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "title": "example", "unitCode": "example", "csnSchoolCode": "example", "municipalityCode": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "unitCode": true, "csnSchoolCode": true, "municipalityCode": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "unitCode": true, "csnSchoolCode": true, "municipalityCode": true}, "orCondition": true}]}
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -985,7 +986,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
     errorExample:
       parameters:
         path:
@@ -1014,7 +1015,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184"}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
         "401":
@@ -1039,7 +1040,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184"}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "Grundskola"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "title": "Meitner Grundskola", "unitCode": "12345678", "csnSchoolCode": "12345", "municipalityCode": "0184", "schoolType": "GR"}
     errorExample:
       parameters:
         path:
@@ -2828,13 +2829,3 @@ examples:
         "500":
           application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Python SDK Changes Detected:
-  * `meitner.schools.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.groups.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.employees.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.employee_placements.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.guardians.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.students.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.student_placements.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.audit_events.search()`:  `request` **Changed** **Breaking** :warning:

@@ -5,8 +5,8 @@ from typing import Literal
 
 
 SchoolType = Literal[
-    "Grundskola",
-    "Gymnasieskola",
-    "Förskola",
+    "GR",
+    "GY",
+    "FS",
 ]
 r"""The type of schooling provided at the school"""

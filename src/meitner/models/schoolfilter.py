@@ -129,9 +129,9 @@ class SchoolFilterEqualsExternal(BaseModel):
 
 
 SchoolFilterEqualsSchoolType = Literal[
-    "Grundskola",
-    "Gymnasieskola",
-    "Förskola",
+    "GR",
+    "GY",
+    "FS",
 ]
 r"""Type of schooling provided at the school"""
 
@@ -361,9 +361,9 @@ class SchoolFilterNotEqualsExternal(BaseModel):
 
 
 SchoolFilterNotEqualsSchoolType = Literal[
-    "Grundskola",
-    "Gymnasieskola",
-    "Förskola",
+    "GR",
+    "GY",
+    "FS",
 ]
 r"""Type of schooling provided at the school"""
 
