@@ -10,15 +10,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class EmployeeSearchRequestTypedDict(TypedDict):
+    employee_filter: EmployeeFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of Employees to return (default: 50) when searching Employees"""
     offset: NotRequired[int]
     r"""The number of Employees to skip before starting to return results (default: 0) when searching Employees"""
-    employee_filter: NotRequired[EmployeeFilterTypedDict]
-    r"""Request body"""
 
 
 class EmployeeSearchRequest(BaseModel):
+    employee_filter: Annotated[
+        EmployeeFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -30,12 +36,6 @@ class EmployeeSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of Employees to skip before starting to return results (default: 0) when searching Employees"""
-
-    employee_filter: Annotated[
-        Optional[EmployeeFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class EmployeeSearchResponseTypedDict(TypedDict):

@@ -16,15 +16,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class StudentPlacementSearchRequestTypedDict(TypedDict):
+    student_placement_filter: StudentPlacementFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of StudentPlacements to return (default: 50) when searching StudentPlacements"""
     offset: NotRequired[int]
     r"""The number of StudentPlacements to skip before starting to return results (default: 0) when searching StudentPlacements"""
-    student_placement_filter: NotRequired[StudentPlacementFilterTypedDict]
-    r"""Request body"""
 
 
 class StudentPlacementSearchRequest(BaseModel):
+    student_placement_filter: Annotated[
+        StudentPlacementFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -36,12 +42,6 @@ class StudentPlacementSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of StudentPlacements to skip before starting to return results (default: 0) when searching StudentPlacements"""
-
-    student_placement_filter: Annotated[
-        Optional[StudentPlacementFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class StudentPlacementSearchResponseTypedDict(TypedDict):

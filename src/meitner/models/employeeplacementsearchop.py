@@ -16,15 +16,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class EmployeePlacementSearchRequestTypedDict(TypedDict):
+    employee_placement_filter: EmployeePlacementFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of EmployeePlacements to return (default: 50) when searching EmployeePlacements"""
     offset: NotRequired[int]
     r"""The number of EmployeePlacements to skip before starting to return results (default: 0) when searching EmployeePlacements"""
-    employee_placement_filter: NotRequired[EmployeePlacementFilterTypedDict]
-    r"""Request body"""
 
 
 class EmployeePlacementSearchRequest(BaseModel):
+    employee_placement_filter: Annotated[
+        EmployeePlacementFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -36,12 +42,6 @@ class EmployeePlacementSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of EmployeePlacements to skip before starting to return results (default: 0) when searching EmployeePlacements"""
-
-    employee_placement_filter: Annotated[
-        Optional[EmployeePlacementFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class EmployeePlacementSearchResponseTypedDict(TypedDict):

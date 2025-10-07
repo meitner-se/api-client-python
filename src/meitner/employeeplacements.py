@@ -710,11 +710,85 @@ class EmployeePlacements(BaseSDK):
     def search(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        employee_placement_filter: Optional[
+        equals: OptionalNullable[
             Union[
-                models.EmployeePlacementFilter, models.EmployeePlacementFilterTypedDict
+                models.EmployeePlacementFilterEquals,
+                models.EmployeePlacementFilterEqualsTypedDict,
+            ]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotEquals,
+                models.EmployeePlacementFilterNotEqualsTypedDict,
+            ]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterGreaterThan,
+                models.EmployeePlacementFilterGreaterThanTypedDict,
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterSmallerThan,
+                models.EmployeePlacementFilterSmallerThanTypedDict,
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterGreaterOrEqual,
+                models.EmployeePlacementFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterSmallerOrEqual,
+                models.EmployeePlacementFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterContains,
+                models.EmployeePlacementFilterContainsTypedDict,
+            ]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotContains,
+                models.EmployeePlacementFilterNotContainsTypedDict,
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterLike,
+                models.EmployeePlacementFilterLikeTypedDict,
+            ]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotLike,
+                models.EmployeePlacementFilterNotLikeTypedDict,
+            ]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNull,
+                models.EmployeePlacementFilterNullTypedDict,
+            ]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotNull,
+                models.EmployeePlacementFilterNotNullTypedDict,
+            ]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[
+                List[models.EmployeePlacementFilter],
+                List[models.EmployeePlacementFilterTypedDict],
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -726,9 +800,22 @@ class EmployeePlacements(BaseSDK):
 
         Search for `EmployeePlacements` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of EmployeePlacements to return (default: 50) when searching EmployeePlacements
         :param offset: The number of EmployeePlacements to skip before starting to return results (default: 0) when searching EmployeePlacements
-        :param employee_placement_filter: Request body
+        :param equals: Equality filters for EmployeePlacement
+        :param not_equals: Inequality filters for EmployeePlacement
+        :param greater_than: Greater than filters for EmployeePlacement
+        :param smaller_than: Smaller than filters for EmployeePlacement
+        :param greater_or_equal: Greater than or equal filters for EmployeePlacement
+        :param smaller_or_equal: Smaller than or equal filters for EmployeePlacement
+        :param contains: Contains filters for EmployeePlacement
+        :param not_contains: Not contains filters for EmployeePlacement
+        :param like: LIKE filters for EmployeePlacement
+        :param not_like: NOT LIKE filters for EmployeePlacement
+        :param null: Null filters for EmployeePlacement
+        :param not_null: Not null filters for EmployeePlacement
+        :param nested_filters: NestedFilters of the EmployeePlacement, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -750,8 +837,53 @@ class EmployeePlacements(BaseSDK):
         request = models.EmployeePlacementSearchRequest(
             limit=limit,
             offset=offset,
-            employee_placement_filter=utils.get_pydantic_model(
-                employee_placement_filter, Optional[models.EmployeePlacementFilter]
+            employee_placement_filter=models.EmployeePlacementFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.EmployeePlacementFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals,
+                    OptionalNullable[models.EmployeePlacementFilterNotEquals],
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than,
+                    OptionalNullable[models.EmployeePlacementFilterGreaterThan],
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than,
+                    OptionalNullable[models.EmployeePlacementFilterSmallerThan],
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.EmployeePlacementFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.EmployeePlacementFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.EmployeePlacementFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains,
+                    OptionalNullable[models.EmployeePlacementFilterNotContains],
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.EmployeePlacementFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.EmployeePlacementFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.EmployeePlacementFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.EmployeePlacementFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.EmployeePlacementFilter]]
+                ),
             ),
         )
 
@@ -761,7 +893,7 @@ class EmployeePlacements(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -771,9 +903,9 @@ class EmployeePlacements(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.employee_placement_filter,
                 False,
-                True,
+                False,
                 "json",
-                Optional[models.EmployeePlacementFilter],
+                models.EmployeePlacementFilter,
             ),
             timeout_ms=timeout_ms,
         )
@@ -832,24 +964,22 @@ class EmployeePlacements(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                employee_placement_filter=models.EmployeePlacementFilter(
-                    equals=request.employee_placement_filter.equals,
-                    not_equals=request.employee_placement_filter.not_equals,
-                    greater_than=request.employee_placement_filter.greater_than,
-                    smaller_than=request.employee_placement_filter.smaller_than,
-                    greater_or_equal=request.employee_placement_filter.greater_or_equal,
-                    smaller_or_equal=request.employee_placement_filter.smaller_or_equal,
-                    contains=request.employee_placement_filter.contains,
-                    not_contains=request.employee_placement_filter.not_contains,
-                    like=request.employee_placement_filter.like,
-                    not_like=request.employee_placement_filter.not_like,
-                    null=request.employee_placement_filter.null,
-                    not_null=request.employee_placement_filter.not_null,
-                    or_condition=request.employee_placement_filter.or_condition,
-                    nested_filters=request.employee_placement_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 
@@ -919,11 +1049,85 @@ class EmployeePlacements(BaseSDK):
     async def search_async(
         self,
         *,
+        or_condition: bool,
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        employee_placement_filter: Optional[
+        equals: OptionalNullable[
             Union[
-                models.EmployeePlacementFilter, models.EmployeePlacementFilterTypedDict
+                models.EmployeePlacementFilterEquals,
+                models.EmployeePlacementFilterEqualsTypedDict,
+            ]
+        ] = UNSET,
+        not_equals: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotEquals,
+                models.EmployeePlacementFilterNotEqualsTypedDict,
+            ]
+        ] = UNSET,
+        greater_than: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterGreaterThan,
+                models.EmployeePlacementFilterGreaterThanTypedDict,
+            ]
+        ] = UNSET,
+        smaller_than: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterSmallerThan,
+                models.EmployeePlacementFilterSmallerThanTypedDict,
+            ]
+        ] = UNSET,
+        greater_or_equal: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterGreaterOrEqual,
+                models.EmployeePlacementFilterGreaterOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        smaller_or_equal: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterSmallerOrEqual,
+                models.EmployeePlacementFilterSmallerOrEqualTypedDict,
+            ]
+        ] = UNSET,
+        contains: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterContains,
+                models.EmployeePlacementFilterContainsTypedDict,
+            ]
+        ] = UNSET,
+        not_contains: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotContains,
+                models.EmployeePlacementFilterNotContainsTypedDict,
+            ]
+        ] = UNSET,
+        like: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterLike,
+                models.EmployeePlacementFilterLikeTypedDict,
+            ]
+        ] = UNSET,
+        not_like: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotLike,
+                models.EmployeePlacementFilterNotLikeTypedDict,
+            ]
+        ] = UNSET,
+        null: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNull,
+                models.EmployeePlacementFilterNullTypedDict,
+            ]
+        ] = UNSET,
+        not_null: OptionalNullable[
+            Union[
+                models.EmployeePlacementFilterNotNull,
+                models.EmployeePlacementFilterNotNullTypedDict,
+            ]
+        ] = UNSET,
+        nested_filters: Optional[
+            Union[
+                List[models.EmployeePlacementFilter],
+                List[models.EmployeePlacementFilterTypedDict],
             ]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -935,9 +1139,22 @@ class EmployeePlacements(BaseSDK):
 
         Search for `EmployeePlacements` with filtering capabilities.
 
+        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
         :param limit: The maximum number of EmployeePlacements to return (default: 50) when searching EmployeePlacements
         :param offset: The number of EmployeePlacements to skip before starting to return results (default: 0) when searching EmployeePlacements
-        :param employee_placement_filter: Request body
+        :param equals: Equality filters for EmployeePlacement
+        :param not_equals: Inequality filters for EmployeePlacement
+        :param greater_than: Greater than filters for EmployeePlacement
+        :param smaller_than: Smaller than filters for EmployeePlacement
+        :param greater_or_equal: Greater than or equal filters for EmployeePlacement
+        :param smaller_or_equal: Smaller than or equal filters for EmployeePlacement
+        :param contains: Contains filters for EmployeePlacement
+        :param not_contains: Not contains filters for EmployeePlacement
+        :param like: LIKE filters for EmployeePlacement
+        :param not_like: NOT LIKE filters for EmployeePlacement
+        :param null: Null filters for EmployeePlacement
+        :param not_null: Not null filters for EmployeePlacement
+        :param nested_filters: NestedFilters of the EmployeePlacement, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -959,8 +1176,53 @@ class EmployeePlacements(BaseSDK):
         request = models.EmployeePlacementSearchRequest(
             limit=limit,
             offset=offset,
-            employee_placement_filter=utils.get_pydantic_model(
-                employee_placement_filter, Optional[models.EmployeePlacementFilter]
+            employee_placement_filter=models.EmployeePlacementFilter(
+                equals=utils.get_pydantic_model(
+                    equals, OptionalNullable[models.EmployeePlacementFilterEquals]
+                ),
+                not_equals=utils.get_pydantic_model(
+                    not_equals,
+                    OptionalNullable[models.EmployeePlacementFilterNotEquals],
+                ),
+                greater_than=utils.get_pydantic_model(
+                    greater_than,
+                    OptionalNullable[models.EmployeePlacementFilterGreaterThan],
+                ),
+                smaller_than=utils.get_pydantic_model(
+                    smaller_than,
+                    OptionalNullable[models.EmployeePlacementFilterSmallerThan],
+                ),
+                greater_or_equal=utils.get_pydantic_model(
+                    greater_or_equal,
+                    OptionalNullable[models.EmployeePlacementFilterGreaterOrEqual],
+                ),
+                smaller_or_equal=utils.get_pydantic_model(
+                    smaller_or_equal,
+                    OptionalNullable[models.EmployeePlacementFilterSmallerOrEqual],
+                ),
+                contains=utils.get_pydantic_model(
+                    contains, OptionalNullable[models.EmployeePlacementFilterContains]
+                ),
+                not_contains=utils.get_pydantic_model(
+                    not_contains,
+                    OptionalNullable[models.EmployeePlacementFilterNotContains],
+                ),
+                like=utils.get_pydantic_model(
+                    like, OptionalNullable[models.EmployeePlacementFilterLike]
+                ),
+                not_like=utils.get_pydantic_model(
+                    not_like, OptionalNullable[models.EmployeePlacementFilterNotLike]
+                ),
+                null=utils.get_pydantic_model(
+                    null, OptionalNullable[models.EmployeePlacementFilterNull]
+                ),
+                not_null=utils.get_pydantic_model(
+                    not_null, OptionalNullable[models.EmployeePlacementFilterNotNull]
+                ),
+                or_condition=or_condition,
+                nested_filters=utils.get_pydantic_model(
+                    nested_filters, Optional[List[models.EmployeePlacementFilter]]
+                ),
             ),
         )
 
@@ -970,7 +1232,7 @@ class EmployeePlacements(BaseSDK):
             base_url=base_url,
             url_variables=url_variables,
             request=request,
-            request_body_required=False,
+            request_body_required=True,
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
@@ -980,9 +1242,9 @@ class EmployeePlacements(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.employee_placement_filter,
                 False,
-                True,
+                False,
                 "json",
-                Optional[models.EmployeePlacementFilter],
+                models.EmployeePlacementFilter,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1044,24 +1306,22 @@ class EmployeePlacements(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
+                or_condition=or_condition,
                 limit=limit,
                 offset=next_offset,
-                employee_placement_filter=models.EmployeePlacementFilter(
-                    equals=request.employee_placement_filter.equals,
-                    not_equals=request.employee_placement_filter.not_equals,
-                    greater_than=request.employee_placement_filter.greater_than,
-                    smaller_than=request.employee_placement_filter.smaller_than,
-                    greater_or_equal=request.employee_placement_filter.greater_or_equal,
-                    smaller_or_equal=request.employee_placement_filter.smaller_or_equal,
-                    contains=request.employee_placement_filter.contains,
-                    not_contains=request.employee_placement_filter.not_contains,
-                    like=request.employee_placement_filter.like,
-                    not_like=request.employee_placement_filter.not_like,
-                    null=request.employee_placement_filter.null,
-                    not_null=request.employee_placement_filter.not_null,
-                    or_condition=request.employee_placement_filter.or_condition,
-                    nested_filters=request.employee_placement_filter.nested_filters,
-                ),
+                equals=equals,
+                not_equals=not_equals,
+                greater_than=greater_than,
+                smaller_than=smaller_than,
+                greater_or_equal=greater_or_equal,
+                smaller_or_equal=smaller_or_equal,
+                contains=contains,
+                not_contains=not_contains,
+                like=like,
+                not_like=not_like,
+                null=null,
+                not_null=not_null,
+                nested_filters=nested_filters,
                 retries=retries,
             )
 

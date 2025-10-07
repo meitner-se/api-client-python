@@ -23,22 +23,22 @@ Directory API: Generated API documentation
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
 <!-- $toc-max-depth=2 -->
-* [meitner](#meitner)
-  * [SDK Installation](#sdk-installation)
-  * [IDE Support](#ide-support)
-  * [SDK Example Usage](#sdk-example-usage)
-  * [Authentication](#authentication)
-  * [Available Resources and Operations](#available-resources-and-operations)
-  * [Pagination](#pagination)
-  * [Retries](#retries)
-  * [Error Handling](#error-handling)
-  * [Server Selection](#server-selection)
-  * [Custom HTTP Client](#custom-http-client)
-  * [Resource Management](#resource-management)
-  * [Debugging](#debugging)
-* [Development](#development)
-  * [Maturity](#maturity)
-  * [Contributions](#contributions)
+* [meitner](https://github.com/meitner-se/api-client-python/blob/master/#meitner)
+  * [SDK Installation](https://github.com/meitner-se/api-client-python/blob/master/#sdk-installation)
+  * [IDE Support](https://github.com/meitner-se/api-client-python/blob/master/#ide-support)
+  * [SDK Example Usage](https://github.com/meitner-se/api-client-python/blob/master/#sdk-example-usage)
+  * [Authentication](https://github.com/meitner-se/api-client-python/blob/master/#authentication)
+  * [Available Resources and Operations](https://github.com/meitner-se/api-client-python/blob/master/#available-resources-and-operations)
+  * [Pagination](https://github.com/meitner-se/api-client-python/blob/master/#pagination)
+  * [Retries](https://github.com/meitner-se/api-client-python/blob/master/#retries)
+  * [Error Handling](https://github.com/meitner-se/api-client-python/blob/master/#error-handling)
+  * [Server Selection](https://github.com/meitner-se/api-client-python/blob/master/#server-selection)
+  * [Custom HTTP Client](https://github.com/meitner-se/api-client-python/blob/master/#custom-http-client)
+  * [Resource Management](https://github.com/meitner-se/api-client-python/blob/master/#resource-management)
+  * [Debugging](https://github.com/meitner-se/api-client-python/blob/master/#debugging)
+* [Development](https://github.com/meitner-se/api-client-python/blob/master/#development)
+  * [Maturity](https://github.com/meitner-se/api-client-python/blob/master/#maturity)
+  * [Contributions](https://github.com/meitner-se/api-client-python/blob/master/#contributions)
 
 <!-- End Table of Contents [toc] -->
 
@@ -219,76 +219,76 @@ with Meitner(
 <details open>
 <summary>Available methods</summary>
 
-### [audit_events](docs/sdks/auditevents/README.md)
+### [audit_events](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md)
 
-* [list](docs/sdks/auditevents/README.md#list) - List AuditEvents
-* [search](docs/sdks/auditevents/README.md#search) - Search AuditEvents
-* [get](docs/sdks/auditevents/README.md#get) - Get a AuditEvent
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md#list) - List AuditEvents
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md#search) - Search AuditEvents
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md#get) - Get a AuditEvent
 
-### [employee_placements](docs/sdks/employeeplacements/README.md)
+### [employee_placements](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md)
 
-* [list](docs/sdks/employeeplacements/README.md#list) - List EmployeePlacements
-* [create](docs/sdks/employeeplacements/README.md#create) - Create a new EmployeePlacement
-* [search](docs/sdks/employeeplacements/README.md#search) - Search EmployeePlacements
-* [get](docs/sdks/employeeplacements/README.md#get) - Get a EmployeePlacement
-* [delete](docs/sdks/employeeplacements/README.md#delete) - Delete a EmployeePlacement
-* [update](docs/sdks/employeeplacements/README.md#update) - Update a EmployeePlacement
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#list) - List EmployeePlacements
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#create) - Create a new EmployeePlacement
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#search) - Search EmployeePlacements
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#get) - Get a EmployeePlacement
+* [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#delete) - Delete a EmployeePlacement
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#update) - Update a EmployeePlacement
 
-### [employees](docs/sdks/employees/README.md)
+### [employees](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md)
 
-* [list](docs/sdks/employees/README.md#list) - List Employees
-* [create](docs/sdks/employees/README.md#create) - Create a new Employee
-* [search](docs/sdks/employees/README.md#search) - Search Employees
-* [get](docs/sdks/employees/README.md#get) - Get a Employee
-* [delete](docs/sdks/employees/README.md#delete) - Delete a Employee
-* [update](docs/sdks/employees/README.md#update) - Update a Employee
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#list) - List Employees
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#create) - Create a new Employee
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#search) - Search Employees
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#get) - Get a Employee
+* [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#delete) - Delete a Employee
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#update) - Update a Employee
 
-### [groups](docs/sdks/groups/README.md)
+### [groups](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md)
 
-* [list](docs/sdks/groups/README.md#list) - List Groups
-* [create](docs/sdks/groups/README.md#create) - Create a new Group
-* [search](docs/sdks/groups/README.md#search) - Search Groups
-* [get](docs/sdks/groups/README.md#get) - Get a Group
-* [delete](docs/sdks/groups/README.md#delete) - Delete a Group
-* [update](docs/sdks/groups/README.md#update) - Update a Group
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#list) - List Groups
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#create) - Create a new Group
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#search) - Search Groups
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#get) - Get a Group
+* [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#delete) - Delete a Group
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#update) - Update a Group
 
-### [guardians](docs/sdks/guardians/README.md)
+### [guardians](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md)
 
-* [list](docs/sdks/guardians/README.md#list) - List Guardians
-* [create](docs/sdks/guardians/README.md#create) - Create a new Guardian
-* [search](docs/sdks/guardians/README.md#search) - Search Guardians
-* [get](docs/sdks/guardians/README.md#get) - Get a Guardian
-* [delete](docs/sdks/guardians/README.md#delete) - Delete a Guardian
-* [update](docs/sdks/guardians/README.md#update) - Update a Guardian
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#list) - List Guardians
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#create) - Create a new Guardian
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#search) - Search Guardians
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#get) - Get a Guardian
+* [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#delete) - Delete a Guardian
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#update) - Update a Guardian
 
 
-### [schools](docs/sdks/schools/README.md)
+### [schools](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md)
 
-* [list](docs/sdks/schools/README.md#list) - List Schools
-* [create](docs/sdks/schools/README.md#create) - Create a new School
-* [search](docs/sdks/schools/README.md#search) - Search Schools
-* [get](docs/sdks/schools/README.md#get) - Get a School
-* [update](docs/sdks/schools/README.md#update) - Update a School
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#list) - List Schools
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#create) - Create a new School
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#search) - Search Schools
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#get) - Get a School
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#update) - Update a School
 
-### [student_placements](docs/sdks/studentplacements/README.md)
+### [student_placements](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md)
 
-* [list](docs/sdks/studentplacements/README.md#list) - List StudentPlacements
-* [create](docs/sdks/studentplacements/README.md#create) - Create a new StudentPlacement
-* [search](docs/sdks/studentplacements/README.md#search) - Search StudentPlacements
-* [get](docs/sdks/studentplacements/README.md#get) - Get a StudentPlacement
-* [delete](docs/sdks/studentplacements/README.md#delete) - Delete a StudentPlacement
-* [update](docs/sdks/studentplacements/README.md#update) - Update a StudentPlacement
-* [archive](docs/sdks/studentplacements/README.md#archive) - Archive a student placement
-* [restore](docs/sdks/studentplacements/README.md#restore) - Restore an archived student placement
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#list) - List StudentPlacements
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#create) - Create a new StudentPlacement
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#search) - Search StudentPlacements
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#get) - Get a StudentPlacement
+* [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#delete) - Delete a StudentPlacement
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#update) - Update a StudentPlacement
+* [archive](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#archive) - Archive a student placement
+* [restore](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#restore) - Restore an archived student placement
 
-### [students](docs/sdks/students/README.md)
+### [students](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md)
 
-* [list](docs/sdks/students/README.md#list) - List Students
-* [create](docs/sdks/students/README.md#create) - Create a new Student
-* [search](docs/sdks/students/README.md#search) - Search Students
-* [get](docs/sdks/students/README.md#get) - Get a Student
-* [delete](docs/sdks/students/README.md#delete) - Delete a Student
-* [update](docs/sdks/students/README.md#update) - Update a Student
+* [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#list) - List Students
+* [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#create) - Create a new Student
+* [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#search) - Search Students
+* [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#get) - Get a Student
+* [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#delete) - Delete a Student
+* [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#update) - Update a Student
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -380,7 +380,7 @@ with Meitner(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-[`MeitnerError`](./src/meitner/errors/meitnererror.py) is the base class for all HTTP error responses. It has the following properties:
+[`MeitnerError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/meitnererror.py) is the base class for all HTTP error responses. It has the following properties:
 
 | Property           | Type             | Description                                                                             |
 | ------------------ | ---------------- | --------------------------------------------------------------------------------------- |
@@ -389,7 +389,7 @@ with Meitner(
 | `err.headers`      | `httpx.Headers`  | HTTP response headers                                                                   |
 | `err.body`         | `str`            | HTTP body. Can be empty string if no body is returned.                                  |
 | `err.raw_response` | `httpx.Response` | Raw HTTP response                                                                       |
-| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](#error-classes). |
+| `err.data`         |                  | Optional. Some errors may contain structured data. [See Error Classes](https://github.com/meitner-se/api-client-python/blob/master/#error-classes). |
 
 ### Example
 ```python
@@ -429,14 +429,14 @@ with Meitner(
 
 ### Error Classes
 **Primary errors:**
-* [`MeitnerError`](./src/meitner/errors/meitnererror.py): The base class for HTTP error responses.
-  * [`Error400ResponseBody`](./src/meitner/errors/error400responsebody.py): Bad Request - The request was malformed or contained invalid parameters. Status code `400`.
-  * [`Error401ResponseBody`](./src/meitner/errors/error401responsebody.py): Unauthorized - The request is missing valid authentication credentials. Status code `401`.
-  * [`Error403ResponseBody`](./src/meitner/errors/error403responsebody.py): Forbidden - Request is authenticated, but the user is not allowed to perform the operation. Status code `403`.
-  * [`Error404ResponseBody`](./src/meitner/errors/error404responsebody.py): Not Found - The requested resource does not exist. Status code `404`.
-  * [`Error409ResponseBody`](./src/meitner/errors/error409responsebody.py): Conflict - The request could not be completed due to a conflict. Status code `409`.
-  * [`Error429ResponseBody`](./src/meitner/errors/error429responsebody.py): Too Many Requests - When the rate limit has been exceeded. Status code `429`.
-  * [`Error500ResponseBody`](./src/meitner/errors/error500responsebody.py): Internal Server Error - An unexpected server error occurred. Status code `500`.
+* [`MeitnerError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/meitnererror.py): The base class for HTTP error responses.
+  * [`Error400ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error400responsebody.py): Bad Request - The request was malformed or contained invalid parameters. Status code `400`.
+  * [`Error401ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error401responsebody.py): Unauthorized - The request is missing valid authentication credentials. Status code `401`.
+  * [`Error403ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error403responsebody.py): Forbidden - Request is authenticated, but the user is not allowed to perform the operation. Status code `403`.
+  * [`Error404ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error404responsebody.py): Not Found - The requested resource does not exist. Status code `404`.
+  * [`Error409ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error409responsebody.py): Conflict - The request could not be completed due to a conflict. Status code `409`.
+  * [`Error429ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error429responsebody.py): Too Many Requests - When the rate limit has been exceeded. Status code `429`.
+  * [`Error500ResponseBody`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/error500responsebody.py): Internal Server Error - An unexpected server error occurred. Status code `500`.
 
 <details><summary>Less common errors (27)</summary>
 
@@ -448,34 +448,34 @@ with Meitner(
     * [`httpx.TimeoutException`](https://www.python-httpx.org/exceptions/#httpx.TimeoutException): HTTP request timed out.
 
 
-**Inherit from [`MeitnerError`](./src/meitner/errors/meitnererror.py)**:
-* [`SchoolCreate422ResponseBodyError`](./src/meitner/errors/schoolcreate422responsebodyerror.py): Validation error for School Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`SchoolSearch422ResponseBodyError`](./src/meitner/errors/schoolsearch422responsebodyerror.py): Validation error for School Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`SchoolUpdate422ResponseBodyError`](./src/meitner/errors/schoolupdate422responsebodyerror.py): Validation error for School Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GroupCreate422ResponseBodyError`](./src/meitner/errors/groupcreate422responsebodyerror.py): Validation error for Group Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GroupSearch422ResponseBodyError`](./src/meitner/errors/groupsearch422responsebodyerror.py): Validation error for Group Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GroupUpdate422ResponseBodyError`](./src/meitner/errors/groupupdate422responsebodyerror.py): Validation error for Group Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeeCreate422ResponseBodyError`](./src/meitner/errors/employeecreate422responsebodyerror.py): Validation error for Employee Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeeSearch422ResponseBodyError`](./src/meitner/errors/employeesearch422responsebodyerror.py): Validation error for Employee Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeeUpdate422ResponseBodyError`](./src/meitner/errors/employeeupdate422responsebodyerror.py): Validation error for Employee Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeePlacementCreate422ResponseBodyError`](./src/meitner/errors/employeeplacementcreate422responsebodyerror.py): Validation error for EmployeePlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeePlacementSearch422ResponseBodyError`](./src/meitner/errors/employeeplacementsearch422responsebodyerror.py): Validation error for EmployeePlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeePlacementUpdate422ResponseBodyError`](./src/meitner/errors/employeeplacementupdate422responsebodyerror.py): Validation error for EmployeePlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GuardianCreate422ResponseBodyError`](./src/meitner/errors/guardiancreate422responsebodyerror.py): Validation error for Guardian Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GuardianSearch422ResponseBodyError`](./src/meitner/errors/guardiansearch422responsebodyerror.py): Validation error for Guardian Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GuardianUpdate422ResponseBodyError`](./src/meitner/errors/guardianupdate422responsebodyerror.py): Validation error for Guardian Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentCreate422ResponseBodyError`](./src/meitner/errors/studentcreate422responsebodyerror.py): Validation error for Student Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentSearch422ResponseBodyError`](./src/meitner/errors/studentsearch422responsebodyerror.py): Validation error for Student Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentUpdate422ResponseBodyError`](./src/meitner/errors/studentupdate422responsebodyerror.py): Validation error for Student Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentPlacementCreate422ResponseBodyError`](./src/meitner/errors/studentplacementcreate422responsebodyerror.py): Validation error for StudentPlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentPlacementSearch422ResponseBodyError`](./src/meitner/errors/studentplacementsearch422responsebodyerror.py): Validation error for StudentPlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentPlacementUpdate422ResponseBodyError`](./src/meitner/errors/studentplacementupdate422responsebodyerror.py): Validation error for StudentPlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`AuditEventSearch422ResponseBodyError`](./src/meitner/errors/auditeventsearch422responsebodyerror.py): Validation error for AuditEvent Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`ResponseValidationError`](./src/meitner/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
+**Inherit from [`MeitnerError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/meitnererror.py)**:
+* [`SchoolCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/schoolcreate422responsebodyerror.py): Validation error for School Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`SchoolSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/schoolsearch422responsebodyerror.py): Validation error for School Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`SchoolUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/schoolupdate422responsebodyerror.py): Validation error for School Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`GroupCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/groupcreate422responsebodyerror.py): Validation error for Group Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`GroupSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/groupsearch422responsebodyerror.py): Validation error for Group Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`GroupUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/groupupdate422responsebodyerror.py): Validation error for Group Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`EmployeeCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/employeecreate422responsebodyerror.py): Validation error for Employee Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`EmployeeSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/employeesearch422responsebodyerror.py): Validation error for Employee Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`EmployeeUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/employeeupdate422responsebodyerror.py): Validation error for Employee Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`EmployeePlacementCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/employeeplacementcreate422responsebodyerror.py): Validation error for EmployeePlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`EmployeePlacementSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/employeeplacementsearch422responsebodyerror.py): Validation error for EmployeePlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`EmployeePlacementUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/employeeplacementupdate422responsebodyerror.py): Validation error for EmployeePlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`GuardianCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/guardiancreate422responsebodyerror.py): Validation error for Guardian Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`GuardianSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/guardiansearch422responsebodyerror.py): Validation error for Guardian Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`GuardianUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/guardianupdate422responsebodyerror.py): Validation error for Guardian Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`StudentCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/studentcreate422responsebodyerror.py): Validation error for Student Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`StudentSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/studentsearch422responsebodyerror.py): Validation error for Student Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`StudentUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/studentupdate422responsebodyerror.py): Validation error for Student Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`StudentPlacementCreate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/studentplacementcreate422responsebodyerror.py): Validation error for StudentPlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`StudentPlacementSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/studentplacementsearch422responsebodyerror.py): Validation error for StudentPlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`StudentPlacementUpdate422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/studentplacementupdate422responsebodyerror.py): Validation error for StudentPlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`AuditEventSearch422ResponseBodyError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/auditeventsearch422responsebodyerror.py): Validation error for AuditEvent Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`ResponseValidationError`](https://github.com/meitner-se/api-client-python/blob/master/./src/meitner/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>
 
-\* Check [the method documentation](#available-resources-and-operations) to see if the error is applicable.
+\* Check [the method documentation](https://github.com/meitner-se/api-client-python/blob/master/#available-resources-and-operations) to see if the error is applicable.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->

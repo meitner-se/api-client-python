@@ -10,15 +10,21 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class StudentSearchRequestTypedDict(TypedDict):
+    student_filter: StudentFilterTypedDict
+    r"""Request body"""
     limit: NotRequired[int]
     r"""The maximum number of Students to return (default: 50) when searching Students"""
     offset: NotRequired[int]
     r"""The number of Students to skip before starting to return results (default: 0) when searching Students"""
-    student_filter: NotRequired[StudentFilterTypedDict]
-    r"""Request body"""
 
 
 class StudentSearchRequest(BaseModel):
+    student_filter: Annotated[
+        StudentFilter,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+    r"""Request body"""
+
     limit: Annotated[
         Optional[int],
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
@@ -30,12 +36,6 @@ class StudentSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of Students to skip before starting to return results (default: 0) when searching Students"""
-
-    student_filter: Annotated[
-        Optional[StudentFilter],
-        FieldMetadata(request=RequestMetadata(media_type="application/json")),
-    ] = None
-    r"""Request body"""
 
 
 class StudentSearchResponseTypedDict(TypedDict):
