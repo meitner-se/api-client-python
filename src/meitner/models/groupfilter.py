@@ -129,7 +129,7 @@ class GroupFilterEqualsExternal(BaseModel):
         return m
 
 
-EqualsCategory = Literal[
+GroupFilterEqualsCategory = Literal[
     "Education",
     "Other",
 ]
@@ -138,7 +138,7 @@ r"""If the category is Education, the ModeratorIDs have to be employees and the 
 """
 
 
-EqualsTypes = Literal[
+GroupFilterEqualsTypes = Literal[
     "Class",
     "Childcare",
     "Mentor",
@@ -157,13 +157,13 @@ class GroupFilterEqualsTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the employee from another system, used for third-party integration tracking."""
     school_id: NotRequired[Nullable[str]]
     r"""The ID of the school the group belongs to"""
-    category: NotRequired[Nullable[EqualsCategory]]
+    category: NotRequired[Nullable[GroupFilterEqualsCategory]]
     r"""If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
     """
     title: NotRequired[Nullable[str]]
     r"""The title of the group, must be unique within the school."""
-    types: NotRequired[Nullable[EqualsTypes]]
+    types: NotRequired[Nullable[GroupFilterEqualsTypes]]
     r"""The types of the group"""
     moderator_i_ds: NotRequired[Nullable[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
@@ -192,7 +192,7 @@ class GroupFilterEquals(BaseModel):
     )
     r"""The ID of the school the group belongs to"""
 
-    category: OptionalNullable[EqualsCategory] = UNSET
+    category: OptionalNullable[GroupFilterEqualsCategory] = UNSET
     r"""If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
     """
@@ -200,7 +200,7 @@ class GroupFilterEquals(BaseModel):
     title: OptionalNullable[str] = UNSET
     r"""The title of the group, must be unique within the school."""
 
-    types: OptionalNullable[EqualsTypes] = UNSET
+    types: OptionalNullable[GroupFilterEqualsTypes] = UNSET
     r"""The types of the group"""
 
     moderator_i_ds: Annotated[
@@ -386,7 +386,7 @@ class GroupFilterNotEqualsExternal(BaseModel):
         return m
 
 
-NotEqualsCategory = Literal[
+GroupFilterNotEqualsCategory = Literal[
     "Education",
     "Other",
 ]
@@ -395,7 +395,7 @@ r"""If the category is Education, the ModeratorIDs have to be employees and the 
 """
 
 
-NotEqualsTypes = Literal[
+GroupFilterNotEqualsTypes = Literal[
     "Class",
     "Childcare",
     "Mentor",
@@ -414,13 +414,13 @@ class GroupFilterNotEqualsTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the employee from another system, used for third-party integration tracking."""
     school_id: NotRequired[Nullable[str]]
     r"""The ID of the school the group belongs to"""
-    category: NotRequired[Nullable[NotEqualsCategory]]
+    category: NotRequired[Nullable[GroupFilterNotEqualsCategory]]
     r"""If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
     """
     title: NotRequired[Nullable[str]]
     r"""The title of the group, must be unique within the school."""
-    types: NotRequired[Nullable[NotEqualsTypes]]
+    types: NotRequired[Nullable[GroupFilterNotEqualsTypes]]
     r"""The types of the group"""
     moderator_i_ds: NotRequired[Nullable[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
@@ -449,7 +449,7 @@ class GroupFilterNotEquals(BaseModel):
     )
     r"""The ID of the school the group belongs to"""
 
-    category: OptionalNullable[NotEqualsCategory] = UNSET
+    category: OptionalNullable[GroupFilterNotEqualsCategory] = UNSET
     r"""If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
     """
@@ -457,7 +457,7 @@ class GroupFilterNotEquals(BaseModel):
     title: OptionalNullable[str] = UNSET
     r"""The title of the group, must be unique within the school."""
 
-    types: OptionalNullable[NotEqualsTypes] = UNSET
+    types: OptionalNullable[GroupFilterNotEqualsTypes] = UNSET
     r"""The types of the group"""
 
     moderator_i_ds: Annotated[

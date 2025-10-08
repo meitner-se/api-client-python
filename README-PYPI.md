@@ -257,7 +257,6 @@ with Meitner(
 * [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#delete) - Delete a Guardian
 * [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#update) - Update a Guardian
 
-
 ### [schools](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#list) - List Schools

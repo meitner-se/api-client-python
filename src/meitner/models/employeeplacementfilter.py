@@ -128,7 +128,7 @@ class EmployeePlacementFilterEqualsExternal(BaseModel):
         return m
 
 
-EqualsRoles = Literal[
+EmployeePlacementFilterEqualsRoles = Literal[
     "Admin",
     "CareTeam",
     "Manager",
@@ -156,7 +156,7 @@ class EmployeePlacementFilterEqualsTypedDict(TypedDict):
     r"""The signature of the employee"""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
-    roles: NotRequired[Nullable[EqualsRoles]]
+    roles: NotRequired[Nullable[EmployeePlacementFilterEqualsRoles]]
     r"""The roles of the employee"""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement for the employee"""
@@ -196,7 +196,7 @@ class EmployeePlacementFilterEquals(BaseModel):
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""
 
-    roles: OptionalNullable[EqualsRoles] = UNSET
+    roles: OptionalNullable[EmployeePlacementFilterEqualsRoles] = UNSET
     r"""The roles of the employee"""
 
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
@@ -392,7 +392,7 @@ class EmployeePlacementFilterNotEqualsExternal(BaseModel):
         return m
 
 
-NotEqualsRoles = Literal[
+EmployeePlacementFilterNotEqualsRoles = Literal[
     "Admin",
     "CareTeam",
     "Manager",
@@ -420,7 +420,7 @@ class EmployeePlacementFilterNotEqualsTypedDict(TypedDict):
     r"""The signature of the employee"""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
-    roles: NotRequired[Nullable[NotEqualsRoles]]
+    roles: NotRequired[Nullable[EmployeePlacementFilterNotEqualsRoles]]
     r"""The roles of the employee"""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement for the employee"""
@@ -460,7 +460,7 @@ class EmployeePlacementFilterNotEquals(BaseModel):
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""
 
-    roles: OptionalNullable[NotEqualsRoles] = UNSET
+    roles: OptionalNullable[EmployeePlacementFilterNotEqualsRoles] = UNSET
     r"""The roles of the employee"""
 
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (

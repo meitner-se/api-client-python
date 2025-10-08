@@ -83,7 +83,7 @@ class AuditEvents(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="AuditEventList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -250,7 +250,7 @@ class AuditEvents(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="AuditEventList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -351,98 +351,23 @@ class AuditEvents(BaseSDK):
     def search(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[
+            models.AuditEventSearchFilter, models.AuditEventSearchFilterTypedDict
+        ],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.AuditEventFilterEquals, models.AuditEventFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotEquals,
-                models.AuditEventFilterNotEqualsTypedDict,
-            ]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[
-                models.AuditEventFilterGreaterThan,
-                models.AuditEventFilterGreaterThanTypedDict,
-            ]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[
-                models.AuditEventFilterSmallerThan,
-                models.AuditEventFilterSmallerThanTypedDict,
-            ]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.AuditEventFilterGreaterOrEqual,
-                models.AuditEventFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.AuditEventFilterSmallerOrEqual,
-                models.AuditEventFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[
-                models.AuditEventFilterContains,
-                models.AuditEventFilterContainsTypedDict,
-            ]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotContains,
-                models.AuditEventFilterNotContainsTypedDict,
-            ]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.AuditEventFilterLike, models.AuditEventFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotLike, models.AuditEventFilterNotLikeTypedDict
-            ]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.AuditEventFilterNull, models.AuditEventFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotNull, models.AuditEventFilterNotNullTypedDict
-            ]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.AuditEventFilter], List[models.AuditEventFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.AuditEventSearchResponse]:
+    ) -> Optional[models.AuditEventSearchResponseResponse]:
         r"""Search AuditEvents
 
         Search for `AuditEvents` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of AuditEvents to return (default: 50) when searching AuditEvents
         :param offset: The number of AuditEvents to skip before starting to return results (default: 0) when searching AuditEvents
-        :param equals: Equality filters for AuditEvent
-        :param not_equals: Inequality filters for AuditEvent
-        :param greater_than: Greater than filters for AuditEvent
-        :param smaller_than: Smaller than filters for AuditEvent
-        :param greater_or_equal: Greater than or equal filters for AuditEvent
-        :param smaller_or_equal: Smaller than or equal filters for AuditEvent
-        :param contains: Contains filters for AuditEvent
-        :param not_contains: Not contains filters for AuditEvent
-        :param like: LIKE filters for AuditEvent
-        :param not_like: NOT LIKE filters for AuditEvent
-        :param null: Null filters for AuditEvent
-        :param not_null: Not null filters for AuditEvent
-        :param nested_filters: NestedFilters of the AuditEvent, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -464,48 +389,9 @@ class AuditEvents(BaseSDK):
         request = models.AuditEventSearchRequest(
             limit=limit,
             offset=offset,
-            audit_event_filter=models.AuditEventFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.AuditEventFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.AuditEventFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.AuditEventFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.AuditEventFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal,
-                    OptionalNullable[models.AuditEventFilterGreaterOrEqual],
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal,
-                    OptionalNullable[models.AuditEventFilterSmallerOrEqual],
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.AuditEventFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.AuditEventFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.AuditEventFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.AuditEventFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.AuditEventFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.AuditEventFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.AuditEventFilter]]
+            audit_event_search=models.AuditEventSearchRequestBody(
+                filter_=utils.get_pydantic_model(
+                    filter_, models.AuditEventSearchFilter
                 ),
             ),
         )
@@ -524,11 +410,11 @@ class AuditEvents(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.audit_event_filter,
+                request.audit_event_search,
                 False,
                 False,
                 "json",
-                models.AuditEventFilter,
+                models.AuditEventSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -550,7 +436,7 @@ class AuditEvents(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="AuditEventSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -571,7 +457,7 @@ class AuditEvents(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Optional[models.AuditEventSearchResponse]:
+        def next_func() -> Optional[models.AuditEventSearchResponseResponse]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             offset = request.offset if not request.offset is None else 0
@@ -587,29 +473,18 @@ class AuditEvents(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.AuditEventSearchResponse(
-                result=unmarshal_json_response(models.AuditEventSearch, http_res),
+            return models.AuditEventSearchResponseResponse(
+                result=unmarshal_json_response(
+                    models.AuditEventSearchResponse, http_res
+                ),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -668,98 +543,23 @@ class AuditEvents(BaseSDK):
     async def search_async(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[
+            models.AuditEventSearchFilter, models.AuditEventSearchFilterTypedDict
+        ],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.AuditEventFilterEquals, models.AuditEventFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotEquals,
-                models.AuditEventFilterNotEqualsTypedDict,
-            ]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[
-                models.AuditEventFilterGreaterThan,
-                models.AuditEventFilterGreaterThanTypedDict,
-            ]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[
-                models.AuditEventFilterSmallerThan,
-                models.AuditEventFilterSmallerThanTypedDict,
-            ]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.AuditEventFilterGreaterOrEqual,
-                models.AuditEventFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.AuditEventFilterSmallerOrEqual,
-                models.AuditEventFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[
-                models.AuditEventFilterContains,
-                models.AuditEventFilterContainsTypedDict,
-            ]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotContains,
-                models.AuditEventFilterNotContainsTypedDict,
-            ]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.AuditEventFilterLike, models.AuditEventFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotLike, models.AuditEventFilterNotLikeTypedDict
-            ]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.AuditEventFilterNull, models.AuditEventFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[
-                models.AuditEventFilterNotNull, models.AuditEventFilterNotNullTypedDict
-            ]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.AuditEventFilter], List[models.AuditEventFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.AuditEventSearchResponse]:
+    ) -> Optional[models.AuditEventSearchResponseResponse]:
         r"""Search AuditEvents
 
         Search for `AuditEvents` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of AuditEvents to return (default: 50) when searching AuditEvents
         :param offset: The number of AuditEvents to skip before starting to return results (default: 0) when searching AuditEvents
-        :param equals: Equality filters for AuditEvent
-        :param not_equals: Inequality filters for AuditEvent
-        :param greater_than: Greater than filters for AuditEvent
-        :param smaller_than: Smaller than filters for AuditEvent
-        :param greater_or_equal: Greater than or equal filters for AuditEvent
-        :param smaller_or_equal: Smaller than or equal filters for AuditEvent
-        :param contains: Contains filters for AuditEvent
-        :param not_contains: Not contains filters for AuditEvent
-        :param like: LIKE filters for AuditEvent
-        :param not_like: NOT LIKE filters for AuditEvent
-        :param null: Null filters for AuditEvent
-        :param not_null: Not null filters for AuditEvent
-        :param nested_filters: NestedFilters of the AuditEvent, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -781,48 +581,9 @@ class AuditEvents(BaseSDK):
         request = models.AuditEventSearchRequest(
             limit=limit,
             offset=offset,
-            audit_event_filter=models.AuditEventFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.AuditEventFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.AuditEventFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.AuditEventFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.AuditEventFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal,
-                    OptionalNullable[models.AuditEventFilterGreaterOrEqual],
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal,
-                    OptionalNullable[models.AuditEventFilterSmallerOrEqual],
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.AuditEventFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.AuditEventFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.AuditEventFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.AuditEventFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.AuditEventFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.AuditEventFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.AuditEventFilter]]
+            audit_event_search=models.AuditEventSearchRequestBody(
+                filter_=utils.get_pydantic_model(
+                    filter_, models.AuditEventSearchFilter
                 ),
             ),
         )
@@ -841,11 +602,11 @@ class AuditEvents(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.audit_event_filter,
+                request.audit_event_search,
                 False,
                 False,
                 "json",
-                models.AuditEventFilter,
+                models.AuditEventSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -867,7 +628,7 @@ class AuditEvents(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="AuditEventSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -888,7 +649,7 @@ class AuditEvents(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Awaitable[Optional[models.AuditEventSearchResponse]]:
+        def next_func() -> Awaitable[Optional[models.AuditEventSearchResponseResponse]]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             async def empty_result():
@@ -907,29 +668,18 @@ class AuditEvents(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.AuditEventSearchResponse(
-                result=unmarshal_json_response(models.AuditEventSearch, http_res),
+            return models.AuditEventSearchResponseResponse(
+                result=unmarshal_json_response(
+                    models.AuditEventSearchResponse, http_res
+                ),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -1054,7 +804,7 @@ class AuditEvents(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="AuditEventGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1194,7 +944,7 @@ class AuditEvents(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="AuditEventGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),

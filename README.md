@@ -257,7 +257,6 @@ with Meitner(
 * [delete](docs/sdks/guardians/README.md#delete) - Delete a Guardian
 * [update](docs/sdks/guardians/README.md#update) - Update a Guardian
 
-
 ### [schools](docs/sdks/schools/README.md)
 
 * [list](docs/sdks/schools/README.md#list) - List Schools

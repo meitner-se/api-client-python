@@ -22,7 +22,7 @@ class GroupCreateExternal(BaseModel):
     r"""The ID of the external source"""
 
 
-CategoryRequestBody = Literal[
+GroupCreateCategory = Literal[
     "Education",
     "Other",
 ]
@@ -40,7 +40,7 @@ class GroupCreateTypedDict(TypedDict):
     r"""The title of the group, must be unique within the school."""
     external: NotRequired[GroupCreateExternalTypedDict]
     r"""External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included."""
-    category: NotRequired[CategoryRequestBody]
+    category: NotRequired[GroupCreateCategory]
     r"""If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
     """
@@ -68,7 +68,7 @@ class GroupCreate(BaseModel):
     external: Optional[GroupCreateExternal] = None
     r"""External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included."""
 
-    category: Optional[CategoryRequestBody] = "Education"
+    category: Optional[GroupCreateCategory] = "Education"
     r"""If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
     """

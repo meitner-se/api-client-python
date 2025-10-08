@@ -83,7 +83,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -250,7 +250,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -458,7 +458,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianCreate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -645,7 +645,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianCreate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -725,90 +725,23 @@ class Guardians(BaseSDK):
     def search(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[
+            models.GuardianSearchFilter, models.GuardianSearchFilterTypedDict
+        ],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.GuardianFilterEquals, models.GuardianFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[
-                models.GuardianFilterNotEquals, models.GuardianFilterNotEqualsTypedDict
-            ]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[
-                models.GuardianFilterGreaterThan,
-                models.GuardianFilterGreaterThanTypedDict,
-            ]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[
-                models.GuardianFilterSmallerThan,
-                models.GuardianFilterSmallerThanTypedDict,
-            ]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.GuardianFilterGreaterOrEqual,
-                models.GuardianFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.GuardianFilterSmallerOrEqual,
-                models.GuardianFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[models.GuardianFilterContains, models.GuardianFilterContainsTypedDict]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[
-                models.GuardianFilterNotContains,
-                models.GuardianFilterNotContainsTypedDict,
-            ]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.GuardianFilterLike, models.GuardianFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[models.GuardianFilterNotLike, models.GuardianFilterNotLikeTypedDict]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.GuardianFilterNull, models.GuardianFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[models.GuardianFilterNotNull, models.GuardianFilterNotNullTypedDict]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.GuardianFilter], List[models.GuardianFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.GuardianSearchResponse]:
+    ) -> Optional[models.GuardianSearchResponseResponse]:
         r"""Search Guardians
 
         Search for `Guardians` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of Guardians to return (default: 50) when searching Guardians
         :param offset: The number of Guardians to skip before starting to return results (default: 0) when searching Guardians
-        :param equals: Equality filters for Guardian
-        :param not_equals: Inequality filters for Guardian
-        :param greater_than: Greater than filters for Guardian
-        :param smaller_than: Smaller than filters for Guardian
-        :param greater_or_equal: Greater than or equal filters for Guardian
-        :param smaller_or_equal: Smaller than or equal filters for Guardian
-        :param contains: Contains filters for Guardian
-        :param not_contains: Not contains filters for Guardian
-        :param like: LIKE filters for Guardian
-        :param not_like: NOT LIKE filters for Guardian
-        :param null: Null filters for Guardian
-        :param not_null: Not null filters for Guardian
-        :param nested_filters: NestedFilters of the Guardian, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -830,49 +763,8 @@ class Guardians(BaseSDK):
         request = models.GuardianSearchRequest(
             limit=limit,
             offset=offset,
-            guardian_filter=models.GuardianFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.GuardianFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.GuardianFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.GuardianFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.GuardianFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal,
-                    OptionalNullable[models.GuardianFilterGreaterOrEqual],
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal,
-                    OptionalNullable[models.GuardianFilterSmallerOrEqual],
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.GuardianFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.GuardianFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.GuardianFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.GuardianFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.GuardianFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.GuardianFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.GuardianFilter]]
-                ),
+            guardian_search=models.GuardianSearchRequestBody(
+                filter_=utils.get_pydantic_model(filter_, models.GuardianSearchFilter),
             ),
         )
 
@@ -890,7 +782,11 @@ class Guardians(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.guardian_filter, False, False, "json", models.GuardianFilter
+                request.guardian_search,
+                False,
+                False,
+                "json",
+                models.GuardianSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -912,7 +808,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -933,7 +829,7 @@ class Guardians(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Optional[models.GuardianSearchResponse]:
+        def next_func() -> Optional[models.GuardianSearchResponseResponse]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             offset = request.offset if not request.offset is None else 0
@@ -949,29 +845,16 @@ class Guardians(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.GuardianSearchResponse(
-                result=unmarshal_json_response(models.GuardianSearch, http_res),
+            return models.GuardianSearchResponseResponse(
+                result=unmarshal_json_response(models.GuardianSearchResponse, http_res),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -1030,90 +913,23 @@ class Guardians(BaseSDK):
     async def search_async(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[
+            models.GuardianSearchFilter, models.GuardianSearchFilterTypedDict
+        ],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.GuardianFilterEquals, models.GuardianFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[
-                models.GuardianFilterNotEquals, models.GuardianFilterNotEqualsTypedDict
-            ]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[
-                models.GuardianFilterGreaterThan,
-                models.GuardianFilterGreaterThanTypedDict,
-            ]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[
-                models.GuardianFilterSmallerThan,
-                models.GuardianFilterSmallerThanTypedDict,
-            ]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.GuardianFilterGreaterOrEqual,
-                models.GuardianFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.GuardianFilterSmallerOrEqual,
-                models.GuardianFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[models.GuardianFilterContains, models.GuardianFilterContainsTypedDict]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[
-                models.GuardianFilterNotContains,
-                models.GuardianFilterNotContainsTypedDict,
-            ]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.GuardianFilterLike, models.GuardianFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[models.GuardianFilterNotLike, models.GuardianFilterNotLikeTypedDict]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.GuardianFilterNull, models.GuardianFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[models.GuardianFilterNotNull, models.GuardianFilterNotNullTypedDict]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.GuardianFilter], List[models.GuardianFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.GuardianSearchResponse]:
+    ) -> Optional[models.GuardianSearchResponseResponse]:
         r"""Search Guardians
 
         Search for `Guardians` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of Guardians to return (default: 50) when searching Guardians
         :param offset: The number of Guardians to skip before starting to return results (default: 0) when searching Guardians
-        :param equals: Equality filters for Guardian
-        :param not_equals: Inequality filters for Guardian
-        :param greater_than: Greater than filters for Guardian
-        :param smaller_than: Smaller than filters for Guardian
-        :param greater_or_equal: Greater than or equal filters for Guardian
-        :param smaller_or_equal: Smaller than or equal filters for Guardian
-        :param contains: Contains filters for Guardian
-        :param not_contains: Not contains filters for Guardian
-        :param like: LIKE filters for Guardian
-        :param not_like: NOT LIKE filters for Guardian
-        :param null: Null filters for Guardian
-        :param not_null: Not null filters for Guardian
-        :param nested_filters: NestedFilters of the Guardian, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1135,49 +951,8 @@ class Guardians(BaseSDK):
         request = models.GuardianSearchRequest(
             limit=limit,
             offset=offset,
-            guardian_filter=models.GuardianFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.GuardianFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.GuardianFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.GuardianFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.GuardianFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal,
-                    OptionalNullable[models.GuardianFilterGreaterOrEqual],
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal,
-                    OptionalNullable[models.GuardianFilterSmallerOrEqual],
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.GuardianFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.GuardianFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.GuardianFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.GuardianFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.GuardianFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.GuardianFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.GuardianFilter]]
-                ),
+            guardian_search=models.GuardianSearchRequestBody(
+                filter_=utils.get_pydantic_model(filter_, models.GuardianSearchFilter),
             ),
         )
 
@@ -1195,7 +970,11 @@ class Guardians(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.guardian_filter, False, False, "json", models.GuardianFilter
+                request.guardian_search,
+                False,
+                False,
+                "json",
+                models.GuardianSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1217,7 +996,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1238,7 +1017,7 @@ class Guardians(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Awaitable[Optional[models.GuardianSearchResponse]]:
+        def next_func() -> Awaitable[Optional[models.GuardianSearchResponseResponse]]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             async def empty_result():
@@ -1257,29 +1036,16 @@ class Guardians(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.GuardianSearchResponse(
-                result=unmarshal_json_response(models.GuardianSearch, http_res),
+            return models.GuardianSearchResponseResponse(
+                result=unmarshal_json_response(models.GuardianSearchResponse, http_res),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -1404,7 +1170,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1544,7 +1310,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1684,7 +1450,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianDelete",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1824,7 +1590,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianDelete",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2010,7 +1776,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianUpdate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2202,7 +1968,7 @@ class Guardians(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GuardianUpdate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
