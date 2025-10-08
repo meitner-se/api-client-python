@@ -84,7 +84,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -251,7 +251,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -462,7 +462,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentCreate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -652,7 +652,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentCreate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -732,88 +732,21 @@ class Students(BaseSDK):
     def search(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[models.StudentSearchFilter, models.StudentSearchFilterTypedDict],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.StudentFilterEquals, models.StudentFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[models.StudentFilterNotEquals, models.StudentFilterNotEqualsTypedDict]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[
-                models.StudentFilterGreaterThan,
-                models.StudentFilterGreaterThanTypedDict,
-            ]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[
-                models.StudentFilterSmallerThan,
-                models.StudentFilterSmallerThanTypedDict,
-            ]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.StudentFilterGreaterOrEqual,
-                models.StudentFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.StudentFilterSmallerOrEqual,
-                models.StudentFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[models.StudentFilterContains, models.StudentFilterContainsTypedDict]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[
-                models.StudentFilterNotContains,
-                models.StudentFilterNotContainsTypedDict,
-            ]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.StudentFilterLike, models.StudentFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[models.StudentFilterNotLike, models.StudentFilterNotLikeTypedDict]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.StudentFilterNull, models.StudentFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[models.StudentFilterNotNull, models.StudentFilterNotNullTypedDict]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.StudentFilter], List[models.StudentFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.StudentSearchResponse]:
+    ) -> Optional[models.StudentSearchResponseResponse]:
         r"""Search Students
 
         Search for `Students` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of Students to return (default: 50) when searching Students
         :param offset: The number of Students to skip before starting to return results (default: 0) when searching Students
-        :param equals: Equality filters for Student
-        :param not_equals: Inequality filters for Student
-        :param greater_than: Greater than filters for Student
-        :param smaller_than: Smaller than filters for Student
-        :param greater_or_equal: Greater than or equal filters for Student
-        :param smaller_or_equal: Smaller than or equal filters for Student
-        :param contains: Contains filters for Student
-        :param not_contains: Not contains filters for Student
-        :param like: LIKE filters for Student
-        :param not_like: NOT LIKE filters for Student
-        :param null: Null filters for Student
-        :param not_null: Not null filters for Student
-        :param nested_filters: NestedFilters of the Student, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -835,49 +768,8 @@ class Students(BaseSDK):
         request = models.StudentSearchRequest(
             limit=limit,
             offset=offset,
-            student_filter=models.StudentFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.StudentFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.StudentFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.StudentFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.StudentFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal,
-                    OptionalNullable[models.StudentFilterGreaterOrEqual],
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal,
-                    OptionalNullable[models.StudentFilterSmallerOrEqual],
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.StudentFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.StudentFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.StudentFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.StudentFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.StudentFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.StudentFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.StudentFilter]]
-                ),
+            student_search=models.StudentSearchRequestBody(
+                filter_=utils.get_pydantic_model(filter_, models.StudentSearchFilter),
             ),
         )
 
@@ -895,7 +787,11 @@ class Students(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.student_filter, False, False, "json", models.StudentFilter
+                request.student_search,
+                False,
+                False,
+                "json",
+                models.StudentSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -917,7 +813,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -938,7 +834,7 @@ class Students(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Optional[models.StudentSearchResponse]:
+        def next_func() -> Optional[models.StudentSearchResponseResponse]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             offset = request.offset if not request.offset is None else 0
@@ -954,29 +850,16 @@ class Students(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.StudentSearchResponse(
-                result=unmarshal_json_response(models.StudentSearch, http_res),
+            return models.StudentSearchResponseResponse(
+                result=unmarshal_json_response(models.StudentSearchResponse, http_res),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -1035,88 +918,21 @@ class Students(BaseSDK):
     async def search_async(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[models.StudentSearchFilter, models.StudentSearchFilterTypedDict],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.StudentFilterEquals, models.StudentFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[models.StudentFilterNotEquals, models.StudentFilterNotEqualsTypedDict]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[
-                models.StudentFilterGreaterThan,
-                models.StudentFilterGreaterThanTypedDict,
-            ]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[
-                models.StudentFilterSmallerThan,
-                models.StudentFilterSmallerThanTypedDict,
-            ]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.StudentFilterGreaterOrEqual,
-                models.StudentFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.StudentFilterSmallerOrEqual,
-                models.StudentFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[models.StudentFilterContains, models.StudentFilterContainsTypedDict]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[
-                models.StudentFilterNotContains,
-                models.StudentFilterNotContainsTypedDict,
-            ]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.StudentFilterLike, models.StudentFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[models.StudentFilterNotLike, models.StudentFilterNotLikeTypedDict]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.StudentFilterNull, models.StudentFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[models.StudentFilterNotNull, models.StudentFilterNotNullTypedDict]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.StudentFilter], List[models.StudentFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.StudentSearchResponse]:
+    ) -> Optional[models.StudentSearchResponseResponse]:
         r"""Search Students
 
         Search for `Students` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of Students to return (default: 50) when searching Students
         :param offset: The number of Students to skip before starting to return results (default: 0) when searching Students
-        :param equals: Equality filters for Student
-        :param not_equals: Inequality filters for Student
-        :param greater_than: Greater than filters for Student
-        :param smaller_than: Smaller than filters for Student
-        :param greater_or_equal: Greater than or equal filters for Student
-        :param smaller_or_equal: Smaller than or equal filters for Student
-        :param contains: Contains filters for Student
-        :param not_contains: Not contains filters for Student
-        :param like: LIKE filters for Student
-        :param not_like: NOT LIKE filters for Student
-        :param null: Null filters for Student
-        :param not_null: Not null filters for Student
-        :param nested_filters: NestedFilters of the Student, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1138,49 +954,8 @@ class Students(BaseSDK):
         request = models.StudentSearchRequest(
             limit=limit,
             offset=offset,
-            student_filter=models.StudentFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.StudentFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.StudentFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.StudentFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.StudentFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal,
-                    OptionalNullable[models.StudentFilterGreaterOrEqual],
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal,
-                    OptionalNullable[models.StudentFilterSmallerOrEqual],
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.StudentFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.StudentFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.StudentFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.StudentFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.StudentFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.StudentFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.StudentFilter]]
-                ),
+            student_search=models.StudentSearchRequestBody(
+                filter_=utils.get_pydantic_model(filter_, models.StudentSearchFilter),
             ),
         )
 
@@ -1198,7 +973,11 @@ class Students(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.student_filter, False, False, "json", models.StudentFilter
+                request.student_search,
+                False,
+                False,
+                "json",
+                models.StudentSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1220,7 +999,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1241,7 +1020,7 @@ class Students(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Awaitable[Optional[models.StudentSearchResponse]]:
+        def next_func() -> Awaitable[Optional[models.StudentSearchResponseResponse]]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             async def empty_result():
@@ -1260,29 +1039,16 @@ class Students(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.StudentSearchResponse(
-                result=unmarshal_json_response(models.StudentSearch, http_res),
+            return models.StudentSearchResponseResponse(
+                result=unmarshal_json_response(models.StudentSearchResponse, http_res),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -1407,7 +1173,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1547,7 +1313,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1687,7 +1453,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentDelete",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1827,7 +1593,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentDelete",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2016,7 +1782,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentUpdate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2211,7 +1977,7 @@ class Students(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="StudentUpdate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),

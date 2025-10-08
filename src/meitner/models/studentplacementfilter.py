@@ -139,7 +139,7 @@ StudentPlacementFilterEqualsSchoolType = Literal[
 r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
 
 
-EqualsSchoolYear = Literal[
+StudentPlacementFilterEqualsSchoolYear = Literal[
     "0",
     "1",
     "2",
@@ -169,7 +169,7 @@ class StudentPlacementFilterEqualsTypedDict(TypedDict):
     r"""The ID of the school the student is placed in"""
     school_type: NotRequired[Nullable[StudentPlacementFilterEqualsSchoolType]]
     r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
-    school_year: NotRequired[Nullable[EqualsSchoolYear]]
+    school_year: NotRequired[Nullable[StudentPlacementFilterEqualsSchoolYear]]
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[Nullable[bool]]
     r"""Whether the student has childcare"""
@@ -214,7 +214,8 @@ class StudentPlacementFilterEquals(BaseModel):
     r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
 
     school_year: Annotated[
-        OptionalNullable[EqualsSchoolYear], pydantic.Field(alias="schoolYear")
+        OptionalNullable[StudentPlacementFilterEqualsSchoolYear],
+        pydantic.Field(alias="schoolYear"),
     ] = UNSET
     r"""The school year the student is placed in"""
 
@@ -433,7 +434,7 @@ StudentPlacementFilterNotEqualsSchoolType = Literal[
 r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
 
 
-NotEqualsSchoolYear = Literal[
+StudentPlacementFilterNotEqualsSchoolYear = Literal[
     "0",
     "1",
     "2",
@@ -463,7 +464,7 @@ class StudentPlacementFilterNotEqualsTypedDict(TypedDict):
     r"""The ID of the school the student is placed in"""
     school_type: NotRequired[Nullable[StudentPlacementFilterNotEqualsSchoolType]]
     r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
-    school_year: NotRequired[Nullable[NotEqualsSchoolYear]]
+    school_year: NotRequired[Nullable[StudentPlacementFilterNotEqualsSchoolYear]]
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[Nullable[bool]]
     r"""Whether the student has childcare"""
@@ -508,7 +509,8 @@ class StudentPlacementFilterNotEquals(BaseModel):
     r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
 
     school_year: Annotated[
-        OptionalNullable[NotEqualsSchoolYear], pydantic.Field(alias="schoolYear")
+        OptionalNullable[StudentPlacementFilterNotEqualsSchoolYear],
+        pydantic.Field(alias="schoolYear"),
     ] = UNSET
     r"""The school year the student is placed in"""
 

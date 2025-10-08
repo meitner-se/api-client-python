@@ -78,7 +78,7 @@ class AuditEventFilterEqualsMeta(BaseModel):
         return m
 
 
-EqualsResource = Literal[
+AuditEventFilterEqualsResource = Literal[
     "Group",
     "Guardian",
     "Employee",
@@ -89,7 +89,7 @@ EqualsResource = Literal[
 r"""The type of resource the event occured for"""
 
 
-EqualsType = Literal["Delete",]
+AuditEventFilterEqualsType = Literal["Delete",]
 r"""The type of the audit event"""
 
 
@@ -102,11 +102,11 @@ class AuditEventFilterEqualsTypedDict(TypedDict):
     r"""Metadata information for the AuditEvent"""
     timestamp: NotRequired[Nullable[datetime]]
     r"""The timestamp of the event"""
-    resource: NotRequired[Nullable[EqualsResource]]
+    resource: NotRequired[Nullable[AuditEventFilterEqualsResource]]
     r"""The type of resource the event occured for"""
     resource_id: NotRequired[Nullable[str]]
     r"""The ID of the resource the event belongs to"""
-    type: NotRequired[Nullable[EqualsType]]
+    type: NotRequired[Nullable[AuditEventFilterEqualsType]]
     r"""The type of the audit event"""
 
 
@@ -122,7 +122,7 @@ class AuditEventFilterEquals(BaseModel):
     timestamp: OptionalNullable[datetime] = UNSET
     r"""The timestamp of the event"""
 
-    resource: OptionalNullable[EqualsResource] = UNSET
+    resource: OptionalNullable[AuditEventFilterEqualsResource] = UNSET
     r"""The type of resource the event occured for"""
 
     resource_id: Annotated[
@@ -130,7 +130,7 @@ class AuditEventFilterEquals(BaseModel):
     ] = UNSET
     r"""The ID of the resource the event belongs to"""
 
-    type: OptionalNullable[EqualsType] = UNSET
+    type: OptionalNullable[AuditEventFilterEqualsType] = UNSET
     r"""The type of the audit event"""
 
     @model_serializer(mode="wrap")
@@ -231,7 +231,7 @@ class AuditEventFilterNotEqualsMeta(BaseModel):
         return m
 
 
-NotEqualsResource = Literal[
+AuditEventFilterNotEqualsResource = Literal[
     "Group",
     "Guardian",
     "Employee",
@@ -242,7 +242,7 @@ NotEqualsResource = Literal[
 r"""The type of resource the event occured for"""
 
 
-NotEqualsType = Literal["Delete",]
+AuditEventFilterNotEqualsType = Literal["Delete",]
 r"""The type of the audit event"""
 
 
@@ -255,11 +255,11 @@ class AuditEventFilterNotEqualsTypedDict(TypedDict):
     r"""Metadata information for the AuditEvent"""
     timestamp: NotRequired[Nullable[datetime]]
     r"""The timestamp of the event"""
-    resource: NotRequired[Nullable[NotEqualsResource]]
+    resource: NotRequired[Nullable[AuditEventFilterNotEqualsResource]]
     r"""The type of resource the event occured for"""
     resource_id: NotRequired[Nullable[str]]
     r"""The ID of the resource the event belongs to"""
-    type: NotRequired[Nullable[NotEqualsType]]
+    type: NotRequired[Nullable[AuditEventFilterNotEqualsType]]
     r"""The type of the audit event"""
 
 
@@ -275,7 +275,7 @@ class AuditEventFilterNotEquals(BaseModel):
     timestamp: OptionalNullable[datetime] = UNSET
     r"""The timestamp of the event"""
 
-    resource: OptionalNullable[NotEqualsResource] = UNSET
+    resource: OptionalNullable[AuditEventFilterNotEqualsResource] = UNSET
     r"""The type of resource the event occured for"""
 
     resource_id: Annotated[
@@ -283,7 +283,7 @@ class AuditEventFilterNotEquals(BaseModel):
     ] = UNSET
     r"""The ID of the resource the event belongs to"""
 
-    type: OptionalNullable[NotEqualsType] = UNSET
+    type: OptionalNullable[AuditEventFilterNotEqualsType] = UNSET
     r"""The type of the audit event"""
 
     @model_serializer(mode="wrap")

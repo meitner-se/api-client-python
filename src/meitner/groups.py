@@ -83,7 +83,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -250,7 +250,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupList",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -356,7 +356,7 @@ class Groups(BaseSDK):
         external: Optional[
             Union[models.GroupCreateExternal, models.GroupCreateExternalTypedDict]
         ] = None,
-        category: Optional[models.CategoryRequestBody] = "Education",
+        category: Optional[models.GroupCreateCategory] = "Education",
         types: Optional[List[models.GroupType]] = None,
         moderator_i_ds: Optional[List[str]] = None,
         member_i_ds: Optional[List[str]] = None,
@@ -442,7 +442,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupCreate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -527,7 +527,7 @@ class Groups(BaseSDK):
         external: Optional[
             Union[models.GroupCreateExternal, models.GroupCreateExternalTypedDict]
         ] = None,
-        category: Optional[models.CategoryRequestBody] = "Education",
+        category: Optional[models.GroupCreateCategory] = "Education",
         types: Optional[List[models.GroupType]] = None,
         moderator_i_ds: Optional[List[str]] = None,
         member_i_ds: Optional[List[str]] = None,
@@ -613,7 +613,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupCreate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -693,79 +693,21 @@ class Groups(BaseSDK):
     def search(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[models.GroupSearchFilter, models.GroupSearchFilterTypedDict],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.GroupFilterEquals, models.GroupFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[models.GroupFilterNotEquals, models.GroupFilterNotEqualsTypedDict]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[models.GroupFilterGreaterThan, models.GroupFilterGreaterThanTypedDict]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[models.GroupFilterSmallerThan, models.GroupFilterSmallerThanTypedDict]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.GroupFilterGreaterOrEqual,
-                models.GroupFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.GroupFilterSmallerOrEqual,
-                models.GroupFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[models.GroupFilterContains, models.GroupFilterContainsTypedDict]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[models.GroupFilterNotContains, models.GroupFilterNotContainsTypedDict]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.GroupFilterLike, models.GroupFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[models.GroupFilterNotLike, models.GroupFilterNotLikeTypedDict]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.GroupFilterNull, models.GroupFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[models.GroupFilterNotNull, models.GroupFilterNotNullTypedDict]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.GroupFilter], List[models.GroupFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.GroupSearchResponse]:
+    ) -> Optional[models.GroupSearchResponseResponse]:
         r"""Search Groups
 
         Search for `Groups` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of Groups to return (default: 50) when searching Groups
         :param offset: The number of Groups to skip before starting to return results (default: 0) when searching Groups
-        :param equals: Equality filters for Group
-        :param not_equals: Inequality filters for Group
-        :param greater_than: Greater than filters for Group
-        :param smaller_than: Smaller than filters for Group
-        :param greater_or_equal: Greater than or equal filters for Group
-        :param smaller_or_equal: Smaller than or equal filters for Group
-        :param contains: Contains filters for Group
-        :param not_contains: Not contains filters for Group
-        :param like: LIKE filters for Group
-        :param not_like: NOT LIKE filters for Group
-        :param null: Null filters for Group
-        :param not_null: Not null filters for Group
-        :param nested_filters: NestedFilters of the Group, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -787,47 +729,8 @@ class Groups(BaseSDK):
         request = models.GroupSearchRequest(
             limit=limit,
             offset=offset,
-            group_filter=models.GroupFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.GroupFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.GroupFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.GroupFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.GroupFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal, OptionalNullable[models.GroupFilterGreaterOrEqual]
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal, OptionalNullable[models.GroupFilterSmallerOrEqual]
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.GroupFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.GroupFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.GroupFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.GroupFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.GroupFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.GroupFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.GroupFilter]]
-                ),
+            group_search=models.GroupSearchRequestBody(
+                filter_=utils.get_pydantic_model(filter_, models.GroupSearchFilter),
             ),
         )
 
@@ -845,7 +748,11 @@ class Groups(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.group_filter, False, False, "json", models.GroupFilter
+                request.group_search,
+                False,
+                False,
+                "json",
+                models.GroupSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -867,7 +774,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -888,7 +795,7 @@ class Groups(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Optional[models.GroupSearchResponse]:
+        def next_func() -> Optional[models.GroupSearchResponseResponse]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             offset = request.offset if not request.offset is None else 0
@@ -904,29 +811,16 @@ class Groups(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.GroupSearchResponse(
-                result=unmarshal_json_response(models.GroupSearch, http_res),
+            return models.GroupSearchResponseResponse(
+                result=unmarshal_json_response(models.GroupSearchResponse, http_res),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -985,79 +879,21 @@ class Groups(BaseSDK):
     async def search_async(
         self,
         *,
-        or_condition: bool,
+        filter_: Union[models.GroupSearchFilter, models.GroupSearchFilterTypedDict],
         limit: Optional[int] = 50,
         offset: Optional[int] = 0,
-        equals: OptionalNullable[
-            Union[models.GroupFilterEquals, models.GroupFilterEqualsTypedDict]
-        ] = UNSET,
-        not_equals: OptionalNullable[
-            Union[models.GroupFilterNotEquals, models.GroupFilterNotEqualsTypedDict]
-        ] = UNSET,
-        greater_than: OptionalNullable[
-            Union[models.GroupFilterGreaterThan, models.GroupFilterGreaterThanTypedDict]
-        ] = UNSET,
-        smaller_than: OptionalNullable[
-            Union[models.GroupFilterSmallerThan, models.GroupFilterSmallerThanTypedDict]
-        ] = UNSET,
-        greater_or_equal: OptionalNullable[
-            Union[
-                models.GroupFilterGreaterOrEqual,
-                models.GroupFilterGreaterOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        smaller_or_equal: OptionalNullable[
-            Union[
-                models.GroupFilterSmallerOrEqual,
-                models.GroupFilterSmallerOrEqualTypedDict,
-            ]
-        ] = UNSET,
-        contains: OptionalNullable[
-            Union[models.GroupFilterContains, models.GroupFilterContainsTypedDict]
-        ] = UNSET,
-        not_contains: OptionalNullable[
-            Union[models.GroupFilterNotContains, models.GroupFilterNotContainsTypedDict]
-        ] = UNSET,
-        like: OptionalNullable[
-            Union[models.GroupFilterLike, models.GroupFilterLikeTypedDict]
-        ] = UNSET,
-        not_like: OptionalNullable[
-            Union[models.GroupFilterNotLike, models.GroupFilterNotLikeTypedDict]
-        ] = UNSET,
-        null: OptionalNullable[
-            Union[models.GroupFilterNull, models.GroupFilterNullTypedDict]
-        ] = UNSET,
-        not_null: OptionalNullable[
-            Union[models.GroupFilterNotNull, models.GroupFilterNotNullTypedDict]
-        ] = UNSET,
-        nested_filters: Optional[
-            Union[List[models.GroupFilter], List[models.GroupFilterTypedDict]]
-        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> Optional[models.GroupSearchResponse]:
+    ) -> Optional[models.GroupSearchResponseResponse]:
         r"""Search Groups
 
         Search for `Groups` with filtering capabilities.
 
-        :param or_condition: OrCondition decides if this filter is within an OR-condition or AND-condition
+        :param filter_: Filter criteria to search for specific records
         :param limit: The maximum number of Groups to return (default: 50) when searching Groups
         :param offset: The number of Groups to skip before starting to return results (default: 0) when searching Groups
-        :param equals: Equality filters for Group
-        :param not_equals: Inequality filters for Group
-        :param greater_than: Greater than filters for Group
-        :param smaller_than: Smaller than filters for Group
-        :param greater_or_equal: Greater than or equal filters for Group
-        :param smaller_or_equal: Smaller than or equal filters for Group
-        :param contains: Contains filters for Group
-        :param not_contains: Not contains filters for Group
-        :param like: LIKE filters for Group
-        :param not_like: NOT LIKE filters for Group
-        :param null: Null filters for Group
-        :param not_null: Not null filters for Group
-        :param nested_filters: NestedFilters of the Group, useful for more complex filters
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1079,47 +915,8 @@ class Groups(BaseSDK):
         request = models.GroupSearchRequest(
             limit=limit,
             offset=offset,
-            group_filter=models.GroupFilter(
-                equals=utils.get_pydantic_model(
-                    equals, OptionalNullable[models.GroupFilterEquals]
-                ),
-                not_equals=utils.get_pydantic_model(
-                    not_equals, OptionalNullable[models.GroupFilterNotEquals]
-                ),
-                greater_than=utils.get_pydantic_model(
-                    greater_than, OptionalNullable[models.GroupFilterGreaterThan]
-                ),
-                smaller_than=utils.get_pydantic_model(
-                    smaller_than, OptionalNullable[models.GroupFilterSmallerThan]
-                ),
-                greater_or_equal=utils.get_pydantic_model(
-                    greater_or_equal, OptionalNullable[models.GroupFilterGreaterOrEqual]
-                ),
-                smaller_or_equal=utils.get_pydantic_model(
-                    smaller_or_equal, OptionalNullable[models.GroupFilterSmallerOrEqual]
-                ),
-                contains=utils.get_pydantic_model(
-                    contains, OptionalNullable[models.GroupFilterContains]
-                ),
-                not_contains=utils.get_pydantic_model(
-                    not_contains, OptionalNullable[models.GroupFilterNotContains]
-                ),
-                like=utils.get_pydantic_model(
-                    like, OptionalNullable[models.GroupFilterLike]
-                ),
-                not_like=utils.get_pydantic_model(
-                    not_like, OptionalNullable[models.GroupFilterNotLike]
-                ),
-                null=utils.get_pydantic_model(
-                    null, OptionalNullable[models.GroupFilterNull]
-                ),
-                not_null=utils.get_pydantic_model(
-                    not_null, OptionalNullable[models.GroupFilterNotNull]
-                ),
-                or_condition=or_condition,
-                nested_filters=utils.get_pydantic_model(
-                    nested_filters, Optional[List[models.GroupFilter]]
-                ),
+            group_search=models.GroupSearchRequestBody(
+                filter_=utils.get_pydantic_model(filter_, models.GroupSearchFilter),
             ),
         )
 
@@ -1137,7 +934,11 @@ class Groups(BaseSDK):
             http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request.group_filter, False, False, "json", models.GroupFilter
+                request.group_search,
+                False,
+                False,
+                "json",
+                models.GroupSearchRequestBody,
             ),
             timeout_ms=timeout_ms,
         )
@@ -1159,7 +960,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupSearch",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1180,7 +981,7 @@ class Groups(BaseSDK):
             retry_config=retry_config,
         )
 
-        def next_func() -> Awaitable[Optional[models.GroupSearchResponse]]:
+        def next_func() -> Awaitable[Optional[models.GroupSearchResponseResponse]]:
             body = utils.unmarshal_json(http_res.text, Union[Dict[Any, Any], List[Any]])
 
             async def empty_result():
@@ -1199,29 +1000,16 @@ class Groups(BaseSDK):
             next_offset = offset + len(results[0])
 
             return self.search_async(
-                or_condition=or_condition,
+                filter_=filter_,
                 limit=limit,
                 offset=next_offset,
-                equals=equals,
-                not_equals=not_equals,
-                greater_than=greater_than,
-                smaller_than=smaller_than,
-                greater_or_equal=greater_or_equal,
-                smaller_or_equal=smaller_or_equal,
-                contains=contains,
-                not_contains=not_contains,
-                like=like,
-                not_like=not_like,
-                null=null,
-                not_null=not_null,
-                nested_filters=nested_filters,
                 retries=retries,
             )
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return models.GroupSearchResponse(
-                result=unmarshal_json_response(models.GroupSearch, http_res),
+            return models.GroupSearchResponseResponse(
+                result=unmarshal_json_response(models.GroupSearchResponse, http_res),
                 next=next_func,
             )
         if utils.match_response(http_res, "400", "application/json"):
@@ -1346,7 +1134,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1486,7 +1274,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupGet",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1626,7 +1414,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupDelete",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1766,7 +1554,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupDelete",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -1930,7 +1718,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupUpdate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
@@ -2100,7 +1888,7 @@ class Groups(BaseSDK):
                 config=self.sdk_configuration,
                 base_url=base_url or "",
                 operation_id="GroupUpdate",
-                oauth2_scopes=[],
+                oauth2_scopes=None,
                 security_source=get_security_from_env(
                     self.sdk_configuration.security, models.Security
                 ),
