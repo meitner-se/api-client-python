@@ -70,7 +70,12 @@ if TYPE_CHECKING:
         AuditEventFilterSmallerThanTypedDict,
         AuditEventFilterTypedDict,
     )
-    from .auditeventgetop import AuditEventGetRequest, AuditEventGetRequestTypedDict
+    from .auditeventgetop import (
+        AuditEventGetRequest,
+        AuditEventGetRequestTypedDict,
+        AuditEventGetResponse,
+        AuditEventGetResponseTypedDict,
+    )
     from .auditeventlist import (
         AuditEventList,
         AuditEventListPagination,
@@ -183,7 +188,16 @@ if TYPE_CHECKING:
         EmployeeCreate422ResponseBodyError,
         EmployeeCreate422ResponseBodyErrorTypedDict,
     )
-    from .employeedeleteop import EmployeeDeleteRequest, EmployeeDeleteRequestTypedDict
+    from .employeecreateop import (
+        EmployeeCreateResponse,
+        EmployeeCreateResponseTypedDict,
+    )
+    from .employeedeleteop import (
+        EmployeeDeleteRequest,
+        EmployeeDeleteRequestTypedDict,
+        EmployeeDeleteResponse,
+        EmployeeDeleteResponseTypedDict,
+    )
     from .employeefilter import (
         EmployeeFilter,
         EmployeeFilterContains,
@@ -286,7 +300,12 @@ if TYPE_CHECKING:
         EmployeeFilterSmallerThanTypedDict,
         EmployeeFilterTypedDict,
     )
-    from .employeegetop import EmployeeGetRequest, EmployeeGetRequestTypedDict
+    from .employeegetop import (
+        EmployeeGetRequest,
+        EmployeeGetRequestTypedDict,
+        EmployeeGetResponse,
+        EmployeeGetResponseTypedDict,
+    )
     from .employeelist import (
         EmployeeList,
         EmployeeListPagination,
@@ -317,9 +336,15 @@ if TYPE_CHECKING:
         EmployeePlacementCreate422ResponseBodyError,
         EmployeePlacementCreate422ResponseBodyErrorTypedDict,
     )
+    from .employeeplacementcreateop import (
+        EmployeePlacementCreateResponse,
+        EmployeePlacementCreateResponseTypedDict,
+    )
     from .employeeplacementdeleteop import (
         EmployeePlacementDeleteRequest,
         EmployeePlacementDeleteRequestTypedDict,
+        EmployeePlacementDeleteResponse,
+        EmployeePlacementDeleteResponseTypedDict,
     )
     from .employeeplacementfilter import (
         EmployeePlacementFilter,
@@ -402,6 +427,8 @@ if TYPE_CHECKING:
     from .employeeplacementgetop import (
         EmployeePlacementGetRequest,
         EmployeePlacementGetRequestTypedDict,
+        EmployeePlacementGetResponse,
+        EmployeePlacementGetResponseTypedDict,
     )
     from .employeeplacementlist import (
         EmployeePlacementList,
@@ -525,6 +552,8 @@ if TYPE_CHECKING:
     from .employeeplacementupdateop import (
         EmployeePlacementUpdateRequest,
         EmployeePlacementUpdateRequestTypedDict,
+        EmployeePlacementUpdateResponse,
+        EmployeePlacementUpdateResponseTypedDict,
     )
     from .employeesearch_requestbody import (
         EmployeeSearchContains,
@@ -659,7 +688,12 @@ if TYPE_CHECKING:
         EmployeeUpdate422ResponseBodyError,
         EmployeeUpdate422ResponseBodyErrorTypedDict,
     )
-    from .employeeupdateop import EmployeeUpdateRequest, EmployeeUpdateRequestTypedDict
+    from .employeeupdateop import (
+        EmployeeUpdateRequest,
+        EmployeeUpdateRequestTypedDict,
+        EmployeeUpdateResponse,
+        EmployeeUpdateResponseTypedDict,
+    )
     from .error400responsebody import (
         Error400ResponseBodyError,
         Error400ResponseBodyErrorTypedDict,
@@ -711,7 +745,13 @@ if TYPE_CHECKING:
         GroupCreate422ResponseBodyError,
         GroupCreate422ResponseBodyErrorTypedDict,
     )
-    from .groupdeleteop import GroupDeleteRequest, GroupDeleteRequestTypedDict
+    from .groupcreateop import GroupCreateResponse, GroupCreateResponseTypedDict
+    from .groupdeleteop import (
+        GroupDeleteRequest,
+        GroupDeleteRequestTypedDict,
+        GroupDeleteResponse,
+        GroupDeleteResponseTypedDict,
+    )
     from .groupfilter import (
         GroupFilter,
         GroupFilterContains,
@@ -792,7 +832,12 @@ if TYPE_CHECKING:
         GroupFilterSmallerThanTypedDict,
         GroupFilterTypedDict,
     )
-    from .groupgetop import GroupGetRequest, GroupGetRequestTypedDict
+    from .groupgetop import (
+        GroupGetRequest,
+        GroupGetRequestTypedDict,
+        GroupGetResponse,
+        GroupGetResponseTypedDict,
+    )
     from .grouplist import (
         GroupList,
         GroupListPagination,
@@ -914,7 +959,12 @@ if TYPE_CHECKING:
         GroupUpdate422ResponseBodyError,
         GroupUpdate422ResponseBodyErrorTypedDict,
     )
-    from .groupupdateop import GroupUpdateRequest, GroupUpdateRequestTypedDict
+    from .groupupdateop import (
+        GroupUpdateRequest,
+        GroupUpdateRequestTypedDict,
+        GroupUpdateResponse,
+        GroupUpdateResponseTypedDict,
+    )
     from .guardian import (
         Guardian,
         GuardianAddress,
@@ -937,7 +987,16 @@ if TYPE_CHECKING:
         GuardianCreate422ResponseBodyError,
         GuardianCreate422ResponseBodyErrorTypedDict,
     )
-    from .guardiandeleteop import GuardianDeleteRequest, GuardianDeleteRequestTypedDict
+    from .guardiancreateop import (
+        GuardianCreateResponse,
+        GuardianCreateResponseTypedDict,
+    )
+    from .guardiandeleteop import (
+        GuardianDeleteRequest,
+        GuardianDeleteRequestTypedDict,
+        GuardianDeleteResponse,
+        GuardianDeleteResponseTypedDict,
+    )
     from .guardianfilter import (
         GuardianFilter,
         GuardianFilterContains,
@@ -1038,7 +1097,12 @@ if TYPE_CHECKING:
         GuardianFilterSmallerThanTypedDict,
         GuardianFilterTypedDict,
     )
-    from .guardiangetop import GuardianGetRequest, GuardianGetRequestTypedDict
+    from .guardiangetop import (
+        GuardianGetRequest,
+        GuardianGetRequestTypedDict,
+        GuardianGetResponse,
+        GuardianGetResponseTypedDict,
+    )
     from .guardianlist import (
         GuardianList,
         GuardianListPagination,
@@ -1181,7 +1245,12 @@ if TYPE_CHECKING:
         GuardianUpdate422ResponseBodyError,
         GuardianUpdate422ResponseBodyErrorTypedDict,
     )
-    from .guardianupdateop import GuardianUpdateRequest, GuardianUpdateRequestTypedDict
+    from .guardianupdateop import (
+        GuardianUpdateRequest,
+        GuardianUpdateRequestTypedDict,
+        GuardianUpdateResponse,
+        GuardianUpdateResponseTypedDict,
+    )
     from .school import (
         School,
         SchoolExternal,
@@ -1202,6 +1271,7 @@ if TYPE_CHECKING:
         SchoolCreate422ResponseBodyError,
         SchoolCreate422ResponseBodyErrorTypedDict,
     )
+    from .schoolcreateop import SchoolCreateResponse, SchoolCreateResponseTypedDict
     from .schoolfilter import (
         SchoolFilter,
         SchoolFilterContains,
@@ -1280,7 +1350,12 @@ if TYPE_CHECKING:
         SchoolFilterSmallerThanTypedDict,
         SchoolFilterTypedDict,
     )
-    from .schoolgetop import SchoolGetRequest, SchoolGetRequestTypedDict
+    from .schoolgetop import (
+        SchoolGetRequest,
+        SchoolGetRequestTypedDict,
+        SchoolGetResponse,
+        SchoolGetResponseTypedDict,
+    )
     from .schoollist import (
         SchoolList,
         SchoolListPagination,
@@ -1400,7 +1475,12 @@ if TYPE_CHECKING:
         SchoolUpdate422ResponseBodyError,
         SchoolUpdate422ResponseBodyErrorTypedDict,
     )
-    from .schoolupdateop import SchoolUpdateRequest, SchoolUpdateRequestTypedDict
+    from .schoolupdateop import (
+        SchoolUpdateRequest,
+        SchoolUpdateRequestTypedDict,
+        SchoolUpdateResponse,
+        SchoolUpdateResponseTypedDict,
+    )
     from .schoolyear import SchoolYear
     from .security import Security, SecurityTypedDict
     from .student import (
@@ -1427,7 +1507,13 @@ if TYPE_CHECKING:
         StudentCreate422ResponseBodyError,
         StudentCreate422ResponseBodyErrorTypedDict,
     )
-    from .studentdeleteop import StudentDeleteRequest, StudentDeleteRequestTypedDict
+    from .studentcreateop import StudentCreateResponse, StudentCreateResponseTypedDict
+    from .studentdeleteop import (
+        StudentDeleteRequest,
+        StudentDeleteRequestTypedDict,
+        StudentDeleteResponse,
+        StudentDeleteResponseTypedDict,
+    )
     from .studentfilter import (
         StudentFilter,
         StudentFilterContains,
@@ -1530,7 +1616,12 @@ if TYPE_CHECKING:
         StudentFilterSmallerThanTypedDict,
         StudentFilterTypedDict,
     )
-    from .studentgetop import StudentGetRequest, StudentGetRequestTypedDict
+    from .studentgetop import (
+        StudentGetRequest,
+        StudentGetRequestTypedDict,
+        StudentGetResponse,
+        StudentGetResponseTypedDict,
+    )
     from .studentlist import (
         StudentList,
         StudentListPagination,
@@ -1556,6 +1647,8 @@ if TYPE_CHECKING:
     from .studentplacementarchiveop import (
         StudentPlacementArchiveRequest,
         StudentPlacementArchiveRequestTypedDict,
+        StudentPlacementArchiveResponse,
+        StudentPlacementArchiveResponseTypedDict,
     )
     from .studentplacementcreate import (
         StudentPlacementCreate,
@@ -1569,9 +1662,15 @@ if TYPE_CHECKING:
         StudentPlacementCreate422ResponseBodyError,
         StudentPlacementCreate422ResponseBodyErrorTypedDict,
     )
+    from .studentplacementcreateop import (
+        StudentPlacementCreateResponse,
+        StudentPlacementCreateResponseTypedDict,
+    )
     from .studentplacementdeleteop import (
         StudentPlacementDeleteRequest,
         StudentPlacementDeleteRequestTypedDict,
+        StudentPlacementDeleteResponse,
+        StudentPlacementDeleteResponseTypedDict,
     )
     from .studentplacementfilter import (
         StudentPlacementFilter,
@@ -1656,6 +1755,8 @@ if TYPE_CHECKING:
     from .studentplacementgetop import (
         StudentPlacementGetRequest,
         StudentPlacementGetRequestTypedDict,
+        StudentPlacementGetResponse,
+        StudentPlacementGetResponseTypedDict,
     )
     from .studentplacementlist import (
         StudentPlacementList,
@@ -1672,6 +1773,8 @@ if TYPE_CHECKING:
     from .studentplacementrestoreop import (
         StudentPlacementRestoreRequest,
         StudentPlacementRestoreRequestTypedDict,
+        StudentPlacementRestoreResponse,
+        StudentPlacementRestoreResponseTypedDict,
     )
     from .studentplacementschooltype import StudentPlacementSchoolType
     from .studentplacementsearch_requestbody import (
@@ -1787,6 +1890,8 @@ if TYPE_CHECKING:
     from .studentplacementupdateop import (
         StudentPlacementUpdateRequest,
         StudentPlacementUpdateRequestTypedDict,
+        StudentPlacementUpdateResponse,
+        StudentPlacementUpdateResponseTypedDict,
     )
     from .studentsearch_requestbody import (
         StudentSearchContains,
@@ -1921,7 +2026,12 @@ if TYPE_CHECKING:
         StudentUpdate422ResponseBodyError,
         StudentUpdate422ResponseBodyErrorTypedDict,
     )
-    from .studentupdateop import StudentUpdateRequest, StudentUpdateRequestTypedDict
+    from .studentupdateop import (
+        StudentUpdateRequest,
+        StudentUpdateRequestTypedDict,
+        StudentUpdateResponse,
+        StudentUpdateResponseTypedDict,
+    )
 
 __all__ = [
     "AuditEvent",
@@ -1981,6 +2091,8 @@ __all__ = [
     "AuditEventFilterTypedDict",
     "AuditEventGetRequest",
     "AuditEventGetRequestTypedDict",
+    "AuditEventGetResponse",
+    "AuditEventGetResponseTypedDict",
     "AuditEventList",
     "AuditEventListPagination",
     "AuditEventListPaginationTypedDict",
@@ -2069,9 +2181,13 @@ __all__ = [
     "EmployeeCreateExternal",
     "EmployeeCreateExternalTypedDict",
     "EmployeeCreateGender",
+    "EmployeeCreateResponse",
+    "EmployeeCreateResponseTypedDict",
     "EmployeeCreateTypedDict",
     "EmployeeDeleteRequest",
     "EmployeeDeleteRequestTypedDict",
+    "EmployeeDeleteResponse",
+    "EmployeeDeleteResponseTypedDict",
     "EmployeeExternal",
     "EmployeeExternalTypedDict",
     "EmployeeFilter",
@@ -2177,6 +2293,8 @@ __all__ = [
     "EmployeeGender",
     "EmployeeGetRequest",
     "EmployeeGetRequestTypedDict",
+    "EmployeeGetResponse",
+    "EmployeeGetResponseTypedDict",
     "EmployeeList",
     "EmployeeListPagination",
     "EmployeeListPaginationTypedDict",
@@ -2193,9 +2311,13 @@ __all__ = [
     "EmployeePlacementCreate422ResponseBodyErrorTypedDict",
     "EmployeePlacementCreateExternal",
     "EmployeePlacementCreateExternalTypedDict",
+    "EmployeePlacementCreateResponse",
+    "EmployeePlacementCreateResponseTypedDict",
     "EmployeePlacementCreateTypedDict",
     "EmployeePlacementDeleteRequest",
     "EmployeePlacementDeleteRequestTypedDict",
+    "EmployeePlacementDeleteResponse",
+    "EmployeePlacementDeleteResponseTypedDict",
     "EmployeePlacementExternal",
     "EmployeePlacementExternalTypedDict",
     "EmployeePlacementFilter",
@@ -2276,6 +2398,8 @@ __all__ = [
     "EmployeePlacementFilterTypedDict",
     "EmployeePlacementGetRequest",
     "EmployeePlacementGetRequestTypedDict",
+    "EmployeePlacementGetResponse",
+    "EmployeePlacementGetResponseTypedDict",
     "EmployeePlacementList",
     "EmployeePlacementListPagination",
     "EmployeePlacementListPaginationTypedDict",
@@ -2381,6 +2505,8 @@ __all__ = [
     "EmployeePlacementUpdateExternalTypedDict",
     "EmployeePlacementUpdateRequest",
     "EmployeePlacementUpdateRequestTypedDict",
+    "EmployeePlacementUpdateResponse",
+    "EmployeePlacementUpdateResponseTypedDict",
     "EmployeePlacementUpdateTypedDict",
     "EmployeeSearch422ResponseBodyError",
     "EmployeeSearch422ResponseBodyErrorTypedDict",
@@ -2505,6 +2631,8 @@ __all__ = [
     "EmployeeUpdateGender",
     "EmployeeUpdateRequest",
     "EmployeeUpdateRequestTypedDict",
+    "EmployeeUpdateResponse",
+    "EmployeeUpdateResponseTypedDict",
     "EmployeeUpdateTypedDict",
     "EqualsResourceRequestBody",
     "EqualsRolesRequestBody",
@@ -2535,9 +2663,13 @@ __all__ = [
     "GroupCreateCategory",
     "GroupCreateExternal",
     "GroupCreateExternalTypedDict",
+    "GroupCreateResponse",
+    "GroupCreateResponseTypedDict",
     "GroupCreateTypedDict",
     "GroupDeleteRequest",
     "GroupDeleteRequestTypedDict",
+    "GroupDeleteResponse",
+    "GroupDeleteResponseTypedDict",
     "GroupExternal",
     "GroupExternalTypedDict",
     "GroupFilter",
@@ -2620,6 +2752,8 @@ __all__ = [
     "GroupFilterTypedDict",
     "GroupGetRequest",
     "GroupGetRequestTypedDict",
+    "GroupGetResponse",
+    "GroupGetResponseTypedDict",
     "GroupList",
     "GroupListPagination",
     "GroupListPaginationTypedDict",
@@ -2727,6 +2861,8 @@ __all__ = [
     "GroupUpdateExternalTypedDict",
     "GroupUpdateRequest",
     "GroupUpdateRequestTypedDict",
+    "GroupUpdateResponse",
+    "GroupUpdateResponseTypedDict",
     "GroupUpdateTypedDict",
     "Guardian",
     "GuardianAddress",
@@ -2738,9 +2874,13 @@ __all__ = [
     "GuardianCreateAddressTypedDict",
     "GuardianCreateExternal",
     "GuardianCreateExternalTypedDict",
+    "GuardianCreateResponse",
+    "GuardianCreateResponseTypedDict",
     "GuardianCreateTypedDict",
     "GuardianDeleteRequest",
     "GuardianDeleteRequestTypedDict",
+    "GuardianDeleteResponse",
+    "GuardianDeleteResponseTypedDict",
     "GuardianExternal",
     "GuardianExternalTypedDict",
     "GuardianFilter",
@@ -2843,6 +2983,8 @@ __all__ = [
     "GuardianFilterTypedDict",
     "GuardianGetRequest",
     "GuardianGetRequestTypedDict",
+    "GuardianGetResponse",
+    "GuardianGetResponseTypedDict",
     "GuardianList",
     "GuardianListPagination",
     "GuardianListPaginationTypedDict",
@@ -2973,6 +3115,8 @@ __all__ = [
     "GuardianUpdateExternalTypedDict",
     "GuardianUpdateRequest",
     "GuardianUpdateRequestTypedDict",
+    "GuardianUpdateResponse",
+    "GuardianUpdateResponseTypedDict",
     "GuardianUpdateTypedDict",
     "NotEqualsResourceRequestBody",
     "NotEqualsRolesRequestBody",
@@ -2984,6 +3128,8 @@ __all__ = [
     "SchoolCreate422ResponseBodyErrorTypedDict",
     "SchoolCreateExternal",
     "SchoolCreateExternalTypedDict",
+    "SchoolCreateResponse",
+    "SchoolCreateResponseTypedDict",
     "SchoolCreateSchoolType",
     "SchoolCreateTypedDict",
     "SchoolExternal",
@@ -3066,6 +3212,8 @@ __all__ = [
     "SchoolFilterTypedDict",
     "SchoolGetRequest",
     "SchoolGetRequestTypedDict",
+    "SchoolGetResponse",
+    "SchoolGetResponseTypedDict",
     "SchoolList",
     "SchoolListPagination",
     "SchoolListPaginationTypedDict",
@@ -3174,6 +3322,8 @@ __all__ = [
     "SchoolUpdateExternalTypedDict",
     "SchoolUpdateRequest",
     "SchoolUpdateRequestTypedDict",
+    "SchoolUpdateResponse",
+    "SchoolUpdateResponseTypedDict",
     "SchoolUpdateTypedDict",
     "SchoolYear",
     "Security",
@@ -3189,9 +3339,13 @@ __all__ = [
     "StudentCreateExternal",
     "StudentCreateExternalTypedDict",
     "StudentCreateGender",
+    "StudentCreateResponse",
+    "StudentCreateResponseTypedDict",
     "StudentCreateTypedDict",
     "StudentDeleteRequest",
     "StudentDeleteRequestTypedDict",
+    "StudentDeleteResponse",
+    "StudentDeleteResponseTypedDict",
     "StudentExternal",
     "StudentExternalTypedDict",
     "StudentFilter",
@@ -3297,6 +3451,8 @@ __all__ = [
     "StudentGender",
     "StudentGetRequest",
     "StudentGetRequestTypedDict",
+    "StudentGetResponse",
+    "StudentGetResponseTypedDict",
     "StudentList",
     "StudentListPagination",
     "StudentListPaginationTypedDict",
@@ -3310,16 +3466,22 @@ __all__ = [
     "StudentPlacement",
     "StudentPlacementArchiveRequest",
     "StudentPlacementArchiveRequestTypedDict",
+    "StudentPlacementArchiveResponse",
+    "StudentPlacementArchiveResponseTypedDict",
     "StudentPlacementCreate",
     "StudentPlacementCreate422ResponseBodyError",
     "StudentPlacementCreate422ResponseBodyErrorTypedDict",
     "StudentPlacementCreateExternal",
     "StudentPlacementCreateExternalTypedDict",
+    "StudentPlacementCreateResponse",
+    "StudentPlacementCreateResponseTypedDict",
     "StudentPlacementCreateSchoolType",
     "StudentPlacementCreateSchoolYear",
     "StudentPlacementCreateTypedDict",
     "StudentPlacementDeleteRequest",
     "StudentPlacementDeleteRequestTypedDict",
+    "StudentPlacementDeleteResponse",
+    "StudentPlacementDeleteResponseTypedDict",
     "StudentPlacementExternal",
     "StudentPlacementExternalTypedDict",
     "StudentPlacementFilter",
@@ -3402,6 +3564,8 @@ __all__ = [
     "StudentPlacementFilterTypedDict",
     "StudentPlacementGetRequest",
     "StudentPlacementGetRequestTypedDict",
+    "StudentPlacementGetResponse",
+    "StudentPlacementGetResponseTypedDict",
     "StudentPlacementList",
     "StudentPlacementListPagination",
     "StudentPlacementListPaginationTypedDict",
@@ -3414,6 +3578,8 @@ __all__ = [
     "StudentPlacementMetaTypedDict",
     "StudentPlacementRestoreRequest",
     "StudentPlacementRestoreRequestTypedDict",
+    "StudentPlacementRestoreResponse",
+    "StudentPlacementRestoreResponseTypedDict",
     "StudentPlacementSchoolType",
     "StudentPlacementSchoolType1",
     "StudentPlacementSchoolYear",
@@ -3515,6 +3681,8 @@ __all__ = [
     "StudentPlacementUpdateExternalTypedDict",
     "StudentPlacementUpdateRequest",
     "StudentPlacementUpdateRequestTypedDict",
+    "StudentPlacementUpdateResponse",
+    "StudentPlacementUpdateResponseTypedDict",
     "StudentPlacementUpdateSchoolType",
     "StudentPlacementUpdateSchoolYear",
     "StudentPlacementUpdateTypedDict",
@@ -3641,6 +3809,8 @@ __all__ = [
     "StudentUpdateGender",
     "StudentUpdateRequest",
     "StudentUpdateRequestTypedDict",
+    "StudentUpdateResponse",
+    "StudentUpdateResponseTypedDict",
     "StudentUpdateTypedDict",
 ]
 
@@ -3707,6 +3877,8 @@ _dynamic_imports: dict[str, str] = {
     "AuditEventFilterTypedDict": ".auditeventfilter",
     "AuditEventGetRequest": ".auditeventgetop",
     "AuditEventGetRequestTypedDict": ".auditeventgetop",
+    "AuditEventGetResponse": ".auditeventgetop",
+    "AuditEventGetResponseTypedDict": ".auditeventgetop",
     "AuditEventList": ".auditeventlist",
     "AuditEventListPagination": ".auditeventlist",
     "AuditEventListPaginationTypedDict": ".auditeventlist",
@@ -3801,8 +3973,12 @@ _dynamic_imports: dict[str, str] = {
     "EmployeeCreateTypedDict": ".employeecreate",
     "EmployeeCreate422ResponseBodyError": ".employeecreate422responsebody_error",
     "EmployeeCreate422ResponseBodyErrorTypedDict": ".employeecreate422responsebody_error",
+    "EmployeeCreateResponse": ".employeecreateop",
+    "EmployeeCreateResponseTypedDict": ".employeecreateop",
     "EmployeeDeleteRequest": ".employeedeleteop",
     "EmployeeDeleteRequestTypedDict": ".employeedeleteop",
+    "EmployeeDeleteResponse": ".employeedeleteop",
+    "EmployeeDeleteResponseTypedDict": ".employeedeleteop",
     "EmployeeFilter": ".employeefilter",
     "EmployeeFilterContains": ".employeefilter",
     "EmployeeFilterContainsAddress": ".employeefilter",
@@ -3905,6 +4081,8 @@ _dynamic_imports: dict[str, str] = {
     "EmployeeFilterTypedDict": ".employeefilter",
     "EmployeeGetRequest": ".employeegetop",
     "EmployeeGetRequestTypedDict": ".employeegetop",
+    "EmployeeGetResponse": ".employeegetop",
+    "EmployeeGetResponseTypedDict": ".employeegetop",
     "EmployeeList": ".employeelist",
     "EmployeeListPagination": ".employeelist",
     "EmployeeListPaginationTypedDict": ".employeelist",
@@ -3925,8 +4103,12 @@ _dynamic_imports: dict[str, str] = {
     "EmployeePlacementCreateTypedDict": ".employeeplacementcreate",
     "EmployeePlacementCreate422ResponseBodyError": ".employeeplacementcreate422responsebody_error",
     "EmployeePlacementCreate422ResponseBodyErrorTypedDict": ".employeeplacementcreate422responsebody_error",
+    "EmployeePlacementCreateResponse": ".employeeplacementcreateop",
+    "EmployeePlacementCreateResponseTypedDict": ".employeeplacementcreateop",
     "EmployeePlacementDeleteRequest": ".employeeplacementdeleteop",
     "EmployeePlacementDeleteRequestTypedDict": ".employeeplacementdeleteop",
+    "EmployeePlacementDeleteResponse": ".employeeplacementdeleteop",
+    "EmployeePlacementDeleteResponseTypedDict": ".employeeplacementdeleteop",
     "EmployeePlacementFilter": ".employeeplacementfilter",
     "EmployeePlacementFilterContains": ".employeeplacementfilter",
     "EmployeePlacementFilterContainsExternal": ".employeeplacementfilter",
@@ -4005,6 +4187,8 @@ _dynamic_imports: dict[str, str] = {
     "EmployeePlacementFilterTypedDict": ".employeeplacementfilter",
     "EmployeePlacementGetRequest": ".employeeplacementgetop",
     "EmployeePlacementGetRequestTypedDict": ".employeeplacementgetop",
+    "EmployeePlacementGetResponse": ".employeeplacementgetop",
+    "EmployeePlacementGetResponseTypedDict": ".employeeplacementgetop",
     "EmployeePlacementList": ".employeeplacementlist",
     "EmployeePlacementListPagination": ".employeeplacementlist",
     "EmployeePlacementListPaginationTypedDict": ".employeeplacementlist",
@@ -4110,6 +4294,8 @@ _dynamic_imports: dict[str, str] = {
     "EmployeePlacementUpdate422ResponseBodyErrorTypedDict": ".employeeplacementupdate422responsebody_error",
     "EmployeePlacementUpdateRequest": ".employeeplacementupdateop",
     "EmployeePlacementUpdateRequestTypedDict": ".employeeplacementupdateop",
+    "EmployeePlacementUpdateResponse": ".employeeplacementupdateop",
+    "EmployeePlacementUpdateResponseTypedDict": ".employeeplacementupdateop",
     "EmployeeSearchContains": ".employeesearch_requestbody",
     "EmployeeSearchContainsAddress": ".employeesearch_requestbody",
     "EmployeeSearchContainsAddressTypedDict": ".employeesearch_requestbody",
@@ -4233,6 +4419,8 @@ _dynamic_imports: dict[str, str] = {
     "EmployeeUpdate422ResponseBodyErrorTypedDict": ".employeeupdate422responsebody_error",
     "EmployeeUpdateRequest": ".employeeupdateop",
     "EmployeeUpdateRequestTypedDict": ".employeeupdateop",
+    "EmployeeUpdateResponse": ".employeeupdateop",
+    "EmployeeUpdateResponseTypedDict": ".employeeupdateop",
     "Error400ResponseBodyError": ".error400responsebody",
     "Error400ResponseBodyErrorTypedDict": ".error400responsebody",
     "Error401ResponseBodyError": ".error401responsebody",
@@ -4264,8 +4452,12 @@ _dynamic_imports: dict[str, str] = {
     "GroupCreateTypedDict": ".groupcreate",
     "GroupCreate422ResponseBodyError": ".groupcreate422responsebody_error",
     "GroupCreate422ResponseBodyErrorTypedDict": ".groupcreate422responsebody_error",
+    "GroupCreateResponse": ".groupcreateop",
+    "GroupCreateResponseTypedDict": ".groupcreateop",
     "GroupDeleteRequest": ".groupdeleteop",
     "GroupDeleteRequestTypedDict": ".groupdeleteop",
+    "GroupDeleteResponse": ".groupdeleteop",
+    "GroupDeleteResponseTypedDict": ".groupdeleteop",
     "GroupFilter": ".groupfilter",
     "GroupFilterContains": ".groupfilter",
     "GroupFilterContainsExternal": ".groupfilter",
@@ -4346,6 +4538,8 @@ _dynamic_imports: dict[str, str] = {
     "GroupFilterTypedDict": ".groupfilter",
     "GroupGetRequest": ".groupgetop",
     "GroupGetRequestTypedDict": ".groupgetop",
+    "GroupGetResponse": ".groupgetop",
+    "GroupGetResponseTypedDict": ".groupgetop",
     "GroupList": ".grouplist",
     "GroupListPagination": ".grouplist",
     "GroupListPaginationTypedDict": ".grouplist",
@@ -4453,6 +4647,8 @@ _dynamic_imports: dict[str, str] = {
     "GroupUpdate422ResponseBodyErrorTypedDict": ".groupupdate422responsebody_error",
     "GroupUpdateRequest": ".groupupdateop",
     "GroupUpdateRequestTypedDict": ".groupupdateop",
+    "GroupUpdateResponse": ".groupupdateop",
+    "GroupUpdateResponseTypedDict": ".groupupdateop",
     "Guardian": ".guardian",
     "GuardianAddress": ".guardian",
     "GuardianAddressTypedDict": ".guardian",
@@ -4469,8 +4665,12 @@ _dynamic_imports: dict[str, str] = {
     "GuardianCreateTypedDict": ".guardiancreate",
     "GuardianCreate422ResponseBodyError": ".guardiancreate422responsebody_error",
     "GuardianCreate422ResponseBodyErrorTypedDict": ".guardiancreate422responsebody_error",
+    "GuardianCreateResponse": ".guardiancreateop",
+    "GuardianCreateResponseTypedDict": ".guardiancreateop",
     "GuardianDeleteRequest": ".guardiandeleteop",
     "GuardianDeleteRequestTypedDict": ".guardiandeleteop",
+    "GuardianDeleteResponse": ".guardiandeleteop",
+    "GuardianDeleteResponseTypedDict": ".guardiandeleteop",
     "GuardianFilter": ".guardianfilter",
     "GuardianFilterContains": ".guardianfilter",
     "GuardianFilterContainsAddress": ".guardianfilter",
@@ -4571,6 +4771,8 @@ _dynamic_imports: dict[str, str] = {
     "GuardianFilterTypedDict": ".guardianfilter",
     "GuardianGetRequest": ".guardiangetop",
     "GuardianGetRequestTypedDict": ".guardiangetop",
+    "GuardianGetResponse": ".guardiangetop",
+    "GuardianGetResponseTypedDict": ".guardiangetop",
     "GuardianList": ".guardianlist",
     "GuardianListPagination": ".guardianlist",
     "GuardianListPaginationTypedDict": ".guardianlist",
@@ -4699,6 +4901,8 @@ _dynamic_imports: dict[str, str] = {
     "GuardianUpdate422ResponseBodyErrorTypedDict": ".guardianupdate422responsebody_error",
     "GuardianUpdateRequest": ".guardianupdateop",
     "GuardianUpdateRequestTypedDict": ".guardianupdateop",
+    "GuardianUpdateResponse": ".guardianupdateop",
+    "GuardianUpdateResponseTypedDict": ".guardianupdateop",
     "School": ".school",
     "SchoolExternal": ".school",
     "SchoolExternalTypedDict": ".school",
@@ -4713,6 +4917,8 @@ _dynamic_imports: dict[str, str] = {
     "SchoolCreateTypedDict": ".schoolcreate",
     "SchoolCreate422ResponseBodyError": ".schoolcreate422responsebody_error",
     "SchoolCreate422ResponseBodyErrorTypedDict": ".schoolcreate422responsebody_error",
+    "SchoolCreateResponse": ".schoolcreateop",
+    "SchoolCreateResponseTypedDict": ".schoolcreateop",
     "SchoolFilter": ".schoolfilter",
     "SchoolFilterContains": ".schoolfilter",
     "SchoolFilterContainsExternal": ".schoolfilter",
@@ -4791,6 +4997,8 @@ _dynamic_imports: dict[str, str] = {
     "SchoolFilterTypedDict": ".schoolfilter",
     "SchoolGetRequest": ".schoolgetop",
     "SchoolGetRequestTypedDict": ".schoolgetop",
+    "SchoolGetResponse": ".schoolgetop",
+    "SchoolGetResponseTypedDict": ".schoolgetop",
     "SchoolList": ".schoollist",
     "SchoolListPagination": ".schoollist",
     "SchoolListPaginationTypedDict": ".schoollist",
@@ -4896,6 +5104,8 @@ _dynamic_imports: dict[str, str] = {
     "SchoolUpdate422ResponseBodyErrorTypedDict": ".schoolupdate422responsebody_error",
     "SchoolUpdateRequest": ".schoolupdateop",
     "SchoolUpdateRequestTypedDict": ".schoolupdateop",
+    "SchoolUpdateResponse": ".schoolupdateop",
+    "SchoolUpdateResponseTypedDict": ".schoolupdateop",
     "SchoolYear": ".schoolyear",
     "Security": ".security",
     "SecurityTypedDict": ".security",
@@ -4917,8 +5127,12 @@ _dynamic_imports: dict[str, str] = {
     "StudentCreateTypedDict": ".studentcreate",
     "StudentCreate422ResponseBodyError": ".studentcreate422responsebody_error",
     "StudentCreate422ResponseBodyErrorTypedDict": ".studentcreate422responsebody_error",
+    "StudentCreateResponse": ".studentcreateop",
+    "StudentCreateResponseTypedDict": ".studentcreateop",
     "StudentDeleteRequest": ".studentdeleteop",
     "StudentDeleteRequestTypedDict": ".studentdeleteop",
+    "StudentDeleteResponse": ".studentdeleteop",
+    "StudentDeleteResponseTypedDict": ".studentdeleteop",
     "StudentFilter": ".studentfilter",
     "StudentFilterContains": ".studentfilter",
     "StudentFilterContainsAddress": ".studentfilter",
@@ -5021,6 +5235,8 @@ _dynamic_imports: dict[str, str] = {
     "StudentFilterTypedDict": ".studentfilter",
     "StudentGetRequest": ".studentgetop",
     "StudentGetRequestTypedDict": ".studentgetop",
+    "StudentGetResponse": ".studentgetop",
+    "StudentGetResponseTypedDict": ".studentgetop",
     "StudentList": ".studentlist",
     "StudentListPagination": ".studentlist",
     "StudentListPaginationTypedDict": ".studentlist",
@@ -5039,6 +5255,8 @@ _dynamic_imports: dict[str, str] = {
     "StudentPlacementTypedDict": ".studentplacement",
     "StudentPlacementArchiveRequest": ".studentplacementarchiveop",
     "StudentPlacementArchiveRequestTypedDict": ".studentplacementarchiveop",
+    "StudentPlacementArchiveResponse": ".studentplacementarchiveop",
+    "StudentPlacementArchiveResponseTypedDict": ".studentplacementarchiveop",
     "StudentPlacementCreate": ".studentplacementcreate",
     "StudentPlacementCreateExternal": ".studentplacementcreate",
     "StudentPlacementCreateExternalTypedDict": ".studentplacementcreate",
@@ -5047,8 +5265,12 @@ _dynamic_imports: dict[str, str] = {
     "StudentPlacementCreateTypedDict": ".studentplacementcreate",
     "StudentPlacementCreate422ResponseBodyError": ".studentplacementcreate422responsebody_error",
     "StudentPlacementCreate422ResponseBodyErrorTypedDict": ".studentplacementcreate422responsebody_error",
+    "StudentPlacementCreateResponse": ".studentplacementcreateop",
+    "StudentPlacementCreateResponseTypedDict": ".studentplacementcreateop",
     "StudentPlacementDeleteRequest": ".studentplacementdeleteop",
     "StudentPlacementDeleteRequestTypedDict": ".studentplacementdeleteop",
+    "StudentPlacementDeleteResponse": ".studentplacementdeleteop",
+    "StudentPlacementDeleteResponseTypedDict": ".studentplacementdeleteop",
     "StudentPlacementFilter": ".studentplacementfilter",
     "StudentPlacementFilterContains": ".studentplacementfilter",
     "StudentPlacementFilterContainsExternal": ".studentplacementfilter",
@@ -5129,6 +5351,8 @@ _dynamic_imports: dict[str, str] = {
     "StudentPlacementFilterTypedDict": ".studentplacementfilter",
     "StudentPlacementGetRequest": ".studentplacementgetop",
     "StudentPlacementGetRequestTypedDict": ".studentplacementgetop",
+    "StudentPlacementGetResponse": ".studentplacementgetop",
+    "StudentPlacementGetResponseTypedDict": ".studentplacementgetop",
     "StudentPlacementList": ".studentplacementlist",
     "StudentPlacementListPagination": ".studentplacementlist",
     "StudentPlacementListPaginationTypedDict": ".studentplacementlist",
@@ -5139,6 +5363,8 @@ _dynamic_imports: dict[str, str] = {
     "StudentPlacementListResponseTypedDict": ".studentplacementlistop",
     "StudentPlacementRestoreRequest": ".studentplacementrestoreop",
     "StudentPlacementRestoreRequestTypedDict": ".studentplacementrestoreop",
+    "StudentPlacementRestoreResponse": ".studentplacementrestoreop",
+    "StudentPlacementRestoreResponseTypedDict": ".studentplacementrestoreop",
     "StudentPlacementSchoolType": ".studentplacementschooltype",
     "StudentPlacementSearchContains": ".studentplacementsearch_requestbody",
     "StudentPlacementSearchContainsExternal": ".studentplacementsearch_requestbody",
@@ -5240,6 +5466,8 @@ _dynamic_imports: dict[str, str] = {
     "StudentPlacementUpdate422ResponseBodyErrorTypedDict": ".studentplacementupdate422responsebody_error",
     "StudentPlacementUpdateRequest": ".studentplacementupdateop",
     "StudentPlacementUpdateRequestTypedDict": ".studentplacementupdateop",
+    "StudentPlacementUpdateResponse": ".studentplacementupdateop",
+    "StudentPlacementUpdateResponseTypedDict": ".studentplacementupdateop",
     "StudentSearchContains": ".studentsearch_requestbody",
     "StudentSearchContainsAddress": ".studentsearch_requestbody",
     "StudentSearchContainsAddressTypedDict": ".studentsearch_requestbody",
@@ -5363,6 +5591,8 @@ _dynamic_imports: dict[str, str] = {
     "StudentUpdate422ResponseBodyErrorTypedDict": ".studentupdate422responsebody_error",
     "StudentUpdateRequest": ".studentupdateop",
     "StudentUpdateRequestTypedDict": ".studentupdateop",
+    "StudentUpdateResponse": ".studentupdateop",
+    "StudentUpdateResponseTypedDict": ".studentupdateop",
 }
 
 

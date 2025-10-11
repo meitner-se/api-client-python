@@ -112,7 +112,7 @@ with Meitner(
 
 ### Response
 
-**[models.EmployeePlacement](../../models/employeeplacement.md)**
+**[models.EmployeePlacementCreateResponse](../../models/employeeplacementcreateresponse.md)**
 
 ### Errors
 
@@ -436,7 +436,7 @@ with Meitner(
 
 ### Response
 
-**[models.EmployeePlacement](../../models/employeeplacement.md)**
+**[models.EmployeePlacementGetResponse](../../models/employeeplacementgetresponse.md)**
 
 ### Errors
 
@@ -470,9 +470,10 @@ with Meitner(
     ),
 ) as m_client:
 
-    m_client.employee_placements.delete(id="123e4567-e89b-12d3-a456-426614174000")
+    res = m_client.employee_placements.delete(id="123e4567-e89b-12d3-a456-426614174000")
 
-    # Use the SDK ...
+    # Handle response
+    print(res)
 
 ```
 
@@ -482,6 +483,10 @@ with Meitner(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the EmployeePlacement to delete            | 123e4567-e89b-12d3-a456-426614174000                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.EmployeePlacementDeleteResponse](../../models/employeeplacementdeleteresponse.md)**
 
 ### Errors
 
@@ -542,7 +547,7 @@ with Meitner(
 
 ### Response
 
-**[models.EmployeePlacement](../../models/employeeplacement.md)**
+**[models.EmployeePlacementUpdateResponse](../../models/employeeplacementupdateresponse.md)**
 
 ### Errors
 

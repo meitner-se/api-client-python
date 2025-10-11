@@ -4,7 +4,7 @@ from __future__ import annotations
 from .grouplist import GroupList, GroupListTypedDict
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -30,6 +30,7 @@ class GroupListRequest(BaseModel):
 
 
 class GroupListResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: GroupListTypedDict
 
 
@@ -38,5 +39,7 @@ class GroupListResponse(BaseModel):
         Callable[[], Optional[GroupListResponse]],
         Callable[[], Awaitable[Optional[GroupListResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: GroupList

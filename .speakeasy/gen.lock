@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: 4f52d5996cb471229cd6d335ee2ca5d1
+  docChecksum: 5e8370ebbd9b700f19c3f9fb03b85421
   docVersion: v1
-  speakeasyVersion: 1.636.0
-  generationVersion: 2.723.2
-  releaseVersion: 0.0.4
-  configChecksum: e93f740d622c4daca05aa3fba5e010ea
+  speakeasyVersion: 1.636.3
+  generationVersion: 2.723.11
+  releaseVersion: 0.0.5
+  configChecksum: 018329f567528d667289898965569d31
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
   published: true
@@ -101,6 +101,7 @@ generatedFiles:
   - docs/models/auditeventfiltersmallerthan.md
   - docs/models/auditeventfiltersmallerthanmeta.md
   - docs/models/auditeventgetrequest.md
+  - docs/models/auditeventgetresponse.md
   - docs/models/auditeventlist.md
   - docs/models/auditeventlistpagination.md
   - docs/models/auditeventlistrequest.md
@@ -148,7 +149,9 @@ generatedFiles:
   - docs/models/employeecreateaddress.md
   - docs/models/employeecreateexternal.md
   - docs/models/employeecreategender.md
+  - docs/models/employeecreateresponse.md
   - docs/models/employeedeleterequest.md
+  - docs/models/employeedeleteresponse.md
   - docs/models/employeeexternal.md
   - docs/models/employeefilter.md
   - docs/models/employeefiltercontains.md
@@ -203,6 +206,7 @@ generatedFiles:
   - docs/models/employeefiltersmallerthanmeta.md
   - docs/models/employeegender.md
   - docs/models/employeegetrequest.md
+  - docs/models/employeegetresponse.md
   - docs/models/employeelist.md
   - docs/models/employeelistpagination.md
   - docs/models/employeelistrequest.md
@@ -212,7 +216,9 @@ generatedFiles:
   - docs/models/employeeplacementcreate.md
   - docs/models/employeeplacementcreate422responsebodyerror.md
   - docs/models/employeeplacementcreateexternal.md
+  - docs/models/employeeplacementcreateresponse.md
   - docs/models/employeeplacementdeleterequest.md
+  - docs/models/employeeplacementdeleteresponse.md
   - docs/models/employeeplacementexternal.md
   - docs/models/employeeplacementfilter.md
   - docs/models/employeeplacementfiltercontains.md
@@ -254,6 +260,7 @@ generatedFiles:
   - docs/models/employeeplacementfiltersmallerthanexternal.md
   - docs/models/employeeplacementfiltersmallerthanmeta.md
   - docs/models/employeeplacementgetrequest.md
+  - docs/models/employeeplacementgetresponse.md
   - docs/models/employeeplacementlist.md
   - docs/models/employeeplacementlistpagination.md
   - docs/models/employeeplacementlistrequest.md
@@ -307,6 +314,7 @@ generatedFiles:
   - docs/models/employeeplacementupdate422responsebodyerror.md
   - docs/models/employeeplacementupdateexternal.md
   - docs/models/employeeplacementupdaterequest.md
+  - docs/models/employeeplacementupdateresponse.md
   - docs/models/employeesearch422responsebodyerror.md
   - docs/models/employeesearchcontains.md
   - docs/models/employeesearchcontainsaddress.md
@@ -370,6 +378,7 @@ generatedFiles:
   - docs/models/employeeupdateexternal.md
   - docs/models/employeeupdategender.md
   - docs/models/employeeupdaterequest.md
+  - docs/models/employeeupdateresponse.md
   - docs/models/equalsresourcerequestbody.md
   - docs/models/equalsrolesrequestbody.md
   - docs/models/equalstyperequestbody.md
@@ -390,7 +399,9 @@ generatedFiles:
   - docs/models/groupcreate422responsebodyerror.md
   - docs/models/groupcreatecategory.md
   - docs/models/groupcreateexternal.md
+  - docs/models/groupcreateresponse.md
   - docs/models/groupdeleterequest.md
+  - docs/models/groupdeleteresponse.md
   - docs/models/groupexternal.md
   - docs/models/groupfilter.md
   - docs/models/groupfiltercontains.md
@@ -434,6 +445,7 @@ generatedFiles:
   - docs/models/groupfiltersmallerthanexternal.md
   - docs/models/groupfiltersmallerthanmeta.md
   - docs/models/groupgetrequest.md
+  - docs/models/groupgetresponse.md
   - docs/models/grouplist.md
   - docs/models/grouplistpagination.md
   - docs/models/grouplistrequest.md
@@ -489,13 +501,16 @@ generatedFiles:
   - docs/models/groupupdate422responsebodyerror.md
   - docs/models/groupupdateexternal.md
   - docs/models/groupupdaterequest.md
+  - docs/models/groupupdateresponse.md
   - docs/models/guardian.md
   - docs/models/guardianaddress.md
   - docs/models/guardiancreate.md
   - docs/models/guardiancreate422responsebodyerror.md
   - docs/models/guardiancreateaddress.md
   - docs/models/guardiancreateexternal.md
+  - docs/models/guardiancreateresponse.md
   - docs/models/guardiandeleterequest.md
+  - docs/models/guardiandeleteresponse.md
   - docs/models/guardianexternal.md
   - docs/models/guardianfilter.md
   - docs/models/guardianfiltercontains.md
@@ -547,6 +562,7 @@ generatedFiles:
   - docs/models/guardianfiltersmallerthanexternal.md
   - docs/models/guardianfiltersmallerthanmeta.md
   - docs/models/guardiangetrequest.md
+  - docs/models/guardiangetresponse.md
   - docs/models/guardianlist.md
   - docs/models/guardianlistpagination.md
   - docs/models/guardianlistrequest.md
@@ -612,6 +628,7 @@ generatedFiles:
   - docs/models/guardianupdateaddress.md
   - docs/models/guardianupdateexternal.md
   - docs/models/guardianupdaterequest.md
+  - docs/models/guardianupdateresponse.md
   - docs/models/notequalsresourcerequestbody.md
   - docs/models/notequalsrolesrequestbody.md
   - docs/models/notequalstyperequestbody.md
@@ -620,6 +637,7 @@ generatedFiles:
   - docs/models/schoolcreate.md
   - docs/models/schoolcreate422responsebodyerror.md
   - docs/models/schoolcreateexternal.md
+  - docs/models/schoolcreateresponse.md
   - docs/models/schoolcreateschooltype.md
   - docs/models/schoolexternal.md
   - docs/models/schoolfilter.md
@@ -662,6 +680,7 @@ generatedFiles:
   - docs/models/schoolfiltersmallerthanexternal.md
   - docs/models/schoolfiltersmallerthanmeta.md
   - docs/models/schoolgetrequest.md
+  - docs/models/schoolgetresponse.md
   - docs/models/schoollist.md
   - docs/models/schoollistpagination.md
   - docs/models/schoollistrequest.md
@@ -718,6 +737,7 @@ generatedFiles:
   - docs/models/schoolupdate422responsebodyerror.md
   - docs/models/schoolupdateexternal.md
   - docs/models/schoolupdaterequest.md
+  - docs/models/schoolupdateresponse.md
   - docs/models/schoolyear.md
   - docs/models/security.md
   - docs/models/student.md
@@ -727,7 +747,9 @@ generatedFiles:
   - docs/models/studentcreateaddress.md
   - docs/models/studentcreateexternal.md
   - docs/models/studentcreategender.md
+  - docs/models/studentcreateresponse.md
   - docs/models/studentdeleterequest.md
+  - docs/models/studentdeleteresponse.md
   - docs/models/studentexternal.md
   - docs/models/studentfilter.md
   - docs/models/studentfiltercontains.md
@@ -782,6 +804,7 @@ generatedFiles:
   - docs/models/studentfiltersmallerthanmeta.md
   - docs/models/studentgender.md
   - docs/models/studentgetrequest.md
+  - docs/models/studentgetresponse.md
   - docs/models/studentlist.md
   - docs/models/studentlistpagination.md
   - docs/models/studentlistrequest.md
@@ -789,12 +812,15 @@ generatedFiles:
   - docs/models/studentmeta.md
   - docs/models/studentplacement.md
   - docs/models/studentplacementarchiverequest.md
+  - docs/models/studentplacementarchiveresponse.md
   - docs/models/studentplacementcreate.md
   - docs/models/studentplacementcreate422responsebodyerror.md
   - docs/models/studentplacementcreateexternal.md
+  - docs/models/studentplacementcreateresponse.md
   - docs/models/studentplacementcreateschooltype.md
   - docs/models/studentplacementcreateschoolyear.md
   - docs/models/studentplacementdeleterequest.md
+  - docs/models/studentplacementdeleteresponse.md
   - docs/models/studentplacementexternal.md
   - docs/models/studentplacementfilter.md
   - docs/models/studentplacementfiltercontains.md
@@ -838,12 +864,14 @@ generatedFiles:
   - docs/models/studentplacementfiltersmallerthanexternal.md
   - docs/models/studentplacementfiltersmallerthanmeta.md
   - docs/models/studentplacementgetrequest.md
+  - docs/models/studentplacementgetresponse.md
   - docs/models/studentplacementlist.md
   - docs/models/studentplacementlistpagination.md
   - docs/models/studentplacementlistrequest.md
   - docs/models/studentplacementlistresponse.md
   - docs/models/studentplacementmeta.md
   - docs/models/studentplacementrestorerequest.md
+  - docs/models/studentplacementrestoreresponse.md
   - docs/models/studentplacementschooltype.md
   - docs/models/studentplacementschooltype1.md
   - docs/models/studentplacementschoolyear.md
@@ -898,6 +926,7 @@ generatedFiles:
   - docs/models/studentplacementupdate422responsebodyerror.md
   - docs/models/studentplacementupdateexternal.md
   - docs/models/studentplacementupdaterequest.md
+  - docs/models/studentplacementupdateresponse.md
   - docs/models/studentplacementupdateschooltype.md
   - docs/models/studentplacementupdateschoolyear.md
   - docs/models/studentsearch422responsebodyerror.md
@@ -963,6 +992,7 @@ generatedFiles:
   - docs/models/studentupdateexternal.md
   - docs/models/studentupdategender.md
   - docs/models/studentupdaterequest.md
+  - docs/models/studentupdateresponse.md
   - docs/models/utils/retryconfig.md
   - docs/sdks/auditevents/README.md
   - docs/sdks/employeeplacements/README.md
@@ -1038,6 +1068,7 @@ generatedFiles:
   - src/meitner/models/employee.py
   - src/meitner/models/employeecreate.py
   - src/meitner/models/employeecreate422responsebody_error.py
+  - src/meitner/models/employeecreateop.py
   - src/meitner/models/employeedeleteop.py
   - src/meitner/models/employeefilter.py
   - src/meitner/models/employeegetop.py
@@ -1046,6 +1077,7 @@ generatedFiles:
   - src/meitner/models/employeeplacement.py
   - src/meitner/models/employeeplacementcreate.py
   - src/meitner/models/employeeplacementcreate422responsebody_error.py
+  - src/meitner/models/employeeplacementcreateop.py
   - src/meitner/models/employeeplacementdeleteop.py
   - src/meitner/models/employeeplacementfilter.py
   - src/meitner/models/employeeplacementgetop.py
@@ -1079,6 +1111,7 @@ generatedFiles:
   - src/meitner/models/groupcategory.py
   - src/meitner/models/groupcreate.py
   - src/meitner/models/groupcreate422responsebody_error.py
+  - src/meitner/models/groupcreateop.py
   - src/meitner/models/groupdeleteop.py
   - src/meitner/models/groupfilter.py
   - src/meitner/models/groupgetop.py
@@ -1095,6 +1128,7 @@ generatedFiles:
   - src/meitner/models/guardian.py
   - src/meitner/models/guardiancreate.py
   - src/meitner/models/guardiancreate422responsebody_error.py
+  - src/meitner/models/guardiancreateop.py
   - src/meitner/models/guardiandeleteop.py
   - src/meitner/models/guardianfilter.py
   - src/meitner/models/guardiangetop.py
@@ -1110,6 +1144,7 @@ generatedFiles:
   - src/meitner/models/school.py
   - src/meitner/models/schoolcreate.py
   - src/meitner/models/schoolcreate422responsebody_error.py
+  - src/meitner/models/schoolcreateop.py
   - src/meitner/models/schoolfilter.py
   - src/meitner/models/schoolgetop.py
   - src/meitner/models/schoollist.py
@@ -1127,6 +1162,7 @@ generatedFiles:
   - src/meitner/models/student.py
   - src/meitner/models/studentcreate.py
   - src/meitner/models/studentcreate422responsebody_error.py
+  - src/meitner/models/studentcreateop.py
   - src/meitner/models/studentdeleteop.py
   - src/meitner/models/studentfilter.py
   - src/meitner/models/studentgetop.py
@@ -1136,6 +1172,7 @@ generatedFiles:
   - src/meitner/models/studentplacementarchiveop.py
   - src/meitner/models/studentplacementcreate.py
   - src/meitner/models/studentplacementcreate422responsebody_error.py
+  - src/meitner/models/studentplacementcreateop.py
   - src/meitner/models/studentplacementdeleteop.py
   - src/meitner/models/studentplacementfilter.py
   - src/meitner/models/studentplacementgetop.py
@@ -3184,13 +3221,3 @@ examples:
         "500":
           application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
-releaseNotes: |
-  ## Python SDK Changes Detected:
-  * `meitner.schools.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.groups.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.employees.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.employee_placements.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.guardians.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.students.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.student_placements.search()`:  `request` **Changed** **Breaking** :warning:
-  * `meitner.audit_events.search()`:  `request` **Changed** **Breaking** :warning:

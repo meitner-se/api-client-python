@@ -15,7 +15,7 @@ class EmployeePlacementCreate422ResponseBodyErrorData(BaseModel):
     error: models_employeeplacementcreate422responsebody_error.EmployeePlacementCreate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class EmployeePlacementCreate422ResponseBodyError(MeitnerError):
     r"""Validation error for EmployeePlacement Create operation - request data failed validation"""
 

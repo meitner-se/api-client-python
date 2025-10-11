@@ -106,7 +106,7 @@ with Meitner(
 
 ### Response
 
-**[models.School](../../models/school.md)**
+**[models.SchoolCreateResponse](../../models/schoolcreateresponse.md)**
 
 ### Errors
 
@@ -387,7 +387,7 @@ with Meitner(
 
 ### Response
 
-**[models.School](../../models/school.md)**
+**[models.SchoolGetResponse](../../models/schoolgetresponse.md)**
 
 ### Errors
 
@@ -444,7 +444,7 @@ with Meitner(
 
 ### Response
 
-**[models.School](../../models/school.md)**
+**[models.SchoolUpdateResponse](../../models/schoolupdateresponse.md)**
 
 ### Errors
 

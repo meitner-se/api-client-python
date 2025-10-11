@@ -130,6 +130,7 @@ class StudentPlacements(BaseSDK):
             return models.StudentPlacementListResponse(
                 result=unmarshal_json_response(models.StudentPlacementList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -300,6 +301,7 @@ class StudentPlacements(BaseSDK):
             return models.StudentPlacementListResponse(
                 result=unmarshal_json_response(models.StudentPlacementList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -370,7 +372,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementCreateResponse:
         r"""Create a new StudentPlacement
 
         Create a new StudentPlacement
@@ -475,7 +477,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementCreateResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -552,7 +557,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementCreateResponse:
         r"""Create a new StudentPlacement
 
         Create a new StudentPlacement
@@ -657,7 +662,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementCreateResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -852,6 +860,7 @@ class StudentPlacements(BaseSDK):
                     models.StudentPlacementSearchResponse, http_res
                 ),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1052,6 +1061,7 @@ class StudentPlacements(BaseSDK):
                     models.StudentPlacementSearchResponse, http_res
                 ),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1116,7 +1126,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementGetResponse:
         r"""Get a StudentPlacement
 
         Retrieves the `StudentPlacement` with the given ID.
@@ -1199,7 +1209,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementGetResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1256,7 +1269,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementGetResponse:
         r"""Get a StudentPlacement
 
         Retrieves the `StudentPlacement` with the given ID.
@@ -1339,7 +1352,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementGetResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1396,7 +1412,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.StudentPlacementDeleteResponse:
         r"""Delete a StudentPlacement
 
         Delete a StudentPlacement
@@ -1479,7 +1495,9 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.StudentPlacementDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1536,7 +1554,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.StudentPlacementDeleteResponse:
         r"""Delete a StudentPlacement
 
         Delete a StudentPlacement
@@ -1619,7 +1637,9 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.StudentPlacementDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1688,7 +1708,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementUpdateResponse:
         r"""Update a StudentPlacement
 
         Update a StudentPlacement
@@ -1797,7 +1817,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementUpdateResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1873,7 +1896,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementUpdateResponse:
         r"""Update a StudentPlacement
 
         Update a StudentPlacement
@@ -1982,7 +2005,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementUpdateResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -2046,7 +2072,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementArchiveResponse:
         r"""Archive a student placement
 
         :param id: The ID of the student placement to archive
@@ -2127,7 +2153,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementArchiveResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -2184,7 +2213,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementArchiveResponse:
         r"""Archive a student placement
 
         :param id: The ID of the student placement to archive
@@ -2265,7 +2294,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementArchiveResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -2322,7 +2354,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementRestoreResponse:
         r"""Restore an archived student placement
 
         :param id: The ID of the student placement to restore
@@ -2403,7 +2435,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementRestoreResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -2460,7 +2495,7 @@ class StudentPlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.StudentPlacement:
+    ) -> models.StudentPlacementRestoreResponse:
         r"""Restore an archived student placement
 
         :param id: The ID of the student placement to restore
@@ -2541,7 +2576,10 @@ class StudentPlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.StudentPlacement, http_res)
+            return models.StudentPlacementRestoreResponse(
+                result=unmarshal_json_response(models.StudentPlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

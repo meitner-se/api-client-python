@@ -729,7 +729,36 @@
         ],
         "responses": {
           "204": {
-            "description": "Response for Group Delete operation - confirms successful deletion"
+            "description": "Response for Group Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request error for Group Delete operation - request contains invalid parameters",
@@ -1160,7 +1189,36 @@
         ],
         "responses": {
           "204": {
-            "description": "Response for Employee Delete operation - confirms successful deletion"
+            "description": "Response for Employee Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request error for Employee Delete operation - request contains invalid parameters",
@@ -1591,7 +1649,36 @@
         ],
         "responses": {
           "204": {
-            "description": "Response for EmployeePlacement Delete operation - confirms successful deletion"
+            "description": "Response for EmployeePlacement Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request error for EmployeePlacement Delete operation - request contains invalid parameters",
@@ -2022,7 +2109,36 @@
         ],
         "responses": {
           "204": {
-            "description": "Response for Guardian Delete operation - confirms successful deletion"
+            "description": "Response for Guardian Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request error for Guardian Delete operation - request contains invalid parameters",
@@ -2453,7 +2569,36 @@
         ],
         "responses": {
           "204": {
-            "description": "Response for Student Delete operation - confirms successful deletion"
+            "description": "Response for Student Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request error for Student Delete operation - request contains invalid parameters",
@@ -2884,7 +3029,36 @@
         ],
         "responses": {
           "204": {
-            "description": "Response for StudentPlacement Delete operation - confirms successful deletion"
+            "description": "Response for StudentPlacement Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request error for StudentPlacement Delete operation - request contains invalid parameters",
@@ -14847,6 +15021,35 @@
     "responses": {
       "SchoolCreate": {
         "description": "Response for School Create operation - returns the created School",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -14884,6 +15087,35 @@
       },
       "SchoolCreate422ResponseBody": {
         "description": "Validation error for School Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -14925,6 +15157,35 @@
       },
       "SchoolUpdate": {
         "description": "Response for School Update operation - returns the updated School",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -14962,6 +15223,35 @@
       },
       "SchoolUpdate422ResponseBody": {
         "description": "Validation error for School Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15003,6 +15293,35 @@
       },
       "SchoolGet": {
         "description": "Response for School Get operation - returns the requested School",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15040,6 +15359,35 @@
       },
       "SchoolList": {
         "description": "Response for School List operation - returns a paginated list of School",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15132,6 +15480,35 @@
       },
       "SchoolSearch": {
         "description": "Response for School Search operation - returns filtered School results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15224,6 +15601,35 @@
       },
       "SchoolSearch422ResponseBody": {
         "description": "Validation error for School Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15265,6 +15671,35 @@
       },
       "GroupCreate": {
         "description": "Response for Group Create operation - returns the created Group",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15309,6 +15744,35 @@
       },
       "GroupCreate422ResponseBody": {
         "description": "Validation error for Group Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15350,6 +15814,35 @@
       },
       "GroupUpdate": {
         "description": "Response for Group Update operation - returns the updated Group",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15394,6 +15887,35 @@
       },
       "GroupUpdate422ResponseBody": {
         "description": "Validation error for Group Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15435,6 +15957,35 @@
       },
       "GroupGet": {
         "description": "Response for Group Get operation - returns the requested Group",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15479,6 +16030,35 @@
       },
       "GroupList": {
         "description": "Response for Group List operation - returns a paginated list of Group",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15585,6 +16165,35 @@
       },
       "GroupSearch": {
         "description": "Response for Group Search operation - returns filtered Group results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15691,6 +16300,35 @@
       },
       "GroupSearch422ResponseBody": {
         "description": "Validation error for Group Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15732,6 +16370,35 @@
       },
       "EmployeeCreate": {
         "description": "Response for Employee Create operation - returns the created Employee",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15781,6 +16448,35 @@
       },
       "EmployeeCreate422ResponseBody": {
         "description": "Validation error for Employee Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15822,6 +16518,35 @@
       },
       "EmployeeUpdate": {
         "description": "Response for Employee Update operation - returns the updated Employee",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15871,6 +16596,35 @@
       },
       "EmployeeUpdate422ResponseBody": {
         "description": "Validation error for Employee Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15912,6 +16666,35 @@
       },
       "EmployeeGet": {
         "description": "Response for Employee Get operation - returns the requested Employee",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -15961,6 +16744,35 @@
       },
       "EmployeeList": {
         "description": "Response for Employee List operation - returns a paginated list of Employee",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16077,6 +16889,35 @@
       },
       "EmployeeSearch": {
         "description": "Response for Employee Search operation - returns filtered Employee results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16193,6 +17034,35 @@
       },
       "EmployeeSearch422ResponseBody": {
         "description": "Validation error for Employee Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16234,6 +17104,35 @@
       },
       "EmployeePlacementCreate": {
         "description": "Response for EmployeePlacement Create operation - returns the created EmployeePlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16277,6 +17176,35 @@
       },
       "EmployeePlacementCreate422ResponseBody": {
         "description": "Validation error for EmployeePlacement Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16318,6 +17246,35 @@
       },
       "EmployeePlacementUpdate": {
         "description": "Response for EmployeePlacement Update operation - returns the updated EmployeePlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16361,6 +17318,35 @@
       },
       "EmployeePlacementUpdate422ResponseBody": {
         "description": "Validation error for EmployeePlacement Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16402,6 +17388,35 @@
       },
       "EmployeePlacementGet": {
         "description": "Response for EmployeePlacement Get operation - returns the requested EmployeePlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16445,6 +17460,35 @@
       },
       "EmployeePlacementList": {
         "description": "Response for EmployeePlacement List operation - returns a paginated list of EmployeePlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16549,6 +17593,35 @@
       },
       "EmployeePlacementSearch": {
         "description": "Response for EmployeePlacement Search operation - returns filtered EmployeePlacement results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16653,6 +17726,35 @@
       },
       "EmployeePlacementSearch422ResponseBody": {
         "description": "Validation error for EmployeePlacement Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16694,6 +17796,35 @@
       },
       "GuardianCreate": {
         "description": "Response for Guardian Create operation - returns the created Guardian",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16744,6 +17875,35 @@
       },
       "GuardianCreate422ResponseBody": {
         "description": "Validation error for Guardian Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16785,6 +17945,35 @@
       },
       "GuardianUpdate": {
         "description": "Response for Guardian Update operation - returns the updated Guardian",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16835,6 +18024,35 @@
       },
       "GuardianUpdate422ResponseBody": {
         "description": "Validation error for Guardian Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16876,6 +18094,35 @@
       },
       "GuardianGet": {
         "description": "Response for Guardian Get operation - returns the requested Guardian",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -16926,6 +18173,35 @@
       },
       "GuardianList": {
         "description": "Response for Guardian List operation - returns a paginated list of Guardian",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17044,6 +18320,35 @@
       },
       "GuardianSearch": {
         "description": "Response for Guardian Search operation - returns filtered Guardian results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17162,6 +18467,35 @@
       },
       "GuardianSearch422ResponseBody": {
         "description": "Validation error for Guardian Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17203,6 +18537,35 @@
       },
       "StudentCreate": {
         "description": "Response for Student Create operation - returns the created Student",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17252,6 +18615,35 @@
       },
       "StudentCreate422ResponseBody": {
         "description": "Validation error for Student Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17293,6 +18685,35 @@
       },
       "StudentUpdate": {
         "description": "Response for Student Update operation - returns the updated Student",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17342,6 +18763,35 @@
       },
       "StudentUpdate422ResponseBody": {
         "description": "Validation error for Student Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17383,6 +18833,35 @@
       },
       "StudentGet": {
         "description": "Response for Student Get operation - returns the requested Student",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17432,6 +18911,35 @@
       },
       "StudentList": {
         "description": "Response for Student List operation - returns a paginated list of Student",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17548,6 +19056,35 @@
       },
       "StudentSearch": {
         "description": "Response for Student Search operation - returns filtered Student results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17664,6 +19201,35 @@
       },
       "StudentSearch422ResponseBody": {
         "description": "Validation error for Student Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17705,6 +19271,35 @@
       },
       "StudentPlacementArchive": {
         "description": "Response for StudentPlacement Archive operation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17747,6 +19342,35 @@
       },
       "StudentPlacementRestore": {
         "description": "Response for StudentPlacement Restore operation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17789,6 +19413,35 @@
       },
       "StudentPlacementCreate": {
         "description": "Response for StudentPlacement Create operation - returns the created StudentPlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17831,6 +19484,35 @@
       },
       "StudentPlacementCreate422ResponseBody": {
         "description": "Validation error for StudentPlacement Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17872,6 +19554,35 @@
       },
       "StudentPlacementUpdate": {
         "description": "Response for StudentPlacement Update operation - returns the updated StudentPlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17914,6 +19625,35 @@
       },
       "StudentPlacementUpdate422ResponseBody": {
         "description": "Validation error for StudentPlacement Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17955,6 +19695,35 @@
       },
       "StudentPlacementGet": {
         "description": "Response for StudentPlacement Get operation - returns the requested StudentPlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -17997,6 +19766,35 @@
       },
       "StudentPlacementList": {
         "description": "Response for StudentPlacement List operation - returns a paginated list of StudentPlacement",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18099,6 +19897,35 @@
       },
       "StudentPlacementSearch": {
         "description": "Response for StudentPlacement Search operation - returns filtered StudentPlacement results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18201,6 +20028,35 @@
       },
       "StudentPlacementSearch422ResponseBody": {
         "description": "Validation error for StudentPlacement Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18242,6 +20098,35 @@
       },
       "AuditEventGet": {
         "description": "Response for AuditEvent Get operation - returns the requested AuditEvent",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18274,6 +20159,35 @@
       },
       "AuditEventList": {
         "description": "Response for AuditEvent List operation - returns a paginated list of AuditEvent",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18356,6 +20270,35 @@
       },
       "AuditEventSearch": {
         "description": "Response for AuditEvent Search operation - returns filtered AuditEvent results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18438,6 +20381,35 @@
       },
       "AuditEventSearch422ResponseBody": {
         "description": "Validation error for AuditEvent Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18479,6 +20451,35 @@
       },
       "Error400ResponseBody": {
         "description": "Bad Request - The request was malformed or contained invalid parameters",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18520,6 +20521,35 @@
       },
       "Error401ResponseBody": {
         "description": "Unauthorized - The request is missing valid authentication credentials",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18561,6 +20591,35 @@
       },
       "Error403ResponseBody": {
         "description": "Forbidden - Request is authenticated, but the user is not allowed to perform the operation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18602,6 +20661,35 @@
       },
       "Error404ResponseBody": {
         "description": "Not Found - The requested resource does not exist",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18643,6 +20731,35 @@
       },
       "Error409ResponseBody": {
         "description": "Conflict - The request could not be completed due to a conflict",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18684,6 +20801,35 @@
       },
       "Error429ResponseBody": {
         "description": "Too Many Requests - When the rate limit has been exceeded",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {
@@ -18725,6 +20871,35 @@
       },
       "Error500ResponseBody": {
         "description": "Internal Server Error - An unexpected server error occurred",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
         "content": {
           "application/json": {
             "schema": {

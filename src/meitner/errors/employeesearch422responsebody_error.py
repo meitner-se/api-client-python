@@ -15,7 +15,7 @@ class EmployeeSearch422ResponseBodyErrorData(BaseModel):
     error: models_employeesearch422responsebody_error.EmployeeSearch422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class EmployeeSearch422ResponseBodyError(MeitnerError):
     r"""Validation error for Employee Search operation - request data failed validation"""
 

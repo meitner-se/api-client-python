@@ -15,7 +15,7 @@ class StudentSearch422ResponseBodyErrorData(BaseModel):
     error: models_studentsearch422responsebody_error.StudentSearch422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class StudentSearch422ResponseBodyError(MeitnerError):
     r"""Validation error for Student Search operation - request data failed validation"""
 

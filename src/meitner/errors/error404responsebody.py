@@ -13,7 +13,7 @@ class Error404ResponseBodyData(BaseModel):
     error: models_error404responsebody.Error404ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error404ResponseBody(MeitnerError):
     r"""Not Found - The requested resource does not exist"""
 

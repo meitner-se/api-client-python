@@ -120,7 +120,7 @@ with Meitner(
 
 ### Response
 
-**[models.Employee](../../models/employee.md)**
+**[models.EmployeeCreateResponse](../../models/employeecreateresponse.md)**
 
 ### Errors
 
@@ -534,7 +534,7 @@ with Meitner(
 
 ### Response
 
-**[models.Employee](../../models/employee.md)**
+**[models.EmployeeGetResponse](../../models/employeegetresponse.md)**
 
 ### Errors
 
@@ -568,9 +568,10 @@ with Meitner(
     ),
 ) as m_client:
 
-    m_client.employees.delete(id="123e4567-e89b-12d3-a456-426614174000")
+    res = m_client.employees.delete(id="123e4567-e89b-12d3-a456-426614174000")
 
-    # Use the SDK ...
+    # Handle response
+    print(res)
 
 ```
 
@@ -580,6 +581,10 @@ with Meitner(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the Employee to delete                     | 123e4567-e89b-12d3-a456-426614174000                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.EmployeeDeleteResponse](../../models/employeedeleteresponse.md)**
 
 ### Errors
 
@@ -650,7 +655,7 @@ with Meitner(
 
 ### Response
 
-**[models.Employee](../../models/employee.md)**
+**[models.EmployeeUpdateResponse](../../models/employeeupdateresponse.md)**
 
 ### Errors
 
