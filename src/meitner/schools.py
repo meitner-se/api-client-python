@@ -129,6 +129,7 @@ class Schools(BaseSDK):
             return models.SchoolListResponse(
                 result=unmarshal_json_response(models.SchoolList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -299,6 +300,7 @@ class Schools(BaseSDK):
             return models.SchoolListResponse(
                 result=unmarshal_json_response(models.SchoolList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -363,7 +365,7 @@ class Schools(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.School:
+    ) -> models.SchoolCreateResponse:
         r"""Create a new School
 
         Create a new School
@@ -462,7 +464,10 @@ class Schools(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.School, http_res)
+            return models.SchoolCreateResponse(
+                result=unmarshal_json_response(models.School, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -531,7 +536,7 @@ class Schools(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.School:
+    ) -> models.SchoolCreateResponse:
         r"""Create a new School
 
         Create a new School
@@ -630,7 +635,10 @@ class Schools(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.School, http_res)
+            return models.SchoolCreateResponse(
+                result=unmarshal_json_response(models.School, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -816,6 +824,7 @@ class Schools(BaseSDK):
             return models.SchoolSearchResponseResponse(
                 result=unmarshal_json_response(models.SchoolSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1005,6 +1014,7 @@ class Schools(BaseSDK):
             return models.SchoolSearchResponseResponse(
                 result=unmarshal_json_response(models.SchoolSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1067,7 +1077,7 @@ class Schools(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.School:
+    ) -> models.SchoolGetResponse:
         r"""Get a School
 
         Retrieves the `School` with the given ID.
@@ -1150,7 +1160,10 @@ class Schools(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.School, http_res)
+            return models.SchoolGetResponse(
+                result=unmarshal_json_response(models.School, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1207,7 +1220,7 @@ class Schools(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.School:
+    ) -> models.SchoolGetResponse:
         r"""Get a School
 
         Retrieves the `School` with the given ID.
@@ -1290,7 +1303,10 @@ class Schools(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.School, http_res)
+            return models.SchoolGetResponse(
+                result=unmarshal_json_response(models.School, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1354,7 +1370,7 @@ class Schools(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.School:
+    ) -> models.SchoolUpdateResponse:
         r"""Update a School
 
         Update a School
@@ -1455,7 +1471,10 @@ class Schools(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.School, http_res)
+            return models.SchoolUpdateResponse(
+                result=unmarshal_json_response(models.School, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1524,7 +1543,7 @@ class Schools(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.School:
+    ) -> models.SchoolUpdateResponse:
         r"""Update a School
 
         Update a School
@@ -1625,7 +1644,10 @@ class Schools(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.School, http_res)
+            return models.SchoolUpdateResponse(
+                result=unmarshal_json_response(models.School, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

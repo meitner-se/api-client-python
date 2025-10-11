@@ -15,7 +15,7 @@ class AuditEventSearch422ResponseBodyErrorData(BaseModel):
     error: models_auditeventsearch422responsebody_error.AuditEventSearch422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class AuditEventSearch422ResponseBodyError(MeitnerError):
     r"""Validation error for AuditEvent Search operation - request data failed validation"""
 

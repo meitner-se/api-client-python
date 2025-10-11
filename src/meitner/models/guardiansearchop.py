@@ -11,7 +11,7 @@ from .guardiansearch_response import (
 )
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -45,6 +45,7 @@ class GuardianSearchRequest(BaseModel):
 
 
 class GuardianSearchResponseResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: GuardianSearchResponseTypedDict
 
 
@@ -53,5 +54,7 @@ class GuardianSearchResponseResponse(BaseModel):
         Callable[[], Optional[GuardianSearchResponseResponse]],
         Callable[[], Awaitable[Optional[GuardianSearchResponseResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: GuardianSearchResponse

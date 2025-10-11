@@ -11,7 +11,7 @@ from .auditeventsearch_response import (
 )
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -45,6 +45,7 @@ class AuditEventSearchRequest(BaseModel):
 
 
 class AuditEventSearchResponseResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: AuditEventSearchResponseTypedDict
 
 
@@ -53,5 +54,7 @@ class AuditEventSearchResponseResponse(BaseModel):
         Callable[[], Optional[AuditEventSearchResponseResponse]],
         Callable[[], Awaitable[Optional[AuditEventSearchResponseResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: AuditEventSearchResponse

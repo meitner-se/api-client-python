@@ -4,7 +4,7 @@ from __future__ import annotations
 from .guardianlist import GuardianList, GuardianListTypedDict
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -30,6 +30,7 @@ class GuardianListRequest(BaseModel):
 
 
 class GuardianListResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: GuardianListTypedDict
 
 
@@ -38,5 +39,7 @@ class GuardianListResponse(BaseModel):
         Callable[[], Optional[GuardianListResponse]],
         Callable[[], Awaitable[Optional[GuardianListResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: GuardianList

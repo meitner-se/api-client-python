@@ -11,7 +11,7 @@ from .studentsearch_response import (
 )
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -45,6 +45,7 @@ class StudentSearchRequest(BaseModel):
 
 
 class StudentSearchResponseResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: StudentSearchResponseTypedDict
 
 
@@ -53,5 +54,7 @@ class StudentSearchResponseResponse(BaseModel):
         Callable[[], Optional[StudentSearchResponseResponse]],
         Callable[[], Awaitable[Optional[StudentSearchResponseResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: StudentSearchResponse

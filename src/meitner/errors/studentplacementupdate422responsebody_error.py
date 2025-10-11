@@ -15,7 +15,7 @@ class StudentPlacementUpdate422ResponseBodyErrorData(BaseModel):
     error: models_studentplacementupdate422responsebody_error.StudentPlacementUpdate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class StudentPlacementUpdate422ResponseBodyError(MeitnerError):
     r"""Validation error for StudentPlacement Update operation - request data failed validation"""
 

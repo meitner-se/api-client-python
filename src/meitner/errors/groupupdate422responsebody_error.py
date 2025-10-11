@@ -15,7 +15,7 @@ class GroupUpdate422ResponseBodyErrorData(BaseModel):
     error: models_groupupdate422responsebody_error.GroupUpdate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class GroupUpdate422ResponseBodyError(MeitnerError):
     r"""Validation error for Group Update operation - request data failed validation"""
 

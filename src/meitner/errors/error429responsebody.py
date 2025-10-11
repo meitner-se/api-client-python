@@ -13,7 +13,7 @@ class Error429ResponseBodyData(BaseModel):
     error: models_error429responsebody.Error429ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error429ResponseBody(MeitnerError):
     r"""Too Many Requests - When the rate limit has been exceeded"""
 

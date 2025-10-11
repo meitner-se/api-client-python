@@ -15,7 +15,7 @@ class GroupCreate422ResponseBodyErrorData(BaseModel):
     error: models_groupcreate422responsebody_error.GroupCreate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class GroupCreate422ResponseBodyError(MeitnerError):
     r"""Validation error for Group Create operation - request data failed validation"""
 

@@ -13,7 +13,7 @@ class Error403ResponseBodyData(BaseModel):
     error: models_error403responsebody.Error403ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error403ResponseBody(MeitnerError):
     r"""Forbidden - Request is authenticated, but the user is not allowed to perform the operation"""
 
