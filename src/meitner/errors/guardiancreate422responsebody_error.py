@@ -15,7 +15,7 @@ class GuardianCreate422ResponseBodyErrorData(BaseModel):
     error: models_guardiancreate422responsebody_error.GuardianCreate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class GuardianCreate422ResponseBodyError(MeitnerError):
     r"""Validation error for Guardian Create operation - request data failed validation"""
 

@@ -13,7 +13,7 @@ class Error401ResponseBodyData(BaseModel):
     error: models_error401responsebody.Error401ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error401ResponseBody(MeitnerError):
     r"""Unauthorized - The request is missing valid authentication credentials"""
 

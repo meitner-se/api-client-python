@@ -129,6 +129,7 @@ class Guardians(BaseSDK):
             return models.GuardianListResponse(
                 result=unmarshal_json_response(models.GuardianList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -299,6 +300,7 @@ class Guardians(BaseSDK):
             return models.GuardianListResponse(
                 result=unmarshal_json_response(models.GuardianList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -370,7 +372,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Guardian:
+    ) -> models.GuardianCreateResponse:
         r"""Create a new Guardian
 
         Create a new Guardian
@@ -481,7 +483,10 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Guardian, http_res)
+            return models.GuardianCreateResponse(
+                result=unmarshal_json_response(models.Guardian, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -557,7 +562,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Guardian:
+    ) -> models.GuardianCreateResponse:
         r"""Create a new Guardian
 
         Create a new Guardian
@@ -668,7 +673,10 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Guardian, http_res)
+            return models.GuardianCreateResponse(
+                result=unmarshal_json_response(models.Guardian, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -856,6 +864,7 @@ class Guardians(BaseSDK):
             return models.GuardianSearchResponseResponse(
                 result=unmarshal_json_response(models.GuardianSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1047,6 +1056,7 @@ class Guardians(BaseSDK):
             return models.GuardianSearchResponseResponse(
                 result=unmarshal_json_response(models.GuardianSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1109,7 +1119,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Guardian:
+    ) -> models.GuardianGetResponse:
         r"""Get a Guardian
 
         Retrieves the `Guardian` with the given ID.
@@ -1192,7 +1202,10 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Guardian, http_res)
+            return models.GuardianGetResponse(
+                result=unmarshal_json_response(models.Guardian, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1249,7 +1262,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Guardian:
+    ) -> models.GuardianGetResponse:
         r"""Get a Guardian
 
         Retrieves the `Guardian` with the given ID.
@@ -1332,7 +1345,10 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Guardian, http_res)
+            return models.GuardianGetResponse(
+                result=unmarshal_json_response(models.Guardian, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1389,7 +1405,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.GuardianDeleteResponse:
         r"""Delete a Guardian
 
         Delete a Guardian
@@ -1472,7 +1488,9 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.GuardianDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1529,7 +1547,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.GuardianDeleteResponse:
         r"""Delete a Guardian
 
         Delete a Guardian
@@ -1612,7 +1630,9 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.GuardianDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1684,7 +1704,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Guardian:
+    ) -> models.GuardianUpdateResponse:
         r"""Update a Guardian
 
         Update a Guardian
@@ -1799,7 +1819,10 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Guardian, http_res)
+            return models.GuardianUpdateResponse(
+                result=unmarshal_json_response(models.Guardian, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1876,7 +1899,7 @@ class Guardians(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Guardian:
+    ) -> models.GuardianUpdateResponse:
         r"""Update a Guardian
 
         Update a Guardian
@@ -1991,7 +2014,10 @@ class Guardians(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Guardian, http_res)
+            return models.GuardianUpdateResponse(
+                result=unmarshal_json_response(models.Guardian, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

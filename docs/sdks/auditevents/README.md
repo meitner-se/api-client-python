@@ -251,7 +251,7 @@ with Meitner(
 
 ### Response
 
-**[models.AuditEvent](../../models/auditevent.md)**
+**[models.AuditEventGetResponse](../../models/auditeventgetresponse.md)**
 
 ### Errors
 

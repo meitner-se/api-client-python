@@ -129,6 +129,7 @@ class AuditEvents(BaseSDK):
             return models.AuditEventListResponse(
                 result=unmarshal_json_response(models.AuditEventList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -299,6 +300,7 @@ class AuditEvents(BaseSDK):
             return models.AuditEventListResponse(
                 result=unmarshal_json_response(models.AuditEventList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -486,6 +488,7 @@ class AuditEvents(BaseSDK):
                     models.AuditEventSearchResponse, http_res
                 ),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -681,6 +684,7 @@ class AuditEvents(BaseSDK):
                     models.AuditEventSearchResponse, http_res
                 ),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -743,7 +747,7 @@ class AuditEvents(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AuditEvent:
+    ) -> models.AuditEventGetResponse:
         r"""Get a AuditEvent
 
         Retrieves the `AuditEvent` with the given ID.
@@ -826,7 +830,10 @@ class AuditEvents(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.AuditEvent, http_res)
+            return models.AuditEventGetResponse(
+                result=unmarshal_json_response(models.AuditEvent, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -883,7 +890,7 @@ class AuditEvents(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.AuditEvent:
+    ) -> models.AuditEventGetResponse:
         r"""Get a AuditEvent
 
         Retrieves the `AuditEvent` with the given ID.
@@ -966,7 +973,10 @@ class AuditEvents(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.AuditEvent, http_res)
+            return models.AuditEventGetResponse(
+                result=unmarshal_json_response(models.AuditEvent, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

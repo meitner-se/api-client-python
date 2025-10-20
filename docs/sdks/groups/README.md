@@ -114,7 +114,7 @@ with Meitner(
 
 ### Response
 
-**[models.Group](../../models/group.md)**
+**[models.GroupCreateResponse](../../models/groupcreateresponse.md)**
 
 ### Errors
 
@@ -389,7 +389,7 @@ with Meitner(
 
 ### Response
 
-**[models.Group](../../models/group.md)**
+**[models.GroupGetResponse](../../models/groupgetresponse.md)**
 
 ### Errors
 
@@ -423,9 +423,10 @@ with Meitner(
     ),
 ) as m_client:
 
-    m_client.groups.delete(id="123e4567-e89b-12d3-a456-426614174000")
+    res = m_client.groups.delete(id="123e4567-e89b-12d3-a456-426614174000")
 
-    # Use the SDK ...
+    # Handle response
+    print(res)
 
 ```
 
@@ -435,6 +436,10 @@ with Meitner(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the Group to delete                        | 123e4567-e89b-12d3-a456-426614174000                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.GroupDeleteResponse](../../models/groupdeleteresponse.md)**
 
 ### Errors
 
@@ -497,7 +502,7 @@ with Meitner(
 
 ### Response
 
-**[models.Group](../../models/group.md)**
+**[models.GroupUpdateResponse](../../models/groupupdateresponse.md)**
 
 ### Errors
 

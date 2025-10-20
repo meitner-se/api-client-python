@@ -13,7 +13,7 @@ class Error409ResponseBodyData(BaseModel):
     error: models_error409responsebody.Error409ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error409ResponseBody(MeitnerError):
     r"""Conflict - The request could not be completed due to a conflict"""
 

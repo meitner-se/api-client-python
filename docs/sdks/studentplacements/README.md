@@ -113,7 +113,7 @@ with Meitner(
 
 ### Response
 
-**[models.StudentPlacement](../../models/studentplacement.md)**
+**[models.StudentPlacementCreateResponse](../../models/studentplacementcreateresponse.md)**
 
 ### Errors
 
@@ -433,7 +433,7 @@ with Meitner(
 
 ### Response
 
-**[models.StudentPlacement](../../models/studentplacement.md)**
+**[models.StudentPlacementGetResponse](../../models/studentplacementgetresponse.md)**
 
 ### Errors
 
@@ -467,9 +467,10 @@ with Meitner(
     ),
 ) as m_client:
 
-    m_client.student_placements.delete(id="123e4567-e89b-12d3-a456-426614174000")
+    res = m_client.student_placements.delete(id="123e4567-e89b-12d3-a456-426614174000")
 
-    # Use the SDK ...
+    # Handle response
+    print(res)
 
 ```
 
@@ -479,6 +480,10 @@ with Meitner(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | The unique identifier of the StudentPlacement to delete             | 123e4567-e89b-12d3-a456-426614174000                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.StudentPlacementDeleteResponse](../../models/studentplacementdeleteresponse.md)**
 
 ### Errors
 
@@ -538,7 +543,7 @@ with Meitner(
 
 ### Response
 
-**[models.StudentPlacement](../../models/studentplacement.md)**
+**[models.StudentPlacementUpdateResponse](../../models/studentplacementupdateresponse.md)**
 
 ### Errors
 
@@ -589,7 +594,7 @@ with Meitner(
 
 ### Response
 
-**[models.StudentPlacement](../../models/studentplacement.md)**
+**[models.StudentPlacementArchiveResponse](../../models/studentplacementarchiveresponse.md)**
 
 ### Errors
 
@@ -639,7 +644,7 @@ with Meitner(
 
 ### Response
 
-**[models.StudentPlacement](../../models/studentplacement.md)**
+**[models.StudentPlacementRestoreResponse](../../models/studentplacementrestoreresponse.md)**
 
 ### Errors
 

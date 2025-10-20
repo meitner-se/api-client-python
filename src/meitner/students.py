@@ -130,6 +130,7 @@ class Students(BaseSDK):
             return models.StudentListResponse(
                 result=unmarshal_json_response(models.StudentList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -300,6 +301,7 @@ class Students(BaseSDK):
             return models.StudentListResponse(
                 result=unmarshal_json_response(models.StudentList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -372,7 +374,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Student:
+    ) -> models.StudentCreateResponse:
         r"""Create a new Student
 
         Create a new Student
@@ -485,7 +487,10 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Student, http_res)
+            return models.StudentCreateResponse(
+                result=unmarshal_json_response(models.Student, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -562,7 +567,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Student:
+    ) -> models.StudentCreateResponse:
         r"""Create a new Student
 
         Create a new Student
@@ -675,7 +680,10 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Student, http_res)
+            return models.StudentCreateResponse(
+                result=unmarshal_json_response(models.Student, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -861,6 +869,7 @@ class Students(BaseSDK):
             return models.StudentSearchResponseResponse(
                 result=unmarshal_json_response(models.StudentSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1050,6 +1059,7 @@ class Students(BaseSDK):
             return models.StudentSearchResponseResponse(
                 result=unmarshal_json_response(models.StudentSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1112,7 +1122,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Student:
+    ) -> models.StudentGetResponse:
         r"""Get a Student
 
         Retrieves the `Student` with the given ID.
@@ -1195,7 +1205,10 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Student, http_res)
+            return models.StudentGetResponse(
+                result=unmarshal_json_response(models.Student, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1252,7 +1265,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Student:
+    ) -> models.StudentGetResponse:
         r"""Get a Student
 
         Retrieves the `Student` with the given ID.
@@ -1335,7 +1348,10 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Student, http_res)
+            return models.StudentGetResponse(
+                result=unmarshal_json_response(models.Student, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1392,7 +1408,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.StudentDeleteResponse:
         r"""Delete a Student
 
         Delete a Student
@@ -1475,7 +1491,9 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.StudentDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1532,7 +1550,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.StudentDeleteResponse:
         r"""Delete a Student
 
         Delete a Student
@@ -1615,7 +1633,9 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.StudentDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1688,7 +1708,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Student:
+    ) -> models.StudentUpdateResponse:
         r"""Update a Student
 
         Update a Student
@@ -1805,7 +1825,10 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Student, http_res)
+            return models.StudentUpdateResponse(
+                result=unmarshal_json_response(models.Student, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1883,7 +1906,7 @@ class Students(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Student:
+    ) -> models.StudentUpdateResponse:
         r"""Update a Student
 
         Update a Student
@@ -2000,7 +2023,10 @@ class Students(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Student, http_res)
+            return models.StudentUpdateResponse(
+                result=unmarshal_json_response(models.Student, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

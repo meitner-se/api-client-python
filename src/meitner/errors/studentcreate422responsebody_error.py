@@ -15,7 +15,7 @@ class StudentCreate422ResponseBodyErrorData(BaseModel):
     error: models_studentcreate422responsebody_error.StudentCreate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class StudentCreate422ResponseBodyError(MeitnerError):
     r"""Validation error for Student Create operation - request data failed validation"""
 

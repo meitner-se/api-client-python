@@ -130,6 +130,7 @@ class EmployeePlacements(BaseSDK):
             return models.EmployeePlacementListResponse(
                 result=unmarshal_json_response(models.EmployeePlacementList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -300,6 +301,7 @@ class EmployeePlacements(BaseSDK):
             return models.EmployeePlacementListResponse(
                 result=unmarshal_json_response(models.EmployeePlacementList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -369,7 +371,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.EmployeePlacement:
+    ) -> models.EmployeePlacementCreateResponse:
         r"""Create a new EmployeePlacement
 
         Create a new EmployeePlacement
@@ -472,7 +474,10 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.EmployeePlacement, http_res)
+            return models.EmployeePlacementCreateResponse(
+                result=unmarshal_json_response(models.EmployeePlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -548,7 +553,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.EmployeePlacement:
+    ) -> models.EmployeePlacementCreateResponse:
         r"""Create a new EmployeePlacement
 
         Create a new EmployeePlacement
@@ -651,7 +656,10 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.EmployeePlacement, http_res)
+            return models.EmployeePlacementCreateResponse(
+                result=unmarshal_json_response(models.EmployeePlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -846,6 +854,7 @@ class EmployeePlacements(BaseSDK):
                     models.EmployeePlacementSearchResponse, http_res
                 ),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1046,6 +1055,7 @@ class EmployeePlacements(BaseSDK):
                     models.EmployeePlacementSearchResponse, http_res
                 ),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1110,7 +1120,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.EmployeePlacement:
+    ) -> models.EmployeePlacementGetResponse:
         r"""Get a EmployeePlacement
 
         Retrieves the `EmployeePlacement` with the given ID.
@@ -1193,7 +1203,10 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.EmployeePlacement, http_res)
+            return models.EmployeePlacementGetResponse(
+                result=unmarshal_json_response(models.EmployeePlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1250,7 +1263,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.EmployeePlacement:
+    ) -> models.EmployeePlacementGetResponse:
         r"""Get a EmployeePlacement
 
         Retrieves the `EmployeePlacement` with the given ID.
@@ -1333,7 +1346,10 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.EmployeePlacement, http_res)
+            return models.EmployeePlacementGetResponse(
+                result=unmarshal_json_response(models.EmployeePlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1390,7 +1406,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.EmployeePlacementDeleteResponse:
         r"""Delete a EmployeePlacement
 
         Delete a EmployeePlacement
@@ -1473,7 +1489,9 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.EmployeePlacementDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1530,7 +1548,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.EmployeePlacementDeleteResponse:
         r"""Delete a EmployeePlacement
 
         Delete a EmployeePlacement
@@ -1613,7 +1631,9 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.EmployeePlacementDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1681,7 +1701,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.EmployeePlacement:
+    ) -> models.EmployeePlacementUpdateResponse:
         r"""Update a EmployeePlacement
 
         Update a EmployeePlacement
@@ -1788,7 +1808,10 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.EmployeePlacement, http_res)
+            return models.EmployeePlacementUpdateResponse(
+                result=unmarshal_json_response(models.EmployeePlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1863,7 +1886,7 @@ class EmployeePlacements(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.EmployeePlacement:
+    ) -> models.EmployeePlacementUpdateResponse:
         r"""Update a EmployeePlacement
 
         Update a EmployeePlacement
@@ -1970,7 +1993,10 @@ class EmployeePlacements(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.EmployeePlacement, http_res)
+            return models.EmployeePlacementUpdateResponse(
+                result=unmarshal_json_response(models.EmployeePlacement, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

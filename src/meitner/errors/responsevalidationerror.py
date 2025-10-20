@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from meitner.errors import MeitnerError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class ResponseValidationError(MeitnerError):
     """Error raised when there is a type mismatch between the response data and the expected Pydantic model."""
 

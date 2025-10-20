@@ -15,7 +15,7 @@ class GuardianUpdate422ResponseBodyErrorData(BaseModel):
     error: models_guardianupdate422responsebody_error.GuardianUpdate422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class GuardianUpdate422ResponseBodyError(MeitnerError):
     r"""Validation error for Guardian Update operation - request data failed validation"""
 
