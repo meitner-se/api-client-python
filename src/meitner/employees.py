@@ -130,6 +130,7 @@ class Employees(BaseSDK):
             return models.EmployeeListResponse(
                 result=unmarshal_json_response(models.EmployeeList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -300,6 +301,7 @@ class Employees(BaseSDK):
             return models.EmployeeListResponse(
                 result=unmarshal_json_response(models.EmployeeList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -372,7 +374,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Employee:
+    ) -> models.EmployeeCreateResponse:
         r"""Create a new Employee
 
         Create a new Employee
@@ -485,7 +487,10 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Employee, http_res)
+            return models.EmployeeCreateResponse(
+                result=unmarshal_json_response(models.Employee, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -562,7 +567,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Employee:
+    ) -> models.EmployeeCreateResponse:
         r"""Create a new Employee
 
         Create a new Employee
@@ -675,7 +680,10 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Employee, http_res)
+            return models.EmployeeCreateResponse(
+                result=unmarshal_json_response(models.Employee, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -863,6 +871,7 @@ class Employees(BaseSDK):
             return models.EmployeeSearchResponseResponse(
                 result=unmarshal_json_response(models.EmployeeSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1054,6 +1063,7 @@ class Employees(BaseSDK):
             return models.EmployeeSearchResponseResponse(
                 result=unmarshal_json_response(models.EmployeeSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1116,7 +1126,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Employee:
+    ) -> models.EmployeeGetResponse:
         r"""Get a Employee
 
         Retrieves the `Employee` with the given ID.
@@ -1199,7 +1209,10 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Employee, http_res)
+            return models.EmployeeGetResponse(
+                result=unmarshal_json_response(models.Employee, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1256,7 +1269,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Employee:
+    ) -> models.EmployeeGetResponse:
         r"""Get a Employee
 
         Retrieves the `Employee` with the given ID.
@@ -1339,7 +1352,10 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Employee, http_res)
+            return models.EmployeeGetResponse(
+                result=unmarshal_json_response(models.Employee, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1396,7 +1412,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.EmployeeDeleteResponse:
         r"""Delete a Employee
 
         Delete a Employee
@@ -1479,7 +1495,9 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.EmployeeDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1536,7 +1554,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.EmployeeDeleteResponse:
         r"""Delete a Employee
 
         Delete a Employee
@@ -1619,7 +1637,9 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.EmployeeDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1692,7 +1712,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Employee:
+    ) -> models.EmployeeUpdateResponse:
         r"""Update a Employee
 
         Update a Employee
@@ -1809,7 +1829,10 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Employee, http_res)
+            return models.EmployeeUpdateResponse(
+                result=unmarshal_json_response(models.Employee, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1887,7 +1910,7 @@ class Employees(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Employee:
+    ) -> models.EmployeeUpdateResponse:
         r"""Update a Employee
 
         Update a Employee
@@ -2004,7 +2027,10 @@ class Employees(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Employee, http_res)
+            return models.EmployeeUpdateResponse(
+                result=unmarshal_json_response(models.Employee, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

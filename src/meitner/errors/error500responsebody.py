@@ -13,7 +13,7 @@ class Error500ResponseBodyData(BaseModel):
     error: models_error500responsebody.Error500ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error500ResponseBody(MeitnerError):
     r"""Internal Server Error - An unexpected server error occurred"""
 

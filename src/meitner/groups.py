@@ -129,6 +129,7 @@ class Groups(BaseSDK):
             return models.GroupListResponse(
                 result=unmarshal_json_response(models.GroupList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -299,6 +300,7 @@ class Groups(BaseSDK):
             return models.GroupListResponse(
                 result=unmarshal_json_response(models.GroupList, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -364,7 +366,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Group:
+    ) -> models.GroupCreateResponse:
         r"""Create a new Group
 
         Create a new Group
@@ -465,7 +467,10 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Group, http_res)
+            return models.GroupCreateResponse(
+                result=unmarshal_json_response(models.Group, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -535,7 +540,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Group:
+    ) -> models.GroupCreateResponse:
         r"""Create a new Group
 
         Create a new Group
@@ -636,7 +641,10 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "201", "application/json"):
-            return unmarshal_json_response(models.Group, http_res)
+            return models.GroupCreateResponse(
+                result=unmarshal_json_response(models.Group, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -822,6 +830,7 @@ class Groups(BaseSDK):
             return models.GroupSearchResponseResponse(
                 result=unmarshal_json_response(models.GroupSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1011,6 +1020,7 @@ class Groups(BaseSDK):
             return models.GroupSearchResponseResponse(
                 result=unmarshal_json_response(models.GroupSearchResponse, http_res),
                 next=next_func,
+                headers=utils.get_response_headers(http_res.headers),
             )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
@@ -1073,7 +1083,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Group:
+    ) -> models.GroupGetResponse:
         r"""Get a Group
 
         Retrieves the `Group` with the given ID.
@@ -1156,7 +1166,10 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Group, http_res)
+            return models.GroupGetResponse(
+                result=unmarshal_json_response(models.Group, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1213,7 +1226,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Group:
+    ) -> models.GroupGetResponse:
         r"""Get a Group
 
         Retrieves the `Group` with the given ID.
@@ -1296,7 +1309,10 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Group, http_res)
+            return models.GroupGetResponse(
+                result=unmarshal_json_response(models.Group, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1353,7 +1369,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.GroupDeleteResponse:
         r"""Delete a Group
 
         Delete a Group
@@ -1436,7 +1452,9 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.GroupDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1493,7 +1511,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ):
+    ) -> models.GroupDeleteResponse:
         r"""Delete a Group
 
         Delete a Group
@@ -1576,7 +1594,9 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "204", "*"):
-            return
+            return models.GroupDeleteResponse(
+                headers=utils.get_response_headers(http_res.headers)
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1640,7 +1660,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Group:
+    ) -> models.GroupUpdateResponse:
         r"""Update a Group
 
         Update a Group
@@ -1741,7 +1761,10 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Group, http_res)
+            return models.GroupUpdateResponse(
+                result=unmarshal_json_response(models.Group, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res
@@ -1810,7 +1833,7 @@ class Groups(BaseSDK):
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
         http_headers: Optional[Mapping[str, str]] = None,
-    ) -> models.Group:
+    ) -> models.GroupUpdateResponse:
         r"""Update a Group
 
         Update a Group
@@ -1911,7 +1934,10 @@ class Groups(BaseSDK):
 
         response_data: Any = None
         if utils.match_response(http_res, "200", "application/json"):
-            return unmarshal_json_response(models.Group, http_res)
+            return models.GroupUpdateResponse(
+                result=unmarshal_json_response(models.Group, http_res),
+                headers=utils.get_response_headers(http_res.headers),
+            )
         if utils.match_response(http_res, "400", "application/json"):
             response_data = unmarshal_json_response(
                 errors.Error400ResponseBodyData, http_res

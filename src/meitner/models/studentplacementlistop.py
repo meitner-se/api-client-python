@@ -4,7 +4,7 @@ from __future__ import annotations
 from .studentplacementlist import StudentPlacementList, StudentPlacementListTypedDict
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -30,6 +30,7 @@ class StudentPlacementListRequest(BaseModel):
 
 
 class StudentPlacementListResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: StudentPlacementListTypedDict
 
 
@@ -38,5 +39,7 @@ class StudentPlacementListResponse(BaseModel):
         Callable[[], Optional[StudentPlacementListResponse]],
         Callable[[], Awaitable[Optional[StudentPlacementListResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: StudentPlacementList

@@ -15,7 +15,7 @@ class GroupSearch422ResponseBodyErrorData(BaseModel):
     error: models_groupsearch422responsebody_error.GroupSearch422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class GroupSearch422ResponseBodyError(MeitnerError):
     r"""Validation error for Group Search operation - request data failed validation"""
 

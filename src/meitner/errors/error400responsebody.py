@@ -13,7 +13,7 @@ class Error400ResponseBodyData(BaseModel):
     error: models_error400responsebody.Error400ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class Error400ResponseBody(MeitnerError):
     r"""Bad Request - The request was malformed or contained invalid parameters"""
 

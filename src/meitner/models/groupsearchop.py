@@ -8,7 +8,7 @@ from .groupsearch_requestbody import (
 from .groupsearch_response import GroupSearchResponse, GroupSearchResponseTypedDict
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
-from typing import Awaitable, Callable, Optional, Union
+from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
@@ -42,6 +42,7 @@ class GroupSearchRequest(BaseModel):
 
 
 class GroupSearchResponseResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
     result: GroupSearchResponseTypedDict
 
 
@@ -50,5 +51,7 @@ class GroupSearchResponseResponse(BaseModel):
         Callable[[], Optional[GroupSearchResponseResponse]],
         Callable[[], Awaitable[Optional[GroupSearchResponseResponse]]],
     ]
+
+    headers: Dict[str, List[str]]
 
     result: GroupSearchResponse

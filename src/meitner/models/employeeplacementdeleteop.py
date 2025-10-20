@@ -3,6 +3,7 @@
 from __future__ import annotations
 from meitner.types import BaseModel
 from meitner.utils import FieldMetadata, PathParamMetadata
+from typing import Dict, List
 from typing_extensions import Annotated, TypedDict
 
 
@@ -16,3 +17,11 @@ class EmployeePlacementDeleteRequest(BaseModel):
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
     r"""The unique identifier of the EmployeePlacement to delete"""
+
+
+class EmployeePlacementDeleteResponseTypedDict(TypedDict):
+    headers: Dict[str, List[str]]
+
+
+class EmployeePlacementDeleteResponse(BaseModel):
+    headers: Dict[str, List[str]]

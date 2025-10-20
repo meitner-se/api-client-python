@@ -15,7 +15,7 @@ class GuardianSearch422ResponseBodyErrorData(BaseModel):
     error: models_guardiansearch422responsebody_error.GuardianSearch422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class GuardianSearch422ResponseBodyError(MeitnerError):
     r"""Validation error for Guardian Search operation - request data failed validation"""
 

@@ -15,7 +15,7 @@ class SchoolSearch422ResponseBodyErrorData(BaseModel):
     error: models_schoolsearch422responsebody_error.SchoolSearch422ResponseBodyError
 
 
-@dataclass(frozen=True)
+@dataclass(unsafe_hash=True)
 class SchoolSearch422ResponseBodyError(MeitnerError):
     r"""Validation error for School Search operation - request data failed validation"""
 
