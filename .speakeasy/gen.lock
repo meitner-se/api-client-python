@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: 5e8370ebbd9b700f19c3f9fb03b85421
+  docChecksum: c3498ffb25cb875dfda085e34d15c67e
   docVersion: v1
-  speakeasyVersion: 1.637.0
-  generationVersion: 2.727.4
-  releaseVersion: 0.1.0
-  configChecksum: 78051a02ef215137291351778d5f74da
+  speakeasyVersion: 1.658.1
+  generationVersion: 2.755.6
+  releaseVersion: 0.2.0
+  configChecksum: fcc7588bb6e6a3a0772874dd81998a12
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
   published: true
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.5
-    core: 5.23.0
+    core: 5.23.8
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.0
@@ -23,7 +23,7 @@ features:
     flattening: 3.1.1
     globalSecurity: 3.0.4
     globalSecurityCallbacks: 1.0.0
-    globalServerURLs: 3.1.1
+    globalServerURLs: 3.2.0
     groups: 3.0.1
     methodArguments: 1.0.2
     nameOverrides: 3.0.1

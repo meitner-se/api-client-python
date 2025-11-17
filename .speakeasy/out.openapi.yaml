@@ -4759,7 +4759,7 @@
               "SWE",
               null
             ],
-            "description": "The mother tongue of the student",
+            "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "startDate": {
@@ -12715,7 +12715,7 @@
               "example",
               null
             ],
-            "description": "The mother tongue of the student",
+            "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "startDate": {
@@ -12947,7 +12947,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The mother tongue of the student"
+            "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."
           },
           "startDate": {
             "type": "array",
@@ -13024,7 +13024,7 @@
               "example",
               null
             ],
-            "description": "The mother tongue of the student",
+            "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "archiveYear": {
@@ -13090,7 +13090,7 @@
               true,
               null
             ],
-            "description": "The mother tongue of the student",
+            "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "endDate": {
@@ -25727,7 +25727,7 @@
                     "SWE",
                     null
                   ],
-                  "description": "The mother tongue of the student",
+                  "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "startDate": {
@@ -25836,7 +25836,7 @@
                     "SWE",
                     null
                   ],
-                  "description": "The mother tongue of the student",
+                  "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "startDate": {

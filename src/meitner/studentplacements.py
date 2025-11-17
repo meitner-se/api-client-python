@@ -384,7 +384,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
-        :param mother_tongue: The mother tongue of the student
+        :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -569,7 +569,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
-        :param mother_tongue: The mother tongue of the student
+        :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1719,7 +1719,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
-        :param mother_tongue: The mother tongue of the student
+        :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1907,7 +1907,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
-        :param mother_tongue: The mother tongue of the student
+        :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method

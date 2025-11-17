@@ -375,9 +375,12 @@ class Groups(BaseSDK):
         :param title: The title of the group, must be unique within the school.
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param category: If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
+
         :param types: The types of the group
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
+
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -549,9 +552,12 @@ class Groups(BaseSDK):
         :param title: The title of the group, must be unique within the school.
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param category: If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
+
         :param types: The types of the group
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
+
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1670,7 +1676,9 @@ class Groups(BaseSDK):
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param types: The types of the group
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
+
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1843,7 +1851,9 @@ class Groups(BaseSDK):
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param types: The types of the group
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
+
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
