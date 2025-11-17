@@ -493,7 +493,7 @@ import os
 
 
 with Meitner(
-    server="staging",
+    server="production",
     security=models.Security(
         client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
         client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),

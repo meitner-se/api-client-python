@@ -383,7 +383,9 @@ class Guardians(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
         :param identity_temporary: If the identity number is temporary for the guardian
         :param address: The address of the guardian
-        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the guardian, will be used for communication with the guardian from the system.
         :param phone_number2: The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.
@@ -573,7 +575,9 @@ class Guardians(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
         :param identity_temporary: If the identity number is temporary for the guardian
         :param address: The address of the guardian
-        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the guardian, will be used for communication with the guardian from the system.
         :param phone_number2: The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.
@@ -1716,7 +1720,9 @@ class Guardians(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
         :param identity_temporary: If the identity number is temporary for the guardian
         :param address: The address of the guardian
-        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the guardian, will be used for communication with the guardian from the system.
         :param phone_number2: The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.
@@ -1911,7 +1917,9 @@ class Guardians(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
         :param identity_temporary: If the identity number is temporary for the guardian
         :param address: The address of the guardian
-        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the guardian, will be used for communication with the guardian from the system.
         :param phone_number2: The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.

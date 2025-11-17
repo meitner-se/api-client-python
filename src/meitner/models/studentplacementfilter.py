@@ -174,7 +174,7 @@ class StudentPlacementFilterEqualsTypedDict(TypedDict):
     has_childcare: NotRequired[Nullable[bool]]
     r"""Whether the student has childcare"""
     mother_tongue: NotRequired[Nullable[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -227,7 +227,7 @@ class StudentPlacementFilterEquals(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
@@ -469,7 +469,7 @@ class StudentPlacementFilterNotEqualsTypedDict(TypedDict):
     has_childcare: NotRequired[Nullable[bool]]
     r"""Whether the student has childcare"""
     mother_tongue: NotRequired[Nullable[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -522,7 +522,7 @@ class StudentPlacementFilterNotEquals(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
@@ -1179,7 +1179,7 @@ class StudentPlacementFilterContainsTypedDict(TypedDict):
     has_childcare: NotRequired[List[bool]]
     r"""Whether the student has childcare"""
     mother_tongue: NotRequired[List[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[List[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[List[date]]
@@ -1224,7 +1224,7 @@ class StudentPlacementFilterContains(BaseModel):
     mother_tongue: Annotated[
         Optional[List[str]], pydantic.Field(alias="motherTongue")
     ] = None
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[Optional[List[date]], pydantic.Field(alias="startDate")] = (
         None
@@ -1341,7 +1341,7 @@ class StudentPlacementFilterNotContainsTypedDict(TypedDict):
     has_childcare: NotRequired[List[bool]]
     r"""Whether the student has childcare"""
     mother_tongue: NotRequired[List[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[List[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[List[date]]
@@ -1386,7 +1386,7 @@ class StudentPlacementFilterNotContains(BaseModel):
     mother_tongue: Annotated[
         Optional[List[str]], pydantic.Field(alias="motherTongue")
     ] = None
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[Optional[List[date]], pydantic.Field(alias="startDate")] = (
         None
@@ -1512,7 +1512,7 @@ class StudentPlacementFilterLikeTypedDict(TypedDict):
     external: NotRequired[Nullable[StudentPlacementFilterLikeExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
     mother_tongue: NotRequired[Nullable[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     archive_year: NotRequired[Nullable[str]]
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
@@ -1529,7 +1529,7 @@ class StudentPlacementFilterLike(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     archive_year: Annotated[
         OptionalNullable[str], pydantic.Field(alias="archiveYear")
@@ -1634,7 +1634,7 @@ class StudentPlacementFilterNotLikeTypedDict(TypedDict):
     external: NotRequired[Nullable[StudentPlacementFilterNotLikeExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
     mother_tongue: NotRequired[Nullable[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     archive_year: NotRequired[Nullable[str]]
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
@@ -1651,7 +1651,7 @@ class StudentPlacementFilterNotLike(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     archive_year: Annotated[
         OptionalNullable[str], pydantic.Field(alias="archiveYear")
@@ -1810,7 +1810,7 @@ class StudentPlacementFilterNullTypedDict(TypedDict):
     school_year: NotRequired[Nullable[bool]]
     r"""The school year the student is placed in"""
     mother_tongue: NotRequired[Nullable[bool]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     end_date: NotRequired[Nullable[bool]]
     r"""The end date of the placement"""
     archive_year: NotRequired[Nullable[bool]]
@@ -1836,7 +1836,7 @@ class StudentPlacementFilterNull(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     end_date: Annotated[OptionalNullable[bool], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement"""
@@ -2019,7 +2019,7 @@ class StudentPlacementFilterNotNullTypedDict(TypedDict):
     school_year: NotRequired[Nullable[bool]]
     r"""The school year the student is placed in"""
     mother_tongue: NotRequired[Nullable[bool]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     end_date: NotRequired[Nullable[bool]]
     r"""The end date of the placement"""
     archive_year: NotRequired[Nullable[bool]]
@@ -2045,7 +2045,7 @@ class StudentPlacementFilterNotNull(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     end_date: Annotated[OptionalNullable[bool], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement"""

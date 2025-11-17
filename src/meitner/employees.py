@@ -387,7 +387,9 @@ class Employees(BaseSDK):
         :param identity_temporary: If the identity number is temporary for the employee
         :param date_of_birth: The date of birth of the employee
         :param address: The address of the employee
-        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.
         :param phone_number2: The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.
@@ -580,7 +582,9 @@ class Employees(BaseSDK):
         :param identity_temporary: If the identity number is temporary for the employee
         :param date_of_birth: The date of birth of the employee
         :param address: The address of the employee
-        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.
         :param phone_number2: The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.
@@ -1726,7 +1730,9 @@ class Employees(BaseSDK):
         :param identity_temporary: If the identity number is temporary for the employee
         :param date_of_birth: The date of birth of the employee
         :param address: The address of the employee
-        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.
         :param phone_number2: The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.
@@ -1924,7 +1930,9 @@ class Employees(BaseSDK):
         :param identity_temporary: If the identity number is temporary for the employee
         :param date_of_birth: The date of birth of the employee
         :param address: The address of the employee
-        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization. Can be used to login to the system if password-authentication is enabled for the organization.
+        :param email_address1: The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.
+            Can be used to login to the system if password-authentication is enabled for the organization.
+
         :param email_address2: The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.
         :param phone_number2: The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.

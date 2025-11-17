@@ -62,7 +62,7 @@ class StudentPlacementUpdateTypedDict(TypedDict):
     has_childcare: NotRequired[bool]
     r"""Whether the student has childcare"""
     mother_tongue: NotRequired[Nullable[str]]
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     end_date: NotRequired[Nullable[date]]
     r"""The end date of the placement"""
 
@@ -95,7 +95,7 @@ class StudentPlacementUpdate(BaseModel):
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
-    r"""The mother tongue of the student"""
+    r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     end_date: Annotated[OptionalNullable[date], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement"""
