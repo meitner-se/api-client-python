@@ -8,6 +8,7 @@ EmployeePlacementRole = Literal[
     "Admin",
     "CareTeam",
     "Manager",
+    "MealPlanner",
     "OtherPersonnel",
     "Scheduler",
     "Teacher",

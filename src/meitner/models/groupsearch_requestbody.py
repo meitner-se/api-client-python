@@ -134,9 +134,7 @@ EqualsTypesRequestBody = Literal[
     "Childcare",
     "Mentor",
 ]
-r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-"""
+r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
 
 class GroupSearchEqualsTypedDict(TypedDict):
@@ -157,9 +155,7 @@ class GroupSearchEqualsTypedDict(TypedDict):
     title: NotRequired[Nullable[str]]
     r"""The title of the group, must be unique within the school."""
     types: NotRequired[Nullable[EqualsTypesRequestBody]]
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
     moderator_i_ds: NotRequired[Nullable[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -196,9 +192,7 @@ class GroupSearchEquals(BaseModel):
     r"""The title of the group, must be unique within the school."""
 
     types: OptionalNullable[EqualsTypesRequestBody] = UNSET
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
     moderator_i_ds: Annotated[
         OptionalNullable[str], pydantic.Field(alias="moderatorIDs")
@@ -386,9 +380,7 @@ NotEqualsTypesRequestBody = Literal[
     "Childcare",
     "Mentor",
 ]
-r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-"""
+r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
 
 class GroupSearchNotEqualsTypedDict(TypedDict):
@@ -409,9 +401,7 @@ class GroupSearchNotEqualsTypedDict(TypedDict):
     title: NotRequired[Nullable[str]]
     r"""The title of the group, must be unique within the school."""
     types: NotRequired[Nullable[NotEqualsTypesRequestBody]]
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
     moderator_i_ds: NotRequired[Nullable[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -448,9 +438,7 @@ class GroupSearchNotEquals(BaseModel):
     r"""The title of the group, must be unique within the school."""
 
     types: OptionalNullable[NotEqualsTypesRequestBody] = UNSET
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
     moderator_i_ds: Annotated[
         OptionalNullable[str], pydantic.Field(alias="moderatorIDs")
@@ -1004,9 +992,7 @@ class GroupSearchContainsTypedDict(TypedDict):
     title: NotRequired[List[str]]
     r"""The title of the group, must be unique within the school."""
     types: NotRequired[List[GroupType]]
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
     moderator_i_ds: NotRequired[List[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -1041,9 +1027,7 @@ class GroupSearchContains(BaseModel):
     r"""The title of the group, must be unique within the school."""
 
     types: Optional[List[GroupType]] = None
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
     moderator_i_ds: Annotated[
         Optional[List[str]], pydantic.Field(alias="moderatorIDs")
@@ -1185,9 +1169,7 @@ class GroupSearchNotContainsTypedDict(TypedDict):
     title: NotRequired[List[str]]
     r"""The title of the group, must be unique within the school."""
     types: NotRequired[List[GroupType]]
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
     moderator_i_ds: NotRequired[List[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -1222,9 +1204,7 @@ class GroupSearchNotContains(BaseModel):
     r"""The title of the group, must be unique within the school."""
 
     types: Optional[List[GroupType]] = None
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
     moderator_i_ds: Annotated[
         Optional[List[str]], pydantic.Field(alias="moderatorIDs")
@@ -1593,9 +1573,7 @@ class GroupSearchNullTypedDict(TypedDict):
     external: NotRequired[Nullable[GroupSearchNullExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the employee from another system, used for third-party integration tracking."""
     types: NotRequired[Nullable[bool]]
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
     moderator_i_ds: NotRequired[Nullable[bool]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -1616,9 +1594,7 @@ class GroupSearchNull(BaseModel):
     r"""External is a reusable object that can be used to store external information about the employee from another system, used for third-party integration tracking."""
 
     types: OptionalNullable[bool] = UNSET
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
     moderator_i_ds: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="moderatorIDs")
@@ -1773,9 +1749,7 @@ class GroupSearchNotNullTypedDict(TypedDict):
     external: NotRequired[Nullable[GroupSearchNotNullExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the employee from another system, used for third-party integration tracking."""
     types: NotRequired[Nullable[bool]]
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
     moderator_i_ds: NotRequired[Nullable[bool]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -1796,9 +1770,7 @@ class GroupSearchNotNull(BaseModel):
     r"""External is a reusable object that can be used to store external information about the employee from another system, used for third-party integration tracking."""
 
     types: OptionalNullable[bool] = UNSET
-    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
-    """
+    r"""The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control."""
 
     moderator_i_ds: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="moderatorIDs")

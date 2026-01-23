@@ -10,6 +10,7 @@ The role of the employee in the placement
 | `ADMIN`           | Admin             |
 | `CARE_TEAM`       | CareTeam          |
 | `MANAGER`         | Manager           |
+| `MEAL_PLANNER`    | MealPlanner       |
 | `OTHER_PERSONNEL` | OtherPersonnel    |
 | `SCHEDULER`       | Scheduler         |
 | `TEACHER`         | Teacher           |
