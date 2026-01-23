@@ -378,8 +378,7 @@ class Groups(BaseSDK):
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param category: If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
-        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
+        :param types: The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control.
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -557,8 +556,7 @@ class Groups(BaseSDK):
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param category: If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
-        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
+        :param types: The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control.
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -1686,8 +1684,7 @@ class Groups(BaseSDK):
         :param id: The unique identifier of the Group to update
         :param title: The title of the group, must be unique within the school.
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
-        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
+        :param types: The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control.
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -1863,8 +1860,7 @@ class Groups(BaseSDK):
         :param id: The unique identifier of the Group to update
         :param title: The title of the group, must be unique within the school.
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
-        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
-
+        :param types: The types of the group. A group can have multiple types simultaneously. For preschools (FS), Class and Childcare types are automatically paired - adding Class will automatically include Childcare, and vice versa. Integration note for Mentor type - when importing groups from external systems, it can be difficult to determine whether a group should have the Mentor type. One recommended approach is to not include the Mentor type when creating or updating groups via the API, allowing school administrators to manually configure the Mentor type in Meitner as needed. When updating a group, you can preserve existing types by reading the current group state first and only modifying the specific types your integration manages (e.g., Class, Childcare). This ensures the Mentor type remains under administrator control.
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
