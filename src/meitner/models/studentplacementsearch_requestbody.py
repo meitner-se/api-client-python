@@ -53,31 +53,26 @@ class StudentPlacementSearchEqualsMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "createdBy", "updatedAt", "updatedBy"]
-        nullable_fields = ["createdAt", "createdBy", "updatedAt", "updatedBy"]
-        null_default_fields = []
-
+        optional_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
+        nullable_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -104,31 +99,26 @@ class StudentPlacementSearchEqualsExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -253,59 +243,58 @@ class StudentPlacementSearchEquals(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "id",
-            "meta",
-            "external",
-            "studentID",
-            "schoolID",
-            "schoolType",
-            "schoolYear",
-            "hasChildcare",
-            "motherTongue",
-            "startDate",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        nullable_fields = [
-            "id",
-            "meta",
-            "external",
-            "studentID",
-            "schoolID",
-            "schoolType",
-            "schoolYear",
-            "hasChildcare",
-            "motherTongue",
-            "startDate",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "id",
+                "meta",
+                "external",
+                "studentID",
+                "schoolID",
+                "schoolType",
+                "schoolYear",
+                "hasChildcare",
+                "motherTongue",
+                "startDate",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "id",
+                "meta",
+                "external",
+                "studentID",
+                "schoolID",
+                "schoolType",
+                "schoolYear",
+                "hasChildcare",
+                "motherTongue",
+                "startDate",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -348,31 +337,26 @@ class StudentPlacementSearchNotEqualsMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "createdBy", "updatedAt", "updatedBy"]
-        nullable_fields = ["createdAt", "createdBy", "updatedAt", "updatedBy"]
-        null_default_fields = []
-
+        optional_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
+        nullable_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -399,31 +383,26 @@ class StudentPlacementSearchNotEqualsExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -548,59 +527,58 @@ class StudentPlacementSearchNotEquals(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "id",
-            "meta",
-            "external",
-            "studentID",
-            "schoolID",
-            "schoolType",
-            "schoolYear",
-            "hasChildcare",
-            "motherTongue",
-            "startDate",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        nullable_fields = [
-            "id",
-            "meta",
-            "external",
-            "studentID",
-            "schoolID",
-            "schoolType",
-            "schoolYear",
-            "hasChildcare",
-            "motherTongue",
-            "startDate",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "id",
+                "meta",
+                "external",
+                "studentID",
+                "schoolID",
+                "schoolType",
+                "schoolYear",
+                "hasChildcare",
+                "motherTongue",
+                "startDate",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "id",
+                "meta",
+                "external",
+                "studentID",
+                "schoolID",
+                "schoolType",
+                "schoolYear",
+                "hasChildcare",
+                "motherTongue",
+                "startDate",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -629,31 +607,26 @@ class StudentPlacementSearchGreaterThanMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "updatedAt"]
-        nullable_fields = ["createdAt", "updatedAt"]
-        null_default_fields = []
-
+        optional_fields = set(["createdAt", "updatedAt"])
+        nullable_fields = set(["createdAt", "updatedAt"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -705,31 +678,30 @@ class StudentPlacementSearchGreaterThan(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        nullable_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        null_default_fields = []
-
+        optional_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
+        nullable_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -758,31 +730,26 @@ class StudentPlacementSearchSmallerThanMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "updatedAt"]
-        nullable_fields = ["createdAt", "updatedAt"]
-        null_default_fields = []
-
+        optional_fields = set(["createdAt", "updatedAt"])
+        nullable_fields = set(["createdAt", "updatedAt"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -834,31 +801,30 @@ class StudentPlacementSearchSmallerThan(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        nullable_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        null_default_fields = []
-
+        optional_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
+        nullable_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -887,31 +853,26 @@ class StudentPlacementSearchGreaterOrEqualMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "updatedAt"]
-        nullable_fields = ["createdAt", "updatedAt"]
-        null_default_fields = []
-
+        optional_fields = set(["createdAt", "updatedAt"])
+        nullable_fields = set(["createdAt", "updatedAt"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -965,31 +926,30 @@ class StudentPlacementSearchGreaterOrEqual(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        nullable_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        null_default_fields = []
-
+        optional_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
+        nullable_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1018,31 +978,26 @@ class StudentPlacementSearchSmallerOrEqualMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdAt", "updatedAt"]
-        nullable_fields = ["createdAt", "updatedAt"]
-        null_default_fields = []
-
+        optional_fields = set(["createdAt", "updatedAt"])
+        nullable_fields = set(["createdAt", "updatedAt"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1096,31 +1051,30 @@ class StudentPlacementSearchSmallerOrEqual(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        nullable_fields = ["meta", "external", "startDate", "endDate", "archivedAt"]
-        null_default_fields = []
-
+        optional_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
+        nullable_fields = set(
+            ["meta", "external", "startDate", "endDate", "archivedAt"]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1143,6 +1097,22 @@ class StudentPlacementSearchContainsMeta(BaseModel):
     updated_by: Annotated[Optional[List[str]], pydantic.Field(alias="updatedBy")] = None
     r"""User who last updated the resource"""
 
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["createdBy", "updatedBy"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
+
 
 class StudentPlacementSearchContainsExternalTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
@@ -1161,6 +1131,22 @@ class StudentPlacementSearchContainsExternal(BaseModel):
 
     source: Optional[List[str]] = None
     r"""The source of the external information"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["sourceID", "source"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
 
 
 class StudentPlacementSearchContainsTypedDict(TypedDict):
@@ -1245,44 +1231,41 @@ class StudentPlacementSearchContains(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "id",
-            "meta",
-            "external",
-            "studentID",
-            "schoolID",
-            "schoolType",
-            "schoolYear",
-            "hasChildcare",
-            "motherTongue",
-            "startDate",
-            "endDate",
-            "archiveYear",
-        ]
-        nullable_fields = ["meta", "external"]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "id",
+                "meta",
+                "external",
+                "studentID",
+                "schoolID",
+                "schoolType",
+                "schoolYear",
+                "hasChildcare",
+                "motherTongue",
+                "startDate",
+                "endDate",
+                "archiveYear",
+            ]
+        )
+        nullable_fields = set(["meta", "external"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1305,6 +1288,22 @@ class StudentPlacementSearchNotContainsMeta(BaseModel):
     updated_by: Annotated[Optional[List[str]], pydantic.Field(alias="updatedBy")] = None
     r"""User who last updated the resource"""
 
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["createdBy", "updatedBy"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
+
 
 class StudentPlacementSearchNotContainsExternalTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
@@ -1323,6 +1322,22 @@ class StudentPlacementSearchNotContainsExternal(BaseModel):
 
     source: Optional[List[str]] = None
     r"""The source of the external information"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["sourceID", "source"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
 
 
 class StudentPlacementSearchNotContainsTypedDict(TypedDict):
@@ -1407,44 +1422,41 @@ class StudentPlacementSearchNotContains(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "id",
-            "meta",
-            "external",
-            "studentID",
-            "schoolID",
-            "schoolType",
-            "schoolYear",
-            "hasChildcare",
-            "motherTongue",
-            "startDate",
-            "endDate",
-            "archiveYear",
-        ]
-        nullable_fields = ["meta", "external"]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "id",
+                "meta",
+                "external",
+                "studentID",
+                "schoolID",
+                "schoolType",
+                "schoolYear",
+                "hasChildcare",
+                "motherTongue",
+                "startDate",
+                "endDate",
+                "archiveYear",
+            ]
+        )
+        nullable_fields = set(["meta", "external"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1479,31 +1491,26 @@ class StudentPlacementSearchLikeExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1542,31 +1549,26 @@ class StudentPlacementSearchLike(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["meta", "external", "motherTongue", "archiveYear"]
-        nullable_fields = ["meta", "external", "motherTongue", "archiveYear"]
-        null_default_fields = []
-
+        optional_fields = set(["meta", "external", "motherTongue", "archiveYear"])
+        nullable_fields = set(["meta", "external", "motherTongue", "archiveYear"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1601,31 +1603,26 @@ class StudentPlacementSearchNotLikeExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1664,31 +1661,26 @@ class StudentPlacementSearchNotLike(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["meta", "external", "motherTongue", "archiveYear"]
-        nullable_fields = ["meta", "external", "motherTongue", "archiveYear"]
-        null_default_fields = []
-
+        optional_fields = set(["meta", "external", "motherTongue", "archiveYear"])
+        nullable_fields = set(["meta", "external", "motherTongue", "archiveYear"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1724,31 +1716,26 @@ class StudentPlacementSearchNullMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdBy", "updatedAt", "updatedBy"]
-        nullable_fields = ["createdBy", "updatedAt", "updatedBy"]
-        null_default_fields = []
-
+        optional_fields = set(["createdBy", "updatedAt", "updatedBy"])
+        nullable_fields = set(["createdBy", "updatedAt", "updatedBy"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1775,31 +1762,26 @@ class StudentPlacementSearchNullExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1857,47 +1839,46 @@ class StudentPlacementSearchNull(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "meta",
-            "external",
-            "schoolYear",
-            "motherTongue",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        nullable_fields = [
-            "meta",
-            "external",
-            "schoolYear",
-            "motherTongue",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "meta",
+                "external",
+                "schoolYear",
+                "motherTongue",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "meta",
+                "external",
+                "schoolYear",
+                "motherTongue",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1933,31 +1914,26 @@ class StudentPlacementSearchNotNullMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdBy", "updatedAt", "updatedBy"]
-        nullable_fields = ["createdBy", "updatedAt", "updatedBy"]
-        null_default_fields = []
-
+        optional_fields = set(["createdBy", "updatedAt", "updatedBy"])
+        nullable_fields = set(["createdBy", "updatedAt", "updatedBy"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -1984,31 +1960,26 @@ class StudentPlacementSearchNotNullExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -2066,47 +2037,46 @@ class StudentPlacementSearchNotNull(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "meta",
-            "external",
-            "schoolYear",
-            "motherTongue",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        nullable_fields = [
-            "meta",
-            "external",
-            "schoolYear",
-            "motherTongue",
-            "endDate",
-            "archiveYear",
-            "archivedAt",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "meta",
+                "external",
+                "schoolYear",
+                "motherTongue",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "meta",
+                "external",
+                "schoolYear",
+                "motherTongue",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -2219,58 +2189,57 @@ class StudentPlacementSearchFilter(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "equals",
-            "notEquals",
-            "greaterThan",
-            "smallerThan",
-            "greaterOrEqual",
-            "smallerOrEqual",
-            "contains",
-            "notContains",
-            "like",
-            "notLike",
-            "null",
-            "notNull",
-            "nestedFilters",
-        ]
-        nullable_fields = [
-            "equals",
-            "notEquals",
-            "greaterThan",
-            "smallerThan",
-            "greaterOrEqual",
-            "smallerOrEqual",
-            "contains",
-            "notContains",
-            "like",
-            "notLike",
-            "null",
-            "notNull",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "equals",
+                "notEquals",
+                "greaterThan",
+                "smallerThan",
+                "greaterOrEqual",
+                "smallerOrEqual",
+                "contains",
+                "notContains",
+                "like",
+                "notLike",
+                "null",
+                "notNull",
+                "nestedFilters",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "equals",
+                "notEquals",
+                "greaterThan",
+                "smallerThan",
+                "greaterOrEqual",
+                "smallerOrEqual",
+                "contains",
+                "notContains",
+                "like",
+                "notLike",
+                "null",
+                "notNull",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 

@@ -215,13 +215,13 @@ with Meitner(
 <details open>
 <summary>Available methods</summary>
 
-### [audit_events](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md)
+### [AuditEvents](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md#list) - List AuditEvents
 * [search](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md#search) - Search AuditEvents
 * [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/auditevents/README.md#get) - Get a AuditEvent
 
-### [employee_placements](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md)
+### [EmployeePlacements](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#list) - List EmployeePlacements
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#create) - Create a new EmployeePlacement
@@ -230,7 +230,7 @@ with Meitner(
 * [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#delete) - Delete a EmployeePlacement
 * [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employeeplacements/README.md#update) - Update a EmployeePlacement
 
-### [employees](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md)
+### [Employees](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#list) - List Employees
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#create) - Create a new Employee
@@ -239,7 +239,7 @@ with Meitner(
 * [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#delete) - Delete a Employee
 * [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/employees/README.md#update) - Update a Employee
 
-### [groups](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md)
+### [Groups](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#list) - List Groups
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#create) - Create a new Group
@@ -248,7 +248,7 @@ with Meitner(
 * [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#delete) - Delete a Group
 * [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/groups/README.md#update) - Update a Group
 
-### [guardians](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md)
+### [Guardians](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#list) - List Guardians
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#create) - Create a new Guardian
@@ -257,7 +257,7 @@ with Meitner(
 * [delete](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#delete) - Delete a Guardian
 * [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/guardians/README.md#update) - Update a Guardian
 
-### [schools](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md)
+### [Schools](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#list) - List Schools
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#create) - Create a new School
@@ -265,7 +265,7 @@ with Meitner(
 * [get](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#get) - Get a School
 * [update](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/schools/README.md#update) - Update a School
 
-### [student_placements](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md)
+### [StudentPlacements](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#list) - List StudentPlacements
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#create) - Create a new StudentPlacement
@@ -276,7 +276,7 @@ with Meitner(
 * [archive](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#archive) - Archive a student placement
 * [restore](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/studentplacements/README.md#restore) - Restore an archived student placement
 
-### [students](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md)
+### [Students](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md)
 
 * [list](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#list) - List Students
 * [create](https://github.com/meitner-se/api-client-python/blob/master/docs/sdks/students/README.md#create) - Create a new Student

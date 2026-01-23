@@ -45,31 +45,26 @@ class StudentMeta(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["createdBy", "updatedAt", "updatedBy"]
-        nullable_fields = ["createdBy", "updatedAt", "updatedBy"]
-        null_default_fields = []
-
+        optional_fields = set(["createdBy", "updatedAt", "updatedBy"])
+        nullable_fields = set(["createdBy", "updatedAt", "updatedBy"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -96,31 +91,26 @@ class StudentExternal(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = ["sourceID", "source"]
-        nullable_fields = ["sourceID", "source"]
-        null_default_fields = []
-
+        optional_fields = set(["sourceID", "source"])
+        nullable_fields = set(["sourceID", "source"])
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -178,43 +168,42 @@ class StudentAddress(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "postalAddress",
-            "postalCode",
-            "postalCity",
-            "countryCode",
-            "municipalityCode",
-        ]
-        nullable_fields = [
-            "postalAddress",
-            "postalCode",
-            "postalCity",
-            "countryCode",
-            "municipalityCode",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "postalAddress",
+                "postalCode",
+                "postalCity",
+                "countryCode",
+                "municipalityCode",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "postalAddress",
+                "postalCode",
+                "postalCity",
+                "countryCode",
+                "municipalityCode",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -225,7 +214,7 @@ class StudentTypedDict(TypedDict):
     id: str
     r"""Unique identifier for the Student"""
     identity_number: str
-    r"""The identity number of the student, must be unique within the organization."""
+    r"""The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization."""
     first_name: str
     r"""The first name of the student"""
     last_name: str
@@ -262,7 +251,7 @@ class Student(BaseModel):
     r"""Unique identifier for the Student"""
 
     identity_number: Annotated[str, pydantic.Field(alias="identityNumber")]
-    r"""The identity number of the student, must be unique within the organization."""
+    r"""The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization."""
 
     first_name: Annotated[str, pydantic.Field(alias="firstName")]
     r"""The first name of the student"""
@@ -317,49 +306,48 @@ class Student(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "meta",
-            "external",
-            "gender",
-            "identityTemporary",
-            "dateOfBirth",
-            "address",
-            "emailAddress1",
-            "emailAddress2",
-            "phoneNumber1",
-            "phoneNumber2",
-        ]
-        nullable_fields = [
-            "external",
-            "gender",
-            "dateOfBirth",
-            "emailAddress1",
-            "emailAddress2",
-            "phoneNumber1",
-            "phoneNumber2",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "meta",
+                "external",
+                "gender",
+                "identityTemporary",
+                "dateOfBirth",
+                "address",
+                "emailAddress1",
+                "emailAddress2",
+                "phoneNumber1",
+                "phoneNumber2",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "external",
+                "gender",
+                "dateOfBirth",
+                "emailAddress1",
+                "emailAddress2",
+                "phoneNumber1",
+                "phoneNumber2",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m

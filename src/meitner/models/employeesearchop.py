@@ -9,8 +9,9 @@ from .employeesearch_response import (
     EmployeeSearchResponse,
     EmployeeSearchResponseTypedDict,
 )
-from meitner.types import BaseModel
+from meitner.types import BaseModel, UNSET_SENTINEL
 from meitner.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
+from pydantic import model_serializer
 from typing import Awaitable, Callable, Dict, List, Optional, Union
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -42,6 +43,22 @@ class EmployeeSearchRequest(BaseModel):
         FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
     ] = 0
     r"""The number of Employees to skip before starting to return results (default: 0) when searching Employees"""
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(["limit", "offset"])
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m
 
 
 class EmployeeSearchResponseResponseTypedDict(TypedDict):

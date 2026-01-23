@@ -63,6 +63,7 @@ class Schools(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -231,6 +232,7 @@ class Schools(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -421,6 +423,7 @@ class Schools(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.SchoolCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -592,6 +595,7 @@ class Schools(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.SchoolCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -756,6 +760,7 @@ class Schools(BaseSDK):
                 "json",
                 models.SchoolSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -943,6 +948,7 @@ class Schools(BaseSDK):
                 "json",
                 models.SchoolSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1118,6 +1124,7 @@ class Schools(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1261,6 +1268,7 @@ class Schools(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1428,6 +1436,7 @@ class Schools(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.school_update, False, False, "json", models.SchoolUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1601,6 +1610,7 @@ class Schools(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.school_update, False, False, "json", models.SchoolUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
