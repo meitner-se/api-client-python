@@ -63,6 +63,7 @@ class Guardians(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -231,6 +232,7 @@ class Guardians(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -377,7 +379,7 @@ class Guardians(BaseSDK):
 
         Create a new Guardian
 
-        :param identity_number: The identity number of the guardian, must be unique within the organization.
+        :param identity_number: The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the guardian
         :param last_name: The last name of the guardian
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
@@ -442,6 +444,7 @@ class Guardians(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.GuardianCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -569,7 +572,7 @@ class Guardians(BaseSDK):
 
         Create a new Guardian
 
-        :param identity_number: The identity number of the guardian, must be unique within the organization.
+        :param identity_number: The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the guardian
         :param last_name: The last name of the guardian
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
@@ -634,6 +637,7 @@ class Guardians(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.GuardianCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -800,6 +804,7 @@ class Guardians(BaseSDK):
                 "json",
                 models.GuardianSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -989,6 +994,7 @@ class Guardians(BaseSDK):
                 "json",
                 models.GuardianSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1164,6 +1170,7 @@ class Guardians(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1307,6 +1314,7 @@ class Guardians(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1450,6 +1458,7 @@ class Guardians(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1592,6 +1601,7 @@ class Guardians(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1714,7 +1724,7 @@ class Guardians(BaseSDK):
         Update a Guardian
 
         :param id: The unique identifier of the Guardian to update
-        :param identity_number: The identity number of the guardian, must be unique within the organization.
+        :param identity_number: The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the guardian
         :param last_name: The last name of the guardian
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
@@ -1782,6 +1792,7 @@ class Guardians(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.guardian_update, False, False, "json", models.GuardianUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1911,7 +1922,7 @@ class Guardians(BaseSDK):
         Update a Guardian
 
         :param id: The unique identifier of the Guardian to update
-        :param identity_number: The identity number of the guardian, must be unique within the organization.
+        :param identity_number: The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the guardian
         :param last_name: The last name of the guardian
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
@@ -1979,6 +1990,7 @@ class Guardians(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.guardian_update, False, False, "json", models.GuardianUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

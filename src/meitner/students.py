@@ -64,6 +64,7 @@ class Students(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -232,6 +233,7 @@ class Students(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -379,7 +381,7 @@ class Students(BaseSDK):
 
         Create a new Student
 
-        :param identity_number: The identity number of the student, must be unique within the organization.
+        :param identity_number: The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the student
         :param last_name: The last name of the student
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student, the Source-field is not included.
@@ -446,6 +448,7 @@ class Students(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.StudentCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -574,7 +577,7 @@ class Students(BaseSDK):
 
         Create a new Student
 
-        :param identity_number: The identity number of the student, must be unique within the organization.
+        :param identity_number: The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the student
         :param last_name: The last name of the student
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student, the Source-field is not included.
@@ -641,6 +644,7 @@ class Students(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.StudentCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -805,6 +809,7 @@ class Students(BaseSDK):
                 "json",
                 models.StudentSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -992,6 +997,7 @@ class Students(BaseSDK):
                 "json",
                 models.StudentSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1167,6 +1173,7 @@ class Students(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1310,6 +1317,7 @@ class Students(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1453,6 +1461,7 @@ class Students(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1595,6 +1604,7 @@ class Students(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1718,7 +1728,7 @@ class Students(BaseSDK):
         Update a Student
 
         :param id: The unique identifier of the Student to update
-        :param identity_number: The identity number of the student, must be unique within the organization.
+        :param identity_number: The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the student
         :param last_name: The last name of the student
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student, the Source-field is not included.
@@ -1788,6 +1798,7 @@ class Students(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.student_update, False, False, "json", models.StudentUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1918,7 +1929,7 @@ class Students(BaseSDK):
         Update a Student
 
         :param id: The unique identifier of the Student to update
-        :param identity_number: The identity number of the student, must be unique within the organization.
+        :param identity_number: The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the student
         :param last_name: The last name of the student
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student, the Source-field is not included.
@@ -1988,6 +1999,7 @@ class Students(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.student_update, False, False, "json", models.StudentUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

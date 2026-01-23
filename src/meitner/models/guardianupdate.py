@@ -67,43 +67,42 @@ class GuardianUpdateAddress(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "postalAddress",
-            "postalCode",
-            "postalCity",
-            "countryCode",
-            "municipalityCode",
-        ]
-        nullable_fields = [
-            "postalAddress",
-            "postalCode",
-            "postalCity",
-            "countryCode",
-            "municipalityCode",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "postalAddress",
+                "postalCode",
+                "postalCity",
+                "countryCode",
+                "municipalityCode",
+            ]
+        )
+        nullable_fields = set(
+            [
+                "postalAddress",
+                "postalCode",
+                "postalCity",
+                "countryCode",
+                "municipalityCode",
+            ]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m
 
@@ -112,7 +111,7 @@ class GuardianUpdateTypedDict(TypedDict):
     r"""Request body"""
 
     identity_number: str
-    r"""The identity number of the guardian, must be unique within the organization."""
+    r"""The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization."""
     first_name: str
     r"""The first name of the guardian"""
     last_name: str
@@ -142,7 +141,7 @@ class GuardianUpdate(BaseModel):
     r"""Request body"""
 
     identity_number: Annotated[str, pydantic.Field(alias="identityNumber")]
-    r"""The identity number of the guardian, must be unique within the organization."""
+    r"""The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization."""
 
     first_name: Annotated[str, pydantic.Field(alias="firstName")]
     r"""The first name of the guardian"""
@@ -191,44 +190,38 @@ class GuardianUpdate(BaseModel):
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = [
-            "external",
-            "identityTemporary",
-            "address",
-            "emailAddress1",
-            "emailAddress2",
-            "phoneNumber1",
-            "phoneNumber2",
-            "studentIDs",
-        ]
-        nullable_fields = [
-            "emailAddress1",
-            "emailAddress2",
-            "phoneNumber1",
-            "phoneNumber2",
-        ]
-        null_default_fields = []
-
+        optional_fields = set(
+            [
+                "external",
+                "identityTemporary",
+                "address",
+                "emailAddress1",
+                "emailAddress2",
+                "phoneNumber1",
+                "phoneNumber2",
+                "studentIDs",
+            ]
+        )
+        nullable_fields = set(
+            ["emailAddress1", "emailAddress2", "phoneNumber1", "phoneNumber2"]
+        )
         serialized = handler(self)
-
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
             val = serialized.get(k)
-            serialized.pop(k, None)
+            is_nullable_and_explicitly_set = (
+                k in nullable_fields
+                and (self.__pydantic_fields_set__.intersection({n}))  # pylint: disable=no-member
+            )
 
-            optional_nullable = k in optional_fields and k in nullable_fields
-            is_set = (
-                self.__pydantic_fields_set__.intersection({n})
-                or k in null_default_fields
-            )  # pylint: disable=no-member
-
-            if val is not None and val != UNSET_SENTINEL:
-                m[k] = val
-            elif val != UNSET_SENTINEL and (
-                not k in optional_fields or (optional_nullable and is_set)
-            ):
-                m[k] = val
+            if val != UNSET_SENTINEL:
+                if (
+                    val is not None
+                    or k not in optional_fields
+                    or is_nullable_and_explicitly_set
+                ):
+                    m[k] = val
 
         return m

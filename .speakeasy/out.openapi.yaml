@@ -3940,7 +3940,7 @@
           "title",
           "schoolType"
         ],
-        "description": "The `School` resource represents a school where daily operations occur. A school must exist before you can create StudentPlacements, EmployeePlacements, or Groups.\n \nThis resource can be created, Updated, listed, retrieved, and deleted using the standard resource structure. It **does not** support search and filtering.\n"
+        "description": "The `School` resource represents a school where daily operations occur. A school must exist before you can create StudentPlacements, EmployeePlacements, or Groups.\n \nThis resource can be created, updated, listed, retrieved, and searched using the standard resource structure.\n"
       },
       "Group": {
         "type": "object",
@@ -4026,7 +4026,7 @@
                 }
               ]
             },
-            "description": "The types of the group"
+            "description": "The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.\n"
           },
           "moderatorIDs": {
             "type": "array",
@@ -4123,7 +4123,7 @@
             "examples": [
               "20191216-1234"
             ],
-            "description": "The identity number of the employee, must be unique within the organization."
+            "description": "The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization."
           },
           "identityTemporary": {
             "type": "boolean",
@@ -4406,7 +4406,7 @@
             "examples": [
               "20191216-1234"
             ],
-            "description": "The identity number of the guardian, must be unique within the organization."
+            "description": "The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization."
           },
           "identityTemporary": {
             "type": "boolean",
@@ -4566,7 +4566,7 @@
             "examples": [
               "20191216-1234"
             ],
-            "description": "The identity number of the student, must be unique within the organization."
+            "description": "The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization."
           },
           "identityTemporary": {
             "type": "boolean",
@@ -6374,7 +6374,7 @@
                 "$ref": "#/components/schemas/GroupType"
               }
             ],
-            "description": "The types of the group",
+            "description": "The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.\n",
             "nullable": true
           },
           "moderatorIDs": {
@@ -6532,7 +6532,7 @@
                 }
               ]
             },
-            "description": "The types of the group"
+            "description": "The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.\n"
           },
           "moderatorIDs": {
             "type": "array",
@@ -6645,7 +6645,7 @@
               true,
               null
             ],
-            "description": "The types of the group",
+            "description": "The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.\n",
             "nullable": true
           },
           "moderatorIDs": {
@@ -7517,7 +7517,7 @@
               "example",
               null
             ],
-            "description": "The identity number of the employee, must be unique within the organization.",
+            "description": "The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization.",
             "nullable": true
           },
           "identityTemporary": {
@@ -7742,7 +7742,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The identity number of the employee, must be unique within the organization."
+            "description": "The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization."
           },
           "identityTemporary": {
             "type": "array",
@@ -7907,7 +7907,7 @@
               "example",
               null
             ],
-            "description": "The identity number of the employee, must be unique within the organization.",
+            "description": "The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization.",
             "nullable": true
           },
           "firstName": {
@@ -10037,7 +10037,7 @@
               "example",
               null
             ],
-            "description": "The identity number of the guardian, must be unique within the organization.",
+            "description": "The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization.",
             "nullable": true
           },
           "identityTemporary": {
@@ -10241,7 +10241,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The identity number of the guardian, must be unique within the organization."
+            "description": "The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization."
           },
           "identityTemporary": {
             "type": "array",
@@ -10406,7 +10406,7 @@
               "example",
               null
             ],
-            "description": "The identity number of the guardian, must be unique within the organization.",
+            "description": "The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization.",
             "nullable": true
           },
           "firstName": {
@@ -11436,7 +11436,7 @@
               "example",
               null
             ],
-            "description": "The identity number of the student, must be unique within the organization.",
+            "description": "The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization.",
             "nullable": true
           },
           "identityTemporary": {
@@ -11661,7 +11661,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The identity number of the student, must be unique within the organization."
+            "description": "The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization."
           },
           "identityTemporary": {
             "type": "array",
@@ -11826,7 +11826,7 @@
               "example",
               null
             ],
-            "description": "The identity number of the student, must be unique within the organization.",
+            "description": "The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization.",
             "nullable": true
           },
           "firstName": {
@@ -21552,7 +21552,7 @@
                       }
                     ]
                   },
-                  "description": "The types of the group"
+                  "description": "The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.\n"
                 },
                 "moderatorIDs": {
                   "type": "array",
@@ -21653,7 +21653,7 @@
                       }
                     ]
                   },
-                  "description": "The types of the group"
+                  "description": "The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.\n"
                 },
                 "moderatorIDs": {
                   "type": "array",
@@ -22119,7 +22119,7 @@
                   "examples": [
                     "20191216-1234"
                   ],
-                  "description": "The identity number of the employee, must be unique within the organization."
+                  "description": "The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization."
                 },
                 "identityTemporary": {
                   "type": "boolean",
@@ -22282,7 +22282,7 @@
                   "examples": [
                     "20191216-1234"
                   ],
-                  "description": "The identity number of the employee, must be unique within the organization."
+                  "description": "The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization."
                 },
                 "identityTemporary": {
                   "type": "boolean",
@@ -23762,7 +23762,7 @@
                   "examples": [
                     "20191216-1234"
                   ],
-                  "description": "The identity number of the guardian, must be unique within the organization."
+                  "description": "The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization."
                 },
                 "identityTemporary": {
                   "type": "boolean",
@@ -23916,7 +23916,7 @@
                   "examples": [
                     "20191216-1234"
                   ],
-                  "description": "The identity number of the guardian, must be unique within the organization."
+                  "description": "The identity number of the guardian in the format YYYYMMDD-NNNN, must be unique within the organization."
                 },
                 "identityTemporary": {
                   "type": "boolean",
@@ -24718,7 +24718,7 @@
                   "examples": [
                     "20191216-1234"
                   ],
-                  "description": "The identity number of the student, must be unique within the organization."
+                  "description": "The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization."
                 },
                 "identityTemporary": {
                   "type": "boolean",
@@ -24881,7 +24881,7 @@
                   "examples": [
                     "20191216-1234"
                   ],
-                  "description": "The identity number of the student, must be unique within the organization."
+                  "description": "The identity number of the student in the format YYYYMMDD-NNNN, must be unique within the organization."
                 },
                 "identityTemporary": {
                   "type": "boolean",
@@ -26596,7 +26596,7 @@
   "tags": [
     {
       "name": "School",
-      "description": "The `School` resource represents a school where daily operations occur. A school must exist before you can create StudentPlacements, EmployeePlacements, or Groups.\n \nThis resource can be created, Updated, listed, retrieved, and deleted using the standard resource structure. It **does not** support search and filtering.\n"
+      "description": "The `School` resource represents a school where daily operations occur. A school must exist before you can create StudentPlacements, EmployeePlacements, or Groups.\n \nThis resource can be created, updated, listed, retrieved, and searched using the standard resource structure.\n"
     },
     {
       "name": "Group",

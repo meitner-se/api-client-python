@@ -2,7 +2,7 @@
 
 The `School` resource represents a school where daily operations occur. A school must exist before you can create StudentPlacements, EmployeePlacements, or Groups.
  
-This resource can be created, Updated, listed, retrieved, and deleted using the standard resource structure. It **does not** support search and filtering.
+This resource can be created, updated, listed, retrieved, and searched using the standard resource structure.
 
 
 

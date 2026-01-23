@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 from .grouptype import GroupType
-from meitner.types import BaseModel
+from meitner.types import BaseModel, UNSET_SENTINEL
 import pydantic
+from pydantic import model_serializer
 from typing import List, Literal, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
@@ -45,7 +46,9 @@ class GroupCreateTypedDict(TypedDict):
 
     """
     types: NotRequired[List[GroupType]]
-    r"""The types of the group"""
+    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
+
+    """
     moderator_i_ds: NotRequired[List[str]]
     r"""The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
@@ -74,7 +77,9 @@ class GroupCreate(BaseModel):
     """
 
     types: Optional[List[GroupType]] = None
-    r"""The types of the group"""
+    r"""The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
+
+    """
 
     moderator_i_ds: Annotated[
         Optional[List[str]], pydantic.Field(alias="moderatorIDs")
@@ -89,3 +94,21 @@ class GroupCreate(BaseModel):
     r"""The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
 
     """
+
+    @model_serializer(mode="wrap")
+    def serialize_model(self, handler):
+        optional_fields = set(
+            ["external", "category", "types", "moderatorIDs", "memberIDs"]
+        )
+        serialized = handler(self)
+        m = {}
+
+        for n, f in type(self).model_fields.items():
+            k = f.alias or n
+            val = serialized.get(k)
+
+            if val != UNSET_SENTINEL:
+                if val is not None or k not in optional_fields:
+                    m[k] = val
+
+        return m

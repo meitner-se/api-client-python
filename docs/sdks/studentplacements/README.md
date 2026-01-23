@@ -1,5 +1,4 @@
 # StudentPlacements
-(*student_placements*)
 
 ## Overview
 

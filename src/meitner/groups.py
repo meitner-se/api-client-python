@@ -63,6 +63,7 @@ class Groups(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -231,6 +232,7 @@ class Groups(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -376,7 +378,8 @@ class Groups(BaseSDK):
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param category: If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
-        :param types: The types of the group
+        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
+
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -427,6 +430,7 @@ class Groups(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.GroupCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -553,7 +557,8 @@ class Groups(BaseSDK):
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
         :param category: If the category is Education, the ModeratorIDs have to be employees and the MemberIDs have to be students of the school. If the category is Other, it will not be possible to use the IsClass, IsChildcare and IsMentor fields.
 
-        :param types: The types of the group
+        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
+
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -604,6 +609,7 @@ class Groups(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.GroupCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -768,6 +774,7 @@ class Groups(BaseSDK):
                 "json",
                 models.GroupSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -955,6 +962,7 @@ class Groups(BaseSDK):
                 "json",
                 models.GroupSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1130,6 +1138,7 @@ class Groups(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1273,6 +1282,7 @@ class Groups(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1416,6 +1426,7 @@ class Groups(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1558,6 +1569,7 @@ class Groups(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1674,7 +1686,8 @@ class Groups(BaseSDK):
         :param id: The unique identifier of the Group to update
         :param title: The title of the group, must be unique within the school.
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
-        :param types: The types of the group
+        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
+
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -1726,6 +1739,7 @@ class Groups(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.group_update, False, False, "json", models.GroupUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1849,7 +1863,8 @@ class Groups(BaseSDK):
         :param id: The unique identifier of the Group to update
         :param title: The title of the group, must be unique within the school.
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee, the Source-field is not included.
-        :param types: The types of the group
+        :param types: The types of the group. Note: For preschools (FS), Class and Childcare types are automatically paired. Adding Class will automatically include Childcare, and adding Childcare will automatically include Class.
+
         :param moderator_i_ds: The IDs of the moderators of the group.  Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Moderators have to be employees of the school.
 
         :param member_i_ds: The IDs of the members of the group. Can be any user type (Student, Employee, Guardian) if the Category is Other. If the Category is Education, the Members have to be students of the school.
@@ -1901,6 +1916,7 @@ class Groups(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.group_update, False, False, "json", models.GroupUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

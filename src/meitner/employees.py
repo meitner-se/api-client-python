@@ -64,6 +64,7 @@ class Employees(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -232,6 +233,7 @@ class Employees(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -379,7 +381,7 @@ class Employees(BaseSDK):
 
         Create a new Employee
 
-        :param identity_number: The identity number of the employee, must be unique within the organization.
+        :param identity_number: The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the employee
         :param last_name: The last name of the employee
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.
@@ -446,6 +448,7 @@ class Employees(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.EmployeeCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -574,7 +577,7 @@ class Employees(BaseSDK):
 
         Create a new Employee
 
-        :param identity_number: The identity number of the employee, must be unique within the organization.
+        :param identity_number: The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the employee
         :param last_name: The last name of the employee
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.
@@ -641,6 +644,7 @@ class Employees(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, False, "json", models.EmployeeCreate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -807,6 +811,7 @@ class Employees(BaseSDK):
                 "json",
                 models.EmployeeSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -996,6 +1001,7 @@ class Employees(BaseSDK):
                 "json",
                 models.EmployeeSearchRequestBody,
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1171,6 +1177,7 @@ class Employees(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1314,6 +1321,7 @@ class Employees(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1457,6 +1465,7 @@ class Employees(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1599,6 +1608,7 @@ class Employees(BaseSDK):
             accept_header_value="application/json",
             http_headers=http_headers,
             security=self.sdk_configuration.security,
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1722,7 +1732,7 @@ class Employees(BaseSDK):
         Update a Employee
 
         :param id: The unique identifier of the Employee to update
-        :param identity_number: The identity number of the employee, must be unique within the organization.
+        :param identity_number: The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the employee
         :param last_name: The last name of the employee
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.
@@ -1792,6 +1802,7 @@ class Employees(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.employee_update, False, False, "json", models.EmployeeUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 
@@ -1922,7 +1933,7 @@ class Employees(BaseSDK):
         Update a Employee
 
         :param id: The unique identifier of the Employee to update
-        :param identity_number: The identity number of the employee, must be unique within the organization.
+        :param identity_number: The identity number of the employee in the format YYYYMMDD-NNNN, must be unique within the organization.
         :param first_name: The first name of the employee
         :param last_name: The last name of the employee
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.
@@ -1992,6 +2003,7 @@ class Employees(BaseSDK):
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.employee_update, False, False, "json", models.EmployeeUpdate
             ),
+            allow_empty_value=None,
             timeout_ms=timeout_ms,
         )
 

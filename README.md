@@ -215,13 +215,13 @@ with Meitner(
 <details open>
 <summary>Available methods</summary>
 
-### [audit_events](docs/sdks/auditevents/README.md)
+### [AuditEvents](docs/sdks/auditevents/README.md)
 
 * [list](docs/sdks/auditevents/README.md#list) - List AuditEvents
 * [search](docs/sdks/auditevents/README.md#search) - Search AuditEvents
 * [get](docs/sdks/auditevents/README.md#get) - Get a AuditEvent
 
-### [employee_placements](docs/sdks/employeeplacements/README.md)
+### [EmployeePlacements](docs/sdks/employeeplacements/README.md)
 
 * [list](docs/sdks/employeeplacements/README.md#list) - List EmployeePlacements
 * [create](docs/sdks/employeeplacements/README.md#create) - Create a new EmployeePlacement
@@ -230,7 +230,7 @@ with Meitner(
 * [delete](docs/sdks/employeeplacements/README.md#delete) - Delete a EmployeePlacement
 * [update](docs/sdks/employeeplacements/README.md#update) - Update a EmployeePlacement
 
-### [employees](docs/sdks/employees/README.md)
+### [Employees](docs/sdks/employees/README.md)
 
 * [list](docs/sdks/employees/README.md#list) - List Employees
 * [create](docs/sdks/employees/README.md#create) - Create a new Employee
@@ -239,7 +239,7 @@ with Meitner(
 * [delete](docs/sdks/employees/README.md#delete) - Delete a Employee
 * [update](docs/sdks/employees/README.md#update) - Update a Employee
 
-### [groups](docs/sdks/groups/README.md)
+### [Groups](docs/sdks/groups/README.md)
 
 * [list](docs/sdks/groups/README.md#list) - List Groups
 * [create](docs/sdks/groups/README.md#create) - Create a new Group
@@ -248,7 +248,7 @@ with Meitner(
 * [delete](docs/sdks/groups/README.md#delete) - Delete a Group
 * [update](docs/sdks/groups/README.md#update) - Update a Group
 
-### [guardians](docs/sdks/guardians/README.md)
+### [Guardians](docs/sdks/guardians/README.md)
 
 * [list](docs/sdks/guardians/README.md#list) - List Guardians
 * [create](docs/sdks/guardians/README.md#create) - Create a new Guardian
@@ -257,7 +257,7 @@ with Meitner(
 * [delete](docs/sdks/guardians/README.md#delete) - Delete a Guardian
 * [update](docs/sdks/guardians/README.md#update) - Update a Guardian
 
-### [schools](docs/sdks/schools/README.md)
+### [Schools](docs/sdks/schools/README.md)
 
 * [list](docs/sdks/schools/README.md#list) - List Schools
 * [create](docs/sdks/schools/README.md#create) - Create a new School
@@ -265,7 +265,7 @@ with Meitner(
 * [get](docs/sdks/schools/README.md#get) - Get a School
 * [update](docs/sdks/schools/README.md#update) - Update a School
 
-### [student_placements](docs/sdks/studentplacements/README.md)
+### [StudentPlacements](docs/sdks/studentplacements/README.md)
 
 * [list](docs/sdks/studentplacements/README.md#list) - List StudentPlacements
 * [create](docs/sdks/studentplacements/README.md#create) - Create a new StudentPlacement
@@ -276,7 +276,7 @@ with Meitner(
 * [archive](docs/sdks/studentplacements/README.md#archive) - Archive a student placement
 * [restore](docs/sdks/studentplacements/README.md#restore) - Restore an archived student placement
 
-### [students](docs/sdks/students/README.md)
+### [Students](docs/sdks/students/README.md)
 
 * [list](docs/sdks/students/README.md#list) - List Students
 * [create](docs/sdks/students/README.md#create) - Create a new Student
