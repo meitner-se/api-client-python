@@ -369,6 +369,7 @@ class EmployeePlacements(BaseSDK):
         title: OptionalNullable[str] = UNSET,
         roles: Optional[List[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
+        employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -386,6 +387,7 @@ class EmployeePlacements(BaseSDK):
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
+        :param employment_percent: The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -415,6 +417,7 @@ class EmployeePlacements(BaseSDK):
             roles=roles,
             start_date=start_date,
             end_date=end_date,
+            employment_percent=employment_percent,
         )
 
         req = self._build_request(
@@ -552,6 +555,7 @@ class EmployeePlacements(BaseSDK):
         title: OptionalNullable[str] = UNSET,
         roles: Optional[List[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
+        employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -569,6 +573,7 @@ class EmployeePlacements(BaseSDK):
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
+        :param employment_percent: The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -598,6 +603,7 @@ class EmployeePlacements(BaseSDK):
             roles=roles,
             start_date=start_date,
             end_date=end_date,
+            employment_percent=employment_percent,
         )
 
         req = self._build_request_async(
@@ -1707,6 +1713,7 @@ class EmployeePlacements(BaseSDK):
         title: OptionalNullable[str] = UNSET,
         roles: Optional[List[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
+        employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1723,6 +1730,7 @@ class EmployeePlacements(BaseSDK):
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
+        :param employment_percent: The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1752,6 +1760,7 @@ class EmployeePlacements(BaseSDK):
                 roles=roles,
                 start_date=start_date,
                 end_date=end_date,
+                employment_percent=employment_percent,
             ),
         )
 
@@ -1893,6 +1902,7 @@ class EmployeePlacements(BaseSDK):
         title: OptionalNullable[str] = UNSET,
         roles: Optional[List[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
+        employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1909,6 +1919,7 @@ class EmployeePlacements(BaseSDK):
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
+        :param employment_percent: The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1938,6 +1949,7 @@ class EmployeePlacements(BaseSDK):
                 roles=roles,
                 start_date=start_date,
                 end_date=end_date,
+                employment_percent=employment_percent,
             ),
         )
 

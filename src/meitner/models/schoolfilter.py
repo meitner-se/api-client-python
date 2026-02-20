@@ -1951,3 +1951,113 @@ class SchoolFilter(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    SchoolFilterEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterContains.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterLike.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNull.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilterNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolFilter.model_rebuild()
+except NameError:
+    pass

@@ -137,3 +137,13 @@ class AuditEvent(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    AuditEventMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEvent.model_rebuild()
+except NameError:
+    pass

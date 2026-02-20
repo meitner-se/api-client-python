@@ -83,3 +83,13 @@ class GroupUpdate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GroupUpdateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupUpdate.model_rebuild()
+except NameError:
+    pass

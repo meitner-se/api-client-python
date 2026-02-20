@@ -14,7 +14,7 @@ Returns a paginated list of all `AuditEvents` in your organization.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="AuditEventList" method="get" path="/audit-event" -->
+<!-- UsageSnippet language="python" operationID="AuditEventList" method="get" path="/audit-event" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -65,9 +65,375 @@ with Meitner(
 
 Search for `AuditEvents` with filtering capabilities.
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="AuditEventSearch" method="post" path="/audit-event/_search" -->
+<!-- UsageSnippet language="python" operationID="AuditEventSearch" method="post" path="/audit-event/_search" example="errorExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.audit_events.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+            "resource_id": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+            "resource_id": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "resource_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "resource_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="AuditEventSearch" method="post" path="/audit-event/_search" example="requestExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.audit_events.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+            "resource_id": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+            "resource_id": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "resource_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "resource_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="AuditEventSearch" method="post" path="/audit-event/_search" example="responseExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.audit_events.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+            "resource_id": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+            "resource_id": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "timestamp": parse_datetime("2024-01-15T10:30:00Z"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "resource_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "resource_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="AuditEventSearch" method="post" path="/audit-event/_search" example="validationError" -->
 ```python
 from meitner import Meitner, models
 from meitner.utils import parse_datetime
@@ -221,7 +587,7 @@ Retrieves the `AuditEvent` with the given ID.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="AuditEventGet" method="get" path="/audit-event/{id}" -->
+<!-- UsageSnippet language="python" operationID="AuditEventGet" method="get" path="/audit-event/{id}" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os

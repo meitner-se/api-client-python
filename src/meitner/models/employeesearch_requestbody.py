@@ -3090,3 +3090,165 @@ class EmployeeSearchRequestBody(BaseModel):
 
     filter_: Annotated[EmployeeSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    EmployeeSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchGreaterThan.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchSmallerThan.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchGreaterOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchSmallerOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchLike.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNull.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeSearchRequestBody.model_rebuild()
+except NameError:
+    pass

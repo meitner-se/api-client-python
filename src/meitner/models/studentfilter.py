@@ -3075,3 +3075,161 @@ class StudentFilter(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    StudentFilterEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterGreaterThan.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterSmallerThan.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterGreaterOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterSmallerOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterContains.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterLike.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNull.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilterNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentFilter.model_rebuild()
+except NameError:
+    pass

@@ -39,6 +39,8 @@ class EmployeePlacementUpdateTypedDict(TypedDict):
     r"""The roles of the employee"""
     end_date: NotRequired[Nullable[date]]
     r"""The end date of the placement for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementUpdate(BaseModel):
@@ -62,10 +64,17 @@ class EmployeePlacementUpdate(BaseModel):
     end_date: Annotated[OptionalNullable[date], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = set(["external", "signature", "title", "roles", "endDate"])
-        nullable_fields = set(["signature", "title", "endDate"])
+        optional_fields = set(
+            ["external", "signature", "title", "roles", "endDate", "employmentPercent"]
+        )
+        nullable_fields = set(["signature", "title", "endDate", "employmentPercent"])
         serialized = handler(self)
         m = {}
 
@@ -86,3 +95,13 @@ class EmployeePlacementUpdate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    EmployeePlacementUpdateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementUpdate.model_rebuild()
+except NameError:
+    pass

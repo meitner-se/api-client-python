@@ -3075,3 +3075,161 @@ class EmployeeFilter(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    EmployeeFilterEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterGreaterThan.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterSmallerThan.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterGreaterOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterSmallerOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterContains.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterLike.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNull.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilterNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeFilter.model_rebuild()
+except NameError:
+    pass

@@ -29,3 +29,9 @@ class Error409ResponseBodyError(BaseModel):
 
     request_id: Annotated[str, pydantic.Field(alias="requestID")]
     r"""Unique identifier for the request that generated this error, used for logging and debugging"""
+
+
+try:
+    Error409ResponseBodyError.model_rebuild()
+except NameError:
+    pass

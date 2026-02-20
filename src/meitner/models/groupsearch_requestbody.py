@@ -1983,3 +1983,109 @@ class GroupSearchRequestBody(BaseModel):
 
     filter_: Annotated[GroupSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    GroupSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNull.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupSearchRequestBody.model_rebuild()
+except NameError:
+    pass

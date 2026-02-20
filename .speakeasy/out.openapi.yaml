@@ -3165,7 +3165,8 @@
         "tags": [
           "StudentPlacement"
         ],
-        "description": "Archive a student placement",
+        "summary": "Archive a student placement",
+        "description": "Archive a student placement.\n\n**Recommended usage:**\nWe recommend only archiving student placements that have a passed end date. When building syncs from external systems and a studentPlacement is removed, we recommend the following workflow:\n\n1. Set the `endDate` to the date when the studentPlacement was removed from the external system\n2. Wait approximately 5 days before archiving the student placement\n\nThis grace period allows time to correct any mistakes made by administrators in the external system before the placement is permanently archived.\n",
         "operationId": "StudentPlacementArchive",
         "parameters": [
           {
@@ -3225,6 +3226,7 @@
         "tags": [
           "StudentPlacement"
         ],
+        "summary": "Restore an archived student placement",
         "description": "Restore an archived student placement",
         "operationId": "StudentPlacementRestore",
         "parameters": [
@@ -3629,6 +3631,17 @@
           "FS"
         ],
         "description": "The type of schooling the student is attending"
+      },
+      "ModernLanguageAlternative": {
+        "type": "string",
+        "enum": [
+          "EN",
+          "ML",
+          "SV",
+          "SVA",
+          "TN"
+        ],
+        "description": "The modern language alternative for the student"
       },
       "ErrorCode": {
         "type": "string",
@@ -4349,6 +4362,15 @@
             "format": "date-time",
             "description": "The timestamp the placement was archived for the employee",
             "nullable": true
+          },
+          "employmentPercent": {
+            "type": "integer",
+            "examples": [
+              100,
+              null
+            ],
+            "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)",
+            "nullable": true
           }
         },
         "required": [
@@ -4761,6 +4783,53 @@
               null
             ],
             "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageAlternative": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ModernLanguageAlternative"
+              }
+            ],
+            "examples": [
+              "EN",
+              null
+            ],
+            "description": "The modern language alternative for the student",
+            "nullable": true
+          },
+          "swedishAsSecondLanguage": {
+            "type": "boolean",
+            "examples": [
+              false
+            ],
+            "description": "Whether the student has Swedish as their second language",
+            "default": false
+          },
+          "motherTongueParticipates": {
+            "type": "boolean",
+            "examples": [
+              false
+            ],
+            "description": "Whether the student participates in mother tongue education",
+            "default": false
+          },
+          "modernLanguageInSchoolChoice": {
+            "type": "string",
+            "examples": [
+              "deu",
+              null
+            ],
+            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageInLanguageChoice": {
+            "type": "string",
+            "examples": [
+              "fra",
+              null
+            ],
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
             "nullable": true
           },
           "startDate": {
@@ -8128,7 +8197,8 @@
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archiveYear": "example",
-                "archivedAt": "2024-01-15T10:30:00Z"
+                "archivedAt": "2024-01-15T10:30:00Z",
+                "employmentPercent": 42
               },
               null
             ],
@@ -8161,7 +8231,8 @@
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archiveYear": "example",
-                "archivedAt": "2024-01-15T10:30:00Z"
+                "archivedAt": "2024-01-15T10:30:00Z",
+                "employmentPercent": 42
               },
               null
             ],
@@ -8182,7 +8253,8 @@
                 },
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
-                "archivedAt": "2024-01-15T10:30:00Z"
+                "archivedAt": "2024-01-15T10:30:00Z",
+                "employmentPercent": 42
               },
               null
             ],
@@ -8203,7 +8275,8 @@
                 },
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
-                "archivedAt": "2024-01-15T10:30:00Z"
+                "archivedAt": "2024-01-15T10:30:00Z",
+                "employmentPercent": 42
               },
               null
             ],
@@ -8224,7 +8297,8 @@
                 },
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
-                "archivedAt": "2024-01-15T10:30:00Z"
+                "archivedAt": "2024-01-15T10:30:00Z",
+                "employmentPercent": 42
               },
               null
             ],
@@ -8245,7 +8319,8 @@
                 },
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
-                "archivedAt": "2024-01-15T10:30:00Z"
+                "archivedAt": "2024-01-15T10:30:00Z",
+                "employmentPercent": 42
               },
               null
             ],
@@ -8299,6 +8374,9 @@
                 ],
                 "archiveYear": [
                   "example"
+                ],
+                "employmentPercent": [
+                  42
                 ]
               },
               null
@@ -8353,6 +8431,9 @@
                 ],
                 "archiveYear": [
                   "example"
+                ],
+                "employmentPercent": [
+                  42
                 ]
               },
               null
@@ -8424,7 +8505,8 @@
                 "roles": true,
                 "endDate": true,
                 "archiveYear": true,
-                "archivedAt": true
+                "archivedAt": true,
+                "employmentPercent": true
               },
               null
             ],
@@ -8453,7 +8535,8 @@
                 "roles": true,
                 "endDate": true,
                 "archiveYear": true,
-                "archivedAt": true
+                "archivedAt": true,
+                "employmentPercent": true
               },
               null
             ],
@@ -8491,7 +8574,8 @@
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archiveYear": "example",
-                    "archivedAt": "2024-01-15T10:30:00Z"
+                    "archivedAt": "2024-01-15T10:30:00Z",
+                    "employmentPercent": 42
                   },
                   "notEquals": {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -8512,7 +8596,8 @@
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archiveYear": "example",
-                    "archivedAt": "2024-01-15T10:30:00Z"
+                    "archivedAt": "2024-01-15T10:30:00Z",
+                    "employmentPercent": 42
                   },
                   "greaterThan": {
                     "meta": {
@@ -8521,7 +8606,8 @@
                     },
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
-                    "archivedAt": "2024-01-15T10:30:00Z"
+                    "archivedAt": "2024-01-15T10:30:00Z",
+                    "employmentPercent": 42
                   },
                   "smallerThan": {
                     "meta": {
@@ -8530,7 +8616,8 @@
                     },
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
-                    "archivedAt": "2024-01-15T10:30:00Z"
+                    "archivedAt": "2024-01-15T10:30:00Z",
+                    "employmentPercent": 42
                   },
                   "greaterOrEqual": {
                     "meta": {
@@ -8539,7 +8626,8 @@
                     },
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
-                    "archivedAt": "2024-01-15T10:30:00Z"
+                    "archivedAt": "2024-01-15T10:30:00Z",
+                    "employmentPercent": 42
                   },
                   "smallerOrEqual": {
                     "meta": {
@@ -8548,7 +8636,8 @@
                     },
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
-                    "archivedAt": "2024-01-15T10:30:00Z"
+                    "archivedAt": "2024-01-15T10:30:00Z",
+                    "employmentPercent": 42
                   },
                   "contains": {
                     "id": [
@@ -8590,6 +8679,9 @@
                     ],
                     "archiveYear": [
                       "example"
+                    ],
+                    "employmentPercent": [
+                      42
                     ]
                   },
                   "notContains": {
@@ -8632,6 +8724,9 @@
                     ],
                     "archiveYear": [
                       "example"
+                    ],
+                    "employmentPercent": [
+                      42
                     ]
                   },
                   "like": {
@@ -8667,7 +8762,8 @@
                     "roles": true,
                     "endDate": true,
                     "archiveYear": true,
-                    "archivedAt": true
+                    "archivedAt": true,
+                    "employmentPercent": true
                   },
                   "notNull": {
                     "meta": {
@@ -8684,7 +8780,8 @@
                     "roles": true,
                     "endDate": true,
                     "archiveYear": true,
-                    "archivedAt": true
+                    "archivedAt": true,
+                    "employmentPercent": true
                   },
                   "orCondition": true
                 }
@@ -8837,6 +8934,15 @@
             "format": "date-time",
             "description": "The timestamp the placement was archived for the employee",
             "nullable": true
+          },
+          "employmentPercent": {
+            "type": "integer",
+            "examples": [
+              42,
+              null
+            ],
+            "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)",
+            "nullable": true
           }
         },
         "description": "Equality/Inequality filter fields for EmployeePlacement"
@@ -8897,6 +9003,15 @@
             ],
             "format": "date-time",
             "description": "The timestamp the placement was archived for the employee",
+            "nullable": true
+          },
+          "employmentPercent": {
+            "type": "integer",
+            "examples": [
+              42,
+              null
+            ],
+            "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)",
             "nullable": true
           }
         },
@@ -9056,6 +9171,18 @@
               "type": "string"
             },
             "description": "The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."
+          },
+          "employmentPercent": {
+            "type": "array",
+            "examples": [
+              [
+                42
+              ]
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"
           }
         },
         "description": "Contains filter fields for EmployeePlacement"
@@ -9206,6 +9333,15 @@
               null
             ],
             "description": "The timestamp the placement was archived for the employee",
+            "nullable": true
+          },
+          "employmentPercent": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)",
             "nullable": true
           }
         },
@@ -12044,6 +12180,10 @@
                 "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                 "hasChildcare": true,
                 "motherTongue": "example",
+                "swedishAsSecondLanguage": true,
+                "motherTongueParticipates": true,
+                "modernLanguageInSchoolChoice": "example",
+                "modernLanguageInLanguageChoice": "example",
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archiveYear": "example",
@@ -12077,6 +12217,10 @@
                 "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                 "hasChildcare": true,
                 "motherTongue": "example",
+                "swedishAsSecondLanguage": true,
+                "motherTongueParticipates": true,
+                "modernLanguageInSchoolChoice": "example",
+                "modernLanguageInLanguageChoice": "example",
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archiveYear": "example",
@@ -12210,6 +12354,18 @@
                 "motherTongue": [
                   "example"
                 ],
+                "swedishAsSecondLanguage": [
+                  true
+                ],
+                "motherTongueParticipates": [
+                  true
+                ],
+                "modernLanguageInSchoolChoice": [
+                  "example"
+                ],
+                "modernLanguageInLanguageChoice": [
+                  "example"
+                ],
                 "startDate": [
                   "2024-01-15"
                 ],
@@ -12264,6 +12420,18 @@
                 "motherTongue": [
                   "example"
                 ],
+                "swedishAsSecondLanguage": [
+                  true
+                ],
+                "motherTongueParticipates": [
+                  true
+                ],
+                "modernLanguageInSchoolChoice": [
+                  "example"
+                ],
+                "modernLanguageInLanguageChoice": [
+                  "example"
+                ],
                 "startDate": [
                   "2024-01-15"
                 ],
@@ -12292,6 +12460,8 @@
                   "source": "example"
                 },
                 "motherTongue": "example",
+                "modernLanguageInSchoolChoice": "example",
+                "modernLanguageInLanguageChoice": "example",
                 "archiveYear": "example"
               },
               null
@@ -12312,6 +12482,8 @@
                   "source": "example"
                 },
                 "motherTongue": "example",
+                "modernLanguageInSchoolChoice": "example",
+                "modernLanguageInLanguageChoice": "example",
                 "archiveYear": "example"
               },
               null
@@ -12338,6 +12510,9 @@
                 },
                 "schoolYear": true,
                 "motherTongue": true,
+                "modernLanguageAlternative": true,
+                "modernLanguageInSchoolChoice": true,
+                "modernLanguageInLanguageChoice": true,
                 "endDate": true,
                 "archiveYear": true,
                 "archivedAt": true
@@ -12366,6 +12541,9 @@
                 },
                 "schoolYear": true,
                 "motherTongue": true,
+                "modernLanguageAlternative": true,
+                "modernLanguageInSchoolChoice": true,
+                "modernLanguageInLanguageChoice": true,
                 "endDate": true,
                 "archiveYear": true,
                 "archivedAt": true
@@ -12403,6 +12581,10 @@
                     "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                     "hasChildcare": true,
                     "motherTongue": "example",
+                    "swedishAsSecondLanguage": true,
+                    "motherTongueParticipates": true,
+                    "modernLanguageInSchoolChoice": "example",
+                    "modernLanguageInLanguageChoice": "example",
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archiveYear": "example",
@@ -12424,6 +12606,10 @@
                     "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                     "hasChildcare": true,
                     "motherTongue": "example",
+                    "swedishAsSecondLanguage": true,
+                    "motherTongueParticipates": true,
+                    "modernLanguageInSchoolChoice": "example",
+                    "modernLanguageInLanguageChoice": "example",
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archiveYear": "example",
@@ -12497,6 +12683,18 @@
                     "motherTongue": [
                       "example"
                     ],
+                    "swedishAsSecondLanguage": [
+                      true
+                    ],
+                    "motherTongueParticipates": [
+                      true
+                    ],
+                    "modernLanguageInSchoolChoice": [
+                      "example"
+                    ],
+                    "modernLanguageInLanguageChoice": [
+                      "example"
+                    ],
                     "startDate": [
                       "2024-01-15"
                     ],
@@ -12539,6 +12737,18 @@
                     "motherTongue": [
                       "example"
                     ],
+                    "swedishAsSecondLanguage": [
+                      true
+                    ],
+                    "motherTongueParticipates": [
+                      true
+                    ],
+                    "modernLanguageInSchoolChoice": [
+                      "example"
+                    ],
+                    "modernLanguageInLanguageChoice": [
+                      "example"
+                    ],
                     "startDate": [
                       "2024-01-15"
                     ],
@@ -12555,6 +12765,8 @@
                       "source": "example"
                     },
                     "motherTongue": "example",
+                    "modernLanguageInSchoolChoice": "example",
+                    "modernLanguageInLanguageChoice": "example",
                     "archiveYear": "example"
                   },
                   "notLike": {
@@ -12563,6 +12775,8 @@
                       "source": "example"
                     },
                     "motherTongue": "example",
+                    "modernLanguageInSchoolChoice": "example",
+                    "modernLanguageInLanguageChoice": "example",
                     "archiveYear": "example"
                   },
                   "null": {
@@ -12577,6 +12791,9 @@
                     },
                     "schoolYear": true,
                     "motherTongue": true,
+                    "modernLanguageAlternative": true,
+                    "modernLanguageInSchoolChoice": true,
+                    "modernLanguageInLanguageChoice": true,
                     "endDate": true,
                     "archiveYear": true,
                     "archivedAt": true
@@ -12593,6 +12810,9 @@
                     },
                     "schoolYear": true,
                     "motherTongue": true,
+                    "modernLanguageAlternative": true,
+                    "modernLanguageInSchoolChoice": true,
+                    "modernLanguageInLanguageChoice": true,
                     "endDate": true,
                     "archiveYear": true,
                     "archivedAt": true
@@ -12717,6 +12937,51 @@
               null
             ],
             "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageAlternative": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ModernLanguageAlternative"
+              }
+            ],
+            "description": "The modern language alternative for the student",
+            "nullable": true
+          },
+          "swedishAsSecondLanguage": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "Whether the student has Swedish as their second language",
+            "nullable": true
+          },
+          "motherTongueParticipates": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "Whether the student participates in mother tongue education",
+            "nullable": true
+          },
+          "modernLanguageInSchoolChoice": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageInLanguageChoice": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
             "nullable": true
           },
           "startDate": {
@@ -12950,6 +13215,65 @@
             },
             "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."
           },
+          "modernLanguageAlternative": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ModernLanguageAlternative"
+                }
+              ]
+            },
+            "description": "The modern language alternative for the student"
+          },
+          "swedishAsSecondLanguage": {
+            "type": "array",
+            "examples": [
+              [
+                true
+              ]
+            ],
+            "items": {
+              "type": "boolean"
+            },
+            "description": "Whether the student has Swedish as their second language"
+          },
+          "motherTongueParticipates": {
+            "type": "array",
+            "examples": [
+              [
+                true
+              ]
+            ],
+            "items": {
+              "type": "boolean"
+            },
+            "description": "Whether the student participates in mother tongue education"
+          },
+          "modernLanguageInSchoolChoice": {
+            "type": "array",
+            "examples": [
+              [
+                "example"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."
+          },
+          "modernLanguageInLanguageChoice": {
+            "type": "array",
+            "examples": [
+              [
+                "example"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."
+          },
           "startDate": {
             "type": "array",
             "examples": [
@@ -13028,6 +13352,24 @@
             "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
+          "modernLanguageInSchoolChoice": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageInLanguageChoice": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "nullable": true
+          },
           "archiveYear": {
             "type": "string",
             "examples": [
@@ -13092,6 +13434,33 @@
               null
             ],
             "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageAlternative": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The modern language alternative for the student",
+            "nullable": true
+          },
+          "modernLanguageInSchoolChoice": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "nullable": true
+          },
+          "modernLanguageInLanguageChoice": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
             "nullable": true
           },
           "endDate": {
@@ -17168,7 +17537,8 @@
                   "startDate": "2024-08-01",
                   "endDate": "2024-08-01",
                   "archiveYear": "2024_2025",
-                  "archivedAt": "2024-08-01T00:00:00Z"
+                  "archivedAt": "2024-08-01T00:00:00Z",
+                  "employmentPercent": 100
                 }
               }
             }
@@ -17310,7 +17680,8 @@
                   "startDate": "2024-08-01",
                   "endDate": "2024-08-01",
                   "archiveYear": "2024_2025",
-                  "archivedAt": "2024-08-01T00:00:00Z"
+                  "archivedAt": "2024-08-01T00:00:00Z",
+                  "employmentPercent": 100
                 }
               }
             }
@@ -17452,7 +17823,8 @@
                   "startDate": "2024-08-01",
                   "endDate": "2024-08-01",
                   "archiveYear": "2024_2025",
-                  "archivedAt": "2024-08-01T00:00:00Z"
+                  "archivedAt": "2024-08-01T00:00:00Z",
+                  "employmentPercent": 100
                 }
               }
             }
@@ -17521,7 +17893,8 @@
                         "startDate": "2024-08-01",
                         "endDate": "2024-08-01",
                         "archiveYear": "2024_2025",
-                        "archivedAt": "2024-08-01T00:00:00Z"
+                        "archivedAt": "2024-08-01T00:00:00Z",
+                        "employmentPercent": 100
                       }
                     ]
                   ],
@@ -17578,7 +17951,8 @@
                       "startDate": "2024-08-01",
                       "endDate": "2024-08-01",
                       "archiveYear": "2024_2025",
-                      "archivedAt": "2024-08-01T00:00:00Z"
+                      "archivedAt": "2024-08-01T00:00:00Z",
+                      "employmentPercent": 100
                     }
                   ],
                   "pagination": {
@@ -17654,7 +18028,8 @@
                         "startDate": "2024-08-01",
                         "endDate": "2024-08-01",
                         "archiveYear": "2024_2025",
-                        "archivedAt": "2024-08-01T00:00:00Z"
+                        "archivedAt": "2024-08-01T00:00:00Z",
+                        "employmentPercent": 100
                       }
                     ]
                   ],
@@ -17711,7 +18086,8 @@
                       "startDate": "2024-08-01",
                       "endDate": "2024-08-01",
                       "archiveYear": "2024_2025",
-                      "archivedAt": "2024-08-01T00:00:00Z"
+                      "archivedAt": "2024-08-01T00:00:00Z",
+                      "employmentPercent": 100
                     }
                   ],
                   "pagination": {
@@ -19331,6 +19707,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -19402,6 +19783,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -19473,6 +19859,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -19614,6 +20005,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -19755,6 +20151,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -19823,6 +20224,11 @@
                         "schoolYear": "1",
                         "hasChildcare": true,
                         "motherTongue": "SWE",
+                        "modernLanguageAlternative": "EN",
+                        "swedishAsSecondLanguage": false,
+                        "motherTongueParticipates": false,
+                        "modernLanguageInSchoolChoice": "deu",
+                        "modernLanguageInLanguageChoice": "fra",
                         "startDate": "2024-08-01",
                         "endDate": "2025-08-01",
                         "archiveYear": "2024_2025",
@@ -19879,6 +20285,11 @@
                       "schoolYear": "1",
                       "hasChildcare": true,
                       "motherTongue": "SWE",
+                      "modernLanguageAlternative": "EN",
+                      "swedishAsSecondLanguage": false,
+                      "motherTongueParticipates": false,
+                      "modernLanguageInSchoolChoice": "deu",
+                      "modernLanguageInLanguageChoice": "fra",
                       "startDate": "2024-08-01",
                       "endDate": "2025-08-01",
                       "archiveYear": "2024_2025",
@@ -19954,6 +20365,11 @@
                         "schoolYear": "1",
                         "hasChildcare": true,
                         "motherTongue": "SWE",
+                        "modernLanguageAlternative": "EN",
+                        "swedishAsSecondLanguage": false,
+                        "motherTongueParticipates": false,
+                        "modernLanguageInSchoolChoice": "deu",
+                        "modernLanguageInLanguageChoice": "fra",
                         "startDate": "2024-08-01",
                         "endDate": "2025-08-01",
                         "archiveYear": "2024_2025",
@@ -20010,6 +20426,11 @@
                       "schoolYear": "1",
                       "hasChildcare": true,
                       "motherTongue": "SWE",
+                      "modernLanguageAlternative": "EN",
+                      "swedishAsSecondLanguage": false,
+                      "motherTongueParticipates": false,
+                      "modernLanguageInSchoolChoice": "deu",
+                      "modernLanguageInLanguageChoice": "fra",
                       "startDate": "2024-08-01",
                       "endDate": "2025-08-01",
                       "archiveYear": "2024_2025",
@@ -23142,6 +23563,15 @@
                   "format": "date",
                   "description": "The end date of the placement for the employee",
                   "nullable": true
+                },
+                "employmentPercent": {
+                  "type": "integer",
+                  "examples": [
+                    100,
+                    null
+                  ],
+                  "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)",
+                  "nullable": true
                 }
               },
               "required": [
@@ -23165,7 +23595,8 @@
                     "Admin"
                   ],
                   "startDate": "2024-08-01",
-                  "endDate": "2024-08-01"
+                  "endDate": "2024-08-01",
+                  "employmentPercent": 100
                 }
               }
             }
@@ -23244,6 +23675,15 @@
                   "format": "date",
                   "description": "The end date of the placement for the employee",
                   "nullable": true
+                },
+                "employmentPercent": {
+                  "type": "integer",
+                  "examples": [
+                    100,
+                    null
+                  ],
+                  "description": "The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)",
+                  "nullable": true
                 }
               },
               "required": [
@@ -23263,7 +23703,8 @@
                     "Admin"
                   ],
                   "startDate": "2024-08-01",
-                  "endDate": "2024-08-01"
+                  "endDate": "2024-08-01",
+                  "employmentPercent": 100
                 }
               }
             }
@@ -23305,7 +23746,8 @@
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archiveYear": "example",
-                        "archivedAt": "2024-01-15T10:30:00Z"
+                        "archivedAt": "2024-01-15T10:30:00Z",
+                        "employmentPercent": 42
                       },
                       "notEquals": {
                         "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -23326,7 +23768,8 @@
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archiveYear": "example",
-                        "archivedAt": "2024-01-15T10:30:00Z"
+                        "archivedAt": "2024-01-15T10:30:00Z",
+                        "employmentPercent": 42
                       },
                       "greaterThan": {
                         "meta": {
@@ -23335,7 +23778,8 @@
                         },
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
-                        "archivedAt": "2024-01-15T10:30:00Z"
+                        "archivedAt": "2024-01-15T10:30:00Z",
+                        "employmentPercent": 42
                       },
                       "smallerThan": {
                         "meta": {
@@ -23344,7 +23788,8 @@
                         },
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
-                        "archivedAt": "2024-01-15T10:30:00Z"
+                        "archivedAt": "2024-01-15T10:30:00Z",
+                        "employmentPercent": 42
                       },
                       "greaterOrEqual": {
                         "meta": {
@@ -23353,7 +23798,8 @@
                         },
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
-                        "archivedAt": "2024-01-15T10:30:00Z"
+                        "archivedAt": "2024-01-15T10:30:00Z",
+                        "employmentPercent": 42
                       },
                       "smallerOrEqual": {
                         "meta": {
@@ -23362,7 +23808,8 @@
                         },
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
-                        "archivedAt": "2024-01-15T10:30:00Z"
+                        "archivedAt": "2024-01-15T10:30:00Z",
+                        "employmentPercent": 42
                       },
                       "contains": {
                         "id": [
@@ -23404,6 +23851,9 @@
                         ],
                         "archiveYear": [
                           "example"
+                        ],
+                        "employmentPercent": [
+                          42
                         ]
                       },
                       "notContains": {
@@ -23446,6 +23896,9 @@
                         ],
                         "archiveYear": [
                           "example"
+                        ],
+                        "employmentPercent": [
+                          42
                         ]
                       },
                       "like": {
@@ -23481,7 +23934,8 @@
                         "roles": true,
                         "endDate": true,
                         "archiveYear": true,
-                        "archivedAt": true
+                        "archivedAt": true,
+                        "employmentPercent": true
                       },
                       "notNull": {
                         "meta": {
@@ -23498,7 +23952,8 @@
                         "roles": true,
                         "endDate": true,
                         "archiveYear": true,
-                        "archivedAt": true
+                        "archivedAt": true,
+                        "employmentPercent": true
                       },
                       "orCondition": true
                     }
@@ -23534,7 +23989,8 @@
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archiveYear": "example",
-                      "archivedAt": "2024-01-15T10:30:00Z"
+                      "archivedAt": "2024-01-15T10:30:00Z",
+                      "employmentPercent": 42
                     },
                     "notEquals": {
                       "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -23555,7 +24011,8 @@
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archiveYear": "example",
-                      "archivedAt": "2024-01-15T10:30:00Z"
+                      "archivedAt": "2024-01-15T10:30:00Z",
+                      "employmentPercent": 42
                     },
                     "greaterThan": {
                       "meta": {
@@ -23564,7 +24021,8 @@
                       },
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
-                      "archivedAt": "2024-01-15T10:30:00Z"
+                      "archivedAt": "2024-01-15T10:30:00Z",
+                      "employmentPercent": 42
                     },
                     "smallerThan": {
                       "meta": {
@@ -23573,7 +24031,8 @@
                       },
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
-                      "archivedAt": "2024-01-15T10:30:00Z"
+                      "archivedAt": "2024-01-15T10:30:00Z",
+                      "employmentPercent": 42
                     },
                     "greaterOrEqual": {
                       "meta": {
@@ -23582,7 +24041,8 @@
                       },
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
-                      "archivedAt": "2024-01-15T10:30:00Z"
+                      "archivedAt": "2024-01-15T10:30:00Z",
+                      "employmentPercent": 42
                     },
                     "smallerOrEqual": {
                       "meta": {
@@ -23591,7 +24051,8 @@
                       },
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
-                      "archivedAt": "2024-01-15T10:30:00Z"
+                      "archivedAt": "2024-01-15T10:30:00Z",
+                      "employmentPercent": 42
                     },
                     "contains": {
                       "id": [
@@ -23633,6 +24094,9 @@
                       ],
                       "archiveYear": [
                         "example"
+                      ],
+                      "employmentPercent": [
+                        42
                       ]
                     },
                     "notContains": {
@@ -23675,6 +24139,9 @@
                       ],
                       "archiveYear": [
                         "example"
+                      ],
+                      "employmentPercent": [
+                        42
                       ]
                     },
                     "like": {
@@ -23710,7 +24177,8 @@
                       "roles": true,
                       "endDate": true,
                       "archiveYear": true,
-                      "archivedAt": true
+                      "archivedAt": true,
+                      "employmentPercent": true
                     },
                     "notNull": {
                       "meta": {
@@ -23727,7 +24195,8 @@
                       "roles": true,
                       "endDate": true,
                       "archiveYear": true,
-                      "archivedAt": true
+                      "archivedAt": true,
+                      "employmentPercent": true
                     },
                     "orCondition": true
                   }
@@ -25731,6 +26200,53 @@
                   "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
+                "modernLanguageAlternative": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ModernLanguageAlternative"
+                    }
+                  ],
+                  "examples": [
+                    "EN",
+                    null
+                  ],
+                  "description": "The modern language alternative for the student",
+                  "nullable": true
+                },
+                "swedishAsSecondLanguage": {
+                  "type": "boolean",
+                  "examples": [
+                    false
+                  ],
+                  "description": "Whether the student has Swedish as their second language",
+                  "default": false
+                },
+                "motherTongueParticipates": {
+                  "type": "boolean",
+                  "examples": [
+                    false
+                  ],
+                  "description": "Whether the student participates in mother tongue education",
+                  "default": false
+                },
+                "modernLanguageInSchoolChoice": {
+                  "type": "string",
+                  "examples": [
+                    "deu",
+                    null
+                  ],
+                  "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "nullable": true
+                },
+                "modernLanguageInLanguageChoice": {
+                  "type": "string",
+                  "examples": [
+                    "fra",
+                    null
+                  ],
+                  "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "nullable": true
+                },
                 "startDate": {
                   "type": "string",
                   "examples": [
@@ -25770,6 +26286,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01"
                 }
@@ -25840,6 +26361,53 @@
                   "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
+                "modernLanguageAlternative": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ModernLanguageAlternative"
+                    }
+                  ],
+                  "examples": [
+                    "EN",
+                    null
+                  ],
+                  "description": "The modern language alternative for the student",
+                  "nullable": true
+                },
+                "swedishAsSecondLanguage": {
+                  "type": "boolean",
+                  "examples": [
+                    false
+                  ],
+                  "description": "Whether the student has Swedish as their second language",
+                  "default": false
+                },
+                "motherTongueParticipates": {
+                  "type": "boolean",
+                  "examples": [
+                    false
+                  ],
+                  "description": "Whether the student participates in mother tongue education",
+                  "default": false
+                },
+                "modernLanguageInSchoolChoice": {
+                  "type": "string",
+                  "examples": [
+                    "deu",
+                    null
+                  ],
+                  "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "nullable": true
+                },
+                "modernLanguageInLanguageChoice": {
+                  "type": "string",
+                  "examples": [
+                    "fra",
+                    null
+                  ],
+                  "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "nullable": true
+                },
                 "startDate": {
                   "type": "string",
                   "examples": [
@@ -25875,6 +26443,11 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "motherTongue": "SWE",
+                  "modernLanguageAlternative": "EN",
+                  "swedishAsSecondLanguage": false,
+                  "motherTongueParticipates": false,
+                  "modernLanguageInSchoolChoice": "deu",
+                  "modernLanguageInLanguageChoice": "fra",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01"
                 }
@@ -25915,6 +26488,10 @@
                         "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                         "hasChildcare": true,
                         "motherTongue": "example",
+                        "swedishAsSecondLanguage": true,
+                        "motherTongueParticipates": true,
+                        "modernLanguageInSchoolChoice": "example",
+                        "modernLanguageInLanguageChoice": "example",
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archiveYear": "example",
@@ -25936,6 +26513,10 @@
                         "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                         "hasChildcare": true,
                         "motherTongue": "example",
+                        "swedishAsSecondLanguage": true,
+                        "motherTongueParticipates": true,
+                        "modernLanguageInSchoolChoice": "example",
+                        "modernLanguageInLanguageChoice": "example",
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archiveYear": "example",
@@ -26009,6 +26590,18 @@
                         "motherTongue": [
                           "example"
                         ],
+                        "swedishAsSecondLanguage": [
+                          true
+                        ],
+                        "motherTongueParticipates": [
+                          true
+                        ],
+                        "modernLanguageInSchoolChoice": [
+                          "example"
+                        ],
+                        "modernLanguageInLanguageChoice": [
+                          "example"
+                        ],
                         "startDate": [
                           "2024-01-15"
                         ],
@@ -26051,6 +26644,18 @@
                         "motherTongue": [
                           "example"
                         ],
+                        "swedishAsSecondLanguage": [
+                          true
+                        ],
+                        "motherTongueParticipates": [
+                          true
+                        ],
+                        "modernLanguageInSchoolChoice": [
+                          "example"
+                        ],
+                        "modernLanguageInLanguageChoice": [
+                          "example"
+                        ],
                         "startDate": [
                           "2024-01-15"
                         ],
@@ -26067,6 +26672,8 @@
                           "source": "example"
                         },
                         "motherTongue": "example",
+                        "modernLanguageInSchoolChoice": "example",
+                        "modernLanguageInLanguageChoice": "example",
                         "archiveYear": "example"
                       },
                       "notLike": {
@@ -26075,6 +26682,8 @@
                           "source": "example"
                         },
                         "motherTongue": "example",
+                        "modernLanguageInSchoolChoice": "example",
+                        "modernLanguageInLanguageChoice": "example",
                         "archiveYear": "example"
                       },
                       "null": {
@@ -26089,6 +26698,9 @@
                         },
                         "schoolYear": true,
                         "motherTongue": true,
+                        "modernLanguageAlternative": true,
+                        "modernLanguageInSchoolChoice": true,
+                        "modernLanguageInLanguageChoice": true,
                         "endDate": true,
                         "archiveYear": true,
                         "archivedAt": true
@@ -26105,6 +26717,9 @@
                         },
                         "schoolYear": true,
                         "motherTongue": true,
+                        "modernLanguageAlternative": true,
+                        "modernLanguageInSchoolChoice": true,
+                        "modernLanguageInLanguageChoice": true,
                         "endDate": true,
                         "archiveYear": true,
                         "archivedAt": true
@@ -26140,6 +26755,10 @@
                       "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                       "hasChildcare": true,
                       "motherTongue": "example",
+                      "swedishAsSecondLanguage": true,
+                      "motherTongueParticipates": true,
+                      "modernLanguageInSchoolChoice": "example",
+                      "modernLanguageInLanguageChoice": "example",
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archiveYear": "example",
@@ -26161,6 +26780,10 @@
                       "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                       "hasChildcare": true,
                       "motherTongue": "example",
+                      "swedishAsSecondLanguage": true,
+                      "motherTongueParticipates": true,
+                      "modernLanguageInSchoolChoice": "example",
+                      "modernLanguageInLanguageChoice": "example",
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archiveYear": "example",
@@ -26234,6 +26857,18 @@
                       "motherTongue": [
                         "example"
                       ],
+                      "swedishAsSecondLanguage": [
+                        true
+                      ],
+                      "motherTongueParticipates": [
+                        true
+                      ],
+                      "modernLanguageInSchoolChoice": [
+                        "example"
+                      ],
+                      "modernLanguageInLanguageChoice": [
+                        "example"
+                      ],
                       "startDate": [
                         "2024-01-15"
                       ],
@@ -26276,6 +26911,18 @@
                       "motherTongue": [
                         "example"
                       ],
+                      "swedishAsSecondLanguage": [
+                        true
+                      ],
+                      "motherTongueParticipates": [
+                        true
+                      ],
+                      "modernLanguageInSchoolChoice": [
+                        "example"
+                      ],
+                      "modernLanguageInLanguageChoice": [
+                        "example"
+                      ],
                       "startDate": [
                         "2024-01-15"
                       ],
@@ -26292,6 +26939,8 @@
                         "source": "example"
                       },
                       "motherTongue": "example",
+                      "modernLanguageInSchoolChoice": "example",
+                      "modernLanguageInLanguageChoice": "example",
                       "archiveYear": "example"
                     },
                     "notLike": {
@@ -26300,6 +26949,8 @@
                         "source": "example"
                       },
                       "motherTongue": "example",
+                      "modernLanguageInSchoolChoice": "example",
+                      "modernLanguageInLanguageChoice": "example",
                       "archiveYear": "example"
                     },
                     "null": {
@@ -26314,6 +26965,9 @@
                       },
                       "schoolYear": true,
                       "motherTongue": true,
+                      "modernLanguageAlternative": true,
+                      "modernLanguageInSchoolChoice": true,
+                      "modernLanguageInLanguageChoice": true,
                       "endDate": true,
                       "archiveYear": true,
                       "archivedAt": true
@@ -26330,6 +26984,9 @@
                       },
                       "schoolYear": true,
                       "motherTongue": true,
+                      "modernLanguageAlternative": true,
+                      "modernLanguageInSchoolChoice": true,
+                      "modernLanguageInLanguageChoice": true,
                       "endDate": true,
                       "archiveYear": true,
                       "archivedAt": true

@@ -29,3 +29,9 @@ class GroupSearch422ResponseBodyError(BaseModel):
 
     request_id: Annotated[str, pydantic.Field(alias="requestID")]
     r"""Unique identifier for the request that generated this error, used for logging and debugging"""
+
+
+try:
+    GroupSearch422ResponseBodyError.model_rebuild()
+except NameError:
+    pass

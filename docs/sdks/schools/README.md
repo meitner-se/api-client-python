@@ -16,7 +16,7 @@ Returns a paginated list of all `Schools` in your organization.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="SchoolList" method="get" path="/school" -->
+<!-- UsageSnippet language="python" operationID="SchoolList" method="get" path="/school" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -67,9 +67,78 @@ with Meitner(
 
 Create a new School
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="SchoolCreate" method="post" path="/school" -->
+<!-- UsageSnippet language="python" operationID="SchoolCreate" method="post" path="/school" example="errorExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.create(title="Meitner Grundskola", school_type="GR", external={
+        "source_id": "12345678",
+    }, unit_code="12345678", csn_school_code="12345", municipality_code="0184")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="SchoolCreate" method="post" path="/school" example="requestExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.create(title="Meitner Grundskola", school_type="GR", external={
+        "source_id": "12345678",
+    }, unit_code="12345678", csn_school_code="12345", municipality_code="0184")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="SchoolCreate" method="post" path="/school" example="responseExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.create(title="Meitner Grundskola", school_type="GR", external={
+        "source_id": "12345678",
+    }, unit_code="12345678", csn_school_code="12345", municipality_code="0184")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="SchoolCreate" method="post" path="/school" example="validationError" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -98,9 +167,9 @@ with Meitner(
 | `title`                                                                                                                                                                 | *str*                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                      | The title of the school                                                                                                                                                 | Meitner Grundskola                                                                                                                                                      |
 | `school_type`                                                                                                                                                           | [models.SchoolCreateSchoolType](../../models/schoolcreateschooltype.md)                                                                                                 | :heavy_check_mark:                                                                                                                                                      | Type of schooling provided at the school                                                                                                                                | GR                                                                                                                                                                      |
 | `external`                                                                                                                                                              | [Optional[models.SchoolCreateExternal]](../../models/schoolcreateexternal.md)                                                                                           | :heavy_minus_sign:                                                                                                                                                      | External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included. | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                      |
-| `unit_code`                                                                                                                                                             | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Unit Code provided by SCB, is used in reports and printed on grade documents                                                                                 | 12345678                                                                                                                                                                |
-| `csn_school_code`                                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Code provided by CSN, required for reports to CSN                                                                                                            | 12345                                                                                                                                                                   |
-| `municipality_code`                                                                                                                                                     | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | Municipality code of the school, is used in reports and printed on grade documents                                                                                      | 0184                                                                                                                                                                    |
+| `unit_code`                                                                                                                                                             | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Unit Code provided by SCB, is used in reports and printed on grade documents                                                                                 | **Example 1:** 12345678<br/>**Example 2:** <nil>                                                                                                                        |
+| `csn_school_code`                                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Code provided by CSN, required for reports to CSN                                                                                                            | **Example 1:** 12345<br/>**Example 2:** <nil>                                                                                                                           |
+| `municipality_code`                                                                                                                                                     | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | Municipality code of the school, is used in reports and printed on grade documents                                                                                      | **Example 1:** 0184<br/>**Example 2:** <nil>                                                                                                                            |
 | `retries`                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                        | :heavy_minus_sign:                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                     |                                                                                                                                                                         |
 
 ### Response
@@ -125,9 +194,603 @@ with Meitner(
 
 Search for `Schools` with filtering capabilities.
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="SchoolSearch" method="post" path="/school/_search" -->
+<!-- UsageSnippet language="python" operationID="SchoolSearch" method="post" path="/school/_search" example="errorExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "title": [
+                "example",
+            ],
+            "unit_code": [
+                "example",
+            ],
+            "csn_school_code": [
+                "example",
+            ],
+            "municipality_code": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "title": [
+                "example",
+            ],
+            "unit_code": [
+                "example",
+            ],
+            "csn_school_code": [
+                "example",
+            ],
+            "municipality_code": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "unit_code": True,
+            "csn_school_code": True,
+            "municipality_code": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "unit_code": True,
+            "csn_school_code": True,
+            "municipality_code": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="SchoolSearch" method="post" path="/school/_search" example="requestExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "title": [
+                "example",
+            ],
+            "unit_code": [
+                "example",
+            ],
+            "csn_school_code": [
+                "example",
+            ],
+            "municipality_code": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "title": [
+                "example",
+            ],
+            "unit_code": [
+                "example",
+            ],
+            "csn_school_code": [
+                "example",
+            ],
+            "municipality_code": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "unit_code": True,
+            "csn_school_code": True,
+            "municipality_code": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "unit_code": True,
+            "csn_school_code": True,
+            "municipality_code": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="SchoolSearch" method="post" path="/school/_search" example="responseExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "title": [
+                "example",
+            ],
+            "unit_code": [
+                "example",
+            ],
+            "csn_school_code": [
+                "example",
+            ],
+            "municipality_code": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "title": [
+                "example",
+            ],
+            "unit_code": [
+                "example",
+            ],
+            "csn_school_code": [
+                "example",
+            ],
+            "municipality_code": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+            "unit_code": "example",
+            "csn_school_code": "example",
+            "municipality_code": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "unit_code": True,
+            "csn_school_code": True,
+            "municipality_code": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "unit_code": True,
+            "csn_school_code": True,
+            "municipality_code": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="SchoolSearch" method="post" path="/school/_search" example="validationError" -->
 ```python
 from meitner import Meitner, models
 from meitner.utils import parse_datetime
@@ -357,7 +1020,7 @@ Retrieves the `School` with the given ID.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="SchoolGet" method="get" path="/school/{id}" -->
+<!-- UsageSnippet language="python" operationID="SchoolGet" method="get" path="/school/{id}" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -405,9 +1068,78 @@ with Meitner(
 
 Update a School
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="SchoolUpdate" method="patch" path="/school/{id}" -->
+<!-- UsageSnippet language="python" operationID="SchoolUpdate" method="patch" path="/school/{id}" example="errorExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.update(id="123e4567-e89b-12d3-a456-426614174000", title="Meitner Grundskola", external={
+        "source_id": "12345678",
+    }, unit_code="12345678", csn_school_code="12345", municipality_code="0184")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="SchoolUpdate" method="patch" path="/school/{id}" example="requestExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.update(id="123e4567-e89b-12d3-a456-426614174000", title="Meitner Grundskola", external={
+        "source_id": "12345678",
+    }, unit_code="12345678", csn_school_code="12345", municipality_code="0184")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="SchoolUpdate" method="patch" path="/school/{id}" example="responseExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.schools.update(id="123e4567-e89b-12d3-a456-426614174000", title="Meitner Grundskola", external={
+        "source_id": "12345678",
+    }, unit_code="12345678", csn_school_code="12345", municipality_code="0184")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="SchoolUpdate" method="patch" path="/school/{id}" example="validationError" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -436,9 +1168,9 @@ with Meitner(
 | `id`                                                                                                                                                                    | *str*                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                      | The unique identifier of the School to update                                                                                                                           | 123e4567-e89b-12d3-a456-426614174000                                                                                                                                    |
 | `title`                                                                                                                                                                 | *str*                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                      | The title of the school                                                                                                                                                 | Meitner Grundskola                                                                                                                                                      |
 | `external`                                                                                                                                                              | [Optional[models.SchoolUpdateExternal]](../../models/schoolupdateexternal.md)                                                                                           | :heavy_minus_sign:                                                                                                                                                      | External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included. | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                      |
-| `unit_code`                                                                                                                                                             | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Unit Code provided by SCB, is used in reports and printed on grade documents                                                                                 | 12345678                                                                                                                                                                |
-| `csn_school_code`                                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Code provided by CSN, required for reports to CSN                                                                                                            | 12345                                                                                                                                                                   |
-| `municipality_code`                                                                                                                                                     | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | Municipality code of the school, is used in reports and printed on grade documents                                                                                      | 0184                                                                                                                                                                    |
+| `unit_code`                                                                                                                                                             | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Unit Code provided by SCB, is used in reports and printed on grade documents                                                                                 | **Example 1:** 12345678<br/>**Example 2:** <nil>                                                                                                                        |
+| `csn_school_code`                                                                                                                                                       | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | The School Code provided by CSN, required for reports to CSN                                                                                                            | **Example 1:** 12345<br/>**Example 2:** <nil>                                                                                                                           |
+| `municipality_code`                                                                                                                                                     | *OptionalNullable[str]*                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                      | Municipality code of the school, is used in reports and printed on grade documents                                                                                      | **Example 1:** 0184<br/>**Example 2:** <nil>                                                                                                                            |
 | `retries`                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                        | :heavy_minus_sign:                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                     |                                                                                                                                                                         |
 
 ### Response

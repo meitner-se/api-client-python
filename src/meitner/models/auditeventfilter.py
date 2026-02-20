@@ -1303,3 +1303,65 @@ class AuditEventFilter(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    AuditEventFilterEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterContains.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilterNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventFilter.model_rebuild()
+except NameError:
+    pass

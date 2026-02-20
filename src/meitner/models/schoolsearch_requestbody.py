@@ -1966,3 +1966,117 @@ class SchoolSearchRequestBody(BaseModel):
 
     filter_: Annotated[SchoolSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    SchoolSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchLike.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNull.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolSearchRequestBody.model_rebuild()
+except NameError:
+    pass

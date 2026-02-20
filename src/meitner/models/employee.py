@@ -351,3 +351,21 @@ class Employee(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    EmployeeMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    Employee.model_rebuild()
+except NameError:
+    pass

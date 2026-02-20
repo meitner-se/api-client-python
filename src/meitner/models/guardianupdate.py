@@ -225,3 +225,17 @@ class GuardianUpdate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GuardianUpdateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianUpdateAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianUpdate.model_rebuild()
+except NameError:
+    pass

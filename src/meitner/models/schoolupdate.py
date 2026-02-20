@@ -87,3 +87,13 @@ class SchoolUpdate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    SchoolUpdateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolUpdate.model_rebuild()
+except NameError:
+    pass

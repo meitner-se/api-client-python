@@ -247,3 +247,17 @@ class EmployeeCreate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    EmployeeCreateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeCreateAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeCreate.model_rebuild()
+except NameError:
+    pass

@@ -3090,3 +3090,165 @@ class StudentSearchRequestBody(BaseModel):
 
     filter_: Annotated[StudentSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    StudentSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchGreaterThan.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchSmallerThan.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchGreaterOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchSmallerOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchLike.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNull.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentSearchRequestBody.model_rebuild()
+except NameError:
+    pass

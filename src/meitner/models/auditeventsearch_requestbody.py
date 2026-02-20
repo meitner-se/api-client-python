@@ -1318,3 +1318,69 @@ class AuditEventSearchRequestBody(BaseModel):
 
     filter_: Annotated[AuditEventSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    AuditEventSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    AuditEventSearchRequestBody.model_rebuild()
+except NameError:
+    pass

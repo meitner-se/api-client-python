@@ -161,6 +161,8 @@ class EmployeePlacementSearchEqualsTypedDict(TypedDict):
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchEquals(BaseModel):
@@ -212,6 +214,11 @@ class EmployeePlacementSearchEquals(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -228,6 +235,7 @@ class EmployeePlacementSearchEquals(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(
@@ -244,6 +252,7 @@ class EmployeePlacementSearchEquals(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         serialized = handler(self)
@@ -415,6 +424,8 @@ class EmployeePlacementSearchNotEqualsTypedDict(TypedDict):
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchNotEquals(BaseModel):
@@ -466,6 +477,11 @@ class EmployeePlacementSearchNotEquals(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -482,6 +498,7 @@ class EmployeePlacementSearchNotEquals(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(
@@ -498,6 +515,7 @@ class EmployeePlacementSearchNotEquals(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         serialized = handler(self)
@@ -591,6 +609,8 @@ class EmployeePlacementSearchGreaterThanTypedDict(TypedDict):
     r"""The end date of the placement for the employee"""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchGreaterThan(BaseModel):
@@ -615,13 +635,32 @@ class EmployeePlacementSearchGreaterThan(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -714,6 +753,8 @@ class EmployeePlacementSearchSmallerThanTypedDict(TypedDict):
     r"""The end date of the placement for the employee"""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchSmallerThan(BaseModel):
@@ -738,13 +779,32 @@ class EmployeePlacementSearchSmallerThan(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -839,6 +899,8 @@ class EmployeePlacementSearchGreaterOrEqualTypedDict(TypedDict):
     r"""The end date of the placement for the employee"""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchGreaterOrEqual(BaseModel):
@@ -863,13 +925,32 @@ class EmployeePlacementSearchGreaterOrEqual(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -964,6 +1045,8 @@ class EmployeePlacementSearchSmallerOrEqualTypedDict(TypedDict):
     r"""The end date of the placement for the employee"""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchSmallerOrEqual(BaseModel):
@@ -988,13 +1071,32 @@ class EmployeePlacementSearchSmallerOrEqual(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "startDate",
+                "endDate",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -1113,6 +1215,8 @@ class EmployeePlacementSearchContainsTypedDict(TypedDict):
     r"""The end date of the placement for the employee"""
     archive_year: NotRequired[List[str]]
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
+    employment_percent: NotRequired[List[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchContains(BaseModel):
@@ -1157,6 +1261,11 @@ class EmployeePlacementSearchContains(BaseModel):
     ] = None
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
+    employment_percent: Annotated[
+        Optional[List[int]], pydantic.Field(alias="employmentPercent")
+    ] = None
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -1172,6 +1281,7 @@ class EmployeePlacementSearchContains(BaseModel):
                 "startDate",
                 "endDate",
                 "archiveYear",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(["meta", "external"])
@@ -1292,6 +1402,8 @@ class EmployeePlacementSearchNotContainsTypedDict(TypedDict):
     r"""The end date of the placement for the employee"""
     archive_year: NotRequired[List[str]]
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
+    employment_percent: NotRequired[List[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchNotContains(BaseModel):
@@ -1336,6 +1448,11 @@ class EmployeePlacementSearchNotContains(BaseModel):
     ] = None
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
+    employment_percent: Annotated[
+        Optional[List[int]], pydantic.Field(alias="employmentPercent")
+    ] = None
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -1351,6 +1468,7 @@ class EmployeePlacementSearchNotContains(BaseModel):
                 "startDate",
                 "endDate",
                 "archiveYear",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(["meta", "external"])
@@ -1726,6 +1844,8 @@ class EmployeePlacementSearchNullTypedDict(TypedDict):
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
     archived_at: NotRequired[Nullable[bool]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[bool]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchNull(BaseModel):
@@ -1759,6 +1879,11 @@ class EmployeePlacementSearchNull(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -1771,6 +1896,7 @@ class EmployeePlacementSearchNull(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(
@@ -1783,6 +1909,7 @@ class EmployeePlacementSearchNull(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         serialized = handler(self)
@@ -1927,6 +2054,8 @@ class EmployeePlacementSearchNotNullTypedDict(TypedDict):
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
     archived_at: NotRequired[Nullable[bool]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[bool]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacementSearchNotNull(BaseModel):
@@ -1960,6 +2089,11 @@ class EmployeePlacementSearchNotNull(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -1972,6 +2106,7 @@ class EmployeePlacementSearchNotNull(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(
@@ -1984,6 +2119,7 @@ class EmployeePlacementSearchNotNull(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         serialized = handler(self)
@@ -2185,3 +2321,133 @@ class EmployeePlacementSearchRequestBody(BaseModel):
 
     filter_: Annotated[EmployeePlacementSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    EmployeePlacementSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchGreaterThan.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchSmallerThan.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchGreaterOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchSmallerOrEqual.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchLike.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNull.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementSearchRequestBody.model_rebuild()
+except NameError:
+    pass

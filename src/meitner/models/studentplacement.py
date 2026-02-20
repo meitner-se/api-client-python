@@ -140,6 +140,16 @@ StudentPlacementSchoolYear = Literal[
 r"""The school year the student is placed in"""
 
 
+StudentPlacementModernLanguageAlternative = Literal[
+    "EN",
+    "ML",
+    "SV",
+    "SVA",
+    "TN",
+]
+r"""The modern language alternative for the student"""
+
+
 class StudentPlacementTypedDict(TypedDict):
     r"""StudentPlacement holds the placement information about a student in a specific school."""
 
@@ -163,6 +173,18 @@ class StudentPlacementTypedDict(TypedDict):
     r"""Whether the student has childcare"""
     mother_tongue: NotRequired[Nullable[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
+    modern_language_alternative: NotRequired[
+        Nullable[StudentPlacementModernLanguageAlternative]
+    ]
+    r"""The modern language alternative for the student"""
+    swedish_as_second_language: NotRequired[bool]
+    r"""Whether the student has Swedish as their second language"""
+    mother_tongue_participates: NotRequired[bool]
+    r"""Whether the student participates in mother tongue education"""
+    modern_language_in_school_choice: NotRequired[Nullable[str]]
+    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    modern_language_in_language_choice: NotRequired[Nullable[str]]
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
     end_date: NotRequired[Nullable[date]]
     r"""The end date of the placement"""
     archive_year: NotRequired[Nullable[str]]
@@ -212,6 +234,32 @@ class StudentPlacement(BaseModel):
     ] = UNSET
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
+    modern_language_alternative: Annotated[
+        OptionalNullable[StudentPlacementModernLanguageAlternative],
+        pydantic.Field(alias="modernLanguageAlternative"),
+    ] = UNSET
+    r"""The modern language alternative for the student"""
+
+    swedish_as_second_language: Annotated[
+        Optional[bool], pydantic.Field(alias="swedishAsSecondLanguage")
+    ] = False
+    r"""Whether the student has Swedish as their second language"""
+
+    mother_tongue_participates: Annotated[
+        Optional[bool], pydantic.Field(alias="motherTongueParticipates")
+    ] = False
+    r"""Whether the student participates in mother tongue education"""
+
+    modern_language_in_school_choice: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
+    ] = UNSET
+    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+
+    modern_language_in_language_choice: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="modernLanguageInLanguageChoice")
+    ] = UNSET
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+
     end_date: Annotated[OptionalNullable[date], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement"""
 
@@ -234,6 +282,11 @@ class StudentPlacement(BaseModel):
                 "schoolYear",
                 "hasChildcare",
                 "motherTongue",
+                "modernLanguageAlternative",
+                "swedishAsSecondLanguage",
+                "motherTongueParticipates",
+                "modernLanguageInSchoolChoice",
+                "modernLanguageInLanguageChoice",
                 "endDate",
                 "archiveYear",
                 "archivedAt",
@@ -244,6 +297,9 @@ class StudentPlacement(BaseModel):
                 "external",
                 "schoolYear",
                 "motherTongue",
+                "modernLanguageAlternative",
+                "modernLanguageInSchoolChoice",
+                "modernLanguageInLanguageChoice",
                 "endDate",
                 "archiveYear",
                 "archivedAt",
@@ -269,3 +325,17 @@ class StudentPlacement(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    StudentPlacementMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentPlacementExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentPlacement.model_rebuild()
+except NameError:
+    pass

@@ -225,3 +225,17 @@ class GuardianCreate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GuardianCreateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianCreateAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianCreate.model_rebuild()
+except NameError:
+    pass

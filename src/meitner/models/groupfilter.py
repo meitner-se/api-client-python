@@ -1968,3 +1968,105 @@ class GroupFilter(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GroupFilterEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterContains.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNull.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilterNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupFilter.model_rebuild()
+except NameError:
+    pass
