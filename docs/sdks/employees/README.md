@@ -17,7 +17,7 @@ Returns a paginated list of all `Employees` in your organization.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="EmployeeList" method="get" path="/employee" -->
+<!-- UsageSnippet language="python" operationID="EmployeeList" method="get" path="/employee" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -68,9 +68,99 @@ with Meitner(
 
 Create a new Employee
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="EmployeeCreate" method="post" path="/employee" -->
+<!-- UsageSnippet language="python" operationID="EmployeeCreate" method="post" path="/employee" example="errorExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="EmployeeCreate" method="post" path="/employee" example="requestExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="EmployeeCreate" method="post" path="/employee" example="responseExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="EmployeeCreate" method="post" path="/employee" example="validationError" -->
 ```python
 from datetime import date
 from meitner import Meitner, models
@@ -107,14 +197,14 @@ with Meitner(
 | `first_name`                                                                                                                                                                                                                                            | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The first name of the employee                                                                                                                                                                                                                          | Lise                                                                                                                                                                                                                                                    |
 | `last_name`                                                                                                                                                                                                                                             | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The last name of the employee                                                                                                                                                                                                                           | Meitner                                                                                                                                                                                                                                                 |
 | `external`                                                                                                                                                                                                                                              | [Optional[models.EmployeeCreateExternal]](../../models/employeecreateexternal.md)                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                      | ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.                                                              | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                                                                                                      |
-| `gender`                                                                                                                                                                                                                                                | [OptionalNullable[models.EmployeeCreateGender]](../../models/employeecreategender.md)                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                      | The gender of the employee                                                                                                                                                                                                                              | Female                                                                                                                                                                                                                                                  |
+| `gender`                                                                                                                                                                                                                                                | [OptionalNullable[models.EmployeeCreateGender]](../../models/employeecreategender.md)                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                      | The gender of the employee                                                                                                                                                                                                                              | **Example 1:** Female<br/>**Example 2:** <nil>                                                                                                                                                                                                          |
 | `identity_temporary`                                                                                                                                                                                                                                    | *Optional[bool]*                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | If the identity number is temporary for the employee                                                                                                                                                                                                    | true                                                                                                                                                                                                                                                    |
-| `date_of_birth`                                                                                                                                                                                                                                         | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                      | The date of birth of the employee                                                                                                                                                                                                                       | 2019-12-16                                                                                                                                                                                                                                              |
+| `date_of_birth`                                                                                                                                                                                                                                         | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                      | The date of birth of the employee                                                                                                                                                                                                                       | **Example 1:** 2019-12-16<br/>**Example 2:** <nil>                                                                                                                                                                                                      |
 | `address`                                                                                                                                                                                                                                               | [Optional[models.EmployeeCreateAddress]](../../models/employeecreateaddress.md)                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                      | The address of the employee                                                                                                                                                                                                                             | {<br/>"postalAddress": "Dalvägen 14",<br/>"postalCode": "169 56",<br/>"postalCity": "Solna",<br/>"countryCode": "SWE",<br/>"municipalityCode": "0184"<br/>}                                                                                             |
-| `email_address1`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | lise@meitner.se                                                                                                                                                                                                                                         |
-| `email_address2`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                         | lise@gmail.com                                                                                                                                                                                                                                          |
-| `phone_number1`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.                                                                                                  | +46701234567                                                                                                                                                                                                                                            |
-| `phone_number2`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                          | +46701234567                                                                                                                                                                                                                                            |
+| `email_address1`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | **Example 1:** lise@meitner.se<br/>**Example 2:** <nil>                                                                                                                                                                                                 |
+| `email_address2`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                         | **Example 1:** lise@gmail.com<br/>**Example 2:** <nil>                                                                                                                                                                                                  |
+| `phone_number1`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.                                                                                                  | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                                    |
+| `phone_number2`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                          | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                                    |
 | `retries`                                                                                                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                                                                                                     |                                                                                                                                                                                                                                                         |
 
 ### Response
@@ -139,9 +229,1002 @@ with Meitner(
 
 Search for `Employees` with filtering capabilities.
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="EmployeeSearch" method="post" path="/employee/_search" -->
+<!-- UsageSnippet language="python" operationID="EmployeeSearch" method="post" path="/employee/_search" example="errorExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="EmployeeSearch" method="post" path="/employee/_search" example="requestExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="EmployeeSearch" method="post" path="/employee/_search" example="responseExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+            "date_of_birth": date.fromisoformat("2024-01-15"),
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "date_of_birth": [
+                date.fromisoformat("2024-01-15"),
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "gender": True,
+            "date_of_birth": True,
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="EmployeeSearch" method="post" path="/employee/_search" example="validationError" -->
 ```python
 from datetime import date
 from meitner import Meitner, models
@@ -504,7 +1587,7 @@ Retrieves the `Employee` with the given ID.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="EmployeeGet" method="get" path="/employee/{id}" -->
+<!-- UsageSnippet language="python" operationID="EmployeeGet" method="get" path="/employee/{id}" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -602,9 +1685,99 @@ with Meitner(
 
 Update a Employee
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="EmployeeUpdate" method="patch" path="/employee/{id}" -->
+<!-- UsageSnippet language="python" operationID="EmployeeUpdate" method="patch" path="/employee/{id}" example="errorExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="EmployeeUpdate" method="patch" path="/employee/{id}" example="requestExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="EmployeeUpdate" method="patch" path="/employee/{id}" example="responseExample" -->
+```python
+from datetime import date
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.employees.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, gender="Female", identity_temporary=True, date_of_birth=date.fromisoformat("2019-12-16"), address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567")
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="EmployeeUpdate" method="patch" path="/employee/{id}" example="validationError" -->
 ```python
 from datetime import date
 from meitner import Meitner, models
@@ -642,14 +1815,14 @@ with Meitner(
 | `first_name`                                                                                                                                                                                                                                            | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The first name of the employee                                                                                                                                                                                                                          | Lise                                                                                                                                                                                                                                                    |
 | `last_name`                                                                                                                                                                                                                                             | *str*                                                                                                                                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                                      | The last name of the employee                                                                                                                                                                                                                           | Meitner                                                                                                                                                                                                                                                 |
 | `external`                                                                                                                                                                                                                                              | [Optional[models.EmployeeUpdateExternal]](../../models/employeeupdateexternal.md)                                                                                                                                                                       | :heavy_minus_sign:                                                                                                                                                                                                                                      | ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the employee placement, the Source-field is not included.                                                              | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                                                                                                      |
-| `gender`                                                                                                                                                                                                                                                | [OptionalNullable[models.EmployeeUpdateGender]](../../models/employeeupdategender.md)                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                      | The gender of the employee                                                                                                                                                                                                                              | Female                                                                                                                                                                                                                                                  |
+| `gender`                                                                                                                                                                                                                                                | [OptionalNullable[models.EmployeeUpdateGender]](../../models/employeeupdategender.md)                                                                                                                                                                   | :heavy_minus_sign:                                                                                                                                                                                                                                      | The gender of the employee                                                                                                                                                                                                                              | **Example 1:** Female<br/>**Example 2:** <nil>                                                                                                                                                                                                          |
 | `identity_temporary`                                                                                                                                                                                                                                    | *Optional[bool]*                                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | If the identity number is temporary for the employee                                                                                                                                                                                                    | true                                                                                                                                                                                                                                                    |
-| `date_of_birth`                                                                                                                                                                                                                                         | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                      | The date of birth of the employee                                                                                                                                                                                                                       | 2019-12-16                                                                                                                                                                                                                                              |
+| `date_of_birth`                                                                                                                                                                                                                                         | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects)                                                                                                                                                                            | :heavy_minus_sign:                                                                                                                                                                                                                                      | The date of birth of the employee                                                                                                                                                                                                                       | **Example 1:** 2019-12-16<br/>**Example 2:** <nil>                                                                                                                                                                                                      |
 | `address`                                                                                                                                                                                                                                               | [Optional[models.EmployeeUpdateAddress]](../../models/employeeupdateaddress.md)                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                                      | The address of the employee                                                                                                                                                                                                                             | {<br/>"postalAddress": "Dalvägen 14",<br/>"postalCode": "169 56",<br/>"postalCity": "Solna",<br/>"countryCode": "SWE",<br/>"municipalityCode": "0184"<br/>}                                                                                             |
-| `email_address1`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | lise@meitner.se                                                                                                                                                                                                                                         |
-| `email_address2`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                         | lise@gmail.com                                                                                                                                                                                                                                          |
-| `phone_number1`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.                                                                                                  | +46701234567                                                                                                                                                                                                                                            |
-| `phone_number2`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                          | +46701234567                                                                                                                                                                                                                                            |
+| `email_address1`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary email address of the employee, will be used for communication with the employee from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | **Example 1:** lise@meitner.se<br/>**Example 2:** <nil>                                                                                                                                                                                                 |
+| `email_address2`                                                                                                                                                                                                                                        | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary email address of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                         | **Example 1:** lise@gmail.com<br/>**Example 2:** <nil>                                                                                                                                                                                                  |
+| `phone_number1`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization.                                                                                                  | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                                    |
+| `phone_number2`                                                                                                                                                                                                                                         | *OptionalNullable[str]*                                                                                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                                      | The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.                                                                                                                          | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                                    |
 | `retries`                                                                                                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                                                                                                     |                                                                                                                                                                                                                                                         |
 
 ### Response

@@ -143,6 +143,8 @@ class EmployeePlacementTypedDict(TypedDict):
     r"""The year the placement was archived for the employee, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
     archived_at: NotRequired[Nullable[datetime]]
     r"""The timestamp the placement was archived for the employee"""
+    employment_percent: NotRequired[Nullable[int]]
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
 
 
 class EmployeePlacement(BaseModel):
@@ -188,6 +190,11 @@ class EmployeePlacement(BaseModel):
     ] = UNSET
     r"""The timestamp the placement was archived for the employee"""
 
+    employment_percent: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="employmentPercent")
+    ] = UNSET
+    r"""The percentage of employment for the employee at this school, represented as an integer (e.g., 100 for 100%, 50 for 50%)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -200,10 +207,19 @@ class EmployeePlacement(BaseModel):
                 "endDate",
                 "archiveYear",
                 "archivedAt",
+                "employmentPercent",
             ]
         )
         nullable_fields = set(
-            ["external", "signature", "title", "endDate", "archiveYear", "archivedAt"]
+            [
+                "external",
+                "signature",
+                "title",
+                "endDate",
+                "archiveYear",
+                "archivedAt",
+                "employmentPercent",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -225,3 +241,17 @@ class EmployeePlacement(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    EmployeePlacementMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacementExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeePlacement.model_rebuild()
+except NameError:
+    pass

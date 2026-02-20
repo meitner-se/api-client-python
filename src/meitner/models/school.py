@@ -213,3 +213,17 @@ class School(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    SchoolMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    School.model_rebuild()
+except NameError:
+    pass

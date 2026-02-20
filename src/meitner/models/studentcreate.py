@@ -247,3 +247,17 @@ class StudentCreate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    StudentCreateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentCreateAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentCreate.model_rebuild()
+except NameError:
+    pass

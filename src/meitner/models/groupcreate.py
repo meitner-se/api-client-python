@@ -108,3 +108,13 @@ class GroupCreate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GroupCreateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupCreate.model_rebuild()
+except NameError:
+    pass

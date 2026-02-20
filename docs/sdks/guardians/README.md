@@ -17,7 +17,7 @@ Returns a paginated list of all `Guardians` in your organization.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="GuardianList" method="get" path="/guardian" -->
+<!-- UsageSnippet language="python" operationID="GuardianList" method="get" path="/guardian" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -68,9 +68,102 @@ with Meitner(
 
 Create a new Guardian
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="GuardianCreate" method="post" path="/guardian" -->
+<!-- UsageSnippet language="python" operationID="GuardianCreate" method="post" path="/guardian" example="errorExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, identity_temporary=True, address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567", student_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="GuardianCreate" method="post" path="/guardian" example="requestExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, identity_temporary=True, address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567", student_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="GuardianCreate" method="post" path="/guardian" example="responseExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.create(identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, identity_temporary=True, address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567", student_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="GuardianCreate" method="post" path="/guardian" example="validationError" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -110,10 +203,10 @@ with Meitner(
 | `external`                                                                                                                                                                                                                                      | [Optional[models.GuardianCreateExternal]](../../models/guardiancreateexternal.md)                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                              | ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.                                                                | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                                                                                              |
 | `identity_temporary`                                                                                                                                                                                                                            | *Optional[bool]*                                                                                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                              | If the identity number is temporary for the guardian                                                                                                                                                                                            | true                                                                                                                                                                                                                                            |
 | `address`                                                                                                                                                                                                                                       | [Optional[models.GuardianCreateAddress]](../../models/guardiancreateaddress.md)                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                              | The address of the guardian                                                                                                                                                                                                                     | {<br/>"postalAddress": "Dalvägen 14",<br/>"postalCode": "169 56",<br/>"postalCity": "Solna",<br/>"countryCode": "SWE",<br/>"municipalityCode": "0184"<br/>}                                                                                     |
-| `email_address1`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | lise@meitner.se                                                                                                                                                                                                                                 |
-| `email_address2`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                 | lise@gmail.com                                                                                                                                                                                                                                  |
-| `phone_number1`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The primary phone number of the guardian, will be used for communication with the guardian from the system.                                                                                                                                     | +46701234567                                                                                                                                                                                                                                    |
-| `phone_number2`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                  | +46701234567                                                                                                                                                                                                                                    |
+| `email_address1`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | **Example 1:** lise@meitner.se<br/>**Example 2:** <nil>                                                                                                                                                                                         |
+| `email_address2`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                 | **Example 1:** lise@gmail.com<br/>**Example 2:** <nil>                                                                                                                                                                                          |
+| `phone_number1`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The primary phone number of the guardian, will be used for communication with the guardian from the system.                                                                                                                                     | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                            |
+| `phone_number2`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                  | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                            |
 | `student_i_ds`                                                                                                                                                                                                                                  | List[*str*]                                                                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                              | The IDs of the students the guardian is responsible for.                                                                                                                                                                                        | [<br/>"123e4567-e89b-12d3-a456-426614174000"<br/>]                                                                                                                                                                                              |
 | `retries`                                                                                                                                                                                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                              | Configuration to override the default retry behavior of the client.                                                                                                                                                                             |                                                                                                                                                                                                                                                 |
 
@@ -139,9 +232,981 @@ with Meitner(
 
 Search for `Guardians` with filtering capabilities.
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="GuardianSearch" method="post" path="/guardian/_search" -->
+<!-- UsageSnippet language="python" operationID="GuardianSearch" method="post" path="/guardian/_search" example="errorExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+            "student_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+            "student_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+            "student_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+            "student_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+            "student_i_ds": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+            "student_i_ds": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="GuardianSearch" method="post" path="/guardian/_search" example="requestExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+            "student_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+            "student_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+            "student_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+            "student_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+            "student_i_ds": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+            "student_i_ds": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="GuardianSearch" method="post" path="/guardian/_search" example="responseExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+            "student_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "identity_temporary": True,
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+            "student_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+            "student_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "identity_number": [
+                "example",
+            ],
+            "identity_temporary": [
+                True,
+            ],
+            "first_name": [
+                "example",
+            ],
+            "last_name": [
+                "example",
+            ],
+            "address": {
+                "postal_address": [
+                    "example",
+                ],
+                "postal_code": [
+                    "example",
+                ],
+                "postal_city": [
+                    "example",
+                ],
+                "country_code": [
+                    "example",
+                ],
+                "municipality_code": [
+                    "example",
+                ],
+            },
+            "email_address1": [
+                "example",
+            ],
+            "email_address2": [
+                "example",
+            ],
+            "phone_number1": [
+                "example",
+            ],
+            "phone_number2": [
+                "example",
+            ],
+            "student_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "identity_number": "example",
+            "first_name": "example",
+            "last_name": "example",
+            "address": {
+                "postal_address": "example",
+                "postal_code": "example",
+                "postal_city": "example",
+                "country_code": "example",
+                "municipality_code": "example",
+            },
+            "email_address1": "example",
+            "email_address2": "example",
+            "phone_number1": "example",
+            "phone_number2": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+            "student_i_ds": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "address": {
+                "postal_address": True,
+                "postal_code": True,
+                "postal_city": True,
+                "country_code": True,
+                "municipality_code": True,
+            },
+            "email_address1": True,
+            "email_address2": True,
+            "phone_number1": True,
+            "phone_number2": True,
+            "student_i_ds": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="GuardianSearch" method="post" path="/guardian/_search" example="validationError" -->
 ```python
 from meitner import Meitner, models
 from meitner.utils import parse_datetime
@@ -497,7 +1562,7 @@ Retrieves the `Guardian` with the given ID.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="GuardianGet" method="get" path="/guardian/{id}" -->
+<!-- UsageSnippet language="python" operationID="GuardianGet" method="get" path="/guardian/{id}" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -595,9 +1660,102 @@ with Meitner(
 
 Update a Guardian
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="GuardianUpdate" method="patch" path="/guardian/{id}" -->
+<!-- UsageSnippet language="python" operationID="GuardianUpdate" method="patch" path="/guardian/{id}" example="errorExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, identity_temporary=True, address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567", student_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="GuardianUpdate" method="patch" path="/guardian/{id}" example="requestExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, identity_temporary=True, address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567", student_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="GuardianUpdate" method="patch" path="/guardian/{id}" example="responseExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.guardians.update(id="123e4567-e89b-12d3-a456-426614174000", identity_number="20191216-1234", first_name="Lise", last_name="Meitner", external={
+        "source_id": "12345678",
+    }, identity_temporary=True, address={
+        "postal_address": "Dalvägen 14",
+        "postal_code": "169 56",
+        "postal_city": "Solna",
+        "country_code": "SWE",
+        "municipality_code": "0184",
+    }, email_address1="lise@meitner.se", email_address2="lise@gmail.com", phone_number1="+46701234567", phone_number2="+46701234567", student_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="GuardianUpdate" method="patch" path="/guardian/{id}" example="validationError" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -638,10 +1796,10 @@ with Meitner(
 | `external`                                                                                                                                                                                                                                      | [Optional[models.GuardianUpdateExternal]](../../models/guardianupdateexternal.md)                                                                                                                                                               | :heavy_minus_sign:                                                                                                                                                                                                                              | ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.                                                                | {<br/>"sourceID": "12345678"<br/>}                                                                                                                                                                                                              |
 | `identity_temporary`                                                                                                                                                                                                                            | *Optional[bool]*                                                                                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                              | If the identity number is temporary for the guardian                                                                                                                                                                                            | true                                                                                                                                                                                                                                            |
 | `address`                                                                                                                                                                                                                                       | [Optional[models.GuardianUpdateAddress]](../../models/guardianupdateaddress.md)                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                                                                                              | The address of the guardian                                                                                                                                                                                                                     | {<br/>"postalAddress": "Dalvägen 14",<br/>"postalCode": "169 56",<br/>"postalCity": "Solna",<br/>"countryCode": "SWE",<br/>"municipalityCode": "0184"<br/>}                                                                                     |
-| `email_address1`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | lise@meitner.se                                                                                                                                                                                                                                 |
-| `email_address2`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                 | lise@gmail.com                                                                                                                                                                                                                                  |
-| `phone_number1`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The primary phone number of the guardian, will be used for communication with the guardian from the system.                                                                                                                                     | +46701234567                                                                                                                                                                                                                                    |
-| `phone_number2`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                  | +46701234567                                                                                                                                                                                                                                    |
+| `email_address1`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The email address of the guardian, will be used for communication with the guardian from the system and must be unique within the organization.<br/>Can be used to login to the system if password-authentication is enabled for the organization.<br/> | **Example 1:** lise@meitner.se<br/>**Example 2:** <nil>                                                                                                                                                                                         |
+| `email_address2`                                                                                                                                                                                                                                | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary email address of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                 | **Example 1:** lise@gmail.com<br/>**Example 2:** <nil>                                                                                                                                                                                          |
+| `phone_number1`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The primary phone number of the guardian, will be used for communication with the guardian from the system.                                                                                                                                     | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                            |
+| `phone_number2`                                                                                                                                                                                                                                 | *OptionalNullable[str]*                                                                                                                                                                                                                         | :heavy_minus_sign:                                                                                                                                                                                                                              | The secondary phone number of the guardian, will not be used within the system, but will be displayed for contact information.                                                                                                                  | **Example 1:** +46701234567<br/>**Example 2:** <nil>                                                                                                                                                                                            |
 | `student_i_ds`                                                                                                                                                                                                                                  | List[*str*]                                                                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                              | The IDs of the students the guardian is responsible for.                                                                                                                                                                                        | [<br/>"123e4567-e89b-12d3-a456-426614174000"<br/>]                                                                                                                                                                                              |
 | `retries`                                                                                                                                                                                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                | :heavy_minus_sign:                                                                                                                                                                                                                              | Configuration to override the default retry behavior of the client.                                                                                                                                                                             |                                                                                                                                                                                                                                                 |
 

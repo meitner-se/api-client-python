@@ -369,6 +369,13 @@ class StudentPlacements(BaseSDK):
         school_year: OptionalNullable[models.StudentPlacementCreateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
         mother_tongue: OptionalNullable[str] = UNSET,
+        modern_language_alternative: OptionalNullable[
+            models.StudentPlacementCreateModernLanguageAlternative
+        ] = UNSET,
+        swedish_as_second_language: Optional[bool] = False,
+        mother_tongue_participates: Optional[bool] = False,
+        modern_language_in_school_choice: OptionalNullable[str] = UNSET,
+        modern_language_in_language_choice: OptionalNullable[str] = UNSET,
         end_date: OptionalNullable[date] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -387,6 +394,11 @@ class StudentPlacements(BaseSDK):
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_alternative: The modern language alternative for the student
+        :param swedish_as_second_language: Whether the student has Swedish as their second language
+        :param mother_tongue_participates: Whether the student participates in mother tongue education
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -416,6 +428,11 @@ class StudentPlacements(BaseSDK):
             school_year=school_year,
             has_childcare=has_childcare,
             mother_tongue=mother_tongue,
+            modern_language_alternative=modern_language_alternative,
+            swedish_as_second_language=swedish_as_second_language,
+            mother_tongue_participates=mother_tongue_participates,
+            modern_language_in_school_choice=modern_language_in_school_choice,
+            modern_language_in_language_choice=modern_language_in_language_choice,
             start_date=start_date,
             end_date=end_date,
         )
@@ -555,6 +572,13 @@ class StudentPlacements(BaseSDK):
         school_year: OptionalNullable[models.StudentPlacementCreateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
         mother_tongue: OptionalNullable[str] = UNSET,
+        modern_language_alternative: OptionalNullable[
+            models.StudentPlacementCreateModernLanguageAlternative
+        ] = UNSET,
+        swedish_as_second_language: Optional[bool] = False,
+        mother_tongue_participates: Optional[bool] = False,
+        modern_language_in_school_choice: OptionalNullable[str] = UNSET,
+        modern_language_in_language_choice: OptionalNullable[str] = UNSET,
         end_date: OptionalNullable[date] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -573,6 +597,11 @@ class StudentPlacements(BaseSDK):
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_alternative: The modern language alternative for the student
+        :param swedish_as_second_language: Whether the student has Swedish as their second language
+        :param mother_tongue_participates: Whether the student participates in mother tongue education
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -602,6 +631,11 @@ class StudentPlacements(BaseSDK):
             school_year=school_year,
             has_childcare=has_childcare,
             mother_tongue=mother_tongue,
+            modern_language_alternative=modern_language_alternative,
+            swedish_as_second_language=swedish_as_second_language,
+            mother_tongue_participates=mother_tongue_participates,
+            modern_language_in_school_choice=modern_language_in_school_choice,
+            modern_language_in_language_choice=modern_language_in_language_choice,
             start_date=start_date,
             end_date=end_date,
         )
@@ -1713,6 +1747,13 @@ class StudentPlacements(BaseSDK):
         school_year: OptionalNullable[models.StudentPlacementUpdateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
         mother_tongue: OptionalNullable[str] = UNSET,
+        modern_language_alternative: OptionalNullable[
+            models.StudentPlacementUpdateModernLanguageAlternative
+        ] = UNSET,
+        swedish_as_second_language: Optional[bool] = False,
+        mother_tongue_participates: Optional[bool] = False,
+        modern_language_in_school_choice: OptionalNullable[str] = UNSET,
+        modern_language_in_language_choice: OptionalNullable[str] = UNSET,
         end_date: OptionalNullable[date] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1730,6 +1771,11 @@ class StudentPlacements(BaseSDK):
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_alternative: The modern language alternative for the student
+        :param swedish_as_second_language: Whether the student has Swedish as their second language
+        :param mother_tongue_participates: Whether the student participates in mother tongue education
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1759,6 +1805,11 @@ class StudentPlacements(BaseSDK):
                 school_year=school_year,
                 has_childcare=has_childcare,
                 mother_tongue=mother_tongue,
+                modern_language_alternative=modern_language_alternative,
+                swedish_as_second_language=swedish_as_second_language,
+                mother_tongue_participates=mother_tongue_participates,
+                modern_language_in_school_choice=modern_language_in_school_choice,
+                modern_language_in_language_choice=modern_language_in_language_choice,
                 start_date=start_date,
                 end_date=end_date,
             ),
@@ -1902,6 +1953,13 @@ class StudentPlacements(BaseSDK):
         school_year: OptionalNullable[models.StudentPlacementUpdateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
         mother_tongue: OptionalNullable[str] = UNSET,
+        modern_language_alternative: OptionalNullable[
+            models.StudentPlacementUpdateModernLanguageAlternative
+        ] = UNSET,
+        swedish_as_second_language: Optional[bool] = False,
+        mother_tongue_participates: Optional[bool] = False,
+        modern_language_in_school_choice: OptionalNullable[str] = UNSET,
+        modern_language_in_language_choice: OptionalNullable[str] = UNSET,
         end_date: OptionalNullable[date] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1919,6 +1977,11 @@ class StudentPlacements(BaseSDK):
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_alternative: The modern language alternative for the student
+        :param swedish_as_second_language: Whether the student has Swedish as their second language
+        :param mother_tongue_participates: Whether the student participates in mother tongue education
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1948,6 +2011,11 @@ class StudentPlacements(BaseSDK):
                 school_year=school_year,
                 has_childcare=has_childcare,
                 mother_tongue=mother_tongue,
+                modern_language_alternative=modern_language_alternative,
+                swedish_as_second_language=swedish_as_second_language,
+                mother_tongue_participates=mother_tongue_participates,
+                modern_language_in_school_choice=modern_language_in_school_choice,
+                modern_language_in_language_choice=modern_language_in_language_choice,
                 start_date=start_date,
                 end_date=end_date,
             ),
@@ -2086,6 +2154,17 @@ class StudentPlacements(BaseSDK):
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.StudentPlacementArchiveResponse:
         r"""Archive a student placement
+
+        Archive a student placement.
+
+        **Recommended usage:**
+        We recommend only archiving student placements that have a passed end date. When building syncs from external systems and a studentPlacement is removed, we recommend the following workflow:
+
+        1. Set the `endDate` to the date when the studentPlacement was removed from the external system
+        2. Wait approximately 5 days before archiving the student placement
+
+        This grace period allows time to correct any mistakes made by administrators in the external system before the placement is permanently archived.
+
 
         :param id: The ID of the student placement to archive
         :param retries: Override the default retry configuration for this method
@@ -2229,6 +2308,17 @@ class StudentPlacements(BaseSDK):
     ) -> models.StudentPlacementArchiveResponse:
         r"""Archive a student placement
 
+        Archive a student placement.
+
+        **Recommended usage:**
+        We recommend only archiving student placements that have a passed end date. When building syncs from external systems and a studentPlacement is removed, we recommend the following workflow:
+
+        1. Set the `endDate` to the date when the studentPlacement was removed from the external system
+        2. Wait approximately 5 days before archiving the student placement
+
+        This grace period allows time to correct any mistakes made by administrators in the external system before the placement is permanently archived.
+
+
         :param id: The ID of the student placement to archive
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -2371,6 +2461,8 @@ class StudentPlacements(BaseSDK):
     ) -> models.StudentPlacementRestoreResponse:
         r"""Restore an archived student placement
 
+        Restore an archived student placement
+
         :param id: The ID of the student placement to restore
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -2512,6 +2604,8 @@ class StudentPlacements(BaseSDK):
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> models.StudentPlacementRestoreResponse:
         r"""Restore an archived student placement
+
+        Restore an archived student placement
 
         :param id: The ID of the student placement to restore
         :param retries: Override the default retry configuration for this method

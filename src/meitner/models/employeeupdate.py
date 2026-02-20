@@ -247,3 +247,17 @@ class EmployeeUpdate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    EmployeeUpdateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeUpdateAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    EmployeeUpdate.model_rebuild()
+except NameError:
+    pass

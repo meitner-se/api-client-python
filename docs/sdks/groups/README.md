@@ -17,7 +17,7 @@ Returns a paginated list of all `Groups` in your organization.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="GroupList" method="get" path="/group" -->
+<!-- UsageSnippet language="python" operationID="GroupList" method="get" path="/group" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -68,9 +68,96 @@ with Meitner(
 
 Create a new Group
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="GroupCreate" method="post" path="/group" -->
+<!-- UsageSnippet language="python" operationID="GroupCreate" method="post" path="/group" example="errorExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.create(school_id="123e4567-e89b-12d3-a456-426614174000", title="1A", external={
+        "source_id": "12345678",
+    }, category="Education", types=[
+        "Class",
+    ], moderator_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ], member_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="GroupCreate" method="post" path="/group" example="requestExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.create(school_id="123e4567-e89b-12d3-a456-426614174000", title="1A", external={
+        "source_id": "12345678",
+    }, category="Education", types=[
+        "Class",
+    ], moderator_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ], member_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="GroupCreate" method="post" path="/group" example="responseExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.create(school_id="123e4567-e89b-12d3-a456-426614174000", title="1A", external={
+        "source_id": "12345678",
+    }, category="Education", types=[
+        "Class",
+    ], moderator_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ], member_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="GroupCreate" method="post" path="/group" example="validationError" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -133,9 +220,585 @@ with Meitner(
 
 Search for `Groups` with filtering capabilities.
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="GroupSearch" method="post" path="/group/_search" -->
+<!-- UsageSnippet language="python" operationID="GroupSearch" method="post" path="/group/_search" example="errorExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "title": "example",
+            "moderator_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+            "member_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "title": "example",
+            "moderator_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+            "member_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "title": [
+                "example",
+            ],
+            "moderator_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "member_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "title": [
+                "example",
+            ],
+            "moderator_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "member_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "types": True,
+            "moderator_i_ds": True,
+            "member_i_ds": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "types": True,
+            "moderator_i_ds": True,
+            "member_i_ds": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="GroupSearch" method="post" path="/group/_search" example="requestExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "title": "example",
+            "moderator_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+            "member_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "title": "example",
+            "moderator_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+            "member_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "title": [
+                "example",
+            ],
+            "moderator_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "member_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "title": [
+                "example",
+            ],
+            "moderator_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "member_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "types": True,
+            "moderator_i_ds": True,
+            "member_i_ds": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "types": True,
+            "moderator_i_ds": True,
+            "member_i_ds": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="GroupSearch" method="post" path="/group/_search" example="responseExample" -->
+```python
+from meitner import Meitner, models
+from meitner.utils import parse_datetime
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.search(filter_={
+        "equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "title": "example",
+            "moderator_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+            "member_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "not_equals": {
+            "id": "123e4567-e89b-12d3-a456-426614174000",
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "created_by": "123e4567-e89b-12d3-a456-426614174000",
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_by": "123e4567-e89b-12d3-a456-426614174000",
+            },
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "school_id": "123e4567-e89b-12d3-a456-426614174000",
+            "title": "example",
+            "moderator_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+            "member_i_ds": "123e4567-e89b-12d3-a456-426614174000",
+        },
+        "greater_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_than": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "greater_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "smaller_or_equal": {
+            "meta": {
+                "created_at": parse_datetime("2024-01-15T10:30:00Z"),
+                "updated_at": parse_datetime("2024-01-15T10:30:00Z"),
+            },
+        },
+        "contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "title": [
+                "example",
+            ],
+            "moderator_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "member_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "not_contains": {
+            "id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "meta": {
+                "created_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+                "updated_by": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                ],
+            },
+            "external": {
+                "source_id": [
+                    "example",
+                ],
+                "source": [
+                    "example",
+                ],
+            },
+            "school_id": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "title": [
+                "example",
+            ],
+            "moderator_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            "member_i_ds": [
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+        },
+        "like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+        },
+        "not_like": {
+            "external": {
+                "source_id": "example",
+                "source": "example",
+            },
+            "title": "example",
+        },
+        "null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "types": True,
+            "moderator_i_ds": True,
+            "member_i_ds": True,
+        },
+        "not_null": {
+            "meta": {
+                "created_by": True,
+                "updated_at": True,
+                "updated_by": True,
+            },
+            "external": {
+                "source_id": True,
+                "source": True,
+            },
+            "types": True,
+            "moderator_i_ds": True,
+            "member_i_ds": True,
+        },
+        "or_condition": True,
+    }, limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="GroupSearch" method="post" path="/group/_search" example="validationError" -->
 ```python
 from meitner import Meitner, models
 from meitner.utils import parse_datetime
@@ -359,7 +1022,7 @@ Retrieves the `Group` with the given ID.
 
 ### Example Usage
 
-<!-- UsageSnippet language="python" operationID="GroupGet" method="get" path="/group/{id}" -->
+<!-- UsageSnippet language="python" operationID="GroupGet" method="get" path="/group/{id}" example="responseExample" -->
 ```python
 from meitner import Meitner, models
 import os
@@ -457,9 +1120,96 @@ with Meitner(
 
 Update a Group
 
-### Example Usage
+### Example Usage: errorExample
 
-<!-- UsageSnippet language="python" operationID="GroupUpdate" method="patch" path="/group/{id}" -->
+<!-- UsageSnippet language="python" operationID="GroupUpdate" method="patch" path="/group/{id}" example="errorExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.update(id="123e4567-e89b-12d3-a456-426614174000", title="1A", external={
+        "source_id": "12345678",
+    }, types=[
+        "Class",
+    ], moderator_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ], member_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: requestExample
+
+<!-- UsageSnippet language="python" operationID="GroupUpdate" method="patch" path="/group/{id}" example="requestExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.update(id="123e4567-e89b-12d3-a456-426614174000", title="1A", external={
+        "source_id": "12345678",
+    }, types=[
+        "Class",
+    ], moderator_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ], member_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: responseExample
+
+<!-- UsageSnippet language="python" operationID="GroupUpdate" method="patch" path="/group/{id}" example="responseExample" -->
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+    ),
+) as m_client:
+
+    res = m_client.groups.update(id="123e4567-e89b-12d3-a456-426614174000", title="1A", external={
+        "source_id": "12345678",
+    }, types=[
+        "Class",
+    ], moderator_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ], member_i_ds=[
+        "123e4567-e89b-12d3-a456-426614174000",
+    ])
+
+    # Handle response
+    print(res)
+
+```
+### Example Usage: validationError
+
+<!-- UsageSnippet language="python" operationID="GroupUpdate" method="patch" path="/group/{id}" example="validationError" -->
 ```python
 from meitner import Meitner, models
 import os

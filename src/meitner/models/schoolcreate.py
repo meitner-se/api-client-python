@@ -100,3 +100,13 @@ class SchoolCreate(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    SchoolCreateExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    SchoolCreate.model_rebuild()
+except NameError:
+    pass

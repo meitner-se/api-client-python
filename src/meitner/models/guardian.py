@@ -335,3 +335,21 @@ class Guardian(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GuardianMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    Guardian.model_rebuild()
+except NameError:
+    pass

@@ -3005,3 +3005,149 @@ class GuardianSearchRequestBody(BaseModel):
 
     filter_: Annotated[GuardianSearchFilter, pydantic.Field(alias="filter")]
     r"""Filter criteria to search for specific records"""
+
+
+try:
+    GuardianSearchEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotEqualsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotEqualsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotEqualsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotEquals.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchGreaterThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchSmallerThanMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchGreaterOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchSmallerOrEqualMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchContains.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotContainsMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotContainsExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotContainsAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotContains.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchLike.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotLikeExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotLikeAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotLike.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNull.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotNullMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotNullExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotNullAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchNotNull.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchFilter.model_rebuild()
+except NameError:
+    pass
+try:
+    GuardianSearchRequestBody.model_rebuild()
+except NameError:
+    pass

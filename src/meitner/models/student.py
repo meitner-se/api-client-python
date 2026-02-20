@@ -351,3 +351,21 @@ class Student(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    StudentMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    StudentAddress.model_rebuild()
+except NameError:
+    pass
+try:
+    Student.model_rebuild()
+except NameError:
+    pass

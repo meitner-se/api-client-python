@@ -220,3 +220,17 @@ class Group(BaseModel):
                     m[k] = val
 
         return m
+
+
+try:
+    GroupMeta.model_rebuild()
+except NameError:
+    pass
+try:
+    GroupExternal.model_rebuild()
+except NameError:
+    pass
+try:
+    Group.model_rebuild()
+except NameError:
+    pass
