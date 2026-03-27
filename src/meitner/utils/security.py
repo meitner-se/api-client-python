@@ -65,10 +65,29 @@ def get_security_from_env(security: Any, security_class: Any) -> Optional[BaseMo
     security_dict: Any = {}
 
     if os.getenv("MEITNER_CLIENT_CREDENTIALS"):
-        security_dict["client_credentials"] = os.getenv("MEITNER_CLIENT_CREDENTIALS")
+        security_dict.setdefault("option1", {})["client_credentials"] = os.getenv(
+            "MEITNER_CLIENT_CREDENTIALS"
+        )
 
     if os.getenv("MEITNER_CLIENT_SECRET"):
-        security_dict["client_secret"] = os.getenv("MEITNER_CLIENT_SECRET")
+        security_dict.setdefault("option1", {})["client_secret"] = os.getenv(
+            "MEITNER_CLIENT_SECRET"
+        )
+
+    if os.getenv("MEITNER_CLIENT_ID"):
+        security_dict.setdefault("option2", {})["client_id"] = os.getenv(
+            "MEITNER_CLIENT_ID"
+        )
+
+    if os.getenv("MEITNER_CLIENT_SECRET"):
+        security_dict.setdefault("option2", {})["client_secret"] = os.getenv(
+            "MEITNER_CLIENT_SECRET"
+        )
+
+    if os.getenv("MEITNER_TOKEN_URL"):
+        security_dict.setdefault("option2", {})["token_url"] = os.getenv(
+            "MEITNER_TOKEN_URL"
+        )
 
     return security_class(**security_dict) if security_dict else None
 

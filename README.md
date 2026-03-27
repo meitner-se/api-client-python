@@ -131,8 +131,10 @@ import os
 
 with Meitner(
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -158,8 +160,10 @@ async def main():
 
     async with Meitner(
         security=models.Security(
-            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            option1=models.SecurityOption1(
+                client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+                client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            ),
         ),
     ) as m_client:
 
@@ -179,14 +183,17 @@ asyncio.run(main())
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security schemes globally:
+This SDK supports multiple security scheme combinations globally. You can choose from one of the alternatives by setting the `security` optional parameter when initializing the SDK client instance. The selected option will be used by default to authenticate with the API for all operations that support it.
+
+#### Option1
+
+All of the following schemes must be satisfied to use the `Option1` alternative:
 
 | Name                 | Type   | Scheme  | Environment Variable         |
 | -------------------- | ------ | ------- | ---------------------------- |
 | `client_credentials` | apiKey | API key | `MEITNER_CLIENT_CREDENTIALS` |
 | `client_secret`      | apiKey | API key | `MEITNER_CLIENT_SECRET`      |
 
-You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
 from meitner import Meitner, models
 import os
@@ -194,8 +201,42 @@ import os
 
 with Meitner(
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
+    ),
+) as m_client:
+
+    res = m_client.schools.list(limit=1, offset=0)
+
+    while res is not None:
+        # Handle items
+
+        res = res.next()
+
+```
+
+#### Option2
+
+The `Option2` alternative relies on the following scheme:
+
+| Name                                            | Type   | Scheme                         | Environment Variable                                                    |
+| ----------------------------------------------- | ------ | ------------------------------ | ----------------------------------------------------------------------- |
+| `client_id`<br/>`client_secret`<br/>`token_url` | oauth2 | OAuth2 Client Credentials Flow | `MEITNER_CLIENT_ID`<br/>`MEITNER_CLIENT_SECRET`<br/>`MEITNER_TOKEN_URL` |
+
+```python
+from meitner import Meitner, models
+import os
+
+
+with Meitner(
+    security=models.Security(
+        option2=models.SecurityOption2(
+            client_id=os.getenv("MEITNER_CLIENT_ID", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            "token_url": "/oauth/token",
+        ),
     ),
 ) as m_client:
 
@@ -303,8 +344,10 @@ import os
 
 with Meitner(
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -332,8 +375,10 @@ import os
 
 with Meitner(
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -357,8 +402,10 @@ import os
 with Meitner(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -394,8 +441,10 @@ import os
 
 with Meitner(
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
     res = None
@@ -495,8 +544,10 @@ import os
 with Meitner(
     server="production",
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -520,8 +571,10 @@ import os
 with Meitner(
     server_url="https://api.meitner.se/directory/v1",
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -630,8 +683,10 @@ def main():
 
     with Meitner(
         security=models.Security(
-            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            option1=models.SecurityOption1(
+                client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+                client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            ),
         ),
     ) as m_client:
         # Rest of application here...
@@ -642,8 +697,10 @@ async def amain():
 
     async with Meitner(
         security=models.Security(
-            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            option1=models.SecurityOption1(
+                client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+                client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            ),
         ),
     ) as m_client:
         # Rest of application here...

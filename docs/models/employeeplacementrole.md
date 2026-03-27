@@ -2,15 +2,20 @@
 
 The role of the employee in the placement
 
+## Example Usage
+
+```python
+from meitner.models import EmployeePlacementRole
+value: EmployeePlacementRole = "Admin"
+```
+
 
 ## Values
 
-| Name              | Value             |
-| ----------------- | ----------------- |
-| `ADMIN`           | Admin             |
-| `CARE_TEAM`       | CareTeam          |
-| `MANAGER`         | Manager           |
-| `MEAL_PLANNER`    | MealPlanner       |
-| `OTHER_PERSONNEL` | OtherPersonnel    |
-| `SCHEDULER`       | Scheduler         |
-| `TEACHER`         | Teacher           |
+- `"Admin"`
+- `"CareTeam"`
+- `"Manager"`
+- `"MealPlanner"`
+- `"OtherPersonnel"`
+- `"Scheduler"`
+- `"Teacher"`

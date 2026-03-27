@@ -2,10 +2,15 @@
 
 The category of the group
 
+## Example Usage
+
+```python
+from meitner.models import GroupCategory
+value: GroupCategory = "Education"
+```
+
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `EDUCATION` | Education   |
-| `OTHER`     | Other       |
+- `"Education"`
+- `"Other"`

@@ -2,14 +2,19 @@
 
 The type of resource the event occured for
 
+## Example Usage
+
+```python
+from meitner.models import EqualsResourceRequestBody
+value: EqualsResourceRequestBody = "Group"
+```
+
 
 ## Values
 
-| Name                 | Value                |
-| -------------------- | -------------------- |
-| `GROUP`              | Group                |
-| `GUARDIAN`           | Guardian             |
-| `EMPLOYEE`           | Employee             |
-| `EMPLOYEE_PLACEMENT` | EmployeePlacement    |
-| `STUDENT`            | Student              |
-| `STUDENT_PLACEMENT`  | StudentPlacement     |
+- `"Group"`
+- `"Guardian"`
+- `"Employee"`
+- `"EmployeePlacement"`
+- `"Student"`
+- `"StudentPlacement"`

@@ -8,14 +8,14 @@ from typing import Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class SecurityTypedDict(TypedDict):
-    client_credentials: NotRequired[str]
-    client_secret: NotRequired[str]
+class SecurityOption1TypedDict(TypedDict):
+    client_credentials: str
+    client_secret: str
 
 
-class Security(BaseModel):
+class SecurityOption1(BaseModel):
     client_credentials: Annotated[
-        Optional[str],
+        str,
         FieldMetadata(
             security=SecurityMetadata(
                 scheme=True,
@@ -24,10 +24,10 @@ class Security(BaseModel):
                 field_name="Client-ID",
             )
         ),
-    ] = None
+    ]
 
     client_secret: Annotated[
-        Optional[str],
+        str,
         FieldMetadata(
             security=SecurityMetadata(
                 scheme=True,
@@ -36,17 +36,66 @@ class Security(BaseModel):
                 field_name="Client-Secret",
             )
         ),
+    ]
+
+
+class SecurityOption2TypedDict(TypedDict):
+    client_id: str
+    client_secret: str
+    token_url: str
+
+
+class SecurityOption2(BaseModel):
+    client_id: Annotated[
+        str,
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="oauth2",
+                sub_type="client_credentials",
+                field_name="clientID",
+            )
+        ),
+    ]
+
+    client_secret: Annotated[
+        str,
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="oauth2",
+                sub_type="client_credentials",
+                field_name="clientSecret",
+            )
+        ),
+    ]
+
+    token_url: str = "/oauth/token"
+
+
+class SecurityTypedDict(TypedDict):
+    option1: NotRequired[SecurityOption1TypedDict]
+    option2: NotRequired[SecurityOption2TypedDict]
+
+
+class Security(BaseModel):
+    option1: Annotated[
+        Optional[SecurityOption1], FieldMetadata(security=SecurityMetadata(option=True))
+    ] = None
+
+    option2: Annotated[
+        Optional[SecurityOption2], FieldMetadata(security=SecurityMetadata(option=True))
     ] = None
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = set(["ClientCredentials", "ClientSecret"])
+        optional_fields = set(["Option1", "Option2"])
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
             k = f.alias or n
-            val = serialized.get(k)
+            val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
                 if val is not None or k not in optional_fields:

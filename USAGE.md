@@ -7,8 +7,10 @@ import os
 
 with Meitner(
     security=models.Security(
-        client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-        client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        option1=models.SecurityOption1(
+            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+        ),
     ),
 ) as m_client:
 
@@ -34,8 +36,10 @@ async def main():
 
     async with Meitner(
         security=models.Security(
-            client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
-            client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            option1=models.SecurityOption1(
+                client_credentials=os.getenv("MEITNER_CLIENT_CREDENTIALS", ""),
+                client_secret=os.getenv("MEITNER_CLIENT_SECRET", ""),
+            ),
         ),
     ) as m_client:
 

@@ -27242,6 +27242,15 @@
         "type": "apiKey",
         "name": "Client-Secret",
         "in": "header"
+      },
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "/oauth/token",
+            "scopes": {}
+          }
+        }
       }
     }
   },
@@ -27249,6 +27258,9 @@
     {
       "ClientCredentials": [],
       "ClientSecret": []
+    },
+    {
+      "OAuth2": []
     }
   ],
   "tags": [

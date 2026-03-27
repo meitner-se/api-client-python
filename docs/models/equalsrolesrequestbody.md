@@ -2,15 +2,20 @@
 
 The roles of the employee
 
+## Example Usage
+
+```python
+from meitner.models import EqualsRolesRequestBody
+value: EqualsRolesRequestBody = "Admin"
+```
+
 
 ## Values
 
-| Name              | Value             |
-| ----------------- | ----------------- |
-| `ADMIN`           | Admin             |
-| `CARE_TEAM`       | CareTeam          |
-| `MANAGER`         | Manager           |
-| `MEAL_PLANNER`    | MealPlanner       |
-| `OTHER_PERSONNEL` | OtherPersonnel    |
-| `SCHEDULER`       | Scheduler         |
-| `TEACHER`         | Teacher           |
+- `"Admin"`
+- `"CareTeam"`
+- `"Manager"`
+- `"MealPlanner"`
+- `"OtherPersonnel"`
+- `"Scheduler"`
+- `"Teacher"`

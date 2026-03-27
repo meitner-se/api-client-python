@@ -2,13 +2,18 @@
 
 The modern language alternative for the student
 
+## Example Usage
+
+```python
+from meitner.models import StudentPlacementFilterNotEqualsModernLanguageAlternative
+value: StudentPlacementFilterNotEqualsModernLanguageAlternative = "EN"
+```
+
 
 ## Values
 
-| Name  | Value |
-| ----- | ----- |
-| `EN`  | EN    |
-| `ML`  | ML    |
-| `SV`  | SV    |
-| `SVA` | SVA   |
-| `TN`  | TN    |
+- `"EN"`
+- `"ML"`
+- `"SV"`
+- `"SVA"`
+- `"TN"`
