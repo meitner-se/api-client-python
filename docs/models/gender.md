@@ -2,11 +2,16 @@
 
 The gender of the person
 
+## Example Usage
+
+```python
+from meitner.models import Gender
+value: Gender = "Female"
+```
+
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `FEMALE` | Female   |
-| `MALE`   | Male     |
-| `OTHER`  | Other    |
+- `"Female"`
+- `"Male"`
+- `"Other"`

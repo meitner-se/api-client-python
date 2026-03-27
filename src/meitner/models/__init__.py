@@ -1482,7 +1482,14 @@ if TYPE_CHECKING:
         SchoolUpdateResponseTypedDict,
     )
     from .schoolyear import SchoolYear
-    from .security import Security, SecurityTypedDict
+    from .security import (
+        Security,
+        SecurityOption1,
+        SecurityOption1TypedDict,
+        SecurityOption2,
+        SecurityOption2TypedDict,
+        SecurityTypedDict,
+    )
     from .student import (
         Student,
         StudentAddress,
@@ -3335,6 +3342,10 @@ __all__ = [
     "SchoolUpdateTypedDict",
     "SchoolYear",
     "Security",
+    "SecurityOption1",
+    "SecurityOption1TypedDict",
+    "SecurityOption2",
+    "SecurityOption2TypedDict",
     "SecurityTypedDict",
     "Student",
     "StudentAddress",
@@ -5124,6 +5135,10 @@ _dynamic_imports: dict[str, str] = {
     "SchoolUpdateResponseTypedDict": ".schoolupdateop",
     "SchoolYear": ".schoolyear",
     "Security": ".security",
+    "SecurityOption1": ".security",
+    "SecurityOption1TypedDict": ".security",
+    "SecurityOption2": ".security",
+    "SecurityOption2TypedDict": ".security",
     "SecurityTypedDict": ".security",
     "Student": ".student",
     "StudentAddress": ".student",

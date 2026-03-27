@@ -2,11 +2,16 @@
 
 The gender of the employee
 
+## Example Usage
+
+```python
+from meitner.models import EmployeeFilterNotEqualsGender
+value: EmployeeFilterNotEqualsGender = "Female"
+```
+
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `FEMALE` | Female   |
-| `MALE`   | Male     |
-| `OTHER`  | Other    |
+- `"Female"`
+- `"Male"`
+- `"Other"`

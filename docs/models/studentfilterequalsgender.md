@@ -2,11 +2,16 @@
 
 The gender of the student
 
+## Example Usage
+
+```python
+from meitner.models import StudentFilterEqualsGender
+value: StudentFilterEqualsGender = "Female"
+```
+
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `FEMALE` | Female   |
-| `MALE`   | Male     |
-| `OTHER`  | Other    |
+- `"Female"`
+- `"Male"`
+- `"Other"`

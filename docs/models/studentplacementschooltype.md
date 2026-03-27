@@ -2,13 +2,18 @@
 
 The type of schooling the student is attending
 
+## Example Usage
+
+```python
+from meitner.models import StudentPlacementSchoolType
+value: StudentPlacementSchoolType = "GR"
+```
+
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `GR`   | GR     |
-| `GRAN` | GRAN   |
-| `GY`   | GY     |
-| `GYAN` | GYAN   |
-| `FS`   | FS     |
+- `"GR"`
+- `"GRAN"`
+- `"GY"`
+- `"GYAN"`
+- `"FS"`
