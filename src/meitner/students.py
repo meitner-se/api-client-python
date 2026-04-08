@@ -124,6 +124,9 @@ class Students(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -296,6 +299,9 @@ class Students(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -372,6 +378,7 @@ class Students(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
+        edu_person_principal_name: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -395,6 +402,9 @@ class Students(BaseSDK):
         :param email_address2: The secondary email address of the student, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the student, will be used for communication with the student from the system.
         :param phone_number2: The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.
+        :param edu_person_principal_name: The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).
+            Format: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -430,6 +440,7 @@ class Students(BaseSDK):
             email_address2=email_address2,
             phone_number1=phone_number1,
             phone_number2=phone_number2,
+            edu_person_principal_name=edu_person_principal_name,
         )
 
         req = self._build_request(
@@ -568,6 +579,7 @@ class Students(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
+        edu_person_principal_name: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -591,6 +603,9 @@ class Students(BaseSDK):
         :param email_address2: The secondary email address of the student, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the student, will be used for communication with the student from the system.
         :param phone_number2: The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.
+        :param edu_person_principal_name: The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).
+            Format: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -626,6 +641,7 @@ class Students(BaseSDK):
             email_address2=email_address2,
             phone_number1=phone_number1,
             phone_number2=phone_number2,
+            edu_person_principal_name=edu_person_principal_name,
         )
 
         req = self._build_request_async(
@@ -871,6 +887,9 @@ class Students(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -1062,6 +1081,9 @@ class Students(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -1718,6 +1740,7 @@ class Students(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
+        edu_person_principal_name: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1742,6 +1765,9 @@ class Students(BaseSDK):
         :param email_address2: The secondary email address of the student, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the student, will be used for communication with the student from the system.
         :param phone_number2: The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.
+        :param edu_person_principal_name: The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).
+            Format: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1779,6 +1805,7 @@ class Students(BaseSDK):
                 email_address2=email_address2,
                 phone_number1=phone_number1,
                 phone_number2=phone_number2,
+                edu_person_principal_name=edu_person_principal_name,
             ),
         )
 
@@ -1919,6 +1946,7 @@ class Students(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
+        edu_person_principal_name: OptionalNullable[str] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1943,6 +1971,9 @@ class Students(BaseSDK):
         :param email_address2: The secondary email address of the student, will not be used within the system, but will be displayed for contact information.
         :param phone_number1: The primary phone number of the student, will be used for communication with the student from the system.
         :param phone_number2: The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.
+        :param edu_person_principal_name: The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).
+            Format: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`
+
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -1980,6 +2011,7 @@ class Students(BaseSDK):
                 email_address2=email_address2,
                 phone_number1=phone_number1,
                 phone_number2=phone_number2,
+                edu_person_principal_name=edu_person_principal_name,
             ),
         )
 

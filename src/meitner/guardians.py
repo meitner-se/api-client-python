@@ -123,6 +123,9 @@ class Guardians(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -295,6 +298,9 @@ class Guardians(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -866,6 +872,9 @@ class Guardians(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None
@@ -1059,6 +1068,9 @@ class Guardians(BaseSDK):
                 limit=limit,
                 offset=next_offset,
                 retries=retries,
+                server_url=server_url,
+                timeout_ms=timeout_ms,
+                http_headers=http_headers,
             )
 
         response_data: Any = None

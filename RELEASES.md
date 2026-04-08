@@ -87,3 +87,13 @@ Based on:
 - [python v0.6.0] .
 ### Releases
 - [PyPI v0.6.0] https://pypi.org/project/meitner/0.6.0 - .
+
+## 2026-04-08 00:22:10
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.761.1 (2.879.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.6.1] .
+### Releases
+- [PyPI v0.6.1] https://pypi.org/project/meitner/0.6.1 - .

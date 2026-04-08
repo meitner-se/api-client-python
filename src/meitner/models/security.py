@@ -21,6 +21,7 @@ class SecurityOption1(BaseModel):
                 scheme=True,
                 scheme_type="apiKey",
                 sub_type="header",
+                composite=True,
                 field_name="Client-ID",
             )
         ),
@@ -33,6 +34,7 @@ class SecurityOption1(BaseModel):
                 scheme=True,
                 scheme_type="apiKey",
                 sub_type="header",
+                composite=True,
                 field_name="Client-Secret",
             )
         ),

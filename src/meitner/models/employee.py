@@ -242,6 +242,11 @@ class EmployeeTypedDict(TypedDict):
     r"""The primary phone number of the employee, will be used for communication with the employee from the system and must be unique within the organization."""
     phone_number2: NotRequired[Nullable[str]]
     r"""The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information."""
+    edu_person_principal_name: NotRequired[Nullable[str]]
+    r"""The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).
+    Format: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`
+
+    """
 
 
 class Employee(BaseModel):
@@ -304,6 +309,14 @@ class Employee(BaseModel):
     ] = UNSET
     r"""The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information."""
 
+    edu_person_principal_name: Annotated[
+        OptionalNullable[str], pydantic.Field(alias="eduPersonPrincipalName")
+    ] = UNSET
+    r"""The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).
+    Format: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`
+
+    """
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
@@ -318,6 +331,7 @@ class Employee(BaseModel):
                 "emailAddress2",
                 "phoneNumber1",
                 "phoneNumber2",
+                "eduPersonPrincipalName",
             ]
         )
         nullable_fields = set(
@@ -329,6 +343,7 @@ class Employee(BaseModel):
                 "emailAddress2",
                 "phoneNumber1",
                 "phoneNumber2",
+                "eduPersonPrincipalName",
             ]
         )
         serialized = handler(self)
