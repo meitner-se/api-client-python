@@ -4223,6 +4223,15 @@
             ],
             "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.",
             "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "string",
+            "examples": [
+              "kalko@edu.goteborg.se",
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+            "nullable": true
           }
         },
         "required": [
@@ -4674,6 +4683,15 @@
               null
             ],
             "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.",
+            "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "string",
+            "examples": [
+              "kalko@edu.goteborg.se",
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
             "nullable": true
           }
         },
@@ -6776,7 +6794,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -6817,7 +6836,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -6970,6 +6990,9 @@
                 ],
                 "phoneNumber2": [
                   "example"
+                ],
+                "eduPersonPrincipalName": [
+                  "example"
                 ]
               },
               null
@@ -7047,6 +7070,9 @@
                 ],
                 "phoneNumber2": [
                   "example"
+                ],
+                "eduPersonPrincipalName": [
+                  "example"
                 ]
               },
               null
@@ -7079,7 +7105,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -7111,7 +7138,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -7147,7 +7175,8 @@
                 "emailAddress1": true,
                 "emailAddress2": true,
                 "phoneNumber1": true,
-                "phoneNumber2": true
+                "phoneNumber2": true,
+                "eduPersonPrincipalName": true
               },
               null
             ],
@@ -7183,7 +7212,8 @@
                 "emailAddress1": true,
                 "emailAddress2": true,
                 "phoneNumber1": true,
-                "phoneNumber2": true
+                "phoneNumber2": true,
+                "eduPersonPrincipalName": true
               },
               null
             ],
@@ -7229,7 +7259,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "notEquals": {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -7258,7 +7289,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "greaterThan": {
                     "meta": {
@@ -7351,6 +7383,9 @@
                     ],
                     "phoneNumber2": [
                       "example"
+                    ],
+                    "eduPersonPrincipalName": [
+                      "example"
                     ]
                   },
                   "notContains": {
@@ -7416,6 +7451,9 @@
                     ],
                     "phoneNumber2": [
                       "example"
+                    ],
+                    "eduPersonPrincipalName": [
+                      "example"
                     ]
                   },
                   "like": {
@@ -7436,7 +7474,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "notLike": {
                     "external": {
@@ -7456,7 +7495,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "null": {
                     "meta": {
@@ -7480,7 +7520,8 @@
                     "emailAddress1": true,
                     "emailAddress2": true,
                     "phoneNumber1": true,
-                    "phoneNumber2": true
+                    "phoneNumber2": true,
+                    "eduPersonPrincipalName": true
                   },
                   "notNull": {
                     "meta": {
@@ -7504,7 +7545,8 @@
                     "emailAddress1": true,
                     "emailAddress2": true,
                     "phoneNumber1": true,
-                    "phoneNumber2": true
+                    "phoneNumber2": true,
+                    "eduPersonPrincipalName": true
                   },
                   "orCondition": true
                 }
@@ -7680,6 +7722,15 @@
               null
             ],
             "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.",
+            "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
             "nullable": true
           }
         },
@@ -7939,6 +7990,18 @@
               "type": "string"
             },
             "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information."
+          },
+          "eduPersonPrincipalName": {
+            "type": "array",
+            "examples": [
+              [
+                "example"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n"
           }
         },
         "description": "Contains filter fields for Employee"
@@ -8052,6 +8115,15 @@
             ],
             "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.",
             "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+            "nullable": true
           }
         },
         "description": "LIKE filter fields for Employee"
@@ -8163,6 +8235,15 @@
               null
             ],
             "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.",
+            "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
             "nullable": true
           }
         },
@@ -10762,7 +10843,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -10803,7 +10885,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -10956,6 +11039,9 @@
                 ],
                 "phoneNumber2": [
                   "example"
+                ],
+                "eduPersonPrincipalName": [
+                  "example"
                 ]
               },
               null
@@ -11033,6 +11119,9 @@
                 ],
                 "phoneNumber2": [
                   "example"
+                ],
+                "eduPersonPrincipalName": [
+                  "example"
                 ]
               },
               null
@@ -11065,7 +11154,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -11097,7 +11187,8 @@
                 "emailAddress1": "example",
                 "emailAddress2": "example",
                 "phoneNumber1": "example",
-                "phoneNumber2": "example"
+                "phoneNumber2": "example",
+                "eduPersonPrincipalName": "example"
               },
               null
             ],
@@ -11133,7 +11224,8 @@
                 "emailAddress1": true,
                 "emailAddress2": true,
                 "phoneNumber1": true,
-                "phoneNumber2": true
+                "phoneNumber2": true,
+                "eduPersonPrincipalName": true
               },
               null
             ],
@@ -11169,7 +11261,8 @@
                 "emailAddress1": true,
                 "emailAddress2": true,
                 "phoneNumber1": true,
-                "phoneNumber2": true
+                "phoneNumber2": true,
+                "eduPersonPrincipalName": true
               },
               null
             ],
@@ -11215,7 +11308,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "notEquals": {
                     "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -11244,7 +11338,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "greaterThan": {
                     "meta": {
@@ -11337,6 +11432,9 @@
                     ],
                     "phoneNumber2": [
                       "example"
+                    ],
+                    "eduPersonPrincipalName": [
+                      "example"
                     ]
                   },
                   "notContains": {
@@ -11402,6 +11500,9 @@
                     ],
                     "phoneNumber2": [
                       "example"
+                    ],
+                    "eduPersonPrincipalName": [
+                      "example"
                     ]
                   },
                   "like": {
@@ -11422,7 +11523,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "notLike": {
                     "external": {
@@ -11442,7 +11544,8 @@
                     "emailAddress1": "example",
                     "emailAddress2": "example",
                     "phoneNumber1": "example",
-                    "phoneNumber2": "example"
+                    "phoneNumber2": "example",
+                    "eduPersonPrincipalName": "example"
                   },
                   "null": {
                     "meta": {
@@ -11466,7 +11569,8 @@
                     "emailAddress1": true,
                     "emailAddress2": true,
                     "phoneNumber1": true,
-                    "phoneNumber2": true
+                    "phoneNumber2": true,
+                    "eduPersonPrincipalName": true
                   },
                   "notNull": {
                     "meta": {
@@ -11490,7 +11594,8 @@
                     "emailAddress1": true,
                     "emailAddress2": true,
                     "phoneNumber1": true,
-                    "phoneNumber2": true
+                    "phoneNumber2": true,
+                    "eduPersonPrincipalName": true
                   },
                   "orCondition": true
                 }
@@ -11666,6 +11771,15 @@
               null
             ],
             "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.",
+            "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
             "nullable": true
           }
         },
@@ -11925,6 +12039,18 @@
               "type": "string"
             },
             "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information."
+          },
+          "eduPersonPrincipalName": {
+            "type": "array",
+            "examples": [
+              [
+                "example"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n"
           }
         },
         "description": "Contains filter fields for Student"
@@ -12038,6 +12164,15 @@
             ],
             "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.",
             "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+            "nullable": true
           }
         },
         "description": "LIKE filter fields for Student"
@@ -12149,6 +12284,15 @@
               null
             ],
             "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.",
+            "nullable": true
+          },
+          "eduPersonPrincipalName": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
             "nullable": true
           }
         },
@@ -16809,7 +16953,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "+46701234567"
+                  "phoneNumber2": "+46701234567",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -16957,7 +17102,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "+46701234567"
+                  "phoneNumber2": "+46701234567",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -17105,7 +17251,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "+46701234567"
+                  "phoneNumber2": "+46701234567",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -17180,7 +17327,8 @@
                         "emailAddress1": "lise@meitner.se",
                         "emailAddress2": "lise@gmail.com",
                         "phoneNumber1": "+46701234567",
-                        "phoneNumber2": "+46701234567"
+                        "phoneNumber2": "+46701234567",
+                        "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                       }
                     ]
                   ],
@@ -17243,7 +17391,8 @@
                       "emailAddress1": "lise@meitner.se",
                       "emailAddress2": "lise@gmail.com",
                       "phoneNumber1": "+46701234567",
-                      "phoneNumber2": "+46701234567"
+                      "phoneNumber2": "+46701234567",
+                      "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                     }
                   ],
                   "pagination": {
@@ -17325,7 +17474,8 @@
                         "emailAddress1": "lise@meitner.se",
                         "emailAddress2": "lise@gmail.com",
                         "phoneNumber1": "+46701234567",
-                        "phoneNumber2": "+46701234567"
+                        "phoneNumber2": "+46701234567",
+                        "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                       }
                     ]
                   ],
@@ -17388,7 +17538,8 @@
                       "emailAddress1": "lise@meitner.se",
                       "emailAddress2": "lise@gmail.com",
                       "phoneNumber1": "+46701234567",
-                      "phoneNumber2": "+46701234567"
+                      "phoneNumber2": "+46701234567",
+                      "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                     }
                   ],
                   "pagination": {
@@ -18983,7 +19134,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "example"
+                  "phoneNumber2": "example",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -19131,7 +19283,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "example"
+                  "phoneNumber2": "example",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -19279,7 +19432,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "example"
+                  "phoneNumber2": "example",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -19354,7 +19508,8 @@
                         "emailAddress1": "lise@meitner.se",
                         "emailAddress2": "lise@gmail.com",
                         "phoneNumber1": "+46701234567",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                       }
                     ]
                   ],
@@ -19417,7 +19572,8 @@
                       "emailAddress1": "lise@meitner.se",
                       "emailAddress2": "lise@gmail.com",
                       "phoneNumber1": "+46701234567",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                     }
                   ],
                   "pagination": {
@@ -19499,7 +19655,8 @@
                         "emailAddress1": "lise@meitner.se",
                         "emailAddress2": "lise@gmail.com",
                         "phoneNumber1": "+46701234567",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                       }
                     ]
                   ],
@@ -19562,7 +19719,8 @@
                       "emailAddress1": "lise@meitner.se",
                       "emailAddress2": "lise@gmail.com",
                       "phoneNumber1": "+46701234567",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                     }
                   ],
                   "pagination": {
@@ -22627,6 +22785,15 @@
                   ],
                   "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.",
                   "nullable": true
+                },
+                "eduPersonPrincipalName": {
+                  "type": "string",
+                  "examples": [
+                    "kalko@edu.goteborg.se",
+                    null
+                  ],
+                  "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+                  "nullable": true
                 }
               },
               "required": [
@@ -22658,7 +22825,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "+46701234567"
+                  "phoneNumber2": "+46701234567",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -22790,6 +22958,15 @@
                   ],
                   "description": "The secondary phone number of the employee, will not be used within the system, but will be displayed for contact information.",
                   "nullable": true
+                },
+                "eduPersonPrincipalName": {
+                  "type": "string",
+                  "examples": [
+                    "kalko@edu.goteborg.se",
+                    null
+                  ],
+                  "description": "The eduPersonPrincipalName (EPPN) of the employee, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+                  "nullable": true
                 }
               },
               "required": [
@@ -22821,7 +22998,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "+46701234567"
+                  "phoneNumber2": "+46701234567",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -22871,7 +23049,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "notEquals": {
                         "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -22900,7 +23079,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "greaterThan": {
                         "meta": {
@@ -22993,6 +23173,9 @@
                         ],
                         "phoneNumber2": [
                           "example"
+                        ],
+                        "eduPersonPrincipalName": [
+                          "example"
                         ]
                       },
                       "notContains": {
@@ -23058,6 +23241,9 @@
                         ],
                         "phoneNumber2": [
                           "example"
+                        ],
+                        "eduPersonPrincipalName": [
+                          "example"
                         ]
                       },
                       "like": {
@@ -23078,7 +23264,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "notLike": {
                         "external": {
@@ -23098,7 +23285,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "null": {
                         "meta": {
@@ -23122,7 +23310,8 @@
                         "emailAddress1": true,
                         "emailAddress2": true,
                         "phoneNumber1": true,
-                        "phoneNumber2": true
+                        "phoneNumber2": true,
+                        "eduPersonPrincipalName": true
                       },
                       "notNull": {
                         "meta": {
@@ -23146,7 +23335,8 @@
                         "emailAddress1": true,
                         "emailAddress2": true,
                         "phoneNumber1": true,
-                        "phoneNumber2": true
+                        "phoneNumber2": true,
+                        "eduPersonPrincipalName": true
                       },
                       "orCondition": true
                     }
@@ -23190,7 +23380,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "notEquals": {
                       "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -23219,7 +23410,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "greaterThan": {
                       "meta": {
@@ -23312,6 +23504,9 @@
                       ],
                       "phoneNumber2": [
                         "example"
+                      ],
+                      "eduPersonPrincipalName": [
+                        "example"
                       ]
                     },
                     "notContains": {
@@ -23377,6 +23572,9 @@
                       ],
                       "phoneNumber2": [
                         "example"
+                      ],
+                      "eduPersonPrincipalName": [
+                        "example"
                       ]
                     },
                     "like": {
@@ -23397,7 +23595,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "notLike": {
                       "external": {
@@ -23417,7 +23616,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "null": {
                       "meta": {
@@ -23441,7 +23641,8 @@
                       "emailAddress1": true,
                       "emailAddress2": true,
                       "phoneNumber1": true,
-                      "phoneNumber2": true
+                      "phoneNumber2": true,
+                      "eduPersonPrincipalName": true
                     },
                     "notNull": {
                       "meta": {
@@ -23465,7 +23666,8 @@
                       "emailAddress1": true,
                       "emailAddress2": true,
                       "phoneNumber1": true,
-                      "phoneNumber2": true
+                      "phoneNumber2": true,
+                      "eduPersonPrincipalName": true
                     },
                     "orCondition": true
                   }
@@ -25274,6 +25476,15 @@
                   ],
                   "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.",
                   "nullable": true
+                },
+                "eduPersonPrincipalName": {
+                  "type": "string",
+                  "examples": [
+                    "kalko@edu.goteborg.se",
+                    null
+                  ],
+                  "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+                  "nullable": true
                 }
               },
               "required": [
@@ -25305,7 +25516,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "example"
+                  "phoneNumber2": "example",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -25437,6 +25649,15 @@
                   ],
                   "description": "The secondary phone number of the student, will not be used within the system, but will be displayed for contact information.",
                   "nullable": true
+                },
+                "eduPersonPrincipalName": {
+                  "type": "string",
+                  "examples": [
+                    "kalko@edu.goteborg.se",
+                    null
+                  ],
+                  "description": "The eduPersonPrincipalName (EPPN) of the student, as defined in the SS12000:2020 standard (TK450). A globally unique, persistent identifier used to identify users across Swedish e-services (e-tjänster).\nFormat: `localIdentifier@domain` — e.g. `kalko@edu.goteborg.se`\n",
+                  "nullable": true
                 }
               },
               "required": [
@@ -25468,7 +25689,8 @@
                   "emailAddress1": "lise@meitner.se",
                   "emailAddress2": "lise@gmail.com",
                   "phoneNumber1": "+46701234567",
-                  "phoneNumber2": "example"
+                  "phoneNumber2": "example",
+                  "eduPersonPrincipalName": "kalko@edu.goteborg.se"
                 }
               }
             }
@@ -25518,7 +25740,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "notEquals": {
                         "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -25547,7 +25770,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "greaterThan": {
                         "meta": {
@@ -25640,6 +25864,9 @@
                         ],
                         "phoneNumber2": [
                           "example"
+                        ],
+                        "eduPersonPrincipalName": [
+                          "example"
                         ]
                       },
                       "notContains": {
@@ -25705,6 +25932,9 @@
                         ],
                         "phoneNumber2": [
                           "example"
+                        ],
+                        "eduPersonPrincipalName": [
+                          "example"
                         ]
                       },
                       "like": {
@@ -25725,7 +25955,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "notLike": {
                         "external": {
@@ -25745,7 +25976,8 @@
                         "emailAddress1": "example",
                         "emailAddress2": "example",
                         "phoneNumber1": "example",
-                        "phoneNumber2": "example"
+                        "phoneNumber2": "example",
+                        "eduPersonPrincipalName": "example"
                       },
                       "null": {
                         "meta": {
@@ -25769,7 +26001,8 @@
                         "emailAddress1": true,
                         "emailAddress2": true,
                         "phoneNumber1": true,
-                        "phoneNumber2": true
+                        "phoneNumber2": true,
+                        "eduPersonPrincipalName": true
                       },
                       "notNull": {
                         "meta": {
@@ -25793,7 +26026,8 @@
                         "emailAddress1": true,
                         "emailAddress2": true,
                         "phoneNumber1": true,
-                        "phoneNumber2": true
+                        "phoneNumber2": true,
+                        "eduPersonPrincipalName": true
                       },
                       "orCondition": true
                     }
@@ -25837,7 +26071,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "notEquals": {
                       "id": "123e4567-e89b-12d3-a456-426614174000",
@@ -25866,7 +26101,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "greaterThan": {
                       "meta": {
@@ -25959,6 +26195,9 @@
                       ],
                       "phoneNumber2": [
                         "example"
+                      ],
+                      "eduPersonPrincipalName": [
+                        "example"
                       ]
                     },
                     "notContains": {
@@ -26024,6 +26263,9 @@
                       ],
                       "phoneNumber2": [
                         "example"
+                      ],
+                      "eduPersonPrincipalName": [
+                        "example"
                       ]
                     },
                     "like": {
@@ -26044,7 +26286,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "notLike": {
                       "external": {
@@ -26064,7 +26307,8 @@
                       "emailAddress1": "example",
                       "emailAddress2": "example",
                       "phoneNumber1": "example",
-                      "phoneNumber2": "example"
+                      "phoneNumber2": "example",
+                      "eduPersonPrincipalName": "example"
                     },
                     "null": {
                       "meta": {
@@ -26088,7 +26332,8 @@
                       "emailAddress1": true,
                       "emailAddress2": true,
                       "phoneNumber1": true,
-                      "phoneNumber2": true
+                      "phoneNumber2": true,
+                      "eduPersonPrincipalName": true
                     },
                     "notNull": {
                       "meta": {
@@ -26112,7 +26357,8 @@
                       "emailAddress1": true,
                       "emailAddress2": true,
                       "phoneNumber1": true,
-                      "phoneNumber2": true
+                      "phoneNumber2": true,
+                      "eduPersonPrincipalName": true
                     },
                     "orCondition": true
                   }
