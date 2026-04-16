@@ -3534,6 +3534,726 @@
         "x-speakeasy-group": "auditEvents",
         "x-speakeasy-name-override": "get"
       }
+    },
+    "/grade-elementary": {
+      "get": {
+        "tags": [
+          "GradeElementary"
+        ],
+        "summary": "List GradeElementaries",
+        "description": "Returns a paginated list of all `GradeElementaries` in your organization.",
+        "operationId": "GradeElementaryList",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of GradeElementaries to return (default: 50) when listing GradeElementaries",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                1
+              ],
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of GradeElementaries to skip before starting to return results (default: 0) when listing GradeElementaries",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                0
+              ],
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for GradeElementary List operation - returns a paginated list of GradeElementary",
+            "$ref": "#/components/responses/GradeElementaryList"
+          },
+          "400": {
+            "description": "Bad Request error for GradeElementary List operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeElementary List operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeElementary List operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeElementary List operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeElementary List operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeElementary List operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeElementary List operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-pagination": {
+          "type": "offsetLimit",
+          "inputs": [
+            {
+              "name": "offset",
+              "in": "parameters",
+              "type": "offset"
+            },
+            {
+              "name": "limit",
+              "in": "parameters",
+              "type": "limit"
+            }
+          ],
+          "outputs": {
+            "results": "$.data.resultArray"
+          }
+        },
+        "x-speakeasy-group": "gradeElementaries",
+        "x-speakeasy-name-override": "list"
+      },
+      "post": {
+        "tags": [
+          "GradeElementary"
+        ],
+        "summary": "Create a new GradeElementary",
+        "description": "Create a new GradeElementary",
+        "operationId": "GradeElementaryCreate",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/GradeElementaryCreate"
+        },
+        "responses": {
+          "201": {
+            "description": "Response for GradeElementary Create operation - returns the created GradeElementary",
+            "$ref": "#/components/responses/GradeElementaryCreate"
+          },
+          "400": {
+            "description": "Bad Request error for GradeElementary Create operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeElementary Create operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeElementary Create operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeElementary Create operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeElementary Create operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for GradeElementary Create operation - request data failed validation",
+            "$ref": "#/components/responses/GradeElementaryCreate422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeElementary Create operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeElementary Create operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeElementaries",
+        "x-speakeasy-name-override": "create"
+      }
+    },
+    "/grade-elementary/{id}": {
+      "get": {
+        "tags": [
+          "GradeElementary"
+        ],
+        "summary": "Get a GradeElementary",
+        "description": "Retrieves the `GradeElementary` with the given ID.",
+        "operationId": "GradeElementaryGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the GradeElementary to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for GradeElementary Get operation - returns the requested GradeElementary",
+            "$ref": "#/components/responses/GradeElementaryGet"
+          },
+          "400": {
+            "description": "Bad Request error for GradeElementary Get operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeElementary Get operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeElementary Get operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeElementary Get operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeElementary Get operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeElementary Get operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeElementary Get operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeElementaries",
+        "x-speakeasy-name-override": "get"
+      },
+      "delete": {
+        "tags": [
+          "GradeElementary"
+        ],
+        "summary": "Delete a GradeElementary",
+        "description": "Delete a GradeElementary",
+        "operationId": "GradeElementaryDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the GradeElementary to delete",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Response for GradeElementary Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request error for GradeElementary Delete operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeElementary Delete operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeElementary Delete operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeElementary Delete operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeElementary Delete operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeElementary Delete operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeElementary Delete operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeElementaries",
+        "x-speakeasy-name-override": "delete"
+      },
+      "patch": {
+        "tags": [
+          "GradeElementary"
+        ],
+        "summary": "Update a GradeElementary",
+        "description": "Update a GradeElementary",
+        "operationId": "GradeElementaryUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the GradeElementary to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/GradeElementaryUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "Response for GradeElementary Update operation - returns the updated GradeElementary",
+            "$ref": "#/components/responses/GradeElementaryUpdate"
+          },
+          "400": {
+            "description": "Bad Request error for GradeElementary Update operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeElementary Update operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeElementary Update operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeElementary Update operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeElementary Update operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for GradeElementary Update operation - request data failed validation",
+            "$ref": "#/components/responses/GradeElementaryUpdate422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeElementary Update operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeElementary Update operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeElementaries",
+        "x-speakeasy-name-override": "update"
+      }
+    },
+    "/grade-upper-secondary": {
+      "get": {
+        "tags": [
+          "GradeUpperSecondary"
+        ],
+        "summary": "List GradeUpperSecondaries",
+        "description": "Returns a paginated list of all `GradeUpperSecondaries` in your organization.",
+        "operationId": "GradeUpperSecondaryList",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of GradeUpperSecondaries to return (default: 50) when listing GradeUpperSecondaries",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                1
+              ],
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of GradeUpperSecondaries to skip before starting to return results (default: 0) when listing GradeUpperSecondaries",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                0
+              ],
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for GradeUpperSecondary List operation - returns a paginated list of GradeUpperSecondary",
+            "$ref": "#/components/responses/GradeUpperSecondaryList"
+          },
+          "400": {
+            "description": "Bad Request error for GradeUpperSecondary List operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeUpperSecondary List operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeUpperSecondary List operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeUpperSecondary List operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeUpperSecondary List operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeUpperSecondary List operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeUpperSecondary List operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-pagination": {
+          "type": "offsetLimit",
+          "inputs": [
+            {
+              "name": "offset",
+              "in": "parameters",
+              "type": "offset"
+            },
+            {
+              "name": "limit",
+              "in": "parameters",
+              "type": "limit"
+            }
+          ],
+          "outputs": {
+            "results": "$.data.resultArray"
+          }
+        },
+        "x-speakeasy-group": "gradeUpperSecondaries",
+        "x-speakeasy-name-override": "list"
+      },
+      "post": {
+        "tags": [
+          "GradeUpperSecondary"
+        ],
+        "summary": "Create a new GradeUpperSecondary",
+        "description": "Create a new GradeUpperSecondary",
+        "operationId": "GradeUpperSecondaryCreate",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/GradeUpperSecondaryCreate"
+        },
+        "responses": {
+          "201": {
+            "description": "Response for GradeUpperSecondary Create operation - returns the created GradeUpperSecondary",
+            "$ref": "#/components/responses/GradeUpperSecondaryCreate"
+          },
+          "400": {
+            "description": "Bad Request error for GradeUpperSecondary Create operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeUpperSecondary Create operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeUpperSecondary Create operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeUpperSecondary Create operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeUpperSecondary Create operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for GradeUpperSecondary Create operation - request data failed validation",
+            "$ref": "#/components/responses/GradeUpperSecondaryCreate422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeUpperSecondary Create operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeUpperSecondary Create operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeUpperSecondaries",
+        "x-speakeasy-name-override": "create"
+      }
+    },
+    "/grade-upper-secondary/{id}": {
+      "get": {
+        "tags": [
+          "GradeUpperSecondary"
+        ],
+        "summary": "Get a GradeUpperSecondary",
+        "description": "Retrieves the `GradeUpperSecondary` with the given ID.",
+        "operationId": "GradeUpperSecondaryGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the GradeUpperSecondary to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for GradeUpperSecondary Get operation - returns the requested GradeUpperSecondary",
+            "$ref": "#/components/responses/GradeUpperSecondaryGet"
+          },
+          "400": {
+            "description": "Bad Request error for GradeUpperSecondary Get operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeUpperSecondary Get operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeUpperSecondary Get operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeUpperSecondary Get operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeUpperSecondary Get operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeUpperSecondary Get operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeUpperSecondary Get operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeUpperSecondaries",
+        "x-speakeasy-name-override": "get"
+      },
+      "delete": {
+        "tags": [
+          "GradeUpperSecondary"
+        ],
+        "summary": "Delete a GradeUpperSecondary",
+        "description": "Delete a GradeUpperSecondary",
+        "operationId": "GradeUpperSecondaryDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the GradeUpperSecondary to delete",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Response for GradeUpperSecondary Delete operation - confirms successful deletion",
+            "headers": {
+              "RateLimit-Limit": {
+                "description": "The maximum number of API requests you're permitted to make per hour.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    5000
+                  ]
+                }
+              },
+              "RateLimit-Remaining": {
+                "description": "The number of API requests remaining in the current rate limit window.",
+                "schema": {
+                  "type": "integer",
+                  "examples": [
+                    4999
+                  ]
+                }
+              },
+              "RateLimit-Reset": {
+                "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+                "schema": {
+                  "type": "string",
+                  "examples": [
+                    "1728316800000"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request error for GradeUpperSecondary Delete operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeUpperSecondary Delete operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeUpperSecondary Delete operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeUpperSecondary Delete operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeUpperSecondary Delete operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeUpperSecondary Delete operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeUpperSecondary Delete operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeUpperSecondaries",
+        "x-speakeasy-name-override": "delete"
+      },
+      "patch": {
+        "tags": [
+          "GradeUpperSecondary"
+        ],
+        "summary": "Update a GradeUpperSecondary",
+        "description": "Update a GradeUpperSecondary",
+        "operationId": "GradeUpperSecondaryUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the GradeUpperSecondary to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/GradeUpperSecondaryUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "Response for GradeUpperSecondary Update operation - returns the updated GradeUpperSecondary",
+            "$ref": "#/components/responses/GradeUpperSecondaryUpdate"
+          },
+          "400": {
+            "description": "Bad Request error for GradeUpperSecondary Update operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for GradeUpperSecondary Update operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for GradeUpperSecondary Update operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for GradeUpperSecondary Update operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for GradeUpperSecondary Update operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for GradeUpperSecondary Update operation - request data failed validation",
+            "$ref": "#/components/responses/GradeUpperSecondaryUpdate422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for GradeUpperSecondary Update operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for GradeUpperSecondary Update operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "gradeUpperSecondaries",
+        "x-speakeasy-name-override": "update"
+      }
     }
   },
   "components": {
@@ -3642,6 +4362,68 @@
           "TN"
         ],
         "description": "The modern language alternative for the student"
+      },
+      "Grade": {
+        "type": "string",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "MISSING"
+        ],
+        "description": "The grade awarded to a student"
+      },
+      "GradeTerm": {
+        "type": "string",
+        "enum": [
+          "HT",
+          "VT"
+        ],
+        "description": "The school term in which the grade was awarded"
+      },
+      "GradeElementarySchoolYear": {
+        "type": "string",
+        "enum": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "description": "The school year of the student when the grade was awarded (elementary school)"
+      },
+      "GradeUpperSecondarySchoolYear": {
+        "type": "string",
+        "enum": [
+          "1",
+          "2",
+          "3"
+        ],
+        "description": "The school year of the student when the grade was awarded (upper secondary school)"
+      },
+      "GradeUpperSecondaryCourseExtent": {
+        "type": "string",
+        "enum": [
+          "Normal",
+          "Extended",
+          "Reduced"
+        ],
+        "description": "The extent of the course in the study plan"
+      },
+      "GradeUpperSecondaryCourseSection": {
+        "type": "string",
+        "enum": [
+          "General",
+          "Program",
+          "Orientation",
+          "Specialization",
+          "Individual",
+          "Project",
+          "Elementary"
+        ],
+        "description": "The section/type of the course in the study plan"
       },
       "ErrorCode": {
         "type": "string",
@@ -4971,6 +5753,411 @@
           "type"
         ],
         "description": "AuditEvent holds the information about an audit event."
+      },
+      "GradeElementary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "Unique identifier for the GradeElementary"
+          },
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Meta"
+              }
+            ],
+            "examples": [
+              {
+                "createdAt": "2024-01-15T10:30:00Z",
+                "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                "updatedAt": "2024-01-15T14:45:00Z",
+                "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+              }
+            ],
+            "description": "Metadata information for the GradeElementary"
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/External"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": "12345678",
+                "source": "ExternalIntegrationAPI"
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the grade from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "studentID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "The ID of the student the grade belongs to. Must reference a student within the organization who has an active placement at the school referenced by SchoolID."
+          },
+          "schoolID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "The ID of the school where the student received the grade. Must reference a school within the organization."
+          },
+          "subjectCode": {
+            "type": "string",
+            "examples": [
+              "MA"
+            ],
+            "description": "The subject code as defined by the Swedish school authorities (e.g. \"MA\" for Mathematics, \"SV\" for Swedish)."
+          },
+          "languageCode": {
+            "type": "string",
+            "examples": [
+              "SV",
+              null
+            ],
+            "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).",
+            "nullable": true
+          },
+          "academicYear": {
+            "type": "string",
+            "examples": [
+              "2024/2025"
+            ],
+            "description": "The academic year in which the grade was awarded, in the format YYYY/YYYY (e.g. \"2024/2025\")."
+          },
+          "term": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GradeTerm"
+              }
+            ],
+            "examples": [
+              "HT"
+            ],
+            "description": "The school term in which the grade was awarded."
+          },
+          "schoolYear": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GradeElementarySchoolYear"
+              }
+            ],
+            "examples": [
+              "9"
+            ],
+            "description": "The school year of the student at the time the grade was awarded."
+          },
+          "teacher1EmployeeID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+            "nullable": true
+          },
+          "teacher2EmployeeID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+            "nullable": true
+          },
+          "grade": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Grade"
+              }
+            ],
+            "examples": [
+              "A",
+              null
+            ],
+            "description": "The grade awarded to the student.",
+            "nullable": true
+          },
+          "gradeDate": {
+            "type": "string",
+            "examples": [
+              "2025-01-15",
+              null
+            ],
+            "format": "date",
+            "description": "The date the grade was awarded.",
+            "nullable": true
+          },
+          "finalGrade": {
+            "type": "boolean",
+            "examples": [
+              true
+            ],
+            "description": "Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate."
+          },
+          "isEnded": {
+            "type": "boolean",
+            "examples": [
+              true
+            ],
+            "description": "Whether the grading period has ended for this student in this subject."
+          },
+          "schoolComment": {
+            "type": "string",
+            "examples": [
+              "Utmärkt arbete under hela terminen.",
+              null
+            ],
+            "description": "A comment from the school about the grade, visible to the student and guardians.",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "studentID",
+          "schoolID",
+          "subjectCode",
+          "academicYear",
+          "term",
+          "schoolYear",
+          "finalGrade",
+          "isEnded"
+        ],
+        "description": "GradeElementary represents a grade awarded to a student in elementary school (Swedish: grundskola).\nGrades are scoped to the organization of the API key used. The SubjectCode field uses the subject code as defined by the Swedish school authorities (e.g. \"MA\" for Mathematics).\n"
+      },
+      "GradeUpperSecondary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "Unique identifier for the GradeUpperSecondary"
+          },
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Meta"
+              }
+            ],
+            "examples": [
+              {
+                "createdAt": "2024-01-15T10:30:00Z",
+                "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                "updatedAt": "2024-01-15T14:45:00Z",
+                "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+              }
+            ],
+            "description": "Metadata information for the GradeUpperSecondary"
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/External"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": "12345678",
+                "source": "ExternalIntegrationAPI"
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the grade from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "studentID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "The ID of the student the grade belongs to. Must reference a student within the organization who has an active placement at the school referenced by SchoolID."
+          },
+          "schoolID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "The ID of the school where the student received the grade. Must reference a school within the organization."
+          },
+          "courseCode": {
+            "type": "string",
+            "examples": [
+              "MATMAT01a"
+            ],
+            "description": "The national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\" for Mathematics 1a)."
+          },
+          "languageCode": {
+            "type": "string",
+            "examples": [
+              "SV",
+              null
+            ],
+            "description": "The language code for the grade, used when the course is taught in a specific language.",
+            "nullable": true
+          },
+          "teacher1EmployeeID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+            "nullable": true
+          },
+          "teacher2EmployeeID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+            "nullable": true
+          },
+          "grade": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Grade"
+              }
+            ],
+            "examples": [
+              "A",
+              null
+            ],
+            "description": "The grade awarded to the student.",
+            "nullable": true
+          },
+          "gradeDate": {
+            "type": "string",
+            "examples": [
+              "2025-01-15",
+              null
+            ],
+            "format": "date",
+            "description": "The date the grade was awarded.",
+            "nullable": true
+          },
+          "gradeComment": {
+            "type": "string",
+            "examples": [
+              "Eleven har visat goda kunskaper i algebra.",
+              null
+            ],
+            "description": "A comment about the grade from the teacher.",
+            "nullable": true
+          },
+          "extent": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GradeUpperSecondaryCourseExtent"
+              }
+            ],
+            "examples": [
+              "Normal",
+              null
+            ],
+            "description": "The extent of the course for this student.",
+            "nullable": true
+          },
+          "schoolYear": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GradeUpperSecondarySchoolYear"
+              }
+            ],
+            "examples": [
+              "2",
+              null
+            ],
+            "description": "The school year of the student at the time the grade was awarded.",
+            "nullable": true
+          },
+          "section": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/GradeUpperSecondaryCourseSection"
+              }
+            ],
+            "examples": [
+              "Program",
+              null
+            ],
+            "description": "The section/type of the course in the student's study plan.",
+            "nullable": true
+          },
+          "teacherComment": {
+            "type": "string",
+            "examples": [
+              "Eleven deltar aktivt och visar stort engagemang.",
+              null
+            ],
+            "description": "A comment from the teacher about the student's performance.",
+            "nullable": true
+          },
+          "includeOnFinalGrade": {
+            "type": "boolean",
+            "examples": [
+              true
+            ],
+            "description": "Whether this course grade should be included when calculating the student's final grade certificate."
+          },
+          "programTitle": {
+            "type": "string",
+            "examples": [
+              "Teknikprogrammet",
+              null
+            ],
+            "description": "The title of the program this course belongs to. Used to associate the course with a specific educational program.",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "examples": [
+              "2024-08-19",
+              null
+            ],
+            "format": "date",
+            "description": "The date the student started the course.",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "examples": [
+              "2025-01-17",
+              null
+            ],
+            "format": "date",
+            "description": "The date the student finished the course.",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "studentID",
+          "schoolID",
+          "courseCode",
+          "includeOnFinalGrade"
+        ],
+        "description": "GradeUpperSecondary represents a grade awarded to a student in upper secondary school (Swedish: gymnasieskola).\nGrades are scoped to the organization of the API key used. The CourseCode field uses the national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\").\n"
       },
       "SchoolFilter": {
         "type": "object",
@@ -21029,6 +22216,1029 @@
           }
         }
       },
+      "GradeElementaryCreate": {
+        "description": "Response for GradeElementary Create operation - returns the created GradeElementary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/GradeElementary"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "subjectCode": "MA",
+                  "languageCode": "SV",
+                  "academicYear": "2024/2025",
+                  "term": "HT",
+                  "schoolYear": "9",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "finalGrade": true,
+                  "isEnded": true,
+                  "schoolComment": "Utmärkt arbete under hela terminen."
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeElementaryCreate422ResponseBody": {
+        "description": "Validation error for GradeElementary Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for GradeElementary Create endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for GradeElementary Create endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeElementaryUpdate": {
+        "description": "Response for GradeElementary Update operation - returns the updated GradeElementary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/GradeElementary"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "subjectCode": "MA",
+                  "languageCode": "SV",
+                  "academicYear": "2024/2025",
+                  "term": "HT",
+                  "schoolYear": "9",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "finalGrade": true,
+                  "isEnded": true,
+                  "schoolComment": "Utmärkt arbete under hela terminen."
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeElementaryUpdate422ResponseBody": {
+        "description": "Validation error for GradeElementary Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for GradeElementary Update endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for GradeElementary Update endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeElementaryGet": {
+        "description": "Response for GradeElementary Get operation - returns the requested GradeElementary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/GradeElementary"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "subjectCode": "MA",
+                  "languageCode": "SV",
+                  "academicYear": "2024/2025",
+                  "term": "HT",
+                  "schoolYear": "9",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "finalGrade": true,
+                  "isEnded": true,
+                  "schoolComment": "Utmärkt arbete under hela terminen."
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeElementaryList": {
+        "description": "Response for GradeElementary List operation - returns a paginated list of GradeElementary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "examples": [
+                    [
+                      {
+                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                          "updatedAt": "2024-01-15T14:45:00Z",
+                          "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                        },
+                        "external": {
+                          "sourceID": "12345678",
+                          "source": "ExternalIntegrationAPI"
+                        },
+                        "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                        "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                        "subjectCode": "MA",
+                        "languageCode": "SV",
+                        "academicYear": "2024/2025",
+                        "term": "HT",
+                        "schoolYear": "9",
+                        "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                        "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                        "grade": "A",
+                        "gradeDate": "2025-01-15",
+                        "finalGrade": true,
+                        "isEnded": true,
+                        "schoolComment": "Utmärkt arbete under hela terminen."
+                      }
+                    ]
+                  ],
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/GradeElementary"
+                      }
+                    ]
+                  },
+                  "description": "Array of GradeElementary objects"
+                },
+                "pagination": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Pagination"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "offset": 0,
+                      "limit": 1,
+                      "total": 100
+                    }
+                  ],
+                  "description": "Pagination information"
+                }
+              }
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "data": [
+                    {
+                      "id": "123e4567-e89b-12d3-a456-426614174000",
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                        "updatedAt": "2024-01-15T14:45:00Z",
+                        "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                      },
+                      "external": {
+                        "sourceID": "12345678",
+                        "source": "ExternalIntegrationAPI"
+                      },
+                      "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                      "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                      "subjectCode": "MA",
+                      "languageCode": "SV",
+                      "academicYear": "2024/2025",
+                      "term": "HT",
+                      "schoolYear": "9",
+                      "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                      "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                      "grade": "A",
+                      "gradeDate": "2025-01-15",
+                      "finalGrade": true,
+                      "isEnded": true,
+                      "schoolComment": "Utmärkt arbete under hela terminen."
+                    }
+                  ],
+                  "pagination": {
+                    "offset": 0,
+                    "limit": 1,
+                    "total": 100
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeUpperSecondaryCreate": {
+        "description": "Response for GradeUpperSecondary Create operation - returns the created GradeUpperSecondary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/GradeUpperSecondary"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "courseCode": "MATMAT01a",
+                  "languageCode": "SV",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                  "extent": "Normal",
+                  "schoolYear": "2",
+                  "section": "Program",
+                  "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                  "includeOnFinalGrade": true,
+                  "programTitle": "Teknikprogrammet",
+                  "startDate": "2024-08-19",
+                  "endDate": "2025-01-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeUpperSecondaryCreate422ResponseBody": {
+        "description": "Validation error for GradeUpperSecondary Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for GradeUpperSecondary Create endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for GradeUpperSecondary Create endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeUpperSecondaryUpdate": {
+        "description": "Response for GradeUpperSecondary Update operation - returns the updated GradeUpperSecondary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/GradeUpperSecondary"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "courseCode": "MATMAT01a",
+                  "languageCode": "SV",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                  "extent": "Normal",
+                  "schoolYear": "2",
+                  "section": "Program",
+                  "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                  "includeOnFinalGrade": true,
+                  "programTitle": "Teknikprogrammet",
+                  "startDate": "2024-08-19",
+                  "endDate": "2025-01-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeUpperSecondaryUpdate422ResponseBody": {
+        "description": "Validation error for GradeUpperSecondary Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for GradeUpperSecondary Update endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for GradeUpperSecondary Update endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeUpperSecondaryGet": {
+        "description": "Response for GradeUpperSecondary Get operation - returns the requested GradeUpperSecondary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/GradeUpperSecondary"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "courseCode": "MATMAT01a",
+                  "languageCode": "SV",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                  "extent": "Normal",
+                  "schoolYear": "2",
+                  "section": "Program",
+                  "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                  "includeOnFinalGrade": true,
+                  "programTitle": "Teknikprogrammet",
+                  "startDate": "2024-08-19",
+                  "endDate": "2025-01-17"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GradeUpperSecondaryList": {
+        "description": "Response for GradeUpperSecondary List operation - returns a paginated list of GradeUpperSecondary",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "examples": [
+                    [
+                      {
+                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                          "updatedAt": "2024-01-15T14:45:00Z",
+                          "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                        },
+                        "external": {
+                          "sourceID": "12345678",
+                          "source": "ExternalIntegrationAPI"
+                        },
+                        "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                        "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                        "courseCode": "MATMAT01a",
+                        "languageCode": "SV",
+                        "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                        "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                        "grade": "A",
+                        "gradeDate": "2025-01-15",
+                        "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                        "extent": "Normal",
+                        "schoolYear": "2",
+                        "section": "Program",
+                        "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                        "includeOnFinalGrade": true,
+                        "programTitle": "Teknikprogrammet",
+                        "startDate": "2024-08-19",
+                        "endDate": "2025-01-17"
+                      }
+                    ]
+                  ],
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/GradeUpperSecondary"
+                      }
+                    ]
+                  },
+                  "description": "Array of GradeUpperSecondary objects"
+                },
+                "pagination": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Pagination"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "offset": 0,
+                      "limit": 1,
+                      "total": 100
+                    }
+                  ],
+                  "description": "Pagination information"
+                }
+              }
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "data": [
+                    {
+                      "id": "123e4567-e89b-12d3-a456-426614174000",
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                        "updatedAt": "2024-01-15T14:45:00Z",
+                        "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                      },
+                      "external": {
+                        "sourceID": "12345678",
+                        "source": "ExternalIntegrationAPI"
+                      },
+                      "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                      "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                      "courseCode": "MATMAT01a",
+                      "languageCode": "SV",
+                      "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                      "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                      "grade": "A",
+                      "gradeDate": "2025-01-15",
+                      "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                      "extent": "Normal",
+                      "schoolYear": "2",
+                      "section": "Program",
+                      "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                      "includeOnFinalGrade": true,
+                      "programTitle": "Teknikprogrammet",
+                      "startDate": "2024-08-19",
+                      "endDate": "2025-01-17"
+                    }
+                  ],
+                  "pagination": {
+                    "offset": 0,
+                    "limit": 1,
+                    "total": 100
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "Error400ResponseBody": {
         "description": "Bad Request - The request was malformed or contained invalid parameters",
         "headers": {
@@ -27476,6 +29686,776 @@
           }
         },
         "required": true
+      },
+      "GradeElementaryCreate": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "external": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ExternalRequest"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "sourceID": "12345678"
+                    }
+                  ],
+                  "description": "ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key."
+                },
+                "studentID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the student the grade belongs to. Must reference a student within the organization who has an active placement at the school referenced by SchoolID."
+                },
+                "schoolID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the school where the student received the grade. Must reference a school within the organization."
+                },
+                "subjectCode": {
+                  "type": "string",
+                  "examples": [
+                    "MA"
+                  ],
+                  "description": "The subject code as defined by the Swedish school authorities (e.g. \"MA\" for Mathematics, \"SV\" for Swedish)."
+                },
+                "languageCode": {
+                  "type": "string",
+                  "examples": [
+                    "SV",
+                    null
+                  ],
+                  "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).",
+                  "nullable": true
+                },
+                "academicYear": {
+                  "type": "string",
+                  "examples": [
+                    "2024/2025"
+                  ],
+                  "description": "The academic year in which the grade was awarded, in the format YYYY/YYYY (e.g. \"2024/2025\")."
+                },
+                "term": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeTerm"
+                    }
+                  ],
+                  "examples": [
+                    "HT"
+                  ],
+                  "description": "The school term in which the grade was awarded."
+                },
+                "schoolYear": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeElementarySchoolYear"
+                    }
+                  ],
+                  "examples": [
+                    "9"
+                  ],
+                  "description": "The school year of the student at the time the grade was awarded."
+                },
+                "teacher1EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "teacher2EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "grade": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Grade"
+                    }
+                  ],
+                  "examples": [
+                    "A",
+                    null
+                  ],
+                  "description": "The grade awarded to the student.",
+                  "nullable": true
+                },
+                "gradeDate": {
+                  "type": "string",
+                  "examples": [
+                    "2025-01-15",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the grade was awarded.",
+                  "nullable": true
+                },
+                "finalGrade": {
+                  "type": "boolean",
+                  "examples": [
+                    true
+                  ],
+                  "description": "Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate."
+                },
+                "isEnded": {
+                  "type": "boolean",
+                  "examples": [
+                    true
+                  ],
+                  "description": "Whether the grading period has ended for this student in this subject."
+                },
+                "schoolComment": {
+                  "type": "string",
+                  "examples": [
+                    "Utmärkt arbete under hela terminen.",
+                    null
+                  ],
+                  "description": "A comment from the school about the grade, visible to the student and guardians.",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "studentID",
+                "schoolID",
+                "subjectCode",
+                "academicYear",
+                "term",
+                "schoolYear",
+                "finalGrade",
+                "isEnded"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "external": {
+                    "sourceID": "12345678"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "subjectCode": "MA",
+                  "languageCode": "SV",
+                  "academicYear": "2024/2025",
+                  "term": "HT",
+                  "schoolYear": "9",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "finalGrade": true,
+                  "isEnded": true,
+                  "schoolComment": "Utmärkt arbete under hela terminen."
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "GradeElementaryUpdate": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "external": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ExternalRequest"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "sourceID": "12345678"
+                    }
+                  ],
+                  "description": "ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key."
+                },
+                "languageCode": {
+                  "type": "string",
+                  "examples": [
+                    "SV",
+                    null
+                  ],
+                  "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).",
+                  "nullable": true
+                },
+                "academicYear": {
+                  "type": "string",
+                  "examples": [
+                    "2024/2025"
+                  ],
+                  "description": "The academic year in which the grade was awarded, in the format YYYY/YYYY (e.g. \"2024/2025\")."
+                },
+                "term": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeTerm"
+                    }
+                  ],
+                  "examples": [
+                    "HT"
+                  ],
+                  "description": "The school term in which the grade was awarded."
+                },
+                "schoolYear": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeElementarySchoolYear"
+                    }
+                  ],
+                  "examples": [
+                    "9"
+                  ],
+                  "description": "The school year of the student at the time the grade was awarded."
+                },
+                "teacher1EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "teacher2EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "grade": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Grade"
+                    }
+                  ],
+                  "examples": [
+                    "A",
+                    null
+                  ],
+                  "description": "The grade awarded to the student.",
+                  "nullable": true
+                },
+                "gradeDate": {
+                  "type": "string",
+                  "examples": [
+                    "2025-01-15",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the grade was awarded.",
+                  "nullable": true
+                },
+                "finalGrade": {
+                  "type": "boolean",
+                  "examples": [
+                    true
+                  ],
+                  "description": "Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate."
+                },
+                "isEnded": {
+                  "type": "boolean",
+                  "examples": [
+                    true
+                  ],
+                  "description": "Whether the grading period has ended for this student in this subject."
+                },
+                "schoolComment": {
+                  "type": "string",
+                  "examples": [
+                    "Utmärkt arbete under hela terminen.",
+                    null
+                  ],
+                  "description": "A comment from the school about the grade, visible to the student and guardians.",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "academicYear",
+                "term",
+                "schoolYear",
+                "finalGrade",
+                "isEnded"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "external": {
+                    "sourceID": "12345678"
+                  },
+                  "languageCode": "SV",
+                  "academicYear": "2024/2025",
+                  "term": "HT",
+                  "schoolYear": "9",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "finalGrade": true,
+                  "isEnded": true,
+                  "schoolComment": "Utmärkt arbete under hela terminen."
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "GradeUpperSecondaryCreate": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "external": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ExternalRequest"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "sourceID": "12345678"
+                    }
+                  ],
+                  "description": "ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key."
+                },
+                "studentID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the student the grade belongs to. Must reference a student within the organization who has an active placement at the school referenced by SchoolID."
+                },
+                "schoolID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the school where the student received the grade. Must reference a school within the organization."
+                },
+                "courseCode": {
+                  "type": "string",
+                  "examples": [
+                    "MATMAT01a"
+                  ],
+                  "description": "The national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\" for Mathematics 1a)."
+                },
+                "languageCode": {
+                  "type": "string",
+                  "examples": [
+                    "SV",
+                    null
+                  ],
+                  "description": "The language code for the grade, used when the course is taught in a specific language.",
+                  "nullable": true
+                },
+                "teacher1EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "teacher2EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "grade": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Grade"
+                    }
+                  ],
+                  "examples": [
+                    "A",
+                    null
+                  ],
+                  "description": "The grade awarded to the student.",
+                  "nullable": true
+                },
+                "gradeDate": {
+                  "type": "string",
+                  "examples": [
+                    "2025-01-15",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the grade was awarded.",
+                  "nullable": true
+                },
+                "gradeComment": {
+                  "type": "string",
+                  "examples": [
+                    "Eleven har visat goda kunskaper i algebra.",
+                    null
+                  ],
+                  "description": "A comment about the grade from the teacher.",
+                  "nullable": true
+                },
+                "extent": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeUpperSecondaryCourseExtent"
+                    }
+                  ],
+                  "examples": [
+                    "Normal",
+                    null
+                  ],
+                  "description": "The extent of the course for this student.",
+                  "nullable": true
+                },
+                "schoolYear": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeUpperSecondarySchoolYear"
+                    }
+                  ],
+                  "examples": [
+                    "2",
+                    null
+                  ],
+                  "description": "The school year of the student at the time the grade was awarded.",
+                  "nullable": true
+                },
+                "section": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeUpperSecondaryCourseSection"
+                    }
+                  ],
+                  "examples": [
+                    "Program",
+                    null
+                  ],
+                  "description": "The section/type of the course in the student's study plan.",
+                  "nullable": true
+                },
+                "teacherComment": {
+                  "type": "string",
+                  "examples": [
+                    "Eleven deltar aktivt och visar stort engagemang.",
+                    null
+                  ],
+                  "description": "A comment from the teacher about the student's performance.",
+                  "nullable": true
+                },
+                "includeOnFinalGrade": {
+                  "type": "boolean",
+                  "examples": [
+                    true
+                  ],
+                  "description": "Whether this course grade should be included when calculating the student's final grade certificate."
+                },
+                "programTitle": {
+                  "type": "string",
+                  "examples": [
+                    "Teknikprogrammet",
+                    null
+                  ],
+                  "description": "The title of the program this course belongs to. Used to associate the course with a specific educational program.",
+                  "nullable": true
+                },
+                "startDate": {
+                  "type": "string",
+                  "examples": [
+                    "2024-08-19",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the student started the course.",
+                  "nullable": true
+                },
+                "endDate": {
+                  "type": "string",
+                  "examples": [
+                    "2025-01-17",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the student finished the course.",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "studentID",
+                "schoolID",
+                "courseCode",
+                "includeOnFinalGrade"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "external": {
+                    "sourceID": "12345678"
+                  },
+                  "studentID": "123e4567-e89b-12d3-a456-426614174000",
+                  "schoolID": "123e4567-e89b-12d3-a456-426614174000",
+                  "courseCode": "MATMAT01a",
+                  "languageCode": "SV",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                  "extent": "Normal",
+                  "schoolYear": "2",
+                  "section": "Program",
+                  "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                  "includeOnFinalGrade": true,
+                  "programTitle": "Teknikprogrammet",
+                  "startDate": "2024-08-19",
+                  "endDate": "2025-01-17"
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "GradeUpperSecondaryUpdate": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "external": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ExternalRequest"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "sourceID": "12345678"
+                    }
+                  ],
+                  "description": "ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key."
+                },
+                "languageCode": {
+                  "type": "string",
+                  "examples": [
+                    "SV",
+                    null
+                  ],
+                  "description": "The language code for the grade, used when the course is taught in a specific language.",
+                  "nullable": true
+                },
+                "teacher1EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "teacher2EmployeeID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.",
+                  "nullable": true
+                },
+                "grade": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Grade"
+                    }
+                  ],
+                  "examples": [
+                    "A",
+                    null
+                  ],
+                  "description": "The grade awarded to the student.",
+                  "nullable": true
+                },
+                "gradeDate": {
+                  "type": "string",
+                  "examples": [
+                    "2025-01-15",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the grade was awarded.",
+                  "nullable": true
+                },
+                "gradeComment": {
+                  "type": "string",
+                  "examples": [
+                    "Eleven har visat goda kunskaper i algebra.",
+                    null
+                  ],
+                  "description": "A comment about the grade from the teacher.",
+                  "nullable": true
+                },
+                "extent": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeUpperSecondaryCourseExtent"
+                    }
+                  ],
+                  "examples": [
+                    "Normal",
+                    null
+                  ],
+                  "description": "The extent of the course for this student.",
+                  "nullable": true
+                },
+                "schoolYear": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeUpperSecondarySchoolYear"
+                    }
+                  ],
+                  "examples": [
+                    "2",
+                    null
+                  ],
+                  "description": "The school year of the student at the time the grade was awarded.",
+                  "nullable": true
+                },
+                "section": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/GradeUpperSecondaryCourseSection"
+                    }
+                  ],
+                  "examples": [
+                    "Program",
+                    null
+                  ],
+                  "description": "The section/type of the course in the student's study plan.",
+                  "nullable": true
+                },
+                "teacherComment": {
+                  "type": "string",
+                  "examples": [
+                    "Eleven deltar aktivt och visar stort engagemang.",
+                    null
+                  ],
+                  "description": "A comment from the teacher about the student's performance.",
+                  "nullable": true
+                },
+                "includeOnFinalGrade": {
+                  "type": "boolean",
+                  "examples": [
+                    true
+                  ],
+                  "description": "Whether this course grade should be included when calculating the student's final grade certificate."
+                },
+                "programTitle": {
+                  "type": "string",
+                  "examples": [
+                    "Teknikprogrammet",
+                    null
+                  ],
+                  "description": "The title of the program this course belongs to. Used to associate the course with a specific educational program.",
+                  "nullable": true
+                },
+                "startDate": {
+                  "type": "string",
+                  "examples": [
+                    "2024-08-19",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the student started the course.",
+                  "nullable": true
+                },
+                "endDate": {
+                  "type": "string",
+                  "examples": [
+                    "2025-01-17",
+                    null
+                  ],
+                  "format": "date",
+                  "description": "The date the student finished the course.",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "includeOnFinalGrade"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "external": {
+                    "sourceID": "12345678"
+                  },
+                  "languageCode": "SV",
+                  "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
+                  "grade": "A",
+                  "gradeDate": "2025-01-15",
+                  "gradeComment": "Eleven har visat goda kunskaper i algebra.",
+                  "extent": "Normal",
+                  "schoolYear": "2",
+                  "section": "Program",
+                  "teacherComment": "Eleven deltar aktivt och visar stort engagemang.",
+                  "includeOnFinalGrade": true,
+                  "programTitle": "Teknikprogrammet",
+                  "startDate": "2024-08-19",
+                  "endDate": "2025-01-17"
+                }
+              }
+            }
+          }
+        },
+        "required": true
       }
     },
     "securitySchemes": {
@@ -27541,6 +30521,14 @@
     {
       "name": "AuditEvent",
       "description": "AuditEvent holds the information about an audit event."
+    },
+    {
+      "name": "GradeElementary",
+      "description": "GradeElementary represents a grade awarded to a student in elementary school (Swedish: grundskola).\nGrades are scoped to the organization of the API key used. The SubjectCode field uses the subject code as defined by the Swedish school authorities (e.g. \"MA\" for Mathematics).\n"
+    },
+    {
+      "name": "GradeUpperSecondary",
+      "description": "GradeUpperSecondary represents a grade awarded to a student in upper secondary school (Swedish: gymnasieskola).\nGrades are scoped to the organization of the API key used. The CourseCode field uses the national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\").\n"
     }
   ],
   "x-speakeasy-retries": {

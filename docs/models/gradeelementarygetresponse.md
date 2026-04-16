@@ -1,0 +1,9 @@
+# GradeElementaryGetResponse
+
+
+## Fields
+
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `headers`                                              | Dict[str, List[*str*]]                                 | :heavy_check_mark:                                     | N/A                                                    |
+| `result`                                               | [models.GradeElementary](../models/gradeelementary.md) | :heavy_check_mark:                                     | N/A                                                    |
