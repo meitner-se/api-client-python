@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: eb930e871b83e042934ff38d8aba9fa9
+  docChecksum: f58cbd553296d932b21d1e0f73cd5557
   docVersion: v1
-  speakeasyVersion: 1.761.1
-  generationVersion: 2.879.6
-  releaseVersion: 0.6.1
-  configChecksum: 7c79a451a1a3f274aca6a5e57dc19dae
+  speakeasyVersion: 1.761.6
+  generationVersion: 2.879.13
+  releaseVersion: 0.6.2
+  configChecksum: 1e5f5bbd76bac352eaf48d0c48f36e54
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
   published: true
 persistentEdits:
-  generation_id: c05f7d22-6a0f-4d11-8c55-1e110feafb20
-  pristine_commit_hash: 2373c6b4fa4c8d166af247f65c8225d803cb0225
-  pristine_tree_hash: 40dfe354029ab0ad2158318523129f89e10a33de
+  generation_id: 8567c761-9253-4bf6-a83a-0d8301d0804a
+  pristine_commit_hash: 10042c0ef6d1ce020f7e66b1c94727f4e7c8dfda
+  pristine_tree_hash: 6e21d5617905c8ee3c2c6d117b14cb8c94b1b502
 features:
   python:
     additionalDependencies: 1.0.0
@@ -120,6 +120,22 @@ trackedFiles:
     id: 0d864dcc6a46
     last_write_checksum: sha1:c885f7ac79edfd67b2e95cd35d877038e93e01d4
     pristine_git_object: b646485e1037302998f5abaf5146660bf7b6b8a1
+  docs/errors/gradeelementarycreate422responsebodyerror.md:
+    id: 030fe7913b1f
+    last_write_checksum: sha1:511115347c66529dea33e97d4eda2de524688aad
+    pristine_git_object: e0b1cae122d1b7ffc8813e675517c81762fff8b9
+  docs/errors/gradeelementaryupdate422responsebodyerror.md:
+    id: 2b27540ad196
+    last_write_checksum: sha1:27bcb58af740908365b829b4d4b94293035521b2
+    pristine_git_object: e18bff400333f9ef39dc6f41e9be290f171db1b3
+  docs/errors/gradeuppersecondarycreate422responsebodyerror.md:
+    id: 9e717e0df41d
+    last_write_checksum: sha1:bb0ff2bd4dc2b7e4c63a089a7de365ecd41c980a
+    pristine_git_object: dc0cc5a52accc921c9aec60c25410f0f54da6404
+  docs/errors/gradeuppersecondaryupdate422responsebodyerror.md:
+    id: baf30724eed4
+    last_write_checksum: sha1:6ccec41fa1a78f142207b6c436615c8d2116b65e
+    pristine_git_object: f894471dfdc1e7c96a2a95498f498e4376221582
   docs/errors/groupcreate422responsebodyerror.md:
     id: 0ac2937176ac
     last_write_checksum: sha1:02d6c9947ef7ade6c6b68bc3925c1a5e86c062d5
@@ -1468,6 +1484,250 @@ trackedFiles:
     id: a335bcd2ebec
     last_write_checksum: sha1:f7ab4ed0a909eaaa66f7c65822f76fd2bbb86dbf
     pristine_git_object: 5e29fd399994d9efd239549d1bfa764fcb74ff5a
+  docs/models/gradeelementary.md:
+    id: 0d263d1d9f84
+    last_write_checksum: sha1:8c5552f6b52ba3ae275b1edc7da5ebd18ddde890
+    pristine_git_object: 12c649979e4d19215f247e1545dfcf9c5441fc6e
+  docs/models/gradeelementarycreate.md:
+    id: fcde44de1bc1
+    last_write_checksum: sha1:8ae023afe890961006e4265bfba174e7733fb071
+    pristine_git_object: f0e4ec504326db2bd023c5a80ab780001db6928a
+  docs/models/gradeelementarycreate422responsebodyerror.md:
+    id: 5b8b935e44b2
+    last_write_checksum: sha1:80039a2aca6209726826dbe9e4b57ac4cbfb4730
+    pristine_git_object: 02368cdb0462cf11dd25a42c98267ff3bfef4e5e
+  docs/models/gradeelementarycreateexternal.md:
+    id: 71a0ae513f64
+    last_write_checksum: sha1:b8e3607ee77c783ff2c6fffb8b29623b66b29ac7
+    pristine_git_object: 42b4526051b212dda8efd4d2825c35006776a006
+  docs/models/gradeelementarycreategrade.md:
+    id: 7d2b7b1d18a5
+    last_write_checksum: sha1:2617ee3500d973bf2e23a0455c0cfced4c3a4a0e
+    pristine_git_object: fd00bbe6b1de8d7a4f6a27d52c0f8e5434d8d93f
+  docs/models/gradeelementarycreateresponse.md:
+    id: 6f6e990b959a
+    last_write_checksum: sha1:6e34267dbb5724ec24bfaa1049b95f56bb0e01a6
+    pristine_git_object: 55484fc855f2606dcf5e28fcb946b698c9158f68
+  docs/models/gradeelementarycreateschoolyear.md:
+    id: e629267b00b7
+    last_write_checksum: sha1:6e3f405d6099af4dbbb6d92be42787f5fbeaa734
+    pristine_git_object: c1c746ac3e67c5a339c3fa65c41a86438da50a95
+  docs/models/gradeelementarycreateterm.md:
+    id: d5bf4a4ccd11
+    last_write_checksum: sha1:a76f4dd7a89546bc1c108c0ecf49948803ddc346
+    pristine_git_object: 41cda4f6192e9f6bb933b30f9276cb133e064bee
+  docs/models/gradeelementarydeleterequest.md:
+    id: 505c4289e991
+    last_write_checksum: sha1:a0674fb9f50b0acaf7a399d8a24a918199e9371e
+    pristine_git_object: 64493ac9ea50a7439e1333eb4435a186e3107a3e
+  docs/models/gradeelementarydeleteresponse.md:
+    id: 5424e1eb548f
+    last_write_checksum: sha1:8d817685cb115863bfb6b45456f1270f190d50e4
+    pristine_git_object: 3c4da4c5589ad297364e985ec5e46f0210ab798e
+  docs/models/gradeelementaryexternal.md:
+    id: 4e831e8f0190
+    last_write_checksum: sha1:b6b5efaf4ecf6930d3bde5e3aa9a7e41f1a1d00d
+    pristine_git_object: dd1a8360fc9eb432328f7ea24ded844f71d306ef
+  docs/models/gradeelementarygetrequest.md:
+    id: b419c9a2bfd9
+    last_write_checksum: sha1:966838a1b90e3cc405a49de8137eed61f10b565a
+    pristine_git_object: c1bce31e00350a5071ae8e30248a4cc485d402c3
+  docs/models/gradeelementarygetresponse.md:
+    id: 3df94be2eefc
+    last_write_checksum: sha1:5f3371122c0ef21911aeb3ea02f6d48b8a4c13d6
+    pristine_git_object: a0f708248f6ef556eda0ff69a20c0a1ea6b13616
+  docs/models/gradeelementarygrade.md:
+    id: 71dc22b463f4
+    last_write_checksum: sha1:fcb35a619116fe8d2075c8914d847cfd3141d81e
+    pristine_git_object: baf2cd4a850a10a9dc954d4a5c2549213b00ae6e
+  docs/models/gradeelementarylist.md:
+    id: f4d817c5ab6e
+    last_write_checksum: sha1:ab7322b5806f95a74b2f03c05a0e0520246f72f8
+    pristine_git_object: fd3c12359fdbaeb4703417e6df9b4bc6ee3a3ce6
+  docs/models/gradeelementarylistpagination.md:
+    id: 9c0a2436b1dc
+    last_write_checksum: sha1:b7cce9863c2a721624b7ba7ffebf101b4b58ddb2
+    pristine_git_object: 70d3045dd3ac6badb5f1d8d1bb06248e2603d5ba
+  docs/models/gradeelementarylistrequest.md:
+    id: fd8cbbefa853
+    last_write_checksum: sha1:1b99f1e8a7a73cfbd56cbeea6e1c6bd21c2cd455
+    pristine_git_object: 417b3bfaba26add254d542cacbfffd68918f8941
+  docs/models/gradeelementarylistresponse.md:
+    id: 04d1ff4f8b44
+    last_write_checksum: sha1:95bcf57cf89e70b3f2a0273e6363803942e76ea6
+    pristine_git_object: f781549cdace602c991618f551ed2c0062d7f0de
+  docs/models/gradeelementarymeta.md:
+    id: dac7d01835ac
+    last_write_checksum: sha1:f6e50b003f4be4ad7207dbda537543e8ef319ea9
+    pristine_git_object: 8cfc7bc073f7c6c9f70eb97788f13123f8775851
+  docs/models/gradeelementaryschoolyear.md:
+    id: 5340ea3104a5
+    last_write_checksum: sha1:1031a861f7c5a1a4efe3277e17b997a3508faf5c
+    pristine_git_object: 45e9a1dcdce74f97b1ba3ea4b03c79fd3c49fbce
+  docs/models/gradeelementaryterm.md:
+    id: 89b6733ab66b
+    last_write_checksum: sha1:1d9f42ca7e635f93c0e3a8a41f1c72026013a83d
+    pristine_git_object: 36755f75db8c9815582d00c4e4d9a82cdb7fdac0
+  docs/models/gradeelementaryupdate.md:
+    id: f268c41630aa
+    last_write_checksum: sha1:1af20a0e7da1198a5b6b904b5798340b5207733a
+    pristine_git_object: 24d4fe2d2f79d09d8afed1837ee4c30e10da6bcf
+  docs/models/gradeelementaryupdate422responsebodyerror.md:
+    id: e0936109c8b1
+    last_write_checksum: sha1:13043810a3be7216973c603d49ae87402be34832
+    pristine_git_object: e8ebf817384b0605296e087d79ab78a7136c7022
+  docs/models/gradeelementaryupdateexternal.md:
+    id: 33137bf40c9d
+    last_write_checksum: sha1:d7ec6f0deb4c991b41ddbc01f126f8a06499ff99
+    pristine_git_object: 82770f243875a7b7f73b6907de3799e4321fb2df
+  docs/models/gradeelementaryupdategrade.md:
+    id: f90a49c11bed
+    last_write_checksum: sha1:1ba748d8049212c90cc09030873180c83ef75ccf
+    pristine_git_object: 848c380a42334b5401c27048ddcb04867c5bfa91
+  docs/models/gradeelementaryupdaterequest.md:
+    id: 86cc9ddaa530
+    last_write_checksum: sha1:1c1c8faf4130bba24b0f8d51b9d15c0bbd66883e
+    pristine_git_object: 905707715b10fcf6b23108be4465365187142062
+  docs/models/gradeelementaryupdateresponse.md:
+    id: 58707d94fe03
+    last_write_checksum: sha1:9a94e90d6df1844025553a8626174cd0a252a456
+    pristine_git_object: c878538365f21b877fb7168062ae4bfb711139fc
+  docs/models/gradeelementaryupdateschoolyear.md:
+    id: 807b19936732
+    last_write_checksum: sha1:79acd0bc81b7563a1cb64356bcb0da8d98e1062a
+    pristine_git_object: 7203ba07ddb28ad948a02d4449a9bf8a361aab2b
+  docs/models/gradeelementaryupdateterm.md:
+    id: 0c67a96372dd
+    last_write_checksum: sha1:f020bf5a463849a9eb68d9d953432d779a7d5e76
+    pristine_git_object: b117aa66c122910506eef907dd2aebc193cfe036
+  docs/models/gradeuppersecondary.md:
+    id: bee51fd30c6c
+    last_write_checksum: sha1:770f55086a6265637997bdcb19de6e7267fff762
+    pristine_git_object: 7fb43e9e676ea3a9dae2f2b29c3cd4c347ad4337
+  docs/models/gradeuppersecondarycreate.md:
+    id: 33766ba5e778
+    last_write_checksum: sha1:7bbf9c78088e6f7de1ae41df81c7f20ef56a82d5
+    pristine_git_object: 56d275e6aa2eefade0a83351d353f52b6fa4affe
+  docs/models/gradeuppersecondarycreate422responsebodyerror.md:
+    id: b77ea26b1233
+    last_write_checksum: sha1:7ec873a16e74f4fbe32301b679b018ce987f7b0d
+    pristine_git_object: a423309e7e0d202343574da1fd979f0f07a897ee
+  docs/models/gradeuppersecondarycreateextent.md:
+    id: 67643a9b369a
+    last_write_checksum: sha1:eb969ad7a413c6ea6cac39460b65e6c947fdbc86
+    pristine_git_object: c96dda8e48aa2911571dd9802c6c5143becf32cd
+  docs/models/gradeuppersecondarycreateexternal.md:
+    id: d46670ba998b
+    last_write_checksum: sha1:251efb27b1cf5cc333524f20a47adc562cb813c5
+    pristine_git_object: d1d1571d694a9958a11d94ed0b65434f22f87d2c
+  docs/models/gradeuppersecondarycreategrade.md:
+    id: 64437e711cd1
+    last_write_checksum: sha1:c694ed7bd0285af485baf468dab277f52c8bf375
+    pristine_git_object: 24ceafaf092b90e9d3261c1b173ac76c407a2b45
+  docs/models/gradeuppersecondarycreateresponse.md:
+    id: 91e0fdeb1861
+    last_write_checksum: sha1:ba19c3104b5aba6d2587d0653af5339843c0aae1
+    pristine_git_object: 4abba2ad967020accf1b80b0c0adf6aa8950fa4f
+  docs/models/gradeuppersecondarycreateschoolyear.md:
+    id: 4500c8880a46
+    last_write_checksum: sha1:02540a9325efb6a1e13c4534d96725cae4fcae3c
+    pristine_git_object: 340e7483bdb0010de8d9541f0ce78f4c1f623096
+  docs/models/gradeuppersecondarycreatesection.md:
+    id: fae8f042d202
+    last_write_checksum: sha1:0cdfebdc15132133a6bcaa69d1ef6ae0591ef975
+    pristine_git_object: 5dceea9163c11e4c05e441dc38f00698a0911bbe
+  docs/models/gradeuppersecondarydeleterequest.md:
+    id: ae511f9fca98
+    last_write_checksum: sha1:1f36cae82cdacc4fdccc2e41557569e4f5827264
+    pristine_git_object: 4df91589fe5f9b0a060182b5b79d7f36ccf4de54
+  docs/models/gradeuppersecondarydeleteresponse.md:
+    id: 382fe107ae0f
+    last_write_checksum: sha1:0d4591a8ace31a478da01ee643e2dd82da1feba6
+    pristine_git_object: 64a70e3e453da1446729597a27e0e91cc815b666
+  docs/models/gradeuppersecondaryextent.md:
+    id: c40bc206d03f
+    last_write_checksum: sha1:ac6bef79db496c13c7c80deb6a25f622decb037b
+    pristine_git_object: 4228070b24d976fc38a5fd2a0078bc288b46c148
+  docs/models/gradeuppersecondaryexternal.md:
+    id: 7f4016484ce0
+    last_write_checksum: sha1:fe64cb50b1e0de30f4ef84b8ee8266c6de08d093
+    pristine_git_object: e7200ecd04fd6d475bda0a3ddb095f23e1e902b3
+  docs/models/gradeuppersecondarygetrequest.md:
+    id: 45960f1b555f
+    last_write_checksum: sha1:f8df534c6cbfa2ecd459e2c5eafdfee3000361a8
+    pristine_git_object: 57cdb1bdee07fbaccbd06fec39918050476a490e
+  docs/models/gradeuppersecondarygetresponse.md:
+    id: 159dc5670070
+    last_write_checksum: sha1:2bb7b61a88bb4203b0b25ffc7835d4ff4ef5fca2
+    pristine_git_object: 637063d62944aefb284fcc5e0a37e7e61632435b
+  docs/models/gradeuppersecondarygrade.md:
+    id: 6f2a5e90e086
+    last_write_checksum: sha1:cb29d3ef683bea04fc58eb94456fc10eca816c44
+    pristine_git_object: 40a4947786ceebc7ba6feb353d77cc4b1080e80f
+  docs/models/gradeuppersecondarylist.md:
+    id: 68442a0931c2
+    last_write_checksum: sha1:48a49b78aacea363d5a15ee359868c5b979db5dc
+    pristine_git_object: caff96d9673ae6b3308afd5b7d9087f3fed0a6d5
+  docs/models/gradeuppersecondarylistpagination.md:
+    id: cd902044f4be
+    last_write_checksum: sha1:8ba52267436516971dd285f1dc3ad74aca6a72b0
+    pristine_git_object: a3268187b3a61fa5619d032e3c1ceffb73f9b88c
+  docs/models/gradeuppersecondarylistrequest.md:
+    id: a0c7fd4efee0
+    last_write_checksum: sha1:a88c0e4dd409733895026573d27127185d6b7433
+    pristine_git_object: bdf152fbe03727a0ab157284e7f9bf95589a78ad
+  docs/models/gradeuppersecondarylistresponse.md:
+    id: a08f3920648f
+    last_write_checksum: sha1:ddb74478b7c029ce3f49822d9dfc54e264973ff2
+    pristine_git_object: 36c7c3ba517f4f5ebea7127284a0ca102a08da6b
+  docs/models/gradeuppersecondarymeta.md:
+    id: 5659bb964f7c
+    last_write_checksum: sha1:43c8010703f60cd465dcd32c20a4c48330a511c7
+    pristine_git_object: 74b1c83dd0c579ab22f3427a36cdc545452d0b2d
+  docs/models/gradeuppersecondaryschoolyear.md:
+    id: f90426798d50
+    last_write_checksum: sha1:3c968e2ced4b518e355a78975fb230e7aeccbad6
+    pristine_git_object: 9528318ba265069783998f96efc2172e3e814022
+  docs/models/gradeuppersecondarysection.md:
+    id: f5490d727abe
+    last_write_checksum: sha1:8f4997dbb0e1a4271a662fce1be4bcc69f171630
+    pristine_git_object: 959fc26ca6c354af551b023fca0b331614f65662
+  docs/models/gradeuppersecondaryupdate.md:
+    id: 4f258a2342a9
+    last_write_checksum: sha1:c4e62f98d406e3140c9f78d0f5f5300489f3af66
+    pristine_git_object: d248b0861bce49e3acefc66f329d594db7ec1409
+  docs/models/gradeuppersecondaryupdate422responsebodyerror.md:
+    id: c7d3678e481a
+    last_write_checksum: sha1:9bb31951c48823172b3424794a09b2d97128edfa
+    pristine_git_object: 412e580c14cb7dd75f788cff77ca2a1fb23a7507
+  docs/models/gradeuppersecondaryupdateextent.md:
+    id: e0592b426651
+    last_write_checksum: sha1:a39c98393ca567ee6cb3ff9295ab66155c96ebbc
+    pristine_git_object: 6ac232b6c2507395018b9d02fc7e147818079e12
+  docs/models/gradeuppersecondaryupdateexternal.md:
+    id: f7a3f10f5292
+    last_write_checksum: sha1:82bfb2a2f03cd6d9278bdb22ce1ad04e0b2490a5
+    pristine_git_object: ba4d04fae000fda5a4e7790e592c2aebba5e0078
+  docs/models/gradeuppersecondaryupdategrade.md:
+    id: 306263835d39
+    last_write_checksum: sha1:82dc90dcb13e7dbe961acd03577616faf413b2ef
+    pristine_git_object: 49bbe5bfab2b8d6009af95a8c7cc1598203cc88f
+  docs/models/gradeuppersecondaryupdaterequest.md:
+    id: 22cd737813c1
+    last_write_checksum: sha1:5bc1829b5edb2dd250a35fdc9978f3668114b942
+    pristine_git_object: 3c6f6e7f710c6db3f409ec8fc24b386673acd190
+  docs/models/gradeuppersecondaryupdateresponse.md:
+    id: 971a50d6496f
+    last_write_checksum: sha1:40421793f2814f3e518cb120ad9ad03321c5b4db
+    pristine_git_object: 3b75454185d9728865bbd38324cc400cff288726
+  docs/models/gradeuppersecondaryupdateschoolyear.md:
+    id: d5d22d79bab7
+    last_write_checksum: sha1:fe478201fd2c5c617d9e436c18bbfd2e57768c4f
+    pristine_git_object: 2b406c610c3c1956c25b6175f32fe05048e5f2c2
+  docs/models/gradeuppersecondaryupdatesection.md:
+    id: 95ac5f00a42f
+    last_write_checksum: sha1:d5915ec74a56484ac4acd24fb87f61a34e72b505
+    pristine_git_object: 5b5a9811de0cac765293ad074830eb84169c6b8c
   docs/models/group.md:
     id: 565e059670b0
     last_write_checksum: sha1:e22cb1d621bc50464d6fd738235480c7d26cccc7
@@ -3928,6 +4188,14 @@ trackedFiles:
     id: 3adbd327ce9d
     last_write_checksum: sha1:4343aa2ca9980b357a35365c7b891ccdc3473a85
     pristine_git_object: e40f9ee753487ee8af2c08e2ff6b5a66d397c144
+  docs/sdks/gradeelementaries/README.md:
+    id: 34bc39354f0d
+    last_write_checksum: sha1:fd1c920080c0f7324e539d6c9a1694ede15ef6fc
+    pristine_git_object: a546f8f37fde873a04a49cbf70f1f1b32b499c64
+  docs/sdks/gradeuppersecondaries/README.md:
+    id: 44cd7e1bd86a
+    last_write_checksum: sha1:3c514917660d32a1e86c05074219e0f539910059
+    pristine_git_object: 306c5789e58b3580ed208efb4f6bc666245ed73c
   docs/sdks/groups/README.md:
     id: 3336939a71e4
     last_write_checksum: sha1:d3229784418639d2c700c22072fee03c66a08002
@@ -3958,8 +4226,8 @@ trackedFiles:
     pristine_git_object: f456032107a9387ba6c98afd1c981df2f4b3d636
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:4f2debb9bdb028cd0041231e8ee944585b449496
-    pristine_git_object: 16a3771213d8d1caba853297d3eca17be1663300
+    last_write_checksum: sha1:bba25540d7d03030bd38d1dfe8acc17f386bd09c
+    pristine_git_object: 691679a8a0151e3a51bf0ebd3e5a677d841d4c74
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:8f2e96afadb77d46883beda8d7b6affc1e5b1e51
@@ -3990,8 +4258,8 @@ trackedFiles:
     pristine_git_object: 1d14fbfee44b0a8ee2fae292044cc7b57a75acd1
   src/meitner/_version.py:
     id: d8bcd4ba1c28
-    last_write_checksum: sha1:7846fbd032435d02334a77df421e794add6ff38e
-    pristine_git_object: 0c61c1d4678454d45518cd06b6550dfa3fcec8f3
+    last_write_checksum: sha1:8986c66b5d896b78da3285d1a8b2ac278c7010ef
+    pristine_git_object: c9f741ae5d0596bea1b56f1fd2b56a0726f642b1
   src/meitner/auditevents.py:
     id: f53a1d6b892b
     last_write_checksum: sha1:c057a072395b42e6889b5a261562b0b32dfa85d5
@@ -4010,8 +4278,8 @@ trackedFiles:
     pristine_git_object: 4813f82bfff5199849154e897a710a9f668827d7
   src/meitner/errors/__init__.py:
     id: b8577e119f85
-    last_write_checksum: sha1:2cd79f87015ad472adebb023b78d9918ecac567f
-    pristine_git_object: 6cb489d00637fbecfbe4db632c7122c2d570a7c9
+    last_write_checksum: sha1:43b0fa6803ce05e33f6c06def540b5cb45f38425
+    pristine_git_object: f6612bfee75c4d61add38f4e1e302244fa05ed86
   src/meitner/errors/auditeventsearch422responsebody_error.py:
     id: d22d31982a04
     last_write_checksum: sha1:4995d164ee1da63b13704c55858cfb5d966fbe1a
@@ -4068,6 +4336,22 @@ trackedFiles:
     id: 1e7f4c784984
     last_write_checksum: sha1:f336d67d534b928398c8890b2699de238b6e8f97
     pristine_git_object: 5df3267448062b255fc3abb1ea110eace563efbc
+  src/meitner/errors/gradeelementarycreate422responsebody_error.py:
+    id: c3f8285cba60
+    last_write_checksum: sha1:26af2d8bad13bb91d1354cc31be2a077094bbc9f
+    pristine_git_object: 05e0434da28838ad453a8702e249bab74a58a682
+  src/meitner/errors/gradeelementaryupdate422responsebody_error.py:
+    id: 145adcd687f9
+    last_write_checksum: sha1:1fa3c8700af844b6cb77546b57c502fc9ced4e77
+    pristine_git_object: e2bf160c5da70e165b35373c481d2e8b21eab731
+  src/meitner/errors/gradeuppersecondarycreate422responsebody_error.py:
+    id: 0cf2204fcb6b
+    last_write_checksum: sha1:ac5b5a18ec8ec94770448326b13503ff4273898d
+    pristine_git_object: 942debb5d514309f73303306ac85ec42c862fa33
+  src/meitner/errors/gradeuppersecondaryupdate422responsebody_error.py:
+    id: 09266219f345
+    last_write_checksum: sha1:2542f22ba3cbb6d4e561bdb2e227ab3944dd7ced
+    pristine_git_object: 815a862aa63b6bc9bf8f3cf567a40f56483e0c22
   src/meitner/errors/groupcreate422responsebody_error.py:
     id: f69ebe30a663
     last_write_checksum: sha1:67852d1169f010053fdd3bf1772216e01c3cb9eb
@@ -4144,6 +4428,14 @@ trackedFiles:
     id: 9a06f5cdeba0
     last_write_checksum: sha1:f0c94d56f1c6526cacf84cbbf9c7b0b120afcf4a
     pristine_git_object: e6c878c7a213ac2037e2371c18ce45e87d8bd6bd
+  src/meitner/gradeelementaries.py:
+    id: 2ba139f9920b
+    last_write_checksum: sha1:83e29f69175d923fd216302abd9ab83ef6b3e8de
+    pristine_git_object: 3e593d178133557c708968758f9bd477fe1054bf
+  src/meitner/gradeuppersecondaries.py:
+    id: a429462ea780
+    last_write_checksum: sha1:a987e63ca2a3bc55a2489ac53eeb8bfedfe4ba63
+    pristine_git_object: 9973d4aa1d4007d7264b31942508d7474fb22306
   src/meitner/groups.py:
     id: c3084147b722
     last_write_checksum: sha1:7e166ebc8b4213630f34f1bb3751f6df3ccb5d3a
@@ -4158,8 +4450,8 @@ trackedFiles:
     pristine_git_object: 89560b566073785535643e694c112bedbd3db13d
   src/meitner/models/__init__.py:
     id: b9491b5586be
-    last_write_checksum: sha1:e30bdc8da3e55e901a3af7e3597ac2e14057df38
-    pristine_git_object: 84ad1c457116760c7ce7e6c6cbb246dd23c49105
+    last_write_checksum: sha1:955bf31366132593d634ed611ae873aad82efb6a
+    pristine_git_object: 14606bde6539af8c0f6ff26484ecd3a1d87d22c0
   src/meitner/models/auditevent.py:
     id: 8dd95f62da82
     last_write_checksum: sha1:5ae1cc6bb722107c7d9bbde3e75da1a0ffe8d0b7
@@ -4372,6 +4664,94 @@ trackedFiles:
     id: 567d7cfc1f2e
     last_write_checksum: sha1:a3b8873e7dc9de6ede796e1ca8f4aae8ff3d62f4
     pristine_git_object: ff71c13d6062bb452b851a905033988f9e6cabae
+  src/meitner/models/gradeelementary.py:
+    id: 3179d7a1b595
+    last_write_checksum: sha1:69cb4e89b7bf50cf170cbad5052301b3be9b2b1b
+    pristine_git_object: 75f73119cf501a80d537caf710ef9eb7b64a37f9
+  src/meitner/models/gradeelementarycreate.py:
+    id: e3f4a016ab6d
+    last_write_checksum: sha1:5e5a0ecca59318e8952dc49dabc33faf629a65f2
+    pristine_git_object: 507c9185f92a8382a9fe0364082fe2ee3a6ace37
+  src/meitner/models/gradeelementarycreate422responsebody_error.py:
+    id: 919b52630601
+    last_write_checksum: sha1:9959774108650487fb6986a3f5f31868ebed084e
+    pristine_git_object: ed4174aeafc9157029bc87a48443d392d09c71e3
+  src/meitner/models/gradeelementarycreateop.py:
+    id: 3f48184d44fd
+    last_write_checksum: sha1:64f358f2aaa875cc7cd283a7ef870d59d48e6b8b
+    pristine_git_object: e4d16e7ee45f185e63401acb0f2d34c0e478e244
+  src/meitner/models/gradeelementarydeleteop.py:
+    id: 3ccd2f15a297
+    last_write_checksum: sha1:154e7596ad5513e2aeae1ee566313ac0974de13d
+    pristine_git_object: 2a90567ced1124ec795b11a0591440c0eda630f5
+  src/meitner/models/gradeelementarygetop.py:
+    id: 39372b1abb3b
+    last_write_checksum: sha1:975b7bfac975eac3c6a2ea2856cbd6025074b16e
+    pristine_git_object: 965fde6f57c5e5ef6c629430bb9f7d5820db5354
+  src/meitner/models/gradeelementarylist.py:
+    id: 2b64e2c83a12
+    last_write_checksum: sha1:1196c5088c287be991c32f404358fc2aa96d5306
+    pristine_git_object: a56d10c2b2416b73b439760ab5a6ecd3494e866f
+  src/meitner/models/gradeelementarylistop.py:
+    id: bf621c3aea6f
+    last_write_checksum: sha1:0b875696437e8d3da8d53d3487049182c0dca924
+    pristine_git_object: f34475963cf224a902de9528261148542a4c373f
+  src/meitner/models/gradeelementaryupdate.py:
+    id: fa62fd922f8a
+    last_write_checksum: sha1:8eff057bdb6209b5aa8bfd7dfe5a27e35d33112b
+    pristine_git_object: 76165e75b6ee0817dbb173d10a6927c9033d0efa
+  src/meitner/models/gradeelementaryupdate422responsebody_error.py:
+    id: 6b2d300bd271
+    last_write_checksum: sha1:978ffb0c44b9656424bd16b758d1538d10bf897d
+    pristine_git_object: fe227a94ffdf2e84e152259462ed59f6061cc648
+  src/meitner/models/gradeelementaryupdateop.py:
+    id: 642b19665245
+    last_write_checksum: sha1:74822a7a0e8f3e4f93373ddf2f3486daa73fca77
+    pristine_git_object: 574f506c5cf215d35a5b6f7561bcc906ba5bcf5e
+  src/meitner/models/gradeuppersecondary.py:
+    id: d4cf4fadda68
+    last_write_checksum: sha1:ded42ebd468b1a6394e8d85d26f1f140b26239e2
+    pristine_git_object: f89345750bab14146c12b92e3965478af3dc7589
+  src/meitner/models/gradeuppersecondarycreate.py:
+    id: bf2e7f1ba156
+    last_write_checksum: sha1:0eef39dd2779d9aef8bac1747709ba7f45b1a691
+    pristine_git_object: 7b2da7aeaa938314f7468c909e3cf8eb3550176d
+  src/meitner/models/gradeuppersecondarycreate422responsebody_error.py:
+    id: 49eef7ec3a94
+    last_write_checksum: sha1:1b58135cba84bae2051d43204711283eceb53f2f
+    pristine_git_object: 7ab0a47285f710dcab8ab403a4cecf7146a4488b
+  src/meitner/models/gradeuppersecondarycreateop.py:
+    id: a4b27a20a696
+    last_write_checksum: sha1:362a754b3c6b359e8bb5356af3b9ad083822a018
+    pristine_git_object: d35404eb258e2c56df0dc8889bb8489b4741a12c
+  src/meitner/models/gradeuppersecondarydeleteop.py:
+    id: 6c4eae89e1bd
+    last_write_checksum: sha1:9b573a4ddf90ade1eb2728a19d6aa303a986f3ed
+    pristine_git_object: b25940ecce112a24dc0272511d2e3c49ce899541
+  src/meitner/models/gradeuppersecondarygetop.py:
+    id: 0c225b2b54ee
+    last_write_checksum: sha1:f273bfbca91b45bb177e1a7b7566ca5b8460dfaa
+    pristine_git_object: 3dca9a32a9a7b10e45ae694d48e8e11896618aad
+  src/meitner/models/gradeuppersecondarylist.py:
+    id: e400ab627661
+    last_write_checksum: sha1:35d8d4d2a900775a07e5b6d45dfe6d4f998a8552
+    pristine_git_object: d635b06eec18062d6ad0eb9a2b6ceba296082caa
+  src/meitner/models/gradeuppersecondarylistop.py:
+    id: 6d1e2da1d918
+    last_write_checksum: sha1:9dee283cdab3f1a53ee97ea2155c2db79928d638
+    pristine_git_object: c76fec85bae7907d7a1d2aade644bb238828bd4c
+  src/meitner/models/gradeuppersecondaryupdate.py:
+    id: 4dc8c54c8f21
+    last_write_checksum: sha1:c414accef8acba7a20635d8e6b820e3888952782
+    pristine_git_object: 590e90d90cfb89e234727c8f33e2f7624fe392ce
+  src/meitner/models/gradeuppersecondaryupdate422responsebody_error.py:
+    id: edce2e798cfa
+    last_write_checksum: sha1:34b21df6e6aa28dd3a4cb26b51152bad3923b727
+    pristine_git_object: 4d0d5f46c600baee7dd018a7cdf84936dcaa801e
+  src/meitner/models/gradeuppersecondaryupdateop.py:
+    id: ae47b23e8e87
+    last_write_checksum: sha1:2f756d672f597c978dbbfd4e46de5cf82e67c908
+    pristine_git_object: 16279811655545315742e9449da6488b1de8b5a6
   src/meitner/models/group.py:
     id: 244ace3dca07
     last_write_checksum: sha1:6a46e8820b9377ec26c89f5a3af210486273e1aa
@@ -4734,8 +5114,8 @@ trackedFiles:
     pristine_git_object: 87bc6facf2cc25518a082be84535c863fa03ff8c
   src/meitner/sdk.py:
     id: 5138a714bd3a
-    last_write_checksum: sha1:99faa3fcf1cc0e38e4fbb99572e69bf30b54532e
-    pristine_git_object: f01141aae4af04100ad2cf6e91e8a2c6aa0c297b
+    last_write_checksum: sha1:0587089771bd9d5228b02eb4d8cded47b7359a2f
+    pristine_git_object: 62772f673b773df4e20c8096ed1ec57db7bd55c0
   src/meitner/sdkconfiguration.py:
     id: 2441494cbed4
     last_write_checksum: sha1:8488778169c09d8f603745d229078193c74369fd
@@ -6943,8 +7323,445 @@ examples:
           application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
         "500":
           application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeElementaryList:
+    responseExample:
+      parameters:
+        query:
+          limit: 1
+          offset: 0
+      responses:
+        "200":
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+    errorExample:
+      parameters:
+        query:
+          limit: 1
+          offset: 0
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeElementaryCreate:
+    requestExample:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "201":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeElementary Create endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    responseExample:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "201":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+    errorExample:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    validationError:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeElementary Create endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeElementaryGet:
+    responseExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "200":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+    errorExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeElementaryDelete:
+    errorExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    speakeasy-default-grade-elementary-delete:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeElementaryUpdate:
+    requestExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "200":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeElementary Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    responseExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "200":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+    errorExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    validationError:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+      responses:
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeElementary Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeUpperSecondaryList:
+    responseExample:
+      parameters:
+        query:
+          limit: 1
+          offset: 0
+      responses:
+        "200":
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+    errorExample:
+      parameters:
+        query:
+          limit: 1
+          offset: 0
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeUpperSecondaryCreate:
+    requestExample:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "201":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeUpperSecondary Create endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    responseExample:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "201":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+    errorExample:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    validationError:
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeUpperSecondary Create endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeUpperSecondaryGet:
+    responseExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "200":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+    errorExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeUpperSecondaryDelete:
+    errorExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    speakeasy-default-grade-upper-secondary-delete:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+  GradeUpperSecondaryUpdate:
+    requestExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "200":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeUpperSecondary Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    responseExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "200":
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+    errorExample:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "400":
+          application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "401":
+          application/json: {"error": {"code": "Unauthorized", "message": "Authentication credentials are missing or invalid", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "403":
+          application/json: {"error": {"code": "Forbidden", "message": "You do not have permission to perform this operation", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "404":
+          application/json: {"error": {"code": "NotFound", "message": "The requested resource could not be found", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "409":
+          application/json: {"error": {"code": "Conflict", "message": "The request conflicts with the current state of the resource", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "429":
+          application/json: {"error": {"code": "RateLimited", "message": "Too many requests - rate limit exceeded", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+        "500":
+          application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
+    validationError:
+      parameters:
+        path:
+          id: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+      responses:
+        "422":
+          application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for GradeUpperSecondary Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
-releaseNotes: "## Python SDK Changes:\n* `meitner.employees.list()`:  `response.data[].edu_person_principal_name` **Added**\n* `meitner.employees.create()`: \n  *  `request.edu_person_principal_name` **Added**\n  *  `response.edu_person_principal_name` **Added**\n* `meitner.employees.search()`: \n  *  `request.filter` **Changed**\n  *  `response.data[].edu_person_principal_name` **Added**\n* `meitner.employees.get()`:  `response.edu_person_principal_name` **Added**\n* `meitner.employees.update()`: \n  *  `request.edu_person_principal_name` **Added**\n  *  `response.edu_person_principal_name` **Added**\n* `meitner.students.list()`:  `response.data[].edu_person_principal_name` **Added**\n* `meitner.students.create()`: \n  *  `request.edu_person_principal_name` **Added**\n  *  `response.edu_person_principal_name` **Added**\n* `meitner.students.search()`: \n  *  `request.filter` **Changed**\n  *  `response.data[].edu_person_principal_name` **Added**\n* `meitner.students.get()`:  `response.edu_person_principal_name` **Added**\n* `meitner.students.update()`: \n  *  `request.edu_person_principal_name` **Added**\n  *  `response.edu_person_principal_name` **Added**\n"
+releaseNotes: |
+  ## Python SDK Changes:
+  * `meitner.grade_elementaries.list()`: **Added**
+  * `meitner.grade_elementaries.create()`: **Added**
+  * `meitner.grade_elementaries.get()`: **Added**
+  * `meitner.grade_elementaries.delete()`: **Added**
+  * `meitner.grade_elementaries.update()`: **Added**
+  * `meitner.grade_upper_secondaries.list()`: **Added**
+  * `meitner.grade_upper_secondaries.create()`: **Added**
+  * `meitner.grade_upper_secondaries.get()`: **Added**
+  * `meitner.grade_upper_secondaries.delete()`: **Added**
+  * `meitner.grade_upper_secondaries.update()`: **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

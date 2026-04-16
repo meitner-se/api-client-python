@@ -41,6 +41,22 @@ if TYPE_CHECKING:
     from .error409responsebody import Error409ResponseBody, Error409ResponseBodyData
     from .error429responsebody import Error429ResponseBody, Error429ResponseBodyData
     from .error500responsebody import Error500ResponseBody, Error500ResponseBodyData
+    from .gradeelementarycreate422responsebody_error import (
+        GradeElementaryCreate422ResponseBodyError,
+        GradeElementaryCreate422ResponseBodyErrorData,
+    )
+    from .gradeelementaryupdate422responsebody_error import (
+        GradeElementaryUpdate422ResponseBodyError,
+        GradeElementaryUpdate422ResponseBodyErrorData,
+    )
+    from .gradeuppersecondarycreate422responsebody_error import (
+        GradeUpperSecondaryCreate422ResponseBodyError,
+        GradeUpperSecondaryCreate422ResponseBodyErrorData,
+    )
+    from .gradeuppersecondaryupdate422responsebody_error import (
+        GradeUpperSecondaryUpdate422ResponseBodyError,
+        GradeUpperSecondaryUpdate422ResponseBodyErrorData,
+    )
     from .groupcreate422responsebody_error import (
         GroupCreate422ResponseBodyError,
         GroupCreate422ResponseBodyErrorData,
@@ -134,6 +150,14 @@ __all__ = [
     "Error429ResponseBodyData",
     "Error500ResponseBody",
     "Error500ResponseBodyData",
+    "GradeElementaryCreate422ResponseBodyError",
+    "GradeElementaryCreate422ResponseBodyErrorData",
+    "GradeElementaryUpdate422ResponseBodyError",
+    "GradeElementaryUpdate422ResponseBodyErrorData",
+    "GradeUpperSecondaryCreate422ResponseBodyError",
+    "GradeUpperSecondaryCreate422ResponseBodyErrorData",
+    "GradeUpperSecondaryUpdate422ResponseBodyError",
+    "GradeUpperSecondaryUpdate422ResponseBodyErrorData",
     "GroupCreate422ResponseBodyError",
     "GroupCreate422ResponseBodyErrorData",
     "GroupSearch422ResponseBodyError",
@@ -199,6 +223,14 @@ _dynamic_imports: dict[str, str] = {
     "Error429ResponseBodyData": ".error429responsebody",
     "Error500ResponseBody": ".error500responsebody",
     "Error500ResponseBodyData": ".error500responsebody",
+    "GradeElementaryCreate422ResponseBodyError": ".gradeelementarycreate422responsebody_error",
+    "GradeElementaryCreate422ResponseBodyErrorData": ".gradeelementarycreate422responsebody_error",
+    "GradeElementaryUpdate422ResponseBodyError": ".gradeelementaryupdate422responsebody_error",
+    "GradeElementaryUpdate422ResponseBodyErrorData": ".gradeelementaryupdate422responsebody_error",
+    "GradeUpperSecondaryCreate422ResponseBodyError": ".gradeuppersecondarycreate422responsebody_error",
+    "GradeUpperSecondaryCreate422ResponseBodyErrorData": ".gradeuppersecondarycreate422responsebody_error",
+    "GradeUpperSecondaryUpdate422ResponseBodyError": ".gradeuppersecondaryupdate422responsebody_error",
+    "GradeUpperSecondaryUpdate422ResponseBodyErrorData": ".gradeuppersecondaryupdate422responsebody_error",
     "GroupCreate422ResponseBodyError": ".groupcreate422responsebody_error",
     "GroupCreate422ResponseBodyErrorData": ".groupcreate422responsebody_error",
     "GroupSearch422ResponseBodyError": ".groupsearch422responsebody_error",

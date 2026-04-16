@@ -280,6 +280,22 @@ with Meitner(
 * [delete](docs/sdks/employees/README.md#delete) - Delete a Employee
 * [update](docs/sdks/employees/README.md#update) - Update a Employee
 
+### [GradeElementaries](docs/sdks/gradeelementaries/README.md)
+
+* [list](docs/sdks/gradeelementaries/README.md#list) - List GradeElementaries
+* [create](docs/sdks/gradeelementaries/README.md#create) - Create a new GradeElementary
+* [get](docs/sdks/gradeelementaries/README.md#get) - Get a GradeElementary
+* [delete](docs/sdks/gradeelementaries/README.md#delete) - Delete a GradeElementary
+* [update](docs/sdks/gradeelementaries/README.md#update) - Update a GradeElementary
+
+### [GradeUpperSecondaries](docs/sdks/gradeuppersecondaries/README.md)
+
+* [list](docs/sdks/gradeuppersecondaries/README.md#list) - List GradeUpperSecondaries
+* [create](docs/sdks/gradeuppersecondaries/README.md#create) - Create a new GradeUpperSecondary
+* [get](docs/sdks/gradeuppersecondaries/README.md#get) - Get a GradeUpperSecondary
+* [delete](docs/sdks/gradeuppersecondaries/README.md#delete) - Delete a GradeUpperSecondary
+* [update](docs/sdks/gradeuppersecondaries/README.md#update) - Update a GradeUpperSecondary
+
 ### [Groups](docs/sdks/groups/README.md)
 
 * [list](docs/sdks/groups/README.md#list) - List Groups
@@ -482,7 +498,7 @@ with Meitner(
   * [`Error429ResponseBody`](./src/meitner/errors/error429responsebody.py): Too Many Requests - When the rate limit has been exceeded. Status code `429`.
   * [`Error500ResponseBody`](./src/meitner/errors/error500responsebody.py): Internal Server Error - An unexpected server error occurred. Status code `500`.
 
-<details><summary>Less common errors (27)</summary>
+<details><summary>Less common errors (31)</summary>
 
 <br />
 
@@ -493,28 +509,32 @@ with Meitner(
 
 
 **Inherit from [`MeitnerError`](./src/meitner/errors/meitnererror.py)**:
-* [`SchoolCreate422ResponseBodyError`](./src/meitner/errors/schoolcreate422responsebodyerror.py): Validation error for School Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`SchoolSearch422ResponseBodyError`](./src/meitner/errors/schoolsearch422responsebodyerror.py): Validation error for School Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`SchoolUpdate422ResponseBodyError`](./src/meitner/errors/schoolupdate422responsebodyerror.py): Validation error for School Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GroupCreate422ResponseBodyError`](./src/meitner/errors/groupcreate422responsebodyerror.py): Validation error for Group Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GroupSearch422ResponseBodyError`](./src/meitner/errors/groupsearch422responsebodyerror.py): Validation error for Group Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GroupUpdate422ResponseBodyError`](./src/meitner/errors/groupupdate422responsebodyerror.py): Validation error for Group Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeeCreate422ResponseBodyError`](./src/meitner/errors/employeecreate422responsebodyerror.py): Validation error for Employee Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeeSearch422ResponseBodyError`](./src/meitner/errors/employeesearch422responsebodyerror.py): Validation error for Employee Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeeUpdate422ResponseBodyError`](./src/meitner/errors/employeeupdate422responsebodyerror.py): Validation error for Employee Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeePlacementCreate422ResponseBodyError`](./src/meitner/errors/employeeplacementcreate422responsebodyerror.py): Validation error for EmployeePlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeePlacementSearch422ResponseBodyError`](./src/meitner/errors/employeeplacementsearch422responsebodyerror.py): Validation error for EmployeePlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`EmployeePlacementUpdate422ResponseBodyError`](./src/meitner/errors/employeeplacementupdate422responsebodyerror.py): Validation error for EmployeePlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GuardianCreate422ResponseBodyError`](./src/meitner/errors/guardiancreate422responsebodyerror.py): Validation error for Guardian Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GuardianSearch422ResponseBodyError`](./src/meitner/errors/guardiansearch422responsebodyerror.py): Validation error for Guardian Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`GuardianUpdate422ResponseBodyError`](./src/meitner/errors/guardianupdate422responsebodyerror.py): Validation error for Guardian Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentCreate422ResponseBodyError`](./src/meitner/errors/studentcreate422responsebodyerror.py): Validation error for Student Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentSearch422ResponseBodyError`](./src/meitner/errors/studentsearch422responsebodyerror.py): Validation error for Student Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentUpdate422ResponseBodyError`](./src/meitner/errors/studentupdate422responsebodyerror.py): Validation error for Student Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentPlacementCreate422ResponseBodyError`](./src/meitner/errors/studentplacementcreate422responsebodyerror.py): Validation error for StudentPlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentPlacementSearch422ResponseBodyError`](./src/meitner/errors/studentplacementsearch422responsebodyerror.py): Validation error for StudentPlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`StudentPlacementUpdate422ResponseBodyError`](./src/meitner/errors/studentplacementupdate422responsebodyerror.py): Validation error for StudentPlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
-* [`AuditEventSearch422ResponseBodyError`](./src/meitner/errors/auditeventsearch422responsebodyerror.py): Validation error for AuditEvent Search operation - request data failed validation. Status code `422`. Applicable to 1 of 46 methods.*
+* [`SchoolCreate422ResponseBodyError`](./src/meitner/errors/schoolcreate422responsebodyerror.py): Validation error for School Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`SchoolSearch422ResponseBodyError`](./src/meitner/errors/schoolsearch422responsebodyerror.py): Validation error for School Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`SchoolUpdate422ResponseBodyError`](./src/meitner/errors/schoolupdate422responsebodyerror.py): Validation error for School Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GroupCreate422ResponseBodyError`](./src/meitner/errors/groupcreate422responsebodyerror.py): Validation error for Group Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GroupSearch422ResponseBodyError`](./src/meitner/errors/groupsearch422responsebodyerror.py): Validation error for Group Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GroupUpdate422ResponseBodyError`](./src/meitner/errors/groupupdate422responsebodyerror.py): Validation error for Group Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`EmployeeCreate422ResponseBodyError`](./src/meitner/errors/employeecreate422responsebodyerror.py): Validation error for Employee Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`EmployeeSearch422ResponseBodyError`](./src/meitner/errors/employeesearch422responsebodyerror.py): Validation error for Employee Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`EmployeeUpdate422ResponseBodyError`](./src/meitner/errors/employeeupdate422responsebodyerror.py): Validation error for Employee Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`EmployeePlacementCreate422ResponseBodyError`](./src/meitner/errors/employeeplacementcreate422responsebodyerror.py): Validation error for EmployeePlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`EmployeePlacementSearch422ResponseBodyError`](./src/meitner/errors/employeeplacementsearch422responsebodyerror.py): Validation error for EmployeePlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`EmployeePlacementUpdate422ResponseBodyError`](./src/meitner/errors/employeeplacementupdate422responsebodyerror.py): Validation error for EmployeePlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GuardianCreate422ResponseBodyError`](./src/meitner/errors/guardiancreate422responsebodyerror.py): Validation error for Guardian Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GuardianSearch422ResponseBodyError`](./src/meitner/errors/guardiansearch422responsebodyerror.py): Validation error for Guardian Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GuardianUpdate422ResponseBodyError`](./src/meitner/errors/guardianupdate422responsebodyerror.py): Validation error for Guardian Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`StudentCreate422ResponseBodyError`](./src/meitner/errors/studentcreate422responsebodyerror.py): Validation error for Student Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`StudentSearch422ResponseBodyError`](./src/meitner/errors/studentsearch422responsebodyerror.py): Validation error for Student Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`StudentUpdate422ResponseBodyError`](./src/meitner/errors/studentupdate422responsebodyerror.py): Validation error for Student Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`StudentPlacementCreate422ResponseBodyError`](./src/meitner/errors/studentplacementcreate422responsebodyerror.py): Validation error for StudentPlacement Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`StudentPlacementSearch422ResponseBodyError`](./src/meitner/errors/studentplacementsearch422responsebodyerror.py): Validation error for StudentPlacement Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`StudentPlacementUpdate422ResponseBodyError`](./src/meitner/errors/studentplacementupdate422responsebodyerror.py): Validation error for StudentPlacement Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`AuditEventSearch422ResponseBodyError`](./src/meitner/errors/auditeventsearch422responsebodyerror.py): Validation error for AuditEvent Search operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GradeElementaryCreate422ResponseBodyError`](./src/meitner/errors/gradeelementarycreate422responsebodyerror.py): Validation error for GradeElementary Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GradeElementaryUpdate422ResponseBodyError`](./src/meitner/errors/gradeelementaryupdate422responsebodyerror.py): Validation error for GradeElementary Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GradeUpperSecondaryCreate422ResponseBodyError`](./src/meitner/errors/gradeuppersecondarycreate422responsebodyerror.py): Validation error for GradeUpperSecondary Create operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
+* [`GradeUpperSecondaryUpdate422ResponseBodyError`](./src/meitner/errors/gradeuppersecondaryupdate422responsebodyerror.py): Validation error for GradeUpperSecondary Update operation - request data failed validation. Status code `422`. Applicable to 1 of 56 methods.*
 * [`ResponseValidationError`](./src/meitner/errors/responsevalidationerror.py): Type mismatch between the response data and the expected Pydantic model. Provides access to the Pydantic validation error via the `cause` attribute.
 
 </details>
