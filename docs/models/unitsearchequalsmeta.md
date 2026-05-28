@@ -1,0 +1,13 @@
+# UnitSearchEqualsMeta
+
+Metadata information for the Unit
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 | Example                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `created_at`                                                                | [date](https://docs.python.org/3/library/datetime.html#date-objects)        | :heavy_minus_sign:                                                          | Timestamp when the resource was created                                     | **Example 1:** 2024-01-15T10:30:00Z<br/>**Example 2:** null                 |
+| `created_by`                                                                | *OptionalNullable[str]*                                                     | :heavy_minus_sign:                                                          | User who created the resource                                               | **Example 1:** 123e4567-e89b-12d3-a456-426614174000<br/>**Example 2:** null |
+| `updated_at`                                                                | [date](https://docs.python.org/3/library/datetime.html#date-objects)        | :heavy_minus_sign:                                                          | Timestamp when the resource was last updated                                | **Example 1:** 2024-01-15T10:30:00Z<br/>**Example 2:** null                 |
+| `updated_by`                                                                | *OptionalNullable[str]*                                                     | :heavy_minus_sign:                                                          | User who last updated the resource                                          | **Example 1:** 123e4567-e89b-12d3-a456-426614174000<br/>**Example 2:** null |

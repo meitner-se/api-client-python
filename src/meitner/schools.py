@@ -90,17 +90,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -114,8 +104,8 @@ class Schools(BaseSDK):
             results = JSONPath("$.data.resultArray").parse(body)
             if len(results) == 0 or len(results[0]) == 0:
                 return None
-            limit = request.limit if isinstance(request.limit, int) else 50
-            if len(results[0]) < limit:
+            limit_ = request.limit if isinstance(request.limit, int) else 50
+            if len(results[0]) < limit_:
                 return None
             next_offset = offset + len(results[0])
 
@@ -262,17 +252,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -289,8 +269,8 @@ class Schools(BaseSDK):
             results = JSONPath("$.data.resultArray").parse(body)
             if len(results) == 0 or len(results[0]) == 0:
                 return empty_result()
-            limit = request.limit if isinstance(request.limit, int) else 50
-            if len(results[0]) < limit:
+            limit_ = request.limit if isinstance(request.limit, int) else 50
+            if len(results[0]) < limit_:
                 return empty_result()
             next_offset = offset + len(results[0])
 
@@ -366,6 +346,7 @@ class Schools(BaseSDK):
         external: Optional[
             Union[models.SchoolCreateExternal, models.SchoolCreateExternalTypedDict]
         ] = None,
+        unit_id: OptionalNullable[str] = UNSET,
         unit_code: OptionalNullable[str] = UNSET,
         csn_school_code: OptionalNullable[str] = UNSET,
         municipality_code: OptionalNullable[str] = UNSET,
@@ -381,6 +362,7 @@ class Schools(BaseSDK):
         :param title: The title of the school
         :param school_type: Type of schooling provided at the school
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included.
+        :param unit_id: The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.
         :param unit_code: The School Unit Code provided by SCB, is used in reports and printed on grade documents
         :param csn_school_code: The School Code provided by CSN, required for reports to CSN
         :param municipality_code: Municipality code of the school, is used in reports and printed on grade documents
@@ -407,6 +389,7 @@ class Schools(BaseSDK):
                 external, Optional[models.SchoolCreateExternal]
             ),
             title=title,
+            unit_id=unit_id,
             unit_code=unit_code,
             csn_school_code=csn_school_code,
             municipality_code=municipality_code,
@@ -456,18 +439,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -538,6 +510,7 @@ class Schools(BaseSDK):
         external: Optional[
             Union[models.SchoolCreateExternal, models.SchoolCreateExternalTypedDict]
         ] = None,
+        unit_id: OptionalNullable[str] = UNSET,
         unit_code: OptionalNullable[str] = UNSET,
         csn_school_code: OptionalNullable[str] = UNSET,
         municipality_code: OptionalNullable[str] = UNSET,
@@ -553,6 +526,7 @@ class Schools(BaseSDK):
         :param title: The title of the school
         :param school_type: Type of schooling provided at the school
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included.
+        :param unit_id: The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.
         :param unit_code: The School Unit Code provided by SCB, is used in reports and printed on grade documents
         :param csn_school_code: The School Code provided by CSN, required for reports to CSN
         :param municipality_code: Municipality code of the school, is used in reports and printed on grade documents
@@ -579,6 +553,7 @@ class Schools(BaseSDK):
                 external, Optional[models.SchoolCreateExternal]
             ),
             title=title,
+            unit_id=unit_id,
             unit_code=unit_code,
             csn_school_code=csn_school_code,
             municipality_code=municipality_code,
@@ -628,18 +603,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -793,18 +757,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -818,8 +771,8 @@ class Schools(BaseSDK):
             results = JSONPath("$.data.resultArray").parse(body)
             if len(results) == 0 or len(results[0]) == 0:
                 return None
-            limit = request.limit if isinstance(request.limit, int) else 50
-            if len(results[0]) < limit:
+            limit_ = request.limit if isinstance(request.limit, int) else 50
+            if len(results[0]) < limit_:
                 return None
             next_offset = offset + len(results[0])
 
@@ -984,18 +937,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1012,8 +954,8 @@ class Schools(BaseSDK):
             results = JSONPath("$.data.resultArray").parse(body)
             if len(results) == 0 or len(results[0]) == 0:
                 return empty_result()
-            limit = request.limit if isinstance(request.limit, int) else 50
-            if len(results[0]) < limit:
+            limit_ = request.limit if isinstance(request.limit, int) else 50
+            if len(results[0]) < limit_:
                 return empty_result()
             next_offset = offset + len(results[0])
 
@@ -1163,17 +1105,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1307,17 +1239,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1383,6 +1305,7 @@ class Schools(BaseSDK):
         external: Optional[
             Union[models.SchoolUpdateExternal, models.SchoolUpdateExternalTypedDict]
         ] = None,
+        unit_id: OptionalNullable[str] = UNSET,
         unit_code: OptionalNullable[str] = UNSET,
         csn_school_code: OptionalNullable[str] = UNSET,
         municipality_code: OptionalNullable[str] = UNSET,
@@ -1398,6 +1321,7 @@ class Schools(BaseSDK):
         :param id: The unique identifier of the School to update
         :param title: The title of the school
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included.
+        :param unit_id: The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.
         :param unit_code: The School Unit Code provided by SCB, is used in reports and printed on grade documents
         :param csn_school_code: The School Code provided by CSN, required for reports to CSN
         :param municipality_code: Municipality code of the school, is used in reports and printed on grade documents
@@ -1426,6 +1350,7 @@ class Schools(BaseSDK):
                     external, Optional[models.SchoolUpdateExternal]
                 ),
                 title=title,
+                unit_id=unit_id,
                 unit_code=unit_code,
                 csn_school_code=csn_school_code,
                 municipality_code=municipality_code,
@@ -1475,18 +1400,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1557,6 +1471,7 @@ class Schools(BaseSDK):
         external: Optional[
             Union[models.SchoolUpdateExternal, models.SchoolUpdateExternalTypedDict]
         ] = None,
+        unit_id: OptionalNullable[str] = UNSET,
         unit_code: OptionalNullable[str] = UNSET,
         csn_school_code: OptionalNullable[str] = UNSET,
         municipality_code: OptionalNullable[str] = UNSET,
@@ -1572,6 +1487,7 @@ class Schools(BaseSDK):
         :param id: The unique identifier of the School to update
         :param title: The title of the school
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included.
+        :param unit_id: The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.
         :param unit_code: The School Unit Code provided by SCB, is used in reports and printed on grade documents
         :param csn_school_code: The School Code provided by CSN, required for reports to CSN
         :param municipality_code: Municipality code of the school, is used in reports and printed on grade documents
@@ -1600,6 +1516,7 @@ class Schools(BaseSDK):
                     external, Optional[models.SchoolUpdateExternal]
                 ),
                 title=title,
+                unit_id=unit_id,
                 unit_code=unit_code,
                 csn_school_code=csn_school_code,
                 municipality_code=municipality_code,
@@ -1649,18 +1566,7 @@ class Schools(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

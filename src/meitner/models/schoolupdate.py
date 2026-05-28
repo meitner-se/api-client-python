@@ -29,6 +29,8 @@ class SchoolUpdateTypedDict(TypedDict):
     r"""The title of the school"""
     external: NotRequired[SchoolUpdateExternalTypedDict]
     r"""External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included."""
+    unit_id: NotRequired[Nullable[str]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[Nullable[str]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[Nullable[str]]
@@ -45,6 +47,9 @@ class SchoolUpdate(BaseModel):
 
     external: Optional[SchoolUpdateExternal] = None
     r"""External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the school, the Source-field is not included."""
+
+    unit_id: Annotated[OptionalNullable[str], pydantic.Field(alias="unitID")] = UNSET
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[OptionalNullable[str], pydantic.Field(alias="unitCode")] = (
         UNSET
@@ -64,9 +69,11 @@ class SchoolUpdate(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            ["external", "unitID", "unitCode", "csnSchoolCode", "municipalityCode"]
         )
-        nullable_fields = set(["unitCode", "csnSchoolCode", "municipalityCode"])
+        nullable_fields = set(
+            ["unitID", "unitCode", "csnSchoolCode", "municipalityCode"]
+        )
         serialized = handler(self)
         m = {}
 

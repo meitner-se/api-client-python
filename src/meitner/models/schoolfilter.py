@@ -137,6 +137,8 @@ class SchoolFilterEqualsTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
     title: NotRequired[Nullable[str]]
     r"""The title of the school"""
+    unit_id: NotRequired[Nullable[str]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[Nullable[str]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[Nullable[str]]
@@ -161,6 +163,9 @@ class SchoolFilterEquals(BaseModel):
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the school"""
+
+    unit_id: Annotated[OptionalNullable[str], pydantic.Field(alias="unitID")] = UNSET
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[OptionalNullable[str], pydantic.Field(alias="unitCode")] = (
         UNSET
@@ -191,6 +196,7 @@ class SchoolFilterEquals(BaseModel):
                 "meta",
                 "external",
                 "title",
+                "unitID",
                 "unitCode",
                 "csnSchoolCode",
                 "municipalityCode",
@@ -203,6 +209,7 @@ class SchoolFilterEquals(BaseModel):
                 "meta",
                 "external",
                 "title",
+                "unitID",
                 "unitCode",
                 "csnSchoolCode",
                 "municipalityCode",
@@ -358,6 +365,8 @@ class SchoolFilterNotEqualsTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
     title: NotRequired[Nullable[str]]
     r"""The title of the school"""
+    unit_id: NotRequired[Nullable[str]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[Nullable[str]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[Nullable[str]]
@@ -382,6 +391,9 @@ class SchoolFilterNotEquals(BaseModel):
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the school"""
+
+    unit_id: Annotated[OptionalNullable[str], pydantic.Field(alias="unitID")] = UNSET
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[OptionalNullable[str], pydantic.Field(alias="unitCode")] = (
         UNSET
@@ -412,6 +424,7 @@ class SchoolFilterNotEquals(BaseModel):
                 "meta",
                 "external",
                 "title",
+                "unitID",
                 "unitCode",
                 "csnSchoolCode",
                 "municipalityCode",
@@ -424,6 +437,7 @@ class SchoolFilterNotEquals(BaseModel):
                 "meta",
                 "external",
                 "title",
+                "unitID",
                 "unitCode",
                 "csnSchoolCode",
                 "municipalityCode",
@@ -933,6 +947,8 @@ class SchoolFilterContainsTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
     title: NotRequired[List[str]]
     r"""The title of the school"""
+    unit_id: NotRequired[List[str]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[List[str]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[List[str]]
@@ -957,6 +973,9 @@ class SchoolFilterContains(BaseModel):
 
     title: Optional[List[str]] = None
     r"""The title of the school"""
+
+    unit_id: Annotated[Optional[List[str]], pydantic.Field(alias="unitID")] = None
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[Optional[List[str]], pydantic.Field(alias="unitCode")] = None
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
@@ -984,6 +1003,7 @@ class SchoolFilterContains(BaseModel):
                 "meta",
                 "external",
                 "title",
+                "unitID",
                 "unitCode",
                 "csnSchoolCode",
                 "municipalityCode",
@@ -1094,6 +1114,8 @@ class SchoolFilterNotContainsTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
     title: NotRequired[List[str]]
     r"""The title of the school"""
+    unit_id: NotRequired[List[str]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[List[str]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[List[str]]
@@ -1118,6 +1140,9 @@ class SchoolFilterNotContains(BaseModel):
 
     title: Optional[List[str]] = None
     r"""The title of the school"""
+
+    unit_id: Annotated[Optional[List[str]], pydantic.Field(alias="unitID")] = None
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[Optional[List[str]], pydantic.Field(alias="unitCode")] = None
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
@@ -1145,6 +1170,7 @@ class SchoolFilterNotContains(BaseModel):
                 "meta",
                 "external",
                 "title",
+                "unitID",
                 "unitCode",
                 "csnSchoolCode",
                 "municipalityCode",
@@ -1566,6 +1592,8 @@ class SchoolFilterNullTypedDict(TypedDict):
     r"""Metadata information for the School"""
     external: NotRequired[Nullable[SchoolFilterNullExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
+    unit_id: NotRequired[Nullable[bool]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[Nullable[bool]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[Nullable[bool]]
@@ -1582,6 +1610,9 @@ class SchoolFilterNull(BaseModel):
 
     external: OptionalNullable[SchoolFilterNullExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
+
+    unit_id: Annotated[OptionalNullable[bool], pydantic.Field(alias="unitID")] = UNSET
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[OptionalNullable[bool], pydantic.Field(alias="unitCode")] = (
         UNSET
@@ -1601,10 +1632,24 @@ class SchoolFilterNull(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            [
+                "meta",
+                "external",
+                "unitID",
+                "unitCode",
+                "csnSchoolCode",
+                "municipalityCode",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            [
+                "meta",
+                "external",
+                "unitID",
+                "unitCode",
+                "csnSchoolCode",
+                "municipalityCode",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -1736,6 +1781,8 @@ class SchoolFilterNotNullTypedDict(TypedDict):
     r"""Metadata information for the School"""
     external: NotRequired[Nullable[SchoolFilterNotNullExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
+    unit_id: NotRequired[Nullable[bool]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[Nullable[bool]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[Nullable[bool]]
@@ -1752,6 +1799,9 @@ class SchoolFilterNotNull(BaseModel):
 
     external: OptionalNullable[SchoolFilterNotNullExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
+
+    unit_id: Annotated[OptionalNullable[bool], pydantic.Field(alias="unitID")] = UNSET
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
 
     unit_code: Annotated[OptionalNullable[bool], pydantic.Field(alias="unitCode")] = (
         UNSET
@@ -1771,10 +1821,24 @@ class SchoolFilterNotNull(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            [
+                "meta",
+                "external",
+                "unitID",
+                "unitCode",
+                "csnSchoolCode",
+                "municipalityCode",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            [
+                "meta",
+                "external",
+                "unitID",
+                "unitCode",
+                "csnSchoolCode",
+                "municipalityCode",
+            ]
         )
         serialized = handler(self)
         m = {}
