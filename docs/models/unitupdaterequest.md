@@ -1,0 +1,9 @@
+# UnitUpdateRequest
+
+
+## Fields
+
+| Field                                        | Type                                         | Required                                     | Description                                  | Example                                      |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| `id`                                         | *str*                                        | :heavy_check_mark:                           | The unique identifier of the Unit to update  | 123e4567-e89b-12d3-a456-426614174000         |
+| `unit_update`                                | [models.UnitUpdate](../models/unitupdate.md) | :heavy_check_mark:                           | Request body                                 |                                              |

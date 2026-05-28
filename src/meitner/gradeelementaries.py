@@ -91,17 +91,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -115,8 +105,8 @@ class GradeElementaries(BaseSDK):
             results = JSONPath("$.data.resultArray").parse(body)
             if len(results) == 0 or len(results[0]) == 0:
                 return None
-            limit = request.limit if isinstance(request.limit, int) else 50
-            if len(results[0]) < limit:
+            limit_ = request.limit if isinstance(request.limit, int) else 50
+            if len(results[0]) < limit_:
                 return None
             next_offset = offset + len(results[0])
 
@@ -263,17 +253,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -290,8 +270,8 @@ class GradeElementaries(BaseSDK):
             results = JSONPath("$.data.resultArray").parse(body)
             if len(results) == 0 or len(results[0]) == 0:
                 return empty_result()
-            limit = request.limit if isinstance(request.limit, int) else 50
-            if len(results[0]) < limit:
+            limit_ = request.limit if isinstance(request.limit, int) else 50
+            if len(results[0]) < limit_:
                 return empty_result()
             next_offset = offset + len(results[0])
 
@@ -487,18 +467,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -691,18 +660,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -843,17 +801,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -987,17 +935,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1131,17 +1069,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1274,17 +1202,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1469,18 +1387,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 
@@ -1673,18 +1580,7 @@ class GradeElementaries(BaseSDK):
                 ),
             ),
             request=req,
-            error_status_codes=[
-                "400",
-                "401",
-                "403",
-                "404",
-                "409",
-                "422",
-                "429",
-                "4XX",
-                "500",
-                "5XX",
-            ],
+            is_error_status_code=lambda c: utils.match_status_codes(["4XX", "5XX"], c),
             retry_config=retry_config,
         )
 

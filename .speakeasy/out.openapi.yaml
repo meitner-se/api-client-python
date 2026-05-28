@@ -4254,6 +4254,379 @@
         "x-speakeasy-group": "gradeUpperSecondaries",
         "x-speakeasy-name-override": "update"
       }
+    },
+    "/unit": {
+      "get": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "List Units",
+        "description": "Returns a paginated list of all `Units` in your organization.",
+        "operationId": "UnitList",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of Units to return (default: 50) when listing Units",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                1
+              ],
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of Units to skip before starting to return results (default: 0) when listing Units",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                0
+              ],
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for Unit List operation - returns a paginated list of Unit",
+            "$ref": "#/components/responses/UnitList"
+          },
+          "400": {
+            "description": "Bad Request error for Unit List operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for Unit List operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for Unit List operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for Unit List operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for Unit List operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for Unit List operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for Unit List operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-pagination": {
+          "type": "offsetLimit",
+          "inputs": [
+            {
+              "name": "offset",
+              "in": "parameters",
+              "type": "offset"
+            },
+            {
+              "name": "limit",
+              "in": "parameters",
+              "type": "limit"
+            }
+          ],
+          "outputs": {
+            "results": "$.data.resultArray"
+          }
+        },
+        "x-speakeasy-group": "units",
+        "x-speakeasy-name-override": "list"
+      },
+      "post": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Create a new Unit",
+        "description": "Create a new Unit",
+        "operationId": "UnitCreate",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/UnitCreate"
+        },
+        "responses": {
+          "201": {
+            "description": "Response for Unit Create operation - returns the created Unit",
+            "$ref": "#/components/responses/UnitCreate"
+          },
+          "400": {
+            "description": "Bad Request error for Unit Create operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for Unit Create operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for Unit Create operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for Unit Create operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for Unit Create operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for Unit Create operation - request data failed validation",
+            "$ref": "#/components/responses/UnitCreate422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for Unit Create operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for Unit Create operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "units",
+        "x-speakeasy-name-override": "create"
+      }
+    },
+    "/unit/_search": {
+      "post": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Search Units",
+        "description": "Search for `Units` with filtering capabilities.",
+        "operationId": "UnitSearch",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of Units to return (default: 50) when searching Units",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                1
+              ],
+              "default": 50
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of Units to skip before starting to return results (default: 0) when searching Units",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "examples": [
+                0
+              ],
+              "default": 0
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/UnitSearch"
+        },
+        "responses": {
+          "200": {
+            "description": "Response for Unit Search operation - returns filtered Unit results",
+            "$ref": "#/components/responses/UnitSearch"
+          },
+          "400": {
+            "description": "Bad Request error for Unit Search operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for Unit Search operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for Unit Search operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for Unit Search operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for Unit Search operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for Unit Search operation - request data failed validation",
+            "$ref": "#/components/responses/UnitSearch422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for Unit Search operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for Unit Search operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-pagination": {
+          "type": "offsetLimit",
+          "inputs": [
+            {
+              "name": "offset",
+              "in": "parameters",
+              "type": "offset"
+            },
+            {
+              "name": "limit",
+              "in": "parameters",
+              "type": "limit"
+            }
+          ],
+          "outputs": {
+            "results": "$.data.resultArray"
+          }
+        },
+        "x-speakeasy-group": "units",
+        "x-speakeasy-name-override": "search"
+      }
+    },
+    "/unit/{id}": {
+      "get": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Get a Unit",
+        "description": "Retrieves the `Unit` with the given ID.",
+        "operationId": "UnitGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the Unit to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for Unit Get operation - returns the requested Unit",
+            "$ref": "#/components/responses/UnitGet"
+          },
+          "400": {
+            "description": "Bad Request error for Unit Get operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for Unit Get operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for Unit Get operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for Unit Get operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for Unit Get operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for Unit Get operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for Unit Get operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "units",
+        "x-speakeasy-name-override": "get"
+      },
+      "patch": {
+        "tags": [
+          "Unit"
+        ],
+        "summary": "Update a Unit",
+        "description": "Update a Unit",
+        "operationId": "UnitUpdate",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the Unit to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "examples": [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ],
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "$ref": "#/components/requestBodies/UnitUpdate"
+        },
+        "responses": {
+          "200": {
+            "description": "Response for Unit Update operation - returns the updated Unit",
+            "$ref": "#/components/responses/UnitUpdate"
+          },
+          "400": {
+            "description": "Bad Request error for Unit Update operation - request contains invalid parameters",
+            "$ref": "#/components/responses/Error400ResponseBody"
+          },
+          "401": {
+            "description": "Unauthorized error for Unit Update operation - authentication required",
+            "$ref": "#/components/responses/Error401ResponseBody"
+          },
+          "403": {
+            "description": "Forbidden error for Unit Update operation - insufficient permissions",
+            "$ref": "#/components/responses/Error403ResponseBody"
+          },
+          "404": {
+            "description": "Not Found error for Unit Update operation - resource does not exist",
+            "$ref": "#/components/responses/Error404ResponseBody"
+          },
+          "409": {
+            "description": "Conflict error for Unit Update operation - request conflicts with current state",
+            "$ref": "#/components/responses/Error409ResponseBody"
+          },
+          "422": {
+            "description": "Validation error for Unit Update operation - request data failed validation",
+            "$ref": "#/components/responses/UnitUpdate422ResponseBody"
+          },
+          "429": {
+            "description": "Rate Limit error for Unit Update operation - too many requests",
+            "$ref": "#/components/responses/Error429ResponseBody"
+          },
+          "500": {
+            "description": "Internal Server error for Unit Update operation - unexpected server error",
+            "$ref": "#/components/responses/Error500ResponseBody"
+          }
+        },
+        "x-speakeasy-group": "units",
+        "x-speakeasy-name-override": "update"
+      }
     }
   },
   "components": {
@@ -4691,6 +5064,16 @@
               "Meitner Grundskola"
             ],
             "description": "The title of the school"
+          },
+          "unitID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.",
+            "nullable": true
           },
           "unitCode": {
             "type": "string",
@@ -6159,6 +6542,72 @@
         ],
         "description": "GradeUpperSecondary represents a grade awarded to a student in upper secondary school (Swedish: gymnasieskola).\nGrades are scoped to the organization of the API key used. The CourseCode field uses the national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\").\n"
       },
+      "Unit": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000"
+            ],
+            "format": "uuid",
+            "description": "Unique identifier for the Unit"
+          },
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Meta"
+              }
+            ],
+            "examples": [
+              {
+                "createdAt": "2024-01-15T10:30:00Z",
+                "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                "updatedAt": "2024-01-15T14:45:00Z",
+                "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+              }
+            ],
+            "description": "Metadata information for the Unit"
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/External"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": "12345678",
+                "source": "ExternalIntegrationAPI"
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the unit from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "examples": [
+              "Norra distriktet"
+            ],
+            "description": "The title of the unit"
+          },
+          "description": {
+            "type": "string",
+            "examples": [
+              "Norra grundskole- och förskoleenheten",
+              null
+            ],
+            "description": "The description of the unit",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "title"
+        ],
+        "description": "The `Unit` resource represents an organizational unit that schools can belong to.\nThis resource can be created, updated, listed, retrieved, and searched using the standard resource structure.\n"
+      },
       "SchoolFilter": {
         "type": "object",
         "properties": {
@@ -6182,6 +6631,7 @@
                   "source": "example"
                 },
                 "title": "example",
+                "unitID": "123e4567-e89b-12d3-a456-426614174000",
                 "unitCode": "example",
                 "csnSchoolCode": "example",
                 "municipalityCode": "example"
@@ -6211,6 +6661,7 @@
                   "source": "example"
                 },
                 "title": "example",
+                "unitID": "123e4567-e89b-12d3-a456-426614174000",
                 "unitCode": "example",
                 "csnSchoolCode": "example",
                 "municipalityCode": "example"
@@ -6322,6 +6773,9 @@
                 "title": [
                   "example"
                 ],
+                "unitID": [
+                  "123e4567-e89b-12d3-a456-426614174000"
+                ],
                 "unitCode": [
                   "example"
                 ],
@@ -6366,6 +6820,9 @@
                 },
                 "title": [
                   "example"
+                ],
+                "unitID": [
+                  "123e4567-e89b-12d3-a456-426614174000"
                 ],
                 "unitCode": [
                   "example"
@@ -6443,6 +6900,7 @@
                   "sourceID": true,
                   "source": true
                 },
+                "unitID": true,
                 "unitCode": true,
                 "csnSchoolCode": true,
                 "municipalityCode": true
@@ -6469,6 +6927,7 @@
                   "sourceID": true,
                   "source": true
                 },
+                "unitID": true,
                 "unitCode": true,
                 "csnSchoolCode": true,
                 "municipalityCode": true
@@ -6503,6 +6962,7 @@
                       "source": "example"
                     },
                     "title": "example",
+                    "unitID": "123e4567-e89b-12d3-a456-426614174000",
                     "unitCode": "example",
                     "csnSchoolCode": "example",
                     "municipalityCode": "example"
@@ -6520,6 +6980,7 @@
                       "source": "example"
                     },
                     "title": "example",
+                    "unitID": "123e4567-e89b-12d3-a456-426614174000",
                     "unitCode": "example",
                     "csnSchoolCode": "example",
                     "municipalityCode": "example"
@@ -6571,6 +7032,9 @@
                     "title": [
                       "example"
                     ],
+                    "unitID": [
+                      "123e4567-e89b-12d3-a456-426614174000"
+                    ],
                     "unitCode": [
                       "example"
                     ],
@@ -6603,6 +7067,9 @@
                     },
                     "title": [
                       "example"
+                    ],
+                    "unitID": [
+                      "123e4567-e89b-12d3-a456-426614174000"
                     ],
                     "unitCode": [
                       "example"
@@ -6644,6 +7111,7 @@
                       "sourceID": true,
                       "source": true
                     },
+                    "unitID": true,
                     "unitCode": true,
                     "csnSchoolCode": true,
                     "municipalityCode": true
@@ -6658,6 +7126,7 @@
                       "sourceID": true,
                       "source": true
                     },
+                    "unitID": true,
                     "unitCode": true,
                     "csnSchoolCode": true,
                     "municipalityCode": true
@@ -6735,6 +7204,16 @@
               null
             ],
             "description": "The title of the school",
+            "nullable": true
+          },
+          "unitID": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.",
             "nullable": true
           },
           "unitCode": {
@@ -6874,6 +7353,19 @@
               "type": "string"
             },
             "description": "The title of the school"
+          },
+          "unitID": {
+            "type": "array",
+            "examples": [
+              [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ]
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."
           },
           "unitCode": {
             "type": "array",
@@ -7026,6 +7518,15 @@
               null
             ],
             "description": "External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "unitID": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.",
             "nullable": true
           },
           "unitCode": {
@@ -15404,6 +15905,759 @@
         },
         "description": "Null filter fields for AuditEvent"
       },
+      "UnitFilter": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterEquals"
+              }
+            ],
+            "examples": [
+              {
+                "id": "123e4567-e89b-12d3-a456-426614174000",
+                "meta": {
+                  "createdAt": "2024-01-15T10:30:00Z",
+                  "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                  "updatedAt": "2024-01-15T10:30:00Z",
+                  "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                },
+                "external": {
+                  "sourceID": "example",
+                  "source": "example"
+                },
+                "title": "example",
+                "description": "example"
+              },
+              null
+            ],
+            "description": "Equality filters for Unit",
+            "nullable": true
+          },
+          "notEquals": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterEquals"
+              }
+            ],
+            "examples": [
+              {
+                "id": "123e4567-e89b-12d3-a456-426614174000",
+                "meta": {
+                  "createdAt": "2024-01-15T10:30:00Z",
+                  "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                  "updatedAt": "2024-01-15T10:30:00Z",
+                  "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                },
+                "external": {
+                  "sourceID": "example",
+                  "source": "example"
+                },
+                "title": "example",
+                "description": "example"
+              },
+              null
+            ],
+            "description": "Inequality filters for Unit",
+            "nullable": true
+          },
+          "greaterThan": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterRange"
+              }
+            ],
+            "examples": [
+              {
+                "meta": {
+                  "createdAt": "2024-01-15T10:30:00Z",
+                  "updatedAt": "2024-01-15T10:30:00Z"
+                }
+              },
+              null
+            ],
+            "description": "Greater than filters for Unit",
+            "nullable": true
+          },
+          "smallerThan": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterRange"
+              }
+            ],
+            "examples": [
+              {
+                "meta": {
+                  "createdAt": "2024-01-15T10:30:00Z",
+                  "updatedAt": "2024-01-15T10:30:00Z"
+                }
+              },
+              null
+            ],
+            "description": "Smaller than filters for Unit",
+            "nullable": true
+          },
+          "greaterOrEqual": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterRange"
+              }
+            ],
+            "examples": [
+              {
+                "meta": {
+                  "createdAt": "2024-01-15T10:30:00Z",
+                  "updatedAt": "2024-01-15T10:30:00Z"
+                }
+              },
+              null
+            ],
+            "description": "Greater than or equal filters for Unit",
+            "nullable": true
+          },
+          "smallerOrEqual": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterRange"
+              }
+            ],
+            "examples": [
+              {
+                "meta": {
+                  "createdAt": "2024-01-15T10:30:00Z",
+                  "updatedAt": "2024-01-15T10:30:00Z"
+                }
+              },
+              null
+            ],
+            "description": "Smaller than or equal filters for Unit",
+            "nullable": true
+          },
+          "contains": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterContains"
+              }
+            ],
+            "examples": [
+              {
+                "id": [
+                  "123e4567-e89b-12d3-a456-426614174000"
+                ],
+                "meta": {
+                  "createdBy": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ],
+                  "updatedBy": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ]
+                },
+                "external": {
+                  "sourceID": [
+                    "example"
+                  ],
+                  "source": [
+                    "example"
+                  ]
+                },
+                "title": [
+                  "example"
+                ],
+                "description": [
+                  "example"
+                ]
+              },
+              null
+            ],
+            "description": "Contains filters for Unit",
+            "nullable": true
+          },
+          "notContains": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterContains"
+              }
+            ],
+            "examples": [
+              {
+                "id": [
+                  "123e4567-e89b-12d3-a456-426614174000"
+                ],
+                "meta": {
+                  "createdBy": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ],
+                  "updatedBy": [
+                    "123e4567-e89b-12d3-a456-426614174000"
+                  ]
+                },
+                "external": {
+                  "sourceID": [
+                    "example"
+                  ],
+                  "source": [
+                    "example"
+                  ]
+                },
+                "title": [
+                  "example"
+                ],
+                "description": [
+                  "example"
+                ]
+              },
+              null
+            ],
+            "description": "Not contains filters for Unit",
+            "nullable": true
+          },
+          "like": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterLike"
+              }
+            ],
+            "examples": [
+              {
+                "external": {
+                  "sourceID": "example",
+                  "source": "example"
+                },
+                "title": "example",
+                "description": "example"
+              },
+              null
+            ],
+            "description": "LIKE filters for Unit",
+            "nullable": true
+          },
+          "notLike": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterLike"
+              }
+            ],
+            "examples": [
+              {
+                "external": {
+                  "sourceID": "example",
+                  "source": "example"
+                },
+                "title": "example",
+                "description": "example"
+              },
+              null
+            ],
+            "description": "NOT LIKE filters for Unit",
+            "nullable": true
+          },
+          "null": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterNull"
+              }
+            ],
+            "examples": [
+              {
+                "meta": {
+                  "createdBy": true,
+                  "updatedAt": true,
+                  "updatedBy": true
+                },
+                "external": {
+                  "sourceID": true,
+                  "source": true
+                },
+                "description": true
+              },
+              null
+            ],
+            "description": "Null filters for Unit",
+            "nullable": true
+          },
+          "notNull": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UnitFilterNull"
+              }
+            ],
+            "examples": [
+              {
+                "meta": {
+                  "createdBy": true,
+                  "updatedAt": true,
+                  "updatedBy": true
+                },
+                "external": {
+                  "sourceID": true,
+                  "source": true
+                },
+                "description": true
+              },
+              null
+            ],
+            "description": "Not null filters for Unit",
+            "nullable": true
+          },
+          "orCondition": {
+            "type": "boolean",
+            "examples": [
+              true
+            ],
+            "description": "OrCondition decides if this filter is within an OR-condition or AND-condition"
+          },
+          "nestedFilters": {
+            "type": "array",
+            "examples": [
+              [
+                {
+                  "equals": {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "meta": {
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                      "updatedAt": "2024-01-15T10:30:00Z",
+                      "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                    },
+                    "external": {
+                      "sourceID": "example",
+                      "source": "example"
+                    },
+                    "title": "example",
+                    "description": "example"
+                  },
+                  "notEquals": {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "meta": {
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                      "updatedAt": "2024-01-15T10:30:00Z",
+                      "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                    },
+                    "external": {
+                      "sourceID": "example",
+                      "source": "example"
+                    },
+                    "title": "example",
+                    "description": "example"
+                  },
+                  "greaterThan": {
+                    "meta": {
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "updatedAt": "2024-01-15T10:30:00Z"
+                    }
+                  },
+                  "smallerThan": {
+                    "meta": {
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "updatedAt": "2024-01-15T10:30:00Z"
+                    }
+                  },
+                  "greaterOrEqual": {
+                    "meta": {
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "updatedAt": "2024-01-15T10:30:00Z"
+                    }
+                  },
+                  "smallerOrEqual": {
+                    "meta": {
+                      "createdAt": "2024-01-15T10:30:00Z",
+                      "updatedAt": "2024-01-15T10:30:00Z"
+                    }
+                  },
+                  "contains": {
+                    "id": [
+                      "123e4567-e89b-12d3-a456-426614174000"
+                    ],
+                    "meta": {
+                      "createdBy": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ],
+                      "updatedBy": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ]
+                    },
+                    "external": {
+                      "sourceID": [
+                        "example"
+                      ],
+                      "source": [
+                        "example"
+                      ]
+                    },
+                    "title": [
+                      "example"
+                    ],
+                    "description": [
+                      "example"
+                    ]
+                  },
+                  "notContains": {
+                    "id": [
+                      "123e4567-e89b-12d3-a456-426614174000"
+                    ],
+                    "meta": {
+                      "createdBy": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ],
+                      "updatedBy": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ]
+                    },
+                    "external": {
+                      "sourceID": [
+                        "example"
+                      ],
+                      "source": [
+                        "example"
+                      ]
+                    },
+                    "title": [
+                      "example"
+                    ],
+                    "description": [
+                      "example"
+                    ]
+                  },
+                  "like": {
+                    "external": {
+                      "sourceID": "example",
+                      "source": "example"
+                    },
+                    "title": "example",
+                    "description": "example"
+                  },
+                  "notLike": {
+                    "external": {
+                      "sourceID": "example",
+                      "source": "example"
+                    },
+                    "title": "example",
+                    "description": "example"
+                  },
+                  "null": {
+                    "meta": {
+                      "createdBy": true,
+                      "updatedAt": true,
+                      "updatedBy": true
+                    },
+                    "external": {
+                      "sourceID": true,
+                      "source": true
+                    },
+                    "description": true
+                  },
+                  "notNull": {
+                    "meta": {
+                      "createdBy": true,
+                      "updatedAt": true,
+                      "updatedBy": true
+                    },
+                    "external": {
+                      "sourceID": true,
+                      "source": true
+                    },
+                    "description": true
+                  },
+                  "orCondition": true
+                }
+              ]
+            ],
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/UnitFilter"
+                }
+              ]
+            },
+            "description": "NestedFilters of the Unit, useful for more complex filters"
+          }
+        },
+        "required": [
+          "orCondition"
+        ],
+        "description": "Filter object for Unit"
+      },
+      "UnitFilterEquals": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "examples": [
+              "123e4567-e89b-12d3-a456-426614174000",
+              null
+            ],
+            "format": "uuid",
+            "description": "Unique identifier for the Unit",
+            "nullable": true
+          },
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaFilterEquals"
+              }
+            ],
+            "examples": [
+              {
+                "createdAt": "2024-01-15T10:30:00Z",
+                "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                "updatedAt": "2024-01-15T10:30:00Z",
+                "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+              },
+              null
+            ],
+            "description": "Metadata information for the Unit",
+            "nullable": true
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ExternalFilterEquals"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": "example",
+                "source": "example"
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the unit from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The title of the unit",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The description of the unit",
+            "nullable": true
+          }
+        },
+        "description": "Equality/Inequality filter fields for Unit"
+      },
+      "UnitFilterRange": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaFilterRange"
+              }
+            ],
+            "examples": [
+              {
+                "createdAt": "2024-01-15T10:30:00Z",
+                "updatedAt": "2024-01-15T10:30:00Z"
+              },
+              null
+            ],
+            "description": "Metadata information for the Unit",
+            "nullable": true
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ExternalFilterRange"
+              }
+            ],
+            "description": "External is a reusable object that can be used to store external information about the unit from another system, used for third-party integration tracking.",
+            "nullable": true
+          }
+        },
+        "description": "Range filter fields for Unit"
+      },
+      "UnitFilterContains": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "array",
+            "examples": [
+              [
+                "123e4567-e89b-12d3-a456-426614174000"
+              ]
+            ],
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Unique identifier for the Unit"
+          },
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaFilterContains"
+              }
+            ],
+            "examples": [
+              {
+                "createdBy": [
+                  "123e4567-e89b-12d3-a456-426614174000"
+                ],
+                "updatedBy": [
+                  "123e4567-e89b-12d3-a456-426614174000"
+                ]
+              },
+              null
+            ],
+            "description": "Metadata information for the Unit",
+            "nullable": true
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ExternalFilterContains"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": [
+                  "example"
+                ],
+                "source": [
+                  "example"
+                ]
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the unit from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "title": {
+            "type": "array",
+            "examples": [
+              [
+                "example"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "The title of the unit"
+          },
+          "description": {
+            "type": "array",
+            "examples": [
+              [
+                "example"
+              ]
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "The description of the unit"
+          }
+        },
+        "description": "Contains filter fields for Unit"
+      },
+      "UnitFilterLike": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaFilterLike"
+              }
+            ],
+            "description": "Metadata information for the Unit",
+            "nullable": true
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ExternalFilterLike"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": "example",
+                "source": "example"
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the unit from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The title of the unit",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "examples": [
+              "example",
+              null
+            ],
+            "description": "The description of the unit",
+            "nullable": true
+          }
+        },
+        "description": "LIKE filter fields for Unit"
+      },
+      "UnitFilterNull": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MetaFilterNull"
+              }
+            ],
+            "examples": [
+              {
+                "createdBy": true,
+                "updatedAt": true,
+                "updatedBy": true
+              },
+              null
+            ],
+            "description": "Metadata information for the Unit",
+            "nullable": true
+          },
+          "external": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ExternalFilterNull"
+              }
+            ],
+            "examples": [
+              {
+                "sourceID": true,
+                "source": true
+              },
+              null
+            ],
+            "description": "External is a reusable object that can be used to store external information about the unit from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "description": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The description of the unit",
+            "nullable": true
+          }
+        },
+        "description": "Null filter fields for Unit"
+      },
       "MetaFilter": {
         "type": "object",
         "properties": {
@@ -16776,6 +18030,7 @@
                     "source": "ExternalIntegrationAPI"
                   },
                   "title": "Meitner Grundskola",
+                  "unitID": "123e4567-e89b-12d3-a456-426614174000",
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
@@ -16912,6 +18167,7 @@
                     "source": "ExternalIntegrationAPI"
                   },
                   "title": "Meitner Grundskola",
+                  "unitID": "123e4567-e89b-12d3-a456-426614174000",
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
@@ -17048,6 +18304,7 @@
                     "source": "ExternalIntegrationAPI"
                   },
                   "title": "Meitner Grundskola",
+                  "unitID": "123e4567-e89b-12d3-a456-426614174000",
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
@@ -17111,6 +18368,7 @@
                           "source": "ExternalIntegrationAPI"
                         },
                         "title": "Meitner Grundskola",
+                        "unitID": "123e4567-e89b-12d3-a456-426614174000",
                         "unitCode": "12345678",
                         "csnSchoolCode": "12345",
                         "municipalityCode": "0184",
@@ -17162,6 +18420,7 @@
                         "source": "ExternalIntegrationAPI"
                       },
                       "title": "Meitner Grundskola",
+                      "unitID": "123e4567-e89b-12d3-a456-426614174000",
                       "unitCode": "12345678",
                       "csnSchoolCode": "12345",
                       "municipalityCode": "0184",
@@ -17232,6 +18491,7 @@
                           "source": "ExternalIntegrationAPI"
                         },
                         "title": "Meitner Grundskola",
+                        "unitID": "123e4567-e89b-12d3-a456-426614174000",
                         "unitCode": "12345678",
                         "csnSchoolCode": "12345",
                         "municipalityCode": "0184",
@@ -17283,6 +18543,7 @@
                         "source": "ExternalIntegrationAPI"
                       },
                       "title": "Meitner Grundskola",
+                      "unitID": "123e4567-e89b-12d3-a456-426614174000",
                       "unitCode": "12345678",
                       "csnSchoolCode": "12345",
                       "municipalityCode": "0184",
@@ -23239,6 +24500,635 @@
           }
         }
       },
+      "UnitCreate": {
+        "description": "Response for Unit Create operation - returns the created Unit",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "title": "Norra distriktet",
+                  "description": "Norra grundskole- och förskoleenheten"
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitCreate422ResponseBody": {
+        "description": "Validation error for Unit Create operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for Unit Create endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for Unit Create endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitUpdate": {
+        "description": "Response for Unit Update operation - returns the updated Unit",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "title": "Norra distriktet",
+                  "description": "Norra grundskole- och förskoleenheten"
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitUpdate422ResponseBody": {
+        "description": "Validation error for Unit Update operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for Unit Update endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for Unit Update endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitGet": {
+        "description": "Response for Unit Get operation - returns the requested Unit",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Unit"
+                }
+              ]
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "meta": {
+                    "createdAt": "2024-01-15T10:30:00Z",
+                    "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                    "updatedAt": "2024-01-15T14:45:00Z",
+                    "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                  },
+                  "external": {
+                    "sourceID": "12345678",
+                    "source": "ExternalIntegrationAPI"
+                  },
+                  "title": "Norra distriktet",
+                  "description": "Norra grundskole- och förskoleenheten"
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitList": {
+        "description": "Response for Unit List operation - returns a paginated list of Unit",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "examples": [
+                    [
+                      {
+                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                          "updatedAt": "2024-01-15T14:45:00Z",
+                          "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                        },
+                        "external": {
+                          "sourceID": "12345678",
+                          "source": "ExternalIntegrationAPI"
+                        },
+                        "title": "Norra distriktet",
+                        "description": "Norra grundskole- och förskoleenheten"
+                      }
+                    ]
+                  ],
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Unit"
+                      }
+                    ]
+                  },
+                  "description": "Array of Unit objects"
+                },
+                "pagination": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Pagination"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "offset": 0,
+                      "limit": 1,
+                      "total": 100
+                    }
+                  ],
+                  "description": "Pagination information"
+                }
+              }
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "data": [
+                    {
+                      "id": "123e4567-e89b-12d3-a456-426614174000",
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                        "updatedAt": "2024-01-15T14:45:00Z",
+                        "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                      },
+                      "external": {
+                        "sourceID": "12345678",
+                        "source": "ExternalIntegrationAPI"
+                      },
+                      "title": "Norra distriktet",
+                      "description": "Norra grundskole- och förskoleenheten"
+                    }
+                  ],
+                  "pagination": {
+                    "offset": 0,
+                    "limit": 1,
+                    "total": 100
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitSearch": {
+        "description": "Response for Unit Search operation - returns filtered Unit results",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "examples": [
+                    [
+                      {
+                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                          "updatedAt": "2024-01-15T14:45:00Z",
+                          "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                        },
+                        "external": {
+                          "sourceID": "12345678",
+                          "source": "ExternalIntegrationAPI"
+                        },
+                        "title": "Norra distriktet",
+                        "description": "Norra grundskole- och förskoleenheten"
+                      }
+                    ]
+                  ],
+                  "items": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/Unit"
+                      }
+                    ]
+                  },
+                  "description": "Array of Unit objects"
+                },
+                "pagination": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Pagination"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "offset": 0,
+                      "limit": 1,
+                      "total": 100
+                    }
+                  ],
+                  "description": "Pagination information"
+                }
+              }
+            },
+            "examples": {
+              "responseExample": {
+                "summary": "Response body example",
+                "value": {
+                  "data": [
+                    {
+                      "id": "123e4567-e89b-12d3-a456-426614174000",
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc",
+                        "updatedAt": "2024-01-15T14:45:00Z",
+                        "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"
+                      },
+                      "external": {
+                        "sourceID": "12345678",
+                        "source": "ExternalIntegrationAPI"
+                      },
+                      "title": "Norra distriktet",
+                      "description": "Norra grundskole- och förskoleenheten"
+                    }
+                  ],
+                  "pagination": {
+                    "offset": 0,
+                    "limit": 1,
+                    "total": 100
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "UnitSearch422ResponseBody": {
+        "description": "Validation error for Unit Search operation - request data failed validation",
+        "headers": {
+          "RateLimit-Limit": {
+            "description": "The maximum number of API requests you're permitted to make per hour.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                5000
+              ]
+            }
+          },
+          "RateLimit-Remaining": {
+            "description": "The number of API requests remaining in the current rate limit window.",
+            "schema": {
+              "type": "integer",
+              "examples": [
+                4999
+              ]
+            }
+          },
+          "RateLimit-Reset": {
+            "description": "The time at which the current rate limit window resets in UTC epoch milliseconds.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "1728316800000"
+              ]
+            }
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/Error"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "code": "UnprocessableEntity",
+                      "message": "Validation failed for Unit Search endpoint",
+                      "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "error"
+              ]
+            },
+            "examples": {
+              "validationError": {
+                "summary": "Validation error example",
+                "value": {
+                  "error": {
+                    "code": "UnprocessableEntity",
+                    "message": "Validation failed for Unit Search endpoint",
+                    "requestID": "550e8400-e29b-41d4-a716-446655440000"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "Error400ResponseBody": {
         "description": "Bad Request - The request was malformed or contained invalid parameters",
         "headers": {
@@ -23758,6 +25648,16 @@
                   ],
                   "description": "The title of the school"
                 },
+                "unitID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.",
+                  "nullable": true
+                },
                 "unitCode": {
                   "type": "string",
                   "examples": [
@@ -23810,6 +25710,7 @@
                     "sourceID": "12345678"
                   },
                   "title": "Meitner Grundskola",
+                  "unitID": "123e4567-e89b-12d3-a456-426614174000",
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184",
@@ -23847,6 +25748,16 @@
                     "Meitner Grundskola"
                   ],
                   "description": "The title of the school"
+                },
+                "unitID": {
+                  "type": "string",
+                  "examples": [
+                    "123e4567-e89b-12d3-a456-426614174000",
+                    null
+                  ],
+                  "format": "uuid",
+                  "description": "The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit.",
+                  "nullable": true
                 },
                 "unitCode": {
                   "type": "string",
@@ -23888,6 +25799,7 @@
                     "sourceID": "12345678"
                   },
                   "title": "Meitner Grundskola",
+                  "unitID": "123e4567-e89b-12d3-a456-426614174000",
                   "unitCode": "12345678",
                   "csnSchoolCode": "12345",
                   "municipalityCode": "0184"
@@ -23926,6 +25838,7 @@
                           "source": "example"
                         },
                         "title": "example",
+                        "unitID": "123e4567-e89b-12d3-a456-426614174000",
                         "unitCode": "example",
                         "csnSchoolCode": "example",
                         "municipalityCode": "example"
@@ -23943,6 +25856,7 @@
                           "source": "example"
                         },
                         "title": "example",
+                        "unitID": "123e4567-e89b-12d3-a456-426614174000",
                         "unitCode": "example",
                         "csnSchoolCode": "example",
                         "municipalityCode": "example"
@@ -23994,6 +25908,9 @@
                         "title": [
                           "example"
                         ],
+                        "unitID": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ],
                         "unitCode": [
                           "example"
                         ],
@@ -24026,6 +25943,9 @@
                         },
                         "title": [
                           "example"
+                        ],
+                        "unitID": [
+                          "123e4567-e89b-12d3-a456-426614174000"
                         ],
                         "unitCode": [
                           "example"
@@ -24067,6 +25987,7 @@
                           "sourceID": true,
                           "source": true
                         },
+                        "unitID": true,
                         "unitCode": true,
                         "csnSchoolCode": true,
                         "municipalityCode": true
@@ -24081,6 +26002,7 @@
                           "sourceID": true,
                           "source": true
                         },
+                        "unitID": true,
                         "unitCode": true,
                         "csnSchoolCode": true,
                         "municipalityCode": true
@@ -24113,6 +26035,7 @@
                         "source": "example"
                       },
                       "title": "example",
+                      "unitID": "123e4567-e89b-12d3-a456-426614174000",
                       "unitCode": "example",
                       "csnSchoolCode": "example",
                       "municipalityCode": "example"
@@ -24130,6 +26053,7 @@
                         "source": "example"
                       },
                       "title": "example",
+                      "unitID": "123e4567-e89b-12d3-a456-426614174000",
                       "unitCode": "example",
                       "csnSchoolCode": "example",
                       "municipalityCode": "example"
@@ -24181,6 +26105,9 @@
                       "title": [
                         "example"
                       ],
+                      "unitID": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ],
                       "unitCode": [
                         "example"
                       ],
@@ -24213,6 +26140,9 @@
                       },
                       "title": [
                         "example"
+                      ],
+                      "unitID": [
+                        "123e4567-e89b-12d3-a456-426614174000"
                       ],
                       "unitCode": [
                         "example"
@@ -24254,6 +26184,7 @@
                         "sourceID": true,
                         "source": true
                       },
+                      "unitID": true,
                       "unitCode": true,
                       "csnSchoolCode": true,
                       "municipalityCode": true
@@ -24268,6 +26199,7 @@
                         "sourceID": true,
                         "source": true
                       },
+                      "unitID": true,
                       "unitCode": true,
                       "csnSchoolCode": true,
                       "municipalityCode": true
@@ -30456,6 +32388,455 @@
           }
         },
         "required": true
+      },
+      "UnitCreate": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "external": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ExternalRequest"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "sourceID": "12345678"
+                    }
+                  ],
+                  "description": "External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the unit, the Source-field is not included."
+                },
+                "title": {
+                  "type": "string",
+                  "examples": [
+                    "Norra distriktet"
+                  ],
+                  "description": "The title of the unit"
+                },
+                "description": {
+                  "type": "string",
+                  "examples": [
+                    "Norra grundskole- och förskoleenheten",
+                    null
+                  ],
+                  "description": "The description of the unit",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "title"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "external": {
+                    "sourceID": "12345678"
+                  },
+                  "title": "Norra distriktet",
+                  "description": "Norra grundskole- och förskoleenheten"
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "UnitUpdate": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "external": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ExternalRequest"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "sourceID": "12345678"
+                    }
+                  ],
+                  "description": "External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the unit, the Source-field is not included."
+                },
+                "title": {
+                  "type": "string",
+                  "examples": [
+                    "Norra distriktet"
+                  ],
+                  "description": "The title of the unit"
+                },
+                "description": {
+                  "type": "string",
+                  "examples": [
+                    "Norra grundskole- och förskoleenheten",
+                    null
+                  ],
+                  "description": "The description of the unit",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "title"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "external": {
+                    "sourceID": "12345678"
+                  },
+                  "title": "Norra distriktet",
+                  "description": "Norra grundskole- och förskoleenheten"
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      },
+      "UnitSearch": {
+        "description": "Request body",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "filter": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/UnitFilter"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "equals": {
+                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                          "updatedAt": "2024-01-15T10:30:00Z",
+                          "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                        },
+                        "external": {
+                          "sourceID": "example",
+                          "source": "example"
+                        },
+                        "title": "example",
+                        "description": "example"
+                      },
+                      "notEquals": {
+                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                          "updatedAt": "2024-01-15T10:30:00Z",
+                          "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                        },
+                        "external": {
+                          "sourceID": "example",
+                          "source": "example"
+                        },
+                        "title": "example",
+                        "description": "example"
+                      },
+                      "greaterThan": {
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "updatedAt": "2024-01-15T10:30:00Z"
+                        }
+                      },
+                      "smallerThan": {
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "updatedAt": "2024-01-15T10:30:00Z"
+                        }
+                      },
+                      "greaterOrEqual": {
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "updatedAt": "2024-01-15T10:30:00Z"
+                        }
+                      },
+                      "smallerOrEqual": {
+                        "meta": {
+                          "createdAt": "2024-01-15T10:30:00Z",
+                          "updatedAt": "2024-01-15T10:30:00Z"
+                        }
+                      },
+                      "contains": {
+                        "id": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ],
+                        "meta": {
+                          "createdBy": [
+                            "123e4567-e89b-12d3-a456-426614174000"
+                          ],
+                          "updatedBy": [
+                            "123e4567-e89b-12d3-a456-426614174000"
+                          ]
+                        },
+                        "external": {
+                          "sourceID": [
+                            "example"
+                          ],
+                          "source": [
+                            "example"
+                          ]
+                        },
+                        "title": [
+                          "example"
+                        ],
+                        "description": [
+                          "example"
+                        ]
+                      },
+                      "notContains": {
+                        "id": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ],
+                        "meta": {
+                          "createdBy": [
+                            "123e4567-e89b-12d3-a456-426614174000"
+                          ],
+                          "updatedBy": [
+                            "123e4567-e89b-12d3-a456-426614174000"
+                          ]
+                        },
+                        "external": {
+                          "sourceID": [
+                            "example"
+                          ],
+                          "source": [
+                            "example"
+                          ]
+                        },
+                        "title": [
+                          "example"
+                        ],
+                        "description": [
+                          "example"
+                        ]
+                      },
+                      "like": {
+                        "external": {
+                          "sourceID": "example",
+                          "source": "example"
+                        },
+                        "title": "example",
+                        "description": "example"
+                      },
+                      "notLike": {
+                        "external": {
+                          "sourceID": "example",
+                          "source": "example"
+                        },
+                        "title": "example",
+                        "description": "example"
+                      },
+                      "null": {
+                        "meta": {
+                          "createdBy": true,
+                          "updatedAt": true,
+                          "updatedBy": true
+                        },
+                        "external": {
+                          "sourceID": true,
+                          "source": true
+                        },
+                        "description": true
+                      },
+                      "notNull": {
+                        "meta": {
+                          "createdBy": true,
+                          "updatedAt": true,
+                          "updatedBy": true
+                        },
+                        "external": {
+                          "sourceID": true,
+                          "source": true
+                        },
+                        "description": true
+                      },
+                      "orCondition": true
+                    }
+                  ],
+                  "description": "Filter criteria to search for specific records"
+                }
+              },
+              "required": [
+                "filter"
+              ]
+            },
+            "examples": {
+              "requestExample": {
+                "summary": "Request body example",
+                "value": {
+                  "filter": {
+                    "equals": {
+                      "id": "123e4567-e89b-12d3-a456-426614174000",
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                        "updatedAt": "2024-01-15T10:30:00Z",
+                        "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                      },
+                      "external": {
+                        "sourceID": "example",
+                        "source": "example"
+                      },
+                      "title": "example",
+                      "description": "example"
+                    },
+                    "notEquals": {
+                      "id": "123e4567-e89b-12d3-a456-426614174000",
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "createdBy": "123e4567-e89b-12d3-a456-426614174000",
+                        "updatedAt": "2024-01-15T10:30:00Z",
+                        "updatedBy": "123e4567-e89b-12d3-a456-426614174000"
+                      },
+                      "external": {
+                        "sourceID": "example",
+                        "source": "example"
+                      },
+                      "title": "example",
+                      "description": "example"
+                    },
+                    "greaterThan": {
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "updatedAt": "2024-01-15T10:30:00Z"
+                      }
+                    },
+                    "smallerThan": {
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "updatedAt": "2024-01-15T10:30:00Z"
+                      }
+                    },
+                    "greaterOrEqual": {
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "updatedAt": "2024-01-15T10:30:00Z"
+                      }
+                    },
+                    "smallerOrEqual": {
+                      "meta": {
+                        "createdAt": "2024-01-15T10:30:00Z",
+                        "updatedAt": "2024-01-15T10:30:00Z"
+                      }
+                    },
+                    "contains": {
+                      "id": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ],
+                      "meta": {
+                        "createdBy": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ],
+                        "updatedBy": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ]
+                      },
+                      "external": {
+                        "sourceID": [
+                          "example"
+                        ],
+                        "source": [
+                          "example"
+                        ]
+                      },
+                      "title": [
+                        "example"
+                      ],
+                      "description": [
+                        "example"
+                      ]
+                    },
+                    "notContains": {
+                      "id": [
+                        "123e4567-e89b-12d3-a456-426614174000"
+                      ],
+                      "meta": {
+                        "createdBy": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ],
+                        "updatedBy": [
+                          "123e4567-e89b-12d3-a456-426614174000"
+                        ]
+                      },
+                      "external": {
+                        "sourceID": [
+                          "example"
+                        ],
+                        "source": [
+                          "example"
+                        ]
+                      },
+                      "title": [
+                        "example"
+                      ],
+                      "description": [
+                        "example"
+                      ]
+                    },
+                    "like": {
+                      "external": {
+                        "sourceID": "example",
+                        "source": "example"
+                      },
+                      "title": "example",
+                      "description": "example"
+                    },
+                    "notLike": {
+                      "external": {
+                        "sourceID": "example",
+                        "source": "example"
+                      },
+                      "title": "example",
+                      "description": "example"
+                    },
+                    "null": {
+                      "meta": {
+                        "createdBy": true,
+                        "updatedAt": true,
+                        "updatedBy": true
+                      },
+                      "external": {
+                        "sourceID": true,
+                        "source": true
+                      },
+                      "description": true
+                    },
+                    "notNull": {
+                      "meta": {
+                        "createdBy": true,
+                        "updatedAt": true,
+                        "updatedBy": true
+                      },
+                      "external": {
+                        "sourceID": true,
+                        "source": true
+                      },
+                      "description": true
+                    },
+                    "orCondition": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": true
       }
     },
     "securitySchemes": {
@@ -30529,6 +32910,10 @@
     {
       "name": "GradeUpperSecondary",
       "description": "GradeUpperSecondary represents a grade awarded to a student in upper secondary school (Swedish: gymnasieskola).\nGrades are scoped to the organization of the API key used. The CourseCode field uses the national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\").\n"
+    },
+    {
+      "name": "Unit",
+      "description": "The `Unit` resource represents an organizational unit that schools can belong to.\nThis resource can be created, updated, listed, retrieved, and searched using the standard resource structure.\n"
     }
   ],
   "x-speakeasy-retries": {

@@ -120,6 +120,18 @@ if TYPE_CHECKING:
         StudentUpdate422ResponseBodyError,
         StudentUpdate422ResponseBodyErrorData,
     )
+    from .unitcreate422responsebody_error import (
+        UnitCreate422ResponseBodyError,
+        UnitCreate422ResponseBodyErrorData,
+    )
+    from .unitsearch422responsebody_error import (
+        UnitSearch422ResponseBodyError,
+        UnitSearch422ResponseBodyErrorData,
+    )
+    from .unitupdate422responsebody_error import (
+        UnitUpdate422ResponseBodyError,
+        UnitUpdate422ResponseBodyErrorData,
+    )
 
 __all__ = [
     "AuditEventSearch422ResponseBodyError",
@@ -192,6 +204,12 @@ __all__ = [
     "StudentSearch422ResponseBodyErrorData",
     "StudentUpdate422ResponseBodyError",
     "StudentUpdate422ResponseBodyErrorData",
+    "UnitCreate422ResponseBodyError",
+    "UnitCreate422ResponseBodyErrorData",
+    "UnitSearch422ResponseBodyError",
+    "UnitSearch422ResponseBodyErrorData",
+    "UnitUpdate422ResponseBodyError",
+    "UnitUpdate422ResponseBodyErrorData",
 ]
 
 _dynamic_imports: dict[str, str] = {
@@ -264,6 +282,12 @@ _dynamic_imports: dict[str, str] = {
     "StudentSearch422ResponseBodyErrorData": ".studentsearch422responsebody_error",
     "StudentUpdate422ResponseBodyError": ".studentupdate422responsebody_error",
     "StudentUpdate422ResponseBodyErrorData": ".studentupdate422responsebody_error",
+    "UnitCreate422ResponseBodyError": ".unitcreate422responsebody_error",
+    "UnitCreate422ResponseBodyErrorData": ".unitcreate422responsebody_error",
+    "UnitSearch422ResponseBodyError": ".unitsearch422responsebody_error",
+    "UnitSearch422ResponseBodyErrorData": ".unitsearch422responsebody_error",
+    "UnitUpdate422ResponseBodyError": ".unitupdate422responsebody_error",
+    "UnitUpdate422ResponseBodyErrorData": ".unitupdate422responsebody_error",
 }
 
 

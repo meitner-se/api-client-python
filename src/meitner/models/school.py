@@ -140,6 +140,8 @@ class SchoolTypedDict(TypedDict):
     r"""Metadata information for the School"""
     external: NotRequired[Nullable[SchoolExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
+    unit_id: NotRequired[Nullable[str]]
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
     unit_code: NotRequired[Nullable[str]]
     r"""The School Unit Code provided by SCB, is used in reports and printed on grade documents"""
     csn_school_code: NotRequired[Nullable[str]]
@@ -170,6 +172,9 @@ class School(BaseModel):
     external: OptionalNullable[SchoolExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the school from another system, used for third-party integration tracking."""
 
+    unit_id: Annotated[OptionalNullable[str], pydantic.Field(alias="unitID")] = UNSET
+    r"""The ID of the Unit the school belongs to. Null if the school is not assigned to a Unit."""
+
     unit_code: Annotated[OptionalNullable[str], pydantic.Field(alias="unitCode")] = (
         UNSET
     )
@@ -188,10 +193,17 @@ class School(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            [
+                "meta",
+                "external",
+                "unitID",
+                "unitCode",
+                "csnSchoolCode",
+                "municipalityCode",
+            ]
         )
         nullable_fields = set(
-            ["external", "unitCode", "csnSchoolCode", "municipalityCode"]
+            ["external", "unitID", "unitCode", "csnSchoolCode", "municipalityCode"]
         )
         serialized = handler(self)
         m = {}

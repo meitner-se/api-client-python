@@ -25,6 +25,7 @@ if TYPE_CHECKING:
     from meitner.schools import Schools
     from meitner.studentplacements import StudentPlacements
     from meitner.students import Students
+    from meitner.units import Units
 
 
 class Meitner(BaseSDK):
@@ -40,6 +41,7 @@ class Meitner(BaseSDK):
     audit_events: "AuditEvents"
     grade_elementaries: "GradeElementaries"
     grade_upper_secondaries: "GradeUpperSecondaries"
+    units: "Units"
     _sub_sdk_map = {
         "schools": ("meitner.schools", "Schools"),
         "groups": ("meitner.groups", "Groups"),
@@ -54,6 +56,7 @@ class Meitner(BaseSDK):
             "meitner.gradeuppersecondaries",
             "GradeUpperSecondaries",
         ),
+        "units": ("meitner.units", "Units"),
     }
 
     def __init__(
