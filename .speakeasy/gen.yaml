@@ -34,7 +34,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 python:
-  version: 0.6.3
+  version: 0.7.0
   additionalDependencies:
     dev: {}
     main: {}
@@ -46,6 +46,7 @@ python:
   authors:
     - Speakeasy
   baseErrorName: MeitnerError
+  bodyVariantOverloads: false
   clientServerStatusCodesAsErrors: true
   constFieldCasing: upper
   defaultErrorName: MeitnerDefaultError
@@ -53,6 +54,10 @@ python:
   enableCustomCodeRegions: false
   enumFormat: union
   envVarPrefix: MEITNER
+  errorSchemaValidation: true
+  eventStreamClassNames:
+    async: EventStreamAsync
+    sync: EventStream
   fixFlags:
     asyncPaginationSep2025: true
     conflictResistantModelImportsFeb2026: false
@@ -72,19 +77,25 @@ python:
       webhooks: ""
   inferUnionDiscriminators: true
   inputModelSuffix: input
+  inputTypedDictSuffix: TypedDict
   legacyPyright: false
   license: ""
   maxMethodParams: 999
   methodArguments: infer-optional-args
+  methodTimeoutArgument: timeout-ms
+  methodTimeoutUnits: milliseconds
   moduleName: ""
   multipartArrayFormat: legacy
+  optionalDependencies: {}
   outputModelSuffix: output
   packageManager: uv
   packageName: meitner
   preApplyUnionDiscriminators: false
   pytestFilterWarnings: []
   pytestTimeout: 0
+  rawResponseHelpers: false
   responseFormat: flat
+  responseSchemaValidation: true
   sseFlatResponse: true
   templateVersion: v2
   useAsyncHooks: false

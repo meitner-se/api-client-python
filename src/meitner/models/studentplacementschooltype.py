@@ -10,5 +10,7 @@ StudentPlacementSchoolType = Literal[
     "GY",
     "GYAN",
     "FS",
+    "VUX",
+    "VUXSFI",
 ]
 r"""The type of schooling the student is attending"""

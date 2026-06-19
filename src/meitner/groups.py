@@ -7,7 +7,7 @@ from meitner._hooks import HookContext
 from meitner.types import OptionalNullable, UNSET
 from meitner.utils import get_security_from_env
 from meitner.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, Awaitable, Dict, List, Mapping, Optional, Union
+from typing import Any, Awaitable, Dict, Iterable, List, Mapping, Optional, Union
 
 
 class Groups(BaseSDK):
@@ -347,9 +347,9 @@ class Groups(BaseSDK):
             Union[models.GroupCreateExternal, models.GroupCreateExternalTypedDict]
         ] = None,
         category: Optional[models.GroupCreateCategory] = "Education",
-        types: Optional[List[models.GroupType]] = None,
-        moderator_i_ds: Optional[List[str]] = None,
-        member_i_ds: Optional[List[str]] = None,
+        types: Optional[Iterable[models.GroupType]] = None,
+        moderator_i_ds: Optional[Iterable[str]] = None,
+        member_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -394,9 +394,9 @@ class Groups(BaseSDK):
             school_id=school_id,
             category=category,
             title=title,
-            types=types,
-            moderator_i_ds=moderator_i_ds,
-            member_i_ds=member_i_ds,
+            types=utils.unmarshal(types, Optional[List[models.GroupType]]),
+            moderator_i_ds=utils.unmarshal(moderator_i_ds, Optional[List[str]]),
+            member_i_ds=utils.unmarshal(member_i_ds, Optional[List[str]]),
         )
 
         req = self._build_request(
@@ -514,9 +514,9 @@ class Groups(BaseSDK):
             Union[models.GroupCreateExternal, models.GroupCreateExternalTypedDict]
         ] = None,
         category: Optional[models.GroupCreateCategory] = "Education",
-        types: Optional[List[models.GroupType]] = None,
-        moderator_i_ds: Optional[List[str]] = None,
-        member_i_ds: Optional[List[str]] = None,
+        types: Optional[Iterable[models.GroupType]] = None,
+        moderator_i_ds: Optional[Iterable[str]] = None,
+        member_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -561,9 +561,9 @@ class Groups(BaseSDK):
             school_id=school_id,
             category=category,
             title=title,
-            types=types,
-            moderator_i_ds=moderator_i_ds,
-            member_i_ds=member_i_ds,
+            types=utils.unmarshal(types, Optional[List[models.GroupType]]),
+            moderator_i_ds=utils.unmarshal(moderator_i_ds, Optional[List[str]]),
+            member_i_ds=utils.unmarshal(member_i_ds, Optional[List[str]]),
         )
 
         req = self._build_request_async(
@@ -1577,9 +1577,9 @@ class Groups(BaseSDK):
         external: Optional[
             Union[models.GroupUpdateExternal, models.GroupUpdateExternalTypedDict]
         ] = None,
-        types: Optional[List[models.GroupType]] = None,
-        moderator_i_ds: Optional[List[str]] = None,
-        member_i_ds: Optional[List[str]] = None,
+        types: Optional[Iterable[models.GroupType]] = None,
+        moderator_i_ds: Optional[Iterable[str]] = None,
+        member_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1622,9 +1622,9 @@ class Groups(BaseSDK):
                     external, Optional[models.GroupUpdateExternal]
                 ),
                 title=title,
-                types=types,
-                moderator_i_ds=moderator_i_ds,
-                member_i_ds=member_i_ds,
+                types=utils.unmarshal(types, Optional[List[models.GroupType]]),
+                moderator_i_ds=utils.unmarshal(moderator_i_ds, Optional[List[str]]),
+                member_i_ds=utils.unmarshal(member_i_ds, Optional[List[str]]),
             ),
         )
 
@@ -1742,9 +1742,9 @@ class Groups(BaseSDK):
         external: Optional[
             Union[models.GroupUpdateExternal, models.GroupUpdateExternalTypedDict]
         ] = None,
-        types: Optional[List[models.GroupType]] = None,
-        moderator_i_ds: Optional[List[str]] = None,
-        member_i_ds: Optional[List[str]] = None,
+        types: Optional[Iterable[models.GroupType]] = None,
+        moderator_i_ds: Optional[Iterable[str]] = None,
+        member_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1787,9 +1787,9 @@ class Groups(BaseSDK):
                     external, Optional[models.GroupUpdateExternal]
                 ),
                 title=title,
-                types=types,
-                moderator_i_ds=moderator_i_ds,
-                member_i_ds=member_i_ds,
+                types=utils.unmarshal(types, Optional[List[models.GroupType]]),
+                moderator_i_ds=utils.unmarshal(moderator_i_ds, Optional[List[str]]),
+                member_i_ds=utils.unmarshal(member_i_ds, Optional[List[str]]),
             ),
         )
 
