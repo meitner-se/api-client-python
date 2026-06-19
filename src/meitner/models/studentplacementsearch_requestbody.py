@@ -130,6 +130,8 @@ StudentPlacementSearchEqualsSchoolType = Literal[
     "GY",
     "GYAN",
     "FS",
+    "VUX",
+    "VUXSFI",
 ]
 r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
 
@@ -472,6 +474,8 @@ StudentPlacementSearchNotEqualsSchoolType = Literal[
     "GY",
     "GYAN",
     "FS",
+    "VUX",
+    "VUXSFI",
 ]
 r"""The school type for the student, if not provided on Create, the school type will be fetched from the school."""
 

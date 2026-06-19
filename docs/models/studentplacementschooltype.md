@@ -17,3 +17,5 @@ value: StudentPlacementSchoolType = "GR"
 - `"GY"`
 - `"GYAN"`
 - `"FS"`
+- `"VUX"`
+- `"VUXSFI"`

@@ -17,3 +17,5 @@ value: StudentPlacementCreateSchoolType = "GR"
 - `"GY"`
 - `"GYAN"`
 - `"FS"`
+- `"VUX"`
+- `"VUXSFI"`

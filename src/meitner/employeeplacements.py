@@ -8,7 +8,7 @@ from meitner._hooks import HookContext
 from meitner.types import OptionalNullable, UNSET
 from meitner.utils import get_security_from_env
 from meitner.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, Awaitable, Dict, List, Mapping, Optional, Union
+from typing import Any, Awaitable, Dict, Iterable, List, Mapping, Optional, Union
 
 
 class EmployeePlacements(BaseSDK):
@@ -353,7 +353,7 @@ class EmployeePlacements(BaseSDK):
         ] = None,
         signature: OptionalNullable[str] = UNSET,
         title: OptionalNullable[str] = UNSET,
-        roles: Optional[List[models.EmployeePlacementRole]] = None,
+        roles: Optional[Iterable[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
         employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -400,7 +400,7 @@ class EmployeePlacements(BaseSDK):
             school_id=school_id,
             signature=signature,
             title=title,
-            roles=roles,
+            roles=utils.unmarshal(roles, Optional[List[models.EmployeePlacementRole]]),
             start_date=start_date,
             end_date=end_date,
             employment_percent=employment_percent,
@@ -528,7 +528,7 @@ class EmployeePlacements(BaseSDK):
         ] = None,
         signature: OptionalNullable[str] = UNSET,
         title: OptionalNullable[str] = UNSET,
-        roles: Optional[List[models.EmployeePlacementRole]] = None,
+        roles: Optional[Iterable[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
         employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -575,7 +575,7 @@ class EmployeePlacements(BaseSDK):
             school_id=school_id,
             signature=signature,
             title=title,
-            roles=roles,
+            roles=utils.unmarshal(roles, Optional[List[models.EmployeePlacementRole]]),
             start_date=start_date,
             end_date=end_date,
             employment_percent=employment_percent,
@@ -1619,7 +1619,7 @@ class EmployeePlacements(BaseSDK):
         ] = None,
         signature: OptionalNullable[str] = UNSET,
         title: OptionalNullable[str] = UNSET,
-        roles: Optional[List[models.EmployeePlacementRole]] = None,
+        roles: Optional[Iterable[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
         employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -1665,7 +1665,9 @@ class EmployeePlacements(BaseSDK):
                 ),
                 signature=signature,
                 title=title,
-                roles=roles,
+                roles=utils.unmarshal(
+                    roles, Optional[List[models.EmployeePlacementRole]]
+                ),
                 start_date=start_date,
                 end_date=end_date,
                 employment_percent=employment_percent,
@@ -1797,7 +1799,7 @@ class EmployeePlacements(BaseSDK):
         ] = None,
         signature: OptionalNullable[str] = UNSET,
         title: OptionalNullable[str] = UNSET,
-        roles: Optional[List[models.EmployeePlacementRole]] = None,
+        roles: Optional[Iterable[models.EmployeePlacementRole]] = None,
         end_date: OptionalNullable[date] = UNSET,
         employment_percent: OptionalNullable[int] = UNSET,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
@@ -1843,7 +1845,9 @@ class EmployeePlacements(BaseSDK):
                 ),
                 signature=signature,
                 title=title,
-                roles=roles,
+                roles=utils.unmarshal(
+                    roles, Optional[List[models.EmployeePlacementRole]]
+                ),
                 start_date=start_date,
                 end_date=end_date,
                 employment_percent=employment_percent,

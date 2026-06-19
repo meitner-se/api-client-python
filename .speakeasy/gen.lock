@@ -1,24 +1,24 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: f6c85b72dff214f21fbc892cdd0e995f
+  docChecksum: 459cec0f949b1a4e07853cfbf74e648a
   docVersion: v1
-  speakeasyVersion: 1.768.2
-  generationVersion: 2.889.1
-  releaseVersion: 0.6.3
-  configChecksum: 734d0fdcd7b1e1da8fa876413387a29a
+  speakeasyVersion: 1.784.0
+  generationVersion: 2.911.0
+  releaseVersion: 0.7.0
+  configChecksum: 1e1a394d8b587796372dcd7da6003761
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
   published: true
 persistentEdits:
-  generation_id: dad5ed25-f9fa-4e2c-a1ff-4404094756be
-  pristine_commit_hash: 608e52193b3fc842cc4e6d3883f33b4bc8387d11
-  pristine_tree_hash: 6254ef3fae956256770e643a1bcd8f3cab8aac29
+  generation_id: 82bfac78-c464-477c-a04e-9f52e519ab24
+  pristine_commit_hash: ff86d8730ba52e5f77c0693f294d7714e32acdff
+  pristine_tree_hash: 7e0b8563c8e84dbdf8e438ca02607a9d0b8c7b34
 features:
   python:
-    additionalDependencies: 1.0.0
+    additionalDependencies: 1.1.0
     constsAndDefaults: 1.0.7
-    core: 6.0.23
+    core: 6.0.30
     defaultEnabledRetries: 0.2.0
     devContainers: 3.0.0
     enumUnions: 0.1.1
@@ -29,15 +29,15 @@ features:
     globalSecurityCallbacks: 1.0.0
     globalServerURLs: 3.2.1
     groups: 3.0.1
-    methodArguments: 1.0.2
+    methodArguments: 1.1.1
     nameOverrides: 3.0.3
     nullables: 1.0.2
     oauth2ClientCredentials: 2.1.5
     operationTimeout: 0.3.1
     pagination: 3.0.10
     responseFormat: 1.1.0
-    retries: 3.0.5
-    sdkHooks: 1.2.1
+    retries: 3.0.7
+    sdkHooks: 1.2.2
     serverIDs: 3.0.0
 trackedFiles:
   .devcontainer/README.md:
@@ -3458,8 +3458,8 @@ trackedFiles:
     pristine_git_object: 034d4684351fd558493a71cc2fb69ccaa1236558
   docs/models/studentplacementcreateschooltype.md:
     id: 88427261177e
-    last_write_checksum: sha1:c3ea9039d890ec319209b9716d5dd4d674b4e0c8
-    pristine_git_object: 4a499da57b628cbaa1918bc5683f978d5be7c7bb
+    last_write_checksum: sha1:a1758129e874975a77a28587dbe190e802f180cb
+    pristine_git_object: b63b336374ba60a1244fb7bc4de7736729377bb0
   docs/models/studentplacementcreateschoolyear.md:
     id: df5de5752023
     last_write_checksum: sha1:df730f74acedcb9cd5c620cf1739c887f905aa05
@@ -3510,8 +3510,8 @@ trackedFiles:
     pristine_git_object: 3c93d6719699ae7f1425b20914d1a29bf40327ae
   docs/models/studentplacementfilterequalsschooltype.md:
     id: 69f9fc475ac5
-    last_write_checksum: sha1:6cf4846d5247eea2aeb635d6446b72df03bcfcff
-    pristine_git_object: 8857867da6dd75b09848e8c1734afe6d402fbe73
+    last_write_checksum: sha1:76748372c3e08c3caf102ac70737a7d66083b32f
+    pristine_git_object: 2686031586cbbac25abcfcfc347d9ac93979fa25
   docs/models/studentplacementfilterequalsschoolyear.md:
     id: ba48c266bcc2
     last_write_checksum: sha1:cc960059201bb86940aa2cc013c4baf70a79ee8c
@@ -3582,8 +3582,8 @@ trackedFiles:
     pristine_git_object: b7e2ac744b0ae1fc9f57d9e8fedfbec3d6670b43
   docs/models/studentplacementfilternotequalsschooltype.md:
     id: 3754d281c14e
-    last_write_checksum: sha1:df191637e5d1822a211d766cea73b5d3ac89d1ff
-    pristine_git_object: 24616d006c0cb4883e24762a6fbd545cd72f8008
+    last_write_checksum: sha1:e9dbbc850c099b7e7cf61e1572643871d94f248b
+    pristine_git_object: b5dc2cddc2475f2968f215e33e8aa675df7a4f3c
   docs/models/studentplacementfilternotequalsschoolyear.md:
     id: 18da12f4c992
     last_write_checksum: sha1:d94fd5a2bf784de53cd903ee7d36cd19cc30d375
@@ -3690,12 +3690,12 @@ trackedFiles:
     pristine_git_object: 3f7115c5f1e60b5e0c8531187fecb7c918f1280a
   docs/models/studentplacementschooltype.md:
     id: 2739d6102c3e
-    last_write_checksum: sha1:ce020eb3becc8fe3b94bd629895b2388f18ec1b6
-    pristine_git_object: 10c914e62a508edbd62d614e9c26291e22a685b4
+    last_write_checksum: sha1:e336b300605a69dc64838a6db9c65639193db55d
+    pristine_git_object: 6aacb1b3011e19e949cb764cf8e97673292867c6
   docs/models/studentplacementschooltype1.md:
     id: cab2210e4a47
-    last_write_checksum: sha1:6ee9c074b56eb8fc181f3b78679570fd4a905452
-    pristine_git_object: 18b929936bba7d42dc14e1c0a15cd01b85078c88
+    last_write_checksum: sha1:1fd2b07ddc20fdb865e80b0cda9a0299fffe9fd5
+    pristine_git_object: 600eed2c31b11a94d9a947da5979457452b5753b
   docs/models/studentplacementschoolyear.md:
     id: 737630a171eb
     last_write_checksum: sha1:a9647784010331cb7d742a42b4059ce09aad79a3
@@ -3734,8 +3734,8 @@ trackedFiles:
     pristine_git_object: 964a796f2ea22a9217fa84041a5d21e1d84b197d
   docs/models/studentplacementsearchequalsschooltype.md:
     id: dfe9ec2a1cea
-    last_write_checksum: sha1:dce4326cf692ce0727b7cea01070a6c6c99fd527
-    pristine_git_object: 67e7ffc1d261d721199d0242ef0185275af34925
+    last_write_checksum: sha1:9652797eaceacf5c7e94412f68267e36160f262f
+    pristine_git_object: 633497a79e67914652f71ac5ba91334fc32d09f6
   docs/models/studentplacementsearchequalsschoolyear.md:
     id: c01550c9cbff
     last_write_checksum: sha1:10ef81dd8262b5769860d6306f64cf30f48ec968
@@ -3810,8 +3810,8 @@ trackedFiles:
     pristine_git_object: 11be964a3742819a542df48d8669a99d82cb101d
   docs/models/studentplacementsearchnotequalsschooltype.md:
     id: f2228a96e8d4
-    last_write_checksum: sha1:0bf258a3bc32ff94db30727a12c28309be267c18
-    pristine_git_object: 0da17b61920f76873be22762001f831eb1dd076d
+    last_write_checksum: sha1:d1703def42da2d68be2711f847848dc9a62eedd4
+    pristine_git_object: 9087efe473411b2550d340aceb748d758429b715
   docs/models/studentplacementsearchnotequalsschoolyear.md:
     id: 3b9db9819a2b
     last_write_checksum: sha1:9b3537b923a3f5a4d76d1698f71bb3f9e14570a8
@@ -3922,8 +3922,8 @@ trackedFiles:
     pristine_git_object: 2ea861c41a7081530bee14050bfb064fe5ccd580
   docs/models/studentplacementupdateschooltype.md:
     id: 835c76e52ef2
-    last_write_checksum: sha1:416e8380fa2506a36d410a412ade37a4db4f89e1
-    pristine_git_object: 8872b3c5ec7607d26892ec36ec04c128b4dd2221
+    last_write_checksum: sha1:d68b1242b23dc98fc1e8db19bc1e90efc64abf6d
+    pristine_git_object: 528857ce3cf6460c461f18239315be7749015102
   docs/models/studentplacementupdateschoolyear.md:
     id: ae57b7472f9b
     last_write_checksum: sha1:71cc7facfd4062aa57a94545099185a0e14fcb95
@@ -4634,8 +4634,8 @@ trackedFiles:
     pristine_git_object: f456032107a9387ba6c98afd1c981df2f4b3d636
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:a8ceef8829db6d4bc2e46dffd9a4c6e8a7a0bdb1
-    pristine_git_object: c3116b67f02685fe582501e6bc89af19d9048c86
+    last_write_checksum: sha1:f156a8f6979b2eb0cb884039dc920fbaf1afb365
+    pristine_git_object: c8f5e524bd933114e3a598b0a2856dbbd4ffb830
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:8f2e96afadb77d46883beda8d7b6affc1e5b1e51
@@ -4666,8 +4666,8 @@ trackedFiles:
     pristine_git_object: 1d14fbfee44b0a8ee2fae292044cc7b57a75acd1
   src/meitner/_version.py:
     id: d8bcd4ba1c28
-    last_write_checksum: sha1:28fd244a82f9982f2bbcca1420cc77b27e91e5d7
-    pristine_git_object: 3c6e8a602804295a3cdd3621446d6a0309c5208f
+    last_write_checksum: sha1:9a9dcc42742f8edcfe38e14574e4c9b20ff6b73a
+    pristine_git_object: 38fa4c5d66c17046f98ea066d9124217a4d38944
   src/meitner/auditevents.py:
     id: f53a1d6b892b
     last_write_checksum: sha1:5d1299c2e3a6736d25eba1cb4c50ac96bc74d218
@@ -4678,8 +4678,8 @@ trackedFiles:
     pristine_git_object: b30898cc98aa2d594731367f572ac03d5556343a
   src/meitner/employeeplacements.py:
     id: 071d750d9722
-    last_write_checksum: sha1:d47b7af895e38c67047feaf5204506693bfa2070
-    pristine_git_object: f28e784958405ed354fbbc25c281b795006bf2ed
+    last_write_checksum: sha1:7aa57e049c0b0954dc20442b1eef7dac81c44788
+    pristine_git_object: c429bd240d647be33ab5756fd1b6b34ccaa20334
   src/meitner/employees.py:
     id: 04bc58f00b81
     last_write_checksum: sha1:aa808a74ea16009b0aea27343a9f86371a06d0d6
@@ -4858,12 +4858,12 @@ trackedFiles:
     pristine_git_object: 4db5deb5527a6e01b89e5e70299ebdd915ed9294
   src/meitner/groups.py:
     id: c3084147b722
-    last_write_checksum: sha1:f1c6c2fd19c99988cee234fdb870ab3db12c4824
-    pristine_git_object: e378c752e3c840696243f9d8f656466d3bfc1a8f
+    last_write_checksum: sha1:ab66be0951ac5600d78a33b6693471f67279b1f5
+    pristine_git_object: 781acbc51cc93f656b45f5b6686a8bd4b706c9a8
   src/meitner/guardians.py:
     id: 9c8379a89301
-    last_write_checksum: sha1:ef4072075d65b7646aba8299859c2841edd70cf8
-    pristine_git_object: 17db8f63dd5e5f4fbbce2d1a2dcf2b28afa1dc3f
+    last_write_checksum: sha1:ee46865ac582ccdbd6c29fc34a991e84d5275102
+    pristine_git_object: ac94d7f174fa511b49b252d91ab58698fa303442
   src/meitner/httpclient.py:
     id: af70d3509357
     last_write_checksum: sha1:5e55338d6ee9f01ab648cad4380201a8a3da7dd7
@@ -5422,16 +5422,16 @@ trackedFiles:
     pristine_git_object: 6277e8b0d5c8ff14044bae60d2ab83cc9af97150
   src/meitner/models/studentplacement.py:
     id: 9e743a1bee68
-    last_write_checksum: sha1:ac303f7840e25a568670c5fc8887511233a8c170
-    pristine_git_object: aa12a8e6a0e975c90cc041280f1ee02f2348dea0
+    last_write_checksum: sha1:a74ede9b299376db21779fb885b69b0ac46b2f47
+    pristine_git_object: eef148e97ff5773ef1f22f4c03bfb3a7a3d2e69f
   src/meitner/models/studentplacementarchiveop.py:
     id: 96ef2353b282
     last_write_checksum: sha1:ab951d15a856dfa6449d13c9baacb57420c3dad8
     pristine_git_object: 6cf278d931e0b1d93c844e59af599b5dd40e86bf
   src/meitner/models/studentplacementcreate.py:
     id: 80d87dfcfaef
-    last_write_checksum: sha1:7c5f95b812962886d94bb31c2da7c00a9dfad1cc
-    pristine_git_object: 2fdd97916fa10a7405d6f564c4d5b30f80e57337
+    last_write_checksum: sha1:fcb9497a5266cbe447d972b343d8b64bb0a087eb
+    pristine_git_object: f1b175c0541f9cf9a79f0863aa026ce4c4582c85
   src/meitner/models/studentplacementcreate422responsebody_error.py:
     id: a198aceef4c2
     last_write_checksum: sha1:c1d5171c2ad4fd946f7837f46c608557b7785609
@@ -5446,8 +5446,8 @@ trackedFiles:
     pristine_git_object: 2a851ad0838c75bcae5ecc0b2feddefde2d0d7a8
   src/meitner/models/studentplacementfilter.py:
     id: 7f0a2c87782f
-    last_write_checksum: sha1:91185847a77e8304f3558ec492ce5605b38ebb23
-    pristine_git_object: c378b94c8bc3f0c23803ac95a452292b4504b4ed
+    last_write_checksum: sha1:ddfd53744eb7a6a33d3cf1b068c85e407c62e941
+    pristine_git_object: f1eeeda8b9dd152f603ae563734c81627d66b942
   src/meitner/models/studentplacementgetop.py:
     id: 466a98f2ed30
     last_write_checksum: sha1:9b0d4a11a7ddc215329655c88331fbfeab37151a
@@ -5466,16 +5466,16 @@ trackedFiles:
     pristine_git_object: 20368736d4ca29cdeffdafaf732aa49cc88cd285
   src/meitner/models/studentplacementschooltype.py:
     id: a2cd488c08af
-    last_write_checksum: sha1:be637c76203e72d5ec84c4848fb456a4d5c592f1
-    pristine_git_object: d1e60183c2f5e7962e5815b9d1037c0b2c886fb7
+    last_write_checksum: sha1:15721938787264487d73d2343ccec0d45df16582
+    pristine_git_object: ac2fc48c0ab9a5ecf530c503ae825c1d110b17d3
   src/meitner/models/studentplacementsearch422responsebody_error.py:
     id: 4a4811037ab0
     last_write_checksum: sha1:2868c099c607f94e2972e3ce323819254fa5ae50
     pristine_git_object: c969acbdd559221be48b5430d6d4b8942b32e1f1
   src/meitner/models/studentplacementsearch_requestbody.py:
     id: 2572b39eeea5
-    last_write_checksum: sha1:c1ba6bb57db508daac60ae6fec2db6af588ef0f4
-    pristine_git_object: 1998ca1fd93a5015d64ff1b783308b82e1911ecc
+    last_write_checksum: sha1:afd4ce7c72e1b650e4e1d97d7f1d57bc4163a87a
+    pristine_git_object: f80ade1c8de35851d091e672c0493d5a0a067513
   src/meitner/models/studentplacementsearch_response.py:
     id: dce859ee9ece
     last_write_checksum: sha1:1abb0c5726be90b108dac2fee95d57f112e5f3a9
@@ -5486,8 +5486,8 @@ trackedFiles:
     pristine_git_object: 14d3fc71eb5641a2d272d025232ed3bf1fe10fa6
   src/meitner/models/studentplacementupdate.py:
     id: 2a1948be2584
-    last_write_checksum: sha1:5961024e1a95636ba1926785c61228cb1d8fcaca
-    pristine_git_object: 8fa459dc20230f64154eb526ee43487bbbc599ec
+    last_write_checksum: sha1:8dcfdcbccd1aa5199421384c8fcf8cb175d7d3ba
+    pristine_git_object: f3c1303a6fc4553041eeb2a3e15cbe45458c9993
   src/meitner/models/studentplacementupdate422responsebody_error.py:
     id: 6e97b83c7bb5
     last_write_checksum: sha1:d2c096ad624d9cc6175660c096d161644064311c
@@ -5614,8 +5614,8 @@ trackedFiles:
     pristine_git_object: faa268137bc01c9d08cfadc4797017db48747a96
   src/meitner/types/base64fileinput.py:
     id: 85baf8dda178
-    last_write_checksum: sha1:4780e893d3853b5a6e28d9a6ca3ee102ce0f502d
-    pristine_git_object: 25fc53989ed497649363f983219fc58705c8bf87
+    last_write_checksum: sha1:1522687ae3398374c35710cad993a6e82b5ab99d
+    pristine_git_object: 862566fe2b1db830276b390e136e65090e5963d2
   src/meitner/types/basemodel.py:
     id: bca3bf11d35a
     last_write_checksum: sha1:10d84aedeb9d35edfdadf2c3020caa1d24d8b584
@@ -5646,12 +5646,12 @@ trackedFiles:
     pristine_git_object: 3324e1bc2668c54c4d5f5a1a845675319757a828
   src/meitner/utils/eventstreaming.py:
     id: 9178523854a5
-    last_write_checksum: sha1:620d78a8b4e3b854e08d136e02e40a01a786bd70
-    pristine_git_object: 3bdcd6d3d4fc772cb7f5fca8685dcdc8c85e13e8
+    last_write_checksum: sha1:7d1dc68f8b48486ab646653aa05cc38752e1f912
+    pristine_git_object: a8d4fe5cc88d3c7337339e1b36a61bbf7ca8c4eb
   src/meitner/utils/forms.py:
     id: 3848b811cdd2
-    last_write_checksum: sha1:15fa7e9ab1611e062a9984cf06cb20969713d295
-    pristine_git_object: f961e76beaf0a8b1fe0dda44754a74eebd3608e7
+    last_write_checksum: sha1:a971cdb120ad3d416d296d5d0ad89e4808350a7f
+    pristine_git_object: fdf0dc9b2a67bca773eefe6b471498cccaa83424
   src/meitner/utils/headers.py:
     id: 128f8bde12ff
     last_write_checksum: sha1:7c6df233ee006332b566a8afa9ce9a245941d935
@@ -5670,20 +5670,20 @@ trackedFiles:
     pristine_git_object: c04e0db82b68eca041f2cb2614d748fbac80fd41
   src/meitner/utils/requestbodies.py:
     id: 10551a9be02b
-    last_write_checksum: sha1:41e2d2d2d3ecc394c8122ca4d4b85e1c3e03f054
-    pristine_git_object: 1de32b6d26f46590232f398fdba6ce0072f1659c
+    last_write_checksum: sha1:e1fef575283b7fe7fe2ad392dbbb3fb105309124
+    pristine_git_object: 591415af8e64baa410627b507d2740afb5387d13
   src/meitner/utils/retries.py:
     id: 9e10349995e5
-    last_write_checksum: sha1:471372f5c5d1dd5583239c9cf3c75f1b636e5d87
-    pristine_git_object: af07d4e941007af4213c5ec9047ef8a2fca04e5e
+    last_write_checksum: sha1:3585b891142f30a597fbf7a2f0340700babef8e4
+    pristine_git_object: ca7b59efebbbd9545744d0207ef42725c4cc5143
   src/meitner/utils/security.py:
     id: 1fc12800387c
     last_write_checksum: sha1:90babf4570a146adae7a20b5b49926a16c308a4d
     pristine_git_object: 6e140ea3ed546e0f45860f4329bc80de5a3f3888
   src/meitner/utils/serializers.py:
     id: d95b0e366201
-    last_write_checksum: sha1:61009f2e4ef6613a1a5af813fe020373dae5a492
-    pristine_git_object: d2149f8b909cb96628db140ac3cddb1b1e981367
+    last_write_checksum: sha1:7485f1425b0661fd84836186570df90207eec6af
+    pristine_git_object: 1031ed930bad5ece220cf7416a56c29f40f0588b
   src/meitner/utils/unmarshal_json_response.py:
     id: 2448a5d16fad
     last_write_checksum: sha1:44bb6205d680477449e338d7585e008fcab1ef20
@@ -8481,7 +8481,7 @@ examples:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for Unit Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
-releaseNotes: "## Python SDK Changes:\n* `meitner.units.list()`: **Added**\n* `meitner.units.create()`: **Added**\n* `meitner.units.search()`: **Added**\n* `meitner.units.get()`: **Added**\n* `meitner.units.update()`: **Added**\n* `meitner.schools.list()`:  `response.data[].unit_id` **Added**\n* `meitner.schools.create()`: \n  *  `request.unit_id` **Added**\n  *  `response.unit_id` **Added**\n* `meitner.schools.search()`: \n  *  `request.filter` **Changed**\n  *  `response.data[].unit_id` **Added**\n* `meitner.schools.get()`:  `response.unit_id` **Added**\n* `meitner.schools.update()`: \n  *  `request.unit_id` **Added**\n  *  `response.unit_id` **Added**\n"
+releaseNotes: "## Python SDK Changes:\n* `meitner.student_placements.list()`:  `response.data[].school_type` **Changed** (Breaking ⚠️)\n* `meitner.student_placements.create()`: \n  *  `request.school_type` **Changed**\n  *  `response.school_type` **Changed** (Breaking ⚠️)\n* `meitner.student_placements.search()`: \n  *  `request.filter` **Changed**\n  *  `response.data[].school_type` **Changed** (Breaking ⚠️)\n* `meitner.student_placements.get()`:  `response.school_type` **Changed** (Breaking ⚠️)\n* `meitner.student_placements.update()`: \n  *  `request.school_type` **Changed**\n  *  `response.school_type` **Changed** (Breaking ⚠️)\n* `meitner.student_placements.archive()`:  `response.school_type` **Changed** (Breaking ⚠️)\n* `meitner.student_placements.restore()`:  `response.school_type` **Changed** (Breaking ⚠️)\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

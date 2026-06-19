@@ -17,3 +17,5 @@ value: StudentPlacementSearchNotEqualsSchoolType = "GR"
 - `"GY"`
 - `"GYAN"`
 - `"FS"`
+- `"VUX"`
+- `"VUXSFI"`

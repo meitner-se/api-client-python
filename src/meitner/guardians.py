@@ -7,7 +7,7 @@ from meitner._hooks import HookContext
 from meitner.types import OptionalNullable, UNSET
 from meitner.utils import get_security_from_env
 from meitner.utils.unmarshal_json_response import unmarshal_json_response
-from typing import Any, Awaitable, Dict, List, Mapping, Optional, Union
+from typing import Any, Awaitable, Dict, Iterable, List, Mapping, Optional, Union
 
 
 class Guardians(BaseSDK):
@@ -355,7 +355,7 @@ class Guardians(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
-        student_i_ds: Optional[List[str]] = None,
+        student_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -411,7 +411,7 @@ class Guardians(BaseSDK):
             email_address2=email_address2,
             phone_number1=phone_number1,
             phone_number2=phone_number2,
-            student_i_ds=student_i_ds,
+            student_i_ds=utils.unmarshal(student_i_ds, Optional[List[str]]),
         )
 
         req = self._build_request(
@@ -537,7 +537,7 @@ class Guardians(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
-        student_i_ds: Optional[List[str]] = None,
+        student_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -593,7 +593,7 @@ class Guardians(BaseSDK):
             email_address2=email_address2,
             phone_number1=phone_number1,
             phone_number2=phone_number2,
-            student_i_ds=student_i_ds,
+            student_i_ds=utils.unmarshal(student_i_ds, Optional[List[str]]),
         )
 
         req = self._build_request_async(
@@ -1621,7 +1621,7 @@ class Guardians(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
-        student_i_ds: Optional[List[str]] = None,
+        student_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1680,7 +1680,7 @@ class Guardians(BaseSDK):
                 email_address2=email_address2,
                 phone_number1=phone_number1,
                 phone_number2=phone_number2,
-                student_i_ds=student_i_ds,
+                student_i_ds=utils.unmarshal(student_i_ds, Optional[List[str]]),
             ),
         )
 
@@ -1808,7 +1808,7 @@ class Guardians(BaseSDK):
         email_address2: OptionalNullable[str] = UNSET,
         phone_number1: OptionalNullable[str] = UNSET,
         phone_number2: OptionalNullable[str] = UNSET,
-        student_i_ds: Optional[List[str]] = None,
+        student_i_ds: Optional[Iterable[str]] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -1867,7 +1867,7 @@ class Guardians(BaseSDK):
                 email_address2=email_address2,
                 phone_number1=phone_number1,
                 phone_number2=phone_number2,
-                student_i_ds=student_i_ds,
+                student_i_ds=utils.unmarshal(student_i_ds, Optional[List[str]]),
             ),
         )
 
