@@ -133,7 +133,7 @@ class StudentAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
     r"""The municipality code of the address"""
 
@@ -159,7 +159,7 @@ class StudentAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")

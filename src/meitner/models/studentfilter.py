@@ -136,7 +136,7 @@ class StudentFilterEqualsAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
     r"""The municipality code of the address"""
 
@@ -162,7 +162,7 @@ class StudentFilterEqualsAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
@@ -514,7 +514,7 @@ class StudentFilterNotEqualsAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
     r"""The municipality code of the address"""
 
@@ -540,7 +540,7 @@ class StudentFilterNotEqualsAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
@@ -1326,7 +1326,7 @@ class StudentFilterContainsAddressTypedDict(TypedDict):
     postal_city: NotRequired[List[str]]
     r"""The city of the address"""
     country_code: NotRequired[List[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[List[str]]
     r"""The municipality code of the address"""
 
@@ -1352,7 +1352,7 @@ class StudentFilterContainsAddress(BaseModel):
     country_code: Annotated[
         Optional[List[str]], pydantic.Field(alias="countryCode")
     ] = None
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         Optional[List[str]], pydantic.Field(alias="municipalityCode")
@@ -1619,7 +1619,7 @@ class StudentFilterNotContainsAddressTypedDict(TypedDict):
     postal_city: NotRequired[List[str]]
     r"""The city of the address"""
     country_code: NotRequired[List[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[List[str]]
     r"""The municipality code of the address"""
 
@@ -1645,7 +1645,7 @@ class StudentFilterNotContainsAddress(BaseModel):
     country_code: Annotated[
         Optional[List[str]], pydantic.Field(alias="countryCode")
     ] = None
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         Optional[List[str]], pydantic.Field(alias="municipalityCode")
@@ -1896,7 +1896,7 @@ class StudentFilterLikeAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
     r"""The municipality code of the address"""
 
@@ -1922,7 +1922,7 @@ class StudentFilterLikeAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
@@ -2180,7 +2180,7 @@ class StudentFilterNotLikeAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
     r"""The municipality code of the address"""
 
@@ -2206,7 +2206,7 @@ class StudentFilterNotLikeAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
@@ -2511,7 +2511,7 @@ class StudentFilterNullAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[bool]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[bool]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[bool]]
     r"""The municipality code of the address"""
 
@@ -2537,7 +2537,7 @@ class StudentFilterNullAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="municipalityCode")
@@ -2831,7 +2831,7 @@ class StudentFilterNotNullAddressTypedDict(TypedDict):
     postal_city: NotRequired[Nullable[bool]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[bool]]
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[bool]]
     r"""The municipality code of the address"""
 
@@ -2857,7 +2857,7 @@ class StudentFilterNotNullAddress(BaseModel):
     country_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="countryCode")
     ] = UNSET
-    r"""The country code of the address"""
+    r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
 
     municipality_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="municipalityCode")

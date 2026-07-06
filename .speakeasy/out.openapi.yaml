@@ -4850,7 +4850,7 @@
               "SWE",
               null
             ],
-            "description": "The country code of the address",
+            "description": "The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden).",
             "nullable": true
           },
           "municipalityCode": {
@@ -17787,7 +17787,7 @@
               "example",
               null
             ],
-            "description": "The country code of the address",
+            "description": "The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden).",
             "nullable": true
           },
           "municipalityCode": {
@@ -17855,7 +17855,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The country code of the address"
+            "description": "The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."
           },
           "municipalityCode": {
             "type": "array",
@@ -17908,7 +17908,7 @@
               "example",
               null
             ],
-            "description": "The country code of the address",
+            "description": "The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden).",
             "nullable": true
           },
           "municipalityCode": {
@@ -17959,7 +17959,7 @@
               true,
               null
             ],
-            "description": "The country code of the address",
+            "description": "The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden).",
             "nullable": true
           },
           "municipalityCode": {
