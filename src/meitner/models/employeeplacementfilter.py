@@ -144,7 +144,7 @@ class EmployeePlacementFilterEqualsTypedDict(TypedDict):
     school_id: NotRequired[Nullable[str]]
     r"""The ID of the school the placement belongs to"""
     signature: NotRequired[Nullable[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
     roles: NotRequired[Nullable[EmployeePlacementFilterEqualsRoles]]
@@ -184,7 +184,7 @@ class EmployeePlacementFilterEquals(BaseModel):
     r"""The ID of the school the placement belongs to"""
 
     signature: OptionalNullable[str] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""
@@ -407,7 +407,7 @@ class EmployeePlacementFilterNotEqualsTypedDict(TypedDict):
     school_id: NotRequired[Nullable[str]]
     r"""The ID of the school the placement belongs to"""
     signature: NotRequired[Nullable[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
     roles: NotRequired[Nullable[EmployeePlacementFilterNotEqualsRoles]]
@@ -447,7 +447,7 @@ class EmployeePlacementFilterNotEquals(BaseModel):
     r"""The ID of the school the placement belongs to"""
 
     signature: OptionalNullable[str] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""
@@ -1200,7 +1200,7 @@ class EmployeePlacementFilterContainsTypedDict(TypedDict):
     school_id: NotRequired[List[str]]
     r"""The ID of the school the placement belongs to"""
     signature: NotRequired[List[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[List[str]]
     r"""The title of the employee"""
     roles: NotRequired[List[EmployeePlacementRole]]
@@ -1236,7 +1236,7 @@ class EmployeePlacementFilterContains(BaseModel):
     r"""The ID of the school the placement belongs to"""
 
     signature: Optional[List[str]] = None
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: Optional[List[str]] = None
     r"""The title of the employee"""
@@ -1387,7 +1387,7 @@ class EmployeePlacementFilterNotContainsTypedDict(TypedDict):
     school_id: NotRequired[List[str]]
     r"""The ID of the school the placement belongs to"""
     signature: NotRequired[List[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[List[str]]
     r"""The title of the employee"""
     roles: NotRequired[List[EmployeePlacementRole]]
@@ -1423,7 +1423,7 @@ class EmployeePlacementFilterNotContains(BaseModel):
     r"""The ID of the school the placement belongs to"""
 
     signature: Optional[List[str]] = None
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: Optional[List[str]] = None
     r"""The title of the employee"""
@@ -1552,7 +1552,7 @@ class EmployeePlacementFilterLikeTypedDict(TypedDict):
     external: NotRequired[Nullable[EmployeePlacementFilterLikeExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
     signature: NotRequired[Nullable[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
     archive_year: NotRequired[Nullable[str]]
@@ -1569,7 +1569,7 @@ class EmployeePlacementFilterLike(BaseModel):
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
 
     signature: OptionalNullable[str] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""
@@ -1667,7 +1667,7 @@ class EmployeePlacementFilterNotLikeTypedDict(TypedDict):
     external: NotRequired[Nullable[EmployeePlacementFilterNotLikeExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
     signature: NotRequired[Nullable[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
     archive_year: NotRequired[Nullable[str]]
@@ -1684,7 +1684,7 @@ class EmployeePlacementFilterNotLike(BaseModel):
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
 
     signature: OptionalNullable[str] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""
@@ -1829,7 +1829,7 @@ class EmployeePlacementFilterNullTypedDict(TypedDict):
     external: NotRequired[Nullable[EmployeePlacementFilterNullExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
     signature: NotRequired[Nullable[bool]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[bool]]
     r"""The title of the employee"""
     roles: NotRequired[Nullable[bool]]
@@ -1854,7 +1854,7 @@ class EmployeePlacementFilterNull(BaseModel):
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
 
     signature: OptionalNullable[bool] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[bool] = UNSET
     r"""The title of the employee"""
@@ -2039,7 +2039,7 @@ class EmployeePlacementFilterNotNullTypedDict(TypedDict):
     external: NotRequired[Nullable[EmployeePlacementFilterNotNullExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
     signature: NotRequired[Nullable[bool]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[bool]]
     r"""The title of the employee"""
     roles: NotRequired[Nullable[bool]]
@@ -2064,7 +2064,7 @@ class EmployeePlacementFilterNotNull(BaseModel):
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
 
     signature: OptionalNullable[bool] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[bool] = UNSET
     r"""The title of the employee"""

@@ -132,7 +132,7 @@ class EmployeePlacementTypedDict(TypedDict):
     external: NotRequired[Nullable[EmployeePlacementExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
     signature: NotRequired[Nullable[str]]
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
     title: NotRequired[Nullable[str]]
     r"""The title of the employee"""
     roles: NotRequired[List[EmployeePlacementRole]]
@@ -169,7 +169,7 @@ class EmployeePlacement(BaseModel):
     r"""External is a reusable object that can be used to store external information about the guardian from another system, used for third-party integration tracking."""
 
     signature: OptionalNullable[str] = UNSET
-    r"""The signature of the employee"""
+    r"""The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."""
 
     title: OptionalNullable[str] = UNSET
     r"""The title of the employee"""

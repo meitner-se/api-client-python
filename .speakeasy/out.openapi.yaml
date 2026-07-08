@@ -5474,7 +5474,7 @@
               "LM",
               null
             ],
-            "description": "The signature of the employee",
+            "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).",
             "nullable": true
           },
           "title": {
@@ -10646,7 +10646,7 @@
               "example",
               null
             ],
-            "description": "The signature of the employee",
+            "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).",
             "nullable": true
           },
           "title": {
@@ -10880,7 +10880,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The signature of the employee"
+            "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner)."
           },
           "title": {
             "type": "array",
@@ -10992,7 +10992,7 @@
               "example",
               null
             ],
-            "description": "The signature of the employee",
+            "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).",
             "nullable": true
           },
           "title": {
@@ -11058,7 +11058,7 @@
               true,
               null
             ],
-            "description": "The signature of the employee",
+            "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).",
             "nullable": true
           },
           "title": {
@@ -27864,7 +27864,7 @@
                     "LM",
                     null
                   ],
-                  "description": "The signature of the employee",
+                  "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).",
                   "nullable": true
                 },
                 "title": {
@@ -27976,7 +27976,7 @@
                     "LM",
                     null
                   ],
-                  "description": "The signature of the employee",
+                  "description": "The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).",
                   "nullable": true
                 },
                 "title": {

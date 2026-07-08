@@ -373,7 +373,7 @@ class EmployeePlacements(BaseSDK):
         :param school_id: The ID of the school the placement belongs to
         :param start_date: The start date of the placement for the employee
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
-        :param signature: The signature of the employee
+        :param signature: The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
@@ -550,7 +550,7 @@ class EmployeePlacements(BaseSDK):
         :param school_id: The ID of the school the placement belongs to
         :param start_date: The start date of the placement for the employee
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
-        :param signature: The signature of the employee
+        :param signature: The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
@@ -1654,7 +1654,7 @@ class EmployeePlacements(BaseSDK):
         :param id: The unique identifier of the EmployeePlacement to update
         :param start_date: The start date of the placement for the employee
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
-        :param signature: The signature of the employee
+        :param signature: The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
@@ -1836,7 +1836,7 @@ class EmployeePlacements(BaseSDK):
         :param id: The unique identifier of the EmployeePlacement to update
         :param start_date: The start date of the placement for the employee
         :param external: External is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the guardian, the Source-field is not included.
-        :param signature: The signature of the employee
+        :param signature: The employee's signature — a short code, usually their initials, used to identify the employee within the school on schedules, grade documents, and other printed material (e.g. \"LM\" for Lise Meitner).
         :param title: The title of the employee
         :param roles: The roles of the employee
         :param end_date: The end date of the placement for the employee
