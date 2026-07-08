@@ -4832,7 +4832,7 @@
               "169 56",
               null
             ],
-            "description": "The postal code of the address",
+            "description": "The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area.",
             "nullable": true
           },
           "postalCity": {
@@ -17769,7 +17769,7 @@
               "example",
               null
             ],
-            "description": "The postal code of the address",
+            "description": "The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area.",
             "nullable": true
           },
           "postalCity": {
@@ -17831,7 +17831,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The postal code of the address"
+            "description": "The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."
           },
           "postalCity": {
             "type": "array",
@@ -17890,7 +17890,7 @@
               "example",
               null
             ],
-            "description": "The postal code of the address",
+            "description": "The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area.",
             "nullable": true
           },
           "postalCity": {
@@ -17941,7 +17941,7 @@
               true,
               null
             ],
-            "description": "The postal code of the address",
+            "description": "The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area.",
             "nullable": true
           },
           "postalCity": {

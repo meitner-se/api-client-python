@@ -28,7 +28,7 @@ class GuardianUpdateAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
@@ -48,7 +48,7 @@ class GuardianUpdateAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCity")

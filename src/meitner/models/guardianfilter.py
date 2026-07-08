@@ -123,7 +123,7 @@ class GuardianFilterEqualsAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
@@ -143,7 +143,7 @@ class GuardianFilterEqualsAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCity")
@@ -471,7 +471,7 @@ class GuardianFilterNotEqualsAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
@@ -491,7 +491,7 @@ class GuardianFilterNotEqualsAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCity")
@@ -1233,7 +1233,7 @@ class GuardianFilterContainsAddressTypedDict(TypedDict):
     postal_address: NotRequired[List[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[List[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[List[str]]
     r"""The city of the address"""
     country_code: NotRequired[List[str]]
@@ -1253,7 +1253,7 @@ class GuardianFilterContainsAddress(BaseModel):
     postal_code: Annotated[Optional[List[str]], pydantic.Field(alias="postalCode")] = (
         None
     )
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[Optional[List[str]], pydantic.Field(alias="postalCity")] = (
         None
@@ -1506,7 +1506,7 @@ class GuardianFilterNotContainsAddressTypedDict(TypedDict):
     postal_address: NotRequired[List[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[List[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[List[str]]
     r"""The city of the address"""
     country_code: NotRequired[List[str]]
@@ -1526,7 +1526,7 @@ class GuardianFilterNotContainsAddress(BaseModel):
     postal_code: Annotated[Optional[List[str]], pydantic.Field(alias="postalCode")] = (
         None
     )
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[Optional[List[str]], pydantic.Field(alias="postalCity")] = (
         None
@@ -1763,7 +1763,7 @@ class GuardianFilterLikeAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
@@ -1783,7 +1783,7 @@ class GuardianFilterLikeAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCity")
@@ -2032,7 +2032,7 @@ class GuardianFilterNotLikeAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[str]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[str]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[str]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[str]]
@@ -2052,7 +2052,7 @@ class GuardianFilterNotLikeAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[str], pydantic.Field(alias="postalCity")
@@ -2348,7 +2348,7 @@ class GuardianFilterNullAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[bool]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[bool]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[bool]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[bool]]
@@ -2368,7 +2368,7 @@ class GuardianFilterNullAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="postalCity")
@@ -2646,7 +2646,7 @@ class GuardianFilterNotNullAddressTypedDict(TypedDict):
     postal_address: NotRequired[Nullable[bool]]
     r"""The postal address of the address"""
     postal_code: NotRequired[Nullable[bool]]
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
     postal_city: NotRequired[Nullable[bool]]
     r"""The city of the address"""
     country_code: NotRequired[Nullable[bool]]
@@ -2666,7 +2666,7 @@ class GuardianFilterNotNullAddress(BaseModel):
     postal_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="postalCode")
     ] = UNSET
-    r"""The postal code of the address"""
+    r"""The postal code (also known as ZIP or postcode) of the address, used together with the city to identify the delivery area."""
 
     postal_city: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="postalCity")
