@@ -129,7 +129,7 @@ class GuardianFilterEqualsAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterEqualsAddress(BaseModel):
@@ -158,7 +158,7 @@ class GuardianFilterEqualsAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -477,7 +477,7 @@ class GuardianFilterNotEqualsAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterNotEqualsAddress(BaseModel):
@@ -506,7 +506,7 @@ class GuardianFilterNotEqualsAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -1239,7 +1239,7 @@ class GuardianFilterContainsAddressTypedDict(TypedDict):
     country_code: NotRequired[List[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[List[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterContainsAddress(BaseModel):
@@ -1268,7 +1268,7 @@ class GuardianFilterContainsAddress(BaseModel):
     municipality_code: Annotated[
         Optional[List[str]], pydantic.Field(alias="municipalityCode")
     ] = None
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -1512,7 +1512,7 @@ class GuardianFilterNotContainsAddressTypedDict(TypedDict):
     country_code: NotRequired[List[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[List[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterNotContainsAddress(BaseModel):
@@ -1541,7 +1541,7 @@ class GuardianFilterNotContainsAddress(BaseModel):
     municipality_code: Annotated[
         Optional[List[str]], pydantic.Field(alias="municipalityCode")
     ] = None
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -1769,7 +1769,7 @@ class GuardianFilterLikeAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterLikeAddress(BaseModel):
@@ -1798,7 +1798,7 @@ class GuardianFilterLikeAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -2038,7 +2038,7 @@ class GuardianFilterNotLikeAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterNotLikeAddress(BaseModel):
@@ -2067,7 +2067,7 @@ class GuardianFilterNotLikeAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -2354,7 +2354,7 @@ class GuardianFilterNullAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[bool]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[bool]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterNullAddress(BaseModel):
@@ -2383,7 +2383,7 @@ class GuardianFilterNullAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
@@ -2652,7 +2652,7 @@ class GuardianFilterNotNullAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[bool]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[bool]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianFilterNotNullAddress(BaseModel):
@@ -2681,7 +2681,7 @@ class GuardianFilterNotNullAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):

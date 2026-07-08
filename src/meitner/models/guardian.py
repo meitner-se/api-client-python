@@ -127,7 +127,7 @@ class GuardianAddressTypedDict(TypedDict):
     country_code: NotRequired[Nullable[str]]
     r"""The ISO 3166-1 alpha-3 country code of the address (e.g. \"SWE\" for Sweden)."""
     municipality_code: NotRequired[Nullable[str]]
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
 
 class GuardianAddress(BaseModel):
@@ -156,7 +156,7 @@ class GuardianAddress(BaseModel):
     municipality_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="municipalityCode")
     ] = UNSET
-    r"""The municipality code of the address"""
+    r"""The Swedish municipality (kommun) code for the address — a four-digit code as defined by Statistics Sweden (SCB), e.g. \"0184\" for Solna. Identifies the administrative municipality the address belongs to."""
 
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
