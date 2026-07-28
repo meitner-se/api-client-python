@@ -358,6 +358,7 @@ class StudentPlacements(BaseSDK):
         ] = None,
         school_year: OptionalNullable[models.StudentPlacementCreateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
+        childcare_max_hours: OptionalNullable[int] = UNSET,
         mother_tongue: OptionalNullable[str] = UNSET,
         modern_language_alternative: OptionalNullable[
             models.StudentPlacementCreateModernLanguageAlternative
@@ -383,6 +384,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
+        :param childcare_max_hours: The maximum number of childcare hours per week for the student at this school
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param modern_language_alternative: The modern language alternative for the student
         :param swedish_as_second_language: Whether the student has Swedish as their second language
@@ -417,6 +419,7 @@ class StudentPlacements(BaseSDK):
             school_type=school_type,
             school_year=school_year,
             has_childcare=has_childcare,
+            childcare_max_hours=childcare_max_hours,
             mother_tongue=mother_tongue,
             modern_language_alternative=modern_language_alternative,
             swedish_as_second_language=swedish_as_second_language,
@@ -552,6 +555,7 @@ class StudentPlacements(BaseSDK):
         ] = None,
         school_year: OptionalNullable[models.StudentPlacementCreateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
+        childcare_max_hours: OptionalNullable[int] = UNSET,
         mother_tongue: OptionalNullable[str] = UNSET,
         modern_language_alternative: OptionalNullable[
             models.StudentPlacementCreateModernLanguageAlternative
@@ -577,6 +581,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
+        :param childcare_max_hours: The maximum number of childcare hours per week for the student at this school
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param modern_language_alternative: The modern language alternative for the student
         :param swedish_as_second_language: Whether the student has Swedish as their second language
@@ -611,6 +616,7 @@ class StudentPlacements(BaseSDK):
             school_type=school_type,
             school_year=school_year,
             has_childcare=has_childcare,
+            childcare_max_hours=childcare_max_hours,
             mother_tongue=mother_tongue,
             modern_language_alternative=modern_language_alternative,
             swedish_as_second_language=swedish_as_second_language,
@@ -1674,6 +1680,7 @@ class StudentPlacements(BaseSDK):
         ] = None,
         school_year: OptionalNullable[models.StudentPlacementUpdateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
+        childcare_max_hours: OptionalNullable[int] = UNSET,
         mother_tongue: OptionalNullable[str] = UNSET,
         modern_language_alternative: OptionalNullable[
             models.StudentPlacementUpdateModernLanguageAlternative
@@ -1698,6 +1705,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
+        :param childcare_max_hours: The maximum number of childcare hours per week for the student at this school
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param modern_language_alternative: The modern language alternative for the student
         :param swedish_as_second_language: Whether the student has Swedish as their second language
@@ -1732,6 +1740,7 @@ class StudentPlacements(BaseSDK):
                 school_type=school_type,
                 school_year=school_year,
                 has_childcare=has_childcare,
+                childcare_max_hours=childcare_max_hours,
                 mother_tongue=mother_tongue,
                 modern_language_alternative=modern_language_alternative,
                 swedish_as_second_language=swedish_as_second_language,
@@ -1871,6 +1880,7 @@ class StudentPlacements(BaseSDK):
         ] = None,
         school_year: OptionalNullable[models.StudentPlacementUpdateSchoolYear] = UNSET,
         has_childcare: Optional[bool] = False,
+        childcare_max_hours: OptionalNullable[int] = UNSET,
         mother_tongue: OptionalNullable[str] = UNSET,
         modern_language_alternative: OptionalNullable[
             models.StudentPlacementUpdateModernLanguageAlternative
@@ -1895,6 +1905,7 @@ class StudentPlacements(BaseSDK):
         :param external: ExternalRequest is the External-object used on Update and Create operations, since it should only be allowed to set SourceID for the student placement, the Source-field is not included.
         :param school_year: The school year the student is placed in
         :param has_childcare: Whether the student has childcare
+        :param childcare_max_hours: The maximum number of childcare hours per week for the student at this school
         :param mother_tongue: The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param modern_language_alternative: The modern language alternative for the student
         :param swedish_as_second_language: Whether the student has Swedish as their second language
@@ -1929,6 +1940,7 @@ class StudentPlacements(BaseSDK):
                 school_type=school_type,
                 school_year=school_year,
                 has_childcare=has_childcare,
+                childcare_max_hours=childcare_max_hours,
                 mother_tongue=mother_tongue,
                 modern_language_alternative=modern_language_alternative,
                 swedish_as_second_language=swedish_as_second_language,

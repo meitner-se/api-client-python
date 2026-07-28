@@ -77,6 +77,8 @@ class StudentPlacementCreateTypedDict(TypedDict):
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[bool]
     r"""Whether the student has childcare"""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[Nullable[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[
@@ -126,6 +128,11 @@ class StudentPlacementCreate(BaseModel):
     )
     r"""Whether the student has childcare"""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
@@ -167,6 +174,7 @@ class StudentPlacementCreate(BaseModel):
                 "external",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -179,6 +187,7 @@ class StudentPlacementCreate(BaseModel):
         nullable_fields = set(
             [
                 "schoolYear",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "modernLanguageInSchoolChoice",

@@ -176,6 +176,8 @@ class StudentPlacementFilterEqualsTypedDict(TypedDict):
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[Nullable[bool]]
     r"""Whether the student has childcare"""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[Nullable[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[
@@ -239,6 +241,11 @@ class StudentPlacementFilterEquals(BaseModel):
     ] = UNSET
     r"""Whether the student has childcare"""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
@@ -300,6 +307,7 @@ class StudentPlacementFilterEquals(BaseModel):
                 "schoolType",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -322,6 +330,7 @@ class StudentPlacementFilterEquals(BaseModel):
                 "schoolType",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -520,6 +529,8 @@ class StudentPlacementFilterNotEqualsTypedDict(TypedDict):
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[Nullable[bool]]
     r"""Whether the student has childcare"""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[Nullable[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[
@@ -583,6 +594,11 @@ class StudentPlacementFilterNotEquals(BaseModel):
     ] = UNSET
     r"""Whether the student has childcare"""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     mother_tongue: Annotated[
         OptionalNullable[str], pydantic.Field(alias="motherTongue")
     ] = UNSET
@@ -644,6 +660,7 @@ class StudentPlacementFilterNotEquals(BaseModel):
                 "schoolType",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -666,6 +683,7 @@ class StudentPlacementFilterNotEquals(BaseModel):
                 "schoolType",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -763,6 +781,8 @@ class StudentPlacementFilterGreaterThanTypedDict(TypedDict):
     r"""Metadata information for the StudentPlacement"""
     external: NotRequired[Nullable[StudentPlacementFilterGreaterThanExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -780,6 +800,11 @@ class StudentPlacementFilterGreaterThan(BaseModel):
     external: OptionalNullable[StudentPlacementFilterGreaterThanExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
     )
@@ -796,10 +821,24 @@ class StudentPlacementFilterGreaterThan(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -886,6 +925,8 @@ class StudentPlacementFilterSmallerThanTypedDict(TypedDict):
     r"""Metadata information for the StudentPlacement"""
     external: NotRequired[Nullable[StudentPlacementFilterSmallerThanExternalTypedDict]]
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -903,6 +944,11 @@ class StudentPlacementFilterSmallerThan(BaseModel):
     external: OptionalNullable[StudentPlacementFilterSmallerThanExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
     )
@@ -919,10 +965,24 @@ class StudentPlacementFilterSmallerThan(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -1011,6 +1071,8 @@ class StudentPlacementFilterGreaterOrEqualTypedDict(TypedDict):
         Nullable[StudentPlacementFilterGreaterOrEqualExternalTypedDict]
     ]
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -1028,6 +1090,11 @@ class StudentPlacementFilterGreaterOrEqual(BaseModel):
     external: OptionalNullable[StudentPlacementFilterGreaterOrEqualExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
     )
@@ -1044,10 +1111,24 @@ class StudentPlacementFilterGreaterOrEqual(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -1136,6 +1217,8 @@ class StudentPlacementFilterSmallerOrEqualTypedDict(TypedDict):
         Nullable[StudentPlacementFilterSmallerOrEqualExternalTypedDict]
     ]
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
+    childcare_max_hours: NotRequired[Nullable[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -1153,6 +1236,11 @@ class StudentPlacementFilterSmallerOrEqual(BaseModel):
     external: OptionalNullable[StudentPlacementFilterSmallerOrEqualExternal] = UNSET
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
 
+    childcare_max_hours: Annotated[
+        OptionalNullable[int], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
+
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
     )
@@ -1169,10 +1257,24 @@ class StudentPlacementFilterSmallerOrEqual(BaseModel):
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
         optional_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         nullable_fields = set(
-            ["meta", "external", "startDate", "endDate", "archivedAt"]
+            [
+                "meta",
+                "external",
+                "childcareMaxHours",
+                "startDate",
+                "endDate",
+                "archivedAt",
+            ]
         )
         serialized = handler(self)
         m = {}
@@ -1285,6 +1387,8 @@ class StudentPlacementFilterContainsTypedDict(TypedDict):
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[List[bool]]
     r"""Whether the student has childcare"""
+    childcare_max_hours: NotRequired[List[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[List[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[List[ModernLanguageAlternative]]
@@ -1337,6 +1441,11 @@ class StudentPlacementFilterContains(BaseModel):
         Optional[List[bool]], pydantic.Field(alias="hasChildcare")
     ] = None
     r"""Whether the student has childcare"""
+
+    childcare_max_hours: Annotated[
+        Optional[List[int]], pydantic.Field(alias="childcareMaxHours")
+    ] = None
+    r"""The maximum number of childcare hours per week for the student at this school"""
 
     mother_tongue: Annotated[
         Optional[List[str]], pydantic.Field(alias="motherTongue")
@@ -1394,6 +1503,7 @@ class StudentPlacementFilterContains(BaseModel):
                 "schoolType",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -1517,6 +1627,8 @@ class StudentPlacementFilterNotContainsTypedDict(TypedDict):
     r"""The school year the student is placed in"""
     has_childcare: NotRequired[List[bool]]
     r"""Whether the student has childcare"""
+    childcare_max_hours: NotRequired[List[int]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[List[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[List[ModernLanguageAlternative]]
@@ -1569,6 +1681,11 @@ class StudentPlacementFilterNotContains(BaseModel):
         Optional[List[bool]], pydantic.Field(alias="hasChildcare")
     ] = None
     r"""Whether the student has childcare"""
+
+    childcare_max_hours: Annotated[
+        Optional[List[int]], pydantic.Field(alias="childcareMaxHours")
+    ] = None
+    r"""The maximum number of childcare hours per week for the student at this school"""
 
     mother_tongue: Annotated[
         Optional[List[str]], pydantic.Field(alias="motherTongue")
@@ -1626,6 +1743,7 @@ class StudentPlacementFilterNotContains(BaseModel):
                 "schoolType",
                 "schoolYear",
                 "hasChildcare",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
@@ -2058,6 +2176,8 @@ class StudentPlacementFilterNullTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
     school_year: NotRequired[Nullable[bool]]
     r"""The school year the student is placed in"""
+    childcare_max_hours: NotRequired[Nullable[bool]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[Nullable[bool]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[Nullable[bool]]
@@ -2087,6 +2207,11 @@ class StudentPlacementFilterNull(BaseModel):
         OptionalNullable[bool], pydantic.Field(alias="schoolYear")
     ] = UNSET
     r"""The school year the student is placed in"""
+
+    childcare_max_hours: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
 
     mother_tongue: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="motherTongue")
@@ -2128,6 +2253,7 @@ class StudentPlacementFilterNull(BaseModel):
                 "meta",
                 "external",
                 "schoolYear",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "modernLanguageInSchoolChoice",
@@ -2142,6 +2268,7 @@ class StudentPlacementFilterNull(BaseModel):
                 "meta",
                 "external",
                 "schoolYear",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "modernLanguageInSchoolChoice",
@@ -2283,6 +2410,8 @@ class StudentPlacementFilterNotNullTypedDict(TypedDict):
     r"""External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking."""
     school_year: NotRequired[Nullable[bool]]
     r"""The school year the student is placed in"""
+    childcare_max_hours: NotRequired[Nullable[bool]]
+    r"""The maximum number of childcare hours per week for the student at this school"""
     mother_tongue: NotRequired[Nullable[bool]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_alternative: NotRequired[Nullable[bool]]
@@ -2312,6 +2441,11 @@ class StudentPlacementFilterNotNull(BaseModel):
         OptionalNullable[bool], pydantic.Field(alias="schoolYear")
     ] = UNSET
     r"""The school year the student is placed in"""
+
+    childcare_max_hours: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="childcareMaxHours")
+    ] = UNSET
+    r"""The maximum number of childcare hours per week for the student at this school"""
 
     mother_tongue: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="motherTongue")
@@ -2353,6 +2487,7 @@ class StudentPlacementFilterNotNull(BaseModel):
                 "meta",
                 "external",
                 "schoolYear",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "modernLanguageInSchoolChoice",
@@ -2367,6 +2502,7 @@ class StudentPlacementFilterNotNull(BaseModel):
                 "meta",
                 "external",
                 "schoolYear",
+                "childcareMaxHours",
                 "motherTongue",
                 "modernLanguageAlternative",
                 "modernLanguageInSchoolChoice",

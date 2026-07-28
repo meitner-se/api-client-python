@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: f336462ebb88facca3e3bb9d1d4479ec
+  docChecksum: 547c654c8680bc88beae28239a332f25
   docVersion: v1
-  speakeasyVersion: 1.789.0
-  generationVersion: 2.916.2
-  releaseVersion: 0.8.3
-  configChecksum: 1d012594b6b48a571e28f1c9ec78f830
+  speakeasyVersion: 1.791.0
+  generationVersion: 2.924.0
+  releaseVersion: 0.8.4
+  configChecksum: 8fe598f3ef4d2dffb1be0c2c4278e775
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
   published: true
 persistentEdits:
-  generation_id: c49f497d-dd2f-4c32-8665-95d4308e0415
-  pristine_commit_hash: 59d082daa72876ce7fc9008df3c859bd587f90a8
-  pristine_tree_hash: 587b6c45c06266385d6a3684f20f15a873740bdc
+  generation_id: 328e7975-52b7-425f-8d67-e07ce0875989
+  pristine_commit_hash: 40ccfc4eb4e798363a45b6e11d212fd0b4e392d3
+  pristine_tree_hash: 35cdda21a6a38caf19c211192347d61af1551ebe
 features:
   python:
     additionalDependencies: 1.1.0
@@ -3426,8 +3426,8 @@ trackedFiles:
     pristine_git_object: 9682a6c3b9a713ca8f48800b17dff3538ae6b969
   docs/models/studentplacement.md:
     id: cb273b9096cb
-    last_write_checksum: sha1:1ed76d42148305f72967443579a4056090b9e899
-    pristine_git_object: cfa378ad70beb8ae7fe1d4187c27b1d1ec252f95
+    last_write_checksum: sha1:7b04b221c00ca6f2862cbc8e61d921ab6336a44a
+    pristine_git_object: 0af76a76ce3cd1cbe9338fafca8615024a961e3c
   docs/models/studentplacementarchiverequest.md:
     id: ec67f2b408a1
     last_write_checksum: sha1:aa62a519ca5dcc6fc9a91fa4a2e1ad007761290c
@@ -3438,8 +3438,8 @@ trackedFiles:
     pristine_git_object: 0b2435b7cb1a66d02871aa616348e44815694da3
   docs/models/studentplacementcreate.md:
     id: 4362087b2f32
-    last_write_checksum: sha1:f66072d5b5fb8fa7e38aff22b140e9dd6348b50a
-    pristine_git_object: 4c3d9a1932bf58a4a4aaa5acd5319c1a25b26211
+    last_write_checksum: sha1:52180b99f02ae02013663c13aaa0c4fc54ff122f
+    pristine_git_object: 5362ea8a16555ee9f6a4ec1cf489f0ba227f7f76
   docs/models/studentplacementcreate422responsebodyerror.md:
     id: 3153c255d294
     last_write_checksum: sha1:e167c863290cf7f0afd1b9344c5a2fa9a88dd5a8
@@ -3478,12 +3478,12 @@ trackedFiles:
     pristine_git_object: c463bf1f3f79d27d862ebbd03d4b5ac0f01f3400
   docs/models/studentplacementfilter.md:
     id: ed1ddd088d83
-    last_write_checksum: sha1:f3a2816d84d44d9d6315281cc9f0202cd04c2cc0
-    pristine_git_object: 4e240090b83d3da107e24c0910e59d74d2e94763
+    last_write_checksum: sha1:b9893ea3026024a2b1994c32c0b85c264f7a05f3
+    pristine_git_object: 8be5f85e7d5450641cb02a968b82f9e3c0ba0660
   docs/models/studentplacementfiltercontains.md:
     id: 6b519b3e7476
-    last_write_checksum: sha1:f4a9ad3fc82464e9160290df14d7864ddc420f0e
-    pristine_git_object: 5d3d317b2ae7886e91354eafc955547b1157bfec
+    last_write_checksum: sha1:441f526581cef63b701d363be23e931dce19f90b
+    pristine_git_object: f8360ca43ca8896f2a0b5bb88de130e7904bc693
   docs/models/studentplacementfiltercontainsexternal.md:
     id: de7c8e861a3c
     last_write_checksum: sha1:8765fa0046e7ed668e714044e75dfdb7f061c3da
@@ -3494,8 +3494,8 @@ trackedFiles:
     pristine_git_object: a39bdcbb265c97de1c2310cc5bf8bade6d422217
   docs/models/studentplacementfilterequals.md:
     id: 2c4166531a90
-    last_write_checksum: sha1:23294c1e5ccc3a190eded01f27909c9fb7a39c86
-    pristine_git_object: 1495be92b4be2bbb512a89a71c72f784f149fe1c
+    last_write_checksum: sha1:600a72727347b72b72d2ce20dcfd6f8668219d12
+    pristine_git_object: 525a1c00a6b8e28f7258f48a79c9a9fc5bae133a
   docs/models/studentplacementfilterequalsexternal.md:
     id: 23c274e9efed
     last_write_checksum: sha1:d294f1e08e91d281aa0aa019b0ce3fa1263b42bd
@@ -3518,8 +3518,8 @@ trackedFiles:
     pristine_git_object: 8f7d1a51347277c477da7b3f65447cb6cbf212ec
   docs/models/studentplacementfiltergreaterorequal.md:
     id: 0ef56fc3c960
-    last_write_checksum: sha1:4abed7f633697eccd5e7dc1caf0953a486a621b3
-    pristine_git_object: 543a6ae3e355f15176c595df72bc32c94305591e
+    last_write_checksum: sha1:adbd099bcb8c20a9ca71eb7dcbc806e759360a9d
+    pristine_git_object: 387445bad2852b8918b158415e79765bf1b7f11e
   docs/models/studentplacementfiltergreaterorequalexternal.md:
     id: c1d3d71d81ce
     last_write_checksum: sha1:70dab93d75433d77093c40f803d82a7821dc9d73
@@ -3530,8 +3530,8 @@ trackedFiles:
     pristine_git_object: f175bd58a6c668029bc29f08df14a7b4676707db
   docs/models/studentplacementfiltergreaterthan.md:
     id: 13e19f694425
-    last_write_checksum: sha1:f66920b413b571e7829db1af26353f3ff3376ccd
-    pristine_git_object: fd72e77a74cebb254d34be290b79460f638ea225
+    last_write_checksum: sha1:49c02a20d1ce5a789788a9a8f27f6f7c1e2358bb
+    pristine_git_object: 455ccbad3e3863e32c00bcf5a70a2565329d51c1
   docs/models/studentplacementfiltergreaterthanexternal.md:
     id: 005ef5989a1e
     last_write_checksum: sha1:c2b091533c9b618db99ae2fcbb7158a45269fdb8
@@ -3554,8 +3554,8 @@ trackedFiles:
     pristine_git_object: 8596dc54aafa8bfb9f13a71fad344ec8f92336f8
   docs/models/studentplacementfilternotcontains.md:
     id: 1db893db8b99
-    last_write_checksum: sha1:17352d151d0cc5e2776610dd614ce29ac001d2ef
-    pristine_git_object: ba5ddd88c2a3892cc8a918c7644c3be754894a59
+    last_write_checksum: sha1:b6593ad4682ee0a1c9cdba8a8d89b27d75344cd7
+    pristine_git_object: 251fbcce610bda04658184bd2322d028dafdcf1b
   docs/models/studentplacementfilternotcontainsexternal.md:
     id: b02e6468463f
     last_write_checksum: sha1:6af0814addf75279bd8730246e0c7d50de25fb2f
@@ -3566,8 +3566,8 @@ trackedFiles:
     pristine_git_object: ec93c00b9e8b6e932b3dfca1e7097eae061b124c
   docs/models/studentplacementfilternotequals.md:
     id: 950ed0f7d232
-    last_write_checksum: sha1:89923b08ef9e06b8e8e94ea934e413268f6afe4f
-    pristine_git_object: 11187349b0973e4766dd264ffcb8107b4ffcdc11
+    last_write_checksum: sha1:372ee9beec85db058c4dd23ee580de8615d0dd08
+    pristine_git_object: 3c7943d39770619aaa18de4a9e7377abfb05f3e0
   docs/models/studentplacementfilternotequalsexternal.md:
     id: 5594dc87c59f
     last_write_checksum: sha1:543e8ba25beca28b81fd0370c0075f338263a271
@@ -3602,8 +3602,8 @@ trackedFiles:
     pristine_git_object: dbe19bf43bd2ca6d4c86fe6985e9e361ab167c22
   docs/models/studentplacementfilternotnull.md:
     id: d4a9daa11040
-    last_write_checksum: sha1:ff2055fdc84dc6b64b4dbf206df878896f0cf3a9
-    pristine_git_object: 3867b943c52aa39a3205f415e46eed9361c6df50
+    last_write_checksum: sha1:17ab0080ff1e077015b48b7978d1bf76d436a6fd
+    pristine_git_object: 379e74cd285571e1d246f85b00aebb1aa5ed1bca
   docs/models/studentplacementfilternotnullexternal.md:
     id: a288ec7ea173
     last_write_checksum: sha1:cfd8863fec1e22cc6192da997edece929edb84d3
@@ -3614,8 +3614,8 @@ trackedFiles:
     pristine_git_object: b0151875298bba4f8c7070d7990ce9a51ca4c4fa
   docs/models/studentplacementfilternull.md:
     id: 389336981dbb
-    last_write_checksum: sha1:d79d9979cc82a6fbec0fba966e70426bd3cc100a
-    pristine_git_object: aa9058776f7e7bb57ee2c4754253f2379222a7b0
+    last_write_checksum: sha1:82fc72cd801a7de7ea87108c735df94722eccfb4
+    pristine_git_object: 8a5b7982008099131139a1313f1c15b641416558
   docs/models/studentplacementfilternullexternal.md:
     id: 8d0458e2e6d5
     last_write_checksum: sha1:c5db7affc17d882824aeb80e310f7b5212377742
@@ -3626,8 +3626,8 @@ trackedFiles:
     pristine_git_object: 22912f5b365bd75e65d3b36d0be3123311a32faa
   docs/models/studentplacementfiltersmallerorequal.md:
     id: d40e31cdc0d8
-    last_write_checksum: sha1:da3c72a6b9b102d42d619d4e021a61885a2f00a9
-    pristine_git_object: e1d583f27bacab130a612b47b3250174796bdba9
+    last_write_checksum: sha1:0f5a5e4991657c0a365451565144d60247c037f9
+    pristine_git_object: d338d1c7179fbda6046e37db23675504838c8068
   docs/models/studentplacementfiltersmallerorequalexternal.md:
     id: d93fa125ec5e
     last_write_checksum: sha1:5179cf338d6ec5b56dc55c7f0efe7436afad7ac8
@@ -3638,8 +3638,8 @@ trackedFiles:
     pristine_git_object: 32d2d11431d6950425fbae991cc3b058a88c5bf6
   docs/models/studentplacementfiltersmallerthan.md:
     id: 07ad30a322ee
-    last_write_checksum: sha1:d6b62665d10181dff4432ac18cb16cc883e04087
-    pristine_git_object: e0ee0a4a46a72f4458c29b0235ad0f5a42b131ed
+    last_write_checksum: sha1:c7cfd441186e976ccd594da833c0e5d60674f4f1
+    pristine_git_object: 5adbf9607a5dd8121c91db36c1287c03ca832832
   docs/models/studentplacementfiltersmallerthanexternal.md:
     id: 69b5f073b3c0
     last_write_checksum: sha1:ea69c077dec7ec754dfb28c83b680b34b1872695
@@ -3658,8 +3658,8 @@ trackedFiles:
     pristine_git_object: c69d49b028f1b2fe7bab7af9e37353f377f24176
   docs/models/studentplacementlist.md:
     id: ad7d969032ab
-    last_write_checksum: sha1:4b1e0a92521102f04003ab9653b72de2b01cc3be
-    pristine_git_object: 6d93c86a2940a6438d22eaebf7dce45fb8e106b7
+    last_write_checksum: sha1:d8d76c2e92bd2e6136919ff6f02bb295b623f9aa
+    pristine_git_object: a26c9feb8dbb6c6bfb4e1847a644acba029bc387
   docs/models/studentplacementlistpagination.md:
     id: 0de09a3d850c
     last_write_checksum: sha1:45c958a6d18f589ea252e82370b8f9ee1a6ed66d
@@ -3706,8 +3706,8 @@ trackedFiles:
     pristine_git_object: d981f03c6789fe74d9e228957f41a67533f0e92b
   docs/models/studentplacementsearchcontains.md:
     id: 72e672944399
-    last_write_checksum: sha1:fd47298d7eca5485486aeb7e641070a15f4d6ce5
-    pristine_git_object: 5cce6e26d596f3239ced72bad2aa756dc0f1ca44
+    last_write_checksum: sha1:777dc24893b3e971a2ba33bb166e6b36f2e41897
+    pristine_git_object: e4da75ef57ca8dc1377d1df2775f172cb2cef0fe
   docs/models/studentplacementsearchcontainsexternal.md:
     id: abba5a3e65db
     last_write_checksum: sha1:a3c22c75b67f98578c5128e4e3f9032868032ed2
@@ -3718,8 +3718,8 @@ trackedFiles:
     pristine_git_object: 7ccc67194ce721a2feab9d00391500ca9f07ecc8
   docs/models/studentplacementsearchequals.md:
     id: 30892acab4d4
-    last_write_checksum: sha1:81f51e26a35a38bee3c253ebe52da25f0ef68ed3
-    pristine_git_object: 3980b7197ede3660e7570e365da7a2a1877d5128
+    last_write_checksum: sha1:f8a5760809b0f0ea92fc83d8bedc8455a03b1c9c
+    pristine_git_object: 561aa0a8744a384bd2d8cf37dd68918fae70d71c
   docs/models/studentplacementsearchequalsexternal.md:
     id: abb17101a971
     last_write_checksum: sha1:0a2e4d3f1d5f030b86f97a4ddda457d784d5eb6b
@@ -3742,12 +3742,12 @@ trackedFiles:
     pristine_git_object: 94732f194634f61fa73b26fd00d52fb10647bbde
   docs/models/studentplacementsearchfilter.md:
     id: 146719c60882
-    last_write_checksum: sha1:5f103d7681f263cf6e94405fa2ae9960a9743a2f
-    pristine_git_object: c7b1407bfb66dad01dbf81697a97fa64090b6d80
+    last_write_checksum: sha1:ed2b9905025d72d2165d4996942e605a1ee35bca
+    pristine_git_object: 00803957c499eaf367205755b5de9269f0daedb2
   docs/models/studentplacementsearchgreaterorequal.md:
     id: e1b1f946694e
-    last_write_checksum: sha1:457a4568db61856b447c37a893fb85705319319c
-    pristine_git_object: 39d7679892df482bbb2de14e91e8d147ac7331ef
+    last_write_checksum: sha1:ab9c8421bdfd5c41c7830887dfa2a45bdb041780
+    pristine_git_object: b00bd005dcfbd9b2205b0a0346951466ee29948d
   docs/models/studentplacementsearchgreaterorequalexternal.md:
     id: 4f154fd1c70f
     last_write_checksum: sha1:d30a54e067f3462191a91662ab490fe8aec9b63a
@@ -3758,8 +3758,8 @@ trackedFiles:
     pristine_git_object: c72fdec9bcb5347ced9bf85148016e203e14f437
   docs/models/studentplacementsearchgreaterthan.md:
     id: f9c88e15a32e
-    last_write_checksum: sha1:780b9fcdc7c7c4b121cdc8d5a41a2fe6edb98b1b
-    pristine_git_object: c75bc38ae290d1c29eae2326fcd73225e6d9d65a
+    last_write_checksum: sha1:a63f32d1c25a2895ad60314acd8b1c15c8fd7718
+    pristine_git_object: da251c4a8f328f7d834b65fb009e2bda3d70f60f
   docs/models/studentplacementsearchgreaterthanexternal.md:
     id: d4cca7486bb6
     last_write_checksum: sha1:6c9cfdbb0319e2ca238e19df185938158007c558
@@ -3782,8 +3782,8 @@ trackedFiles:
     pristine_git_object: a05ec26335fee92152216c4b76e39dbd44eed405
   docs/models/studentplacementsearchnotcontains.md:
     id: 1a9628da32dc
-    last_write_checksum: sha1:542f91449e45604871a03572b890eb2933babab7
-    pristine_git_object: 87e03896db48234ce0c10fe0bdfcc8eaf99cba13
+    last_write_checksum: sha1:aef8cc3eeea3c9f09c8dbff1bc3b1c342a645b92
+    pristine_git_object: f656aa865120f41d0d2f2cb302e239ed5eab782e
   docs/models/studentplacementsearchnotcontainsexternal.md:
     id: dc97d8730e95
     last_write_checksum: sha1:8c4449c462d164adfb5277ccc82c00ff238d8bc6
@@ -3794,8 +3794,8 @@ trackedFiles:
     pristine_git_object: 4d7b720fb5526c0714c2d30fb30e6619969e7944
   docs/models/studentplacementsearchnotequals.md:
     id: 67f0b18f1e4d
-    last_write_checksum: sha1:19e4a0a934b6b99ff75442daee215a1960bb9a7e
-    pristine_git_object: 539c6700a818647f1aa6556bc54318e19eec59cc
+    last_write_checksum: sha1:a31adfe968142626fb5a801454ae546e1a1bbd0e
+    pristine_git_object: 2a457304bc3d4cd417e2f3fedc02ea8d3ad7a25a
   docs/models/studentplacementsearchnotequalsexternal.md:
     id: 3ca8c5f84dd4
     last_write_checksum: sha1:41f06a43440a52aa526461779a367d6a2ca6c93d
@@ -3830,8 +3830,8 @@ trackedFiles:
     pristine_git_object: 636a2e20cf0a4e1bcb83b323f8fe86e392a39678
   docs/models/studentplacementsearchnotnull.md:
     id: 02a76b69c9cd
-    last_write_checksum: sha1:de596088f6f7cd994d48b082fec60df3d7a7a457
-    pristine_git_object: 8041fd9272f5bdaff724c0b5376fce19a48022bb
+    last_write_checksum: sha1:c550c44f3cac8a994d5ec3934e46fb138a7861f4
+    pristine_git_object: 3069a0fa2782cf4cd8698851c29853bebcaaada5
   docs/models/studentplacementsearchnotnullexternal.md:
     id: 5f43de481e06
     last_write_checksum: sha1:56218ed72a726b37ca90426edf18af076681c4b2
@@ -3842,8 +3842,8 @@ trackedFiles:
     pristine_git_object: 3fb8038000c91a8c15dd08e1f126287557fb4ef7
   docs/models/studentplacementsearchnull.md:
     id: 21ec06d3901c
-    last_write_checksum: sha1:fb8ec69020bbad46777d803e6231b985f616f8f1
-    pristine_git_object: bb43f98e18032d669ad3c4112c89fd707f88911f
+    last_write_checksum: sha1:b6fef346499fb3be06d24626d2954f9dc17afeea
+    pristine_git_object: a42887cb343a8e30812e06061cbd64b1f8b8cf00
   docs/models/studentplacementsearchnullexternal.md:
     id: "497348943153"
     last_write_checksum: sha1:b4e1aaad145e8c506909390aa05cac93ac0ee701
@@ -3862,20 +3862,20 @@ trackedFiles:
     pristine_git_object: 69671c2296cf56a6c7d4475eacd75a8950aa58c8
   docs/models/studentplacementsearchrequestbody.md:
     id: dcb54864e99d
-    last_write_checksum: sha1:35e693ade4b9d790b857b0b2224bd7eed9fd0bd4
-    pristine_git_object: 79384353ddee0a608f45f460baa449a1fdf36dbf
+    last_write_checksum: sha1:db7b9aa1a1d1c18b0073c89a7809e27cf90e0538
+    pristine_git_object: c7cbc8f9693099db08ff0a67bf85646967969ab2
   docs/models/studentplacementsearchresponse.md:
     id: a5362a85fe52
-    last_write_checksum: sha1:bb56e98a6574650acecbd42995465c12c096a4d9
-    pristine_git_object: f263d47e08b7266254e6272fd36dfb4235311c4f
+    last_write_checksum: sha1:01adcc974fbbd1299e8d1dd259ba490ca3f04e00
+    pristine_git_object: 738a09c4423cc2fb00a762daf8252d9658bcf9b6
   docs/models/studentplacementsearchresponseresponse.md:
     id: d22620dc2d1b
     last_write_checksum: sha1:54426e2975118e44aa935d62e590558fe3dda7f7
     pristine_git_object: 936355ac1c45081d201f2da81bf9a918b16b0827
   docs/models/studentplacementsearchsmallerorequal.md:
     id: 446ea5d744c5
-    last_write_checksum: sha1:b66db0b0a44fc29a7582743749a5b01301b6f603
-    pristine_git_object: 2faba279b1dbe178b3c046d60f10cb8023dbe858
+    last_write_checksum: sha1:a8dd8ffbe54411744e007f816215f47dcd5ee03a
+    pristine_git_object: a2eab846351b500f81c6d7f05dedb631d30f202a
   docs/models/studentplacementsearchsmallerorequalexternal.md:
     id: 6b2a94e66517
     last_write_checksum: sha1:5268564aab82b70afadff3e5bc95627af3810037
@@ -3886,8 +3886,8 @@ trackedFiles:
     pristine_git_object: fcac79f03bb5a684bafabd3d7536cdf5ae12717d
   docs/models/studentplacementsearchsmallerthan.md:
     id: 015c83c97c3c
-    last_write_checksum: sha1:66e69e0f3cdd1699cc34f41ef40da8c18a44a5d3
-    pristine_git_object: 77835fb53ae3b3d96a39676a698d59e5292e9425
+    last_write_checksum: sha1:473847eabe5b88264bbcbcfeacfd78b67a7cc06d
+    pristine_git_object: ef389a6170dffe0cb7cb63651ae9fea28a82d95e
   docs/models/studentplacementsearchsmallerthanexternal.md:
     id: 5da50c0d8fb9
     last_write_checksum: sha1:4f01f5cec2bb3a58b29a60966c2034260750e7c0
@@ -3898,8 +3898,8 @@ trackedFiles:
     pristine_git_object: 3e6f0c7584b3f86353b76496aa21b7377cf1a9a6
   docs/models/studentplacementupdate.md:
     id: afe6e6a32107
-    last_write_checksum: sha1:641249333cf8952f1d12f4244ede35562144851d
-    pristine_git_object: ea0a24ea2362015a5a057234a8d89842a06d172c
+    last_write_checksum: sha1:fc2d047824609dd146f6bce1a0534abb2d378ba2
+    pristine_git_object: 270fc32c0c032dc4e3f7ea1aa5245ef664cf9178
   docs/models/studentplacementupdate422responsebodyerror.md:
     id: d555a0bcfbca
     last_write_checksum: sha1:7d8c89d2995030ba8960dc2ae1c59cd603829c28
@@ -4614,8 +4614,8 @@ trackedFiles:
     pristine_git_object: 77b79c42553bd0685fcd847e1a45dec53ff75d03
   docs/sdks/studentplacements/README.md:
     id: 93e93f975717
-    last_write_checksum: sha1:168557d6d2b8148c9634020afbad8cae68a4c146
-    pristine_git_object: deb645bda22f28776d0fb5eb9750830029e51528
+    last_write_checksum: sha1:aa430c43f6a9dda281fae0a0953f4a93d7ac2928
+    pristine_git_object: 36df73c69f68bc6ec0c8548994c6becb79c83ee0
   docs/sdks/students/README.md:
     id: 2511b9d05d46
     last_write_checksum: sha1:80196645e47b6af5fcc26b621a16b247e9ce1aaf
@@ -4634,8 +4634,8 @@ trackedFiles:
     pristine_git_object: f456032107a9387ba6c98afd1c981df2f4b3d636
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:0dc6cfad0ba93a50b315d0e240c311bed99ae5fe
-    pristine_git_object: 514ab6956745228a36f21205e701e41e5bbfdd27
+    last_write_checksum: sha1:92f43018f733641c46af5f76db84dedcde5de349
+    pristine_git_object: 93605c70ae5fcf8f94e46baf3f3cf96d9332c575
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:8f2e96afadb77d46883beda8d7b6affc1e5b1e51
@@ -4666,8 +4666,8 @@ trackedFiles:
     pristine_git_object: 8f0a78cffff08a495d3df48ad86b350392c71ea9
   src/meitner/_version.py:
     id: d8bcd4ba1c28
-    last_write_checksum: sha1:460735f6e5dc0aa074a70571d9a9035001ba8d4b
-    pristine_git_object: 85bd074b731db796fab3affd7b62feca5693f243
+    last_write_checksum: sha1:51aadd2f15bd75d423352e0057d533a54630a6e4
+    pristine_git_object: edc48d71816a5222f6d87e87aa81367e5e041ed0
   src/meitner/auditevents.py:
     id: f53a1d6b892b
     last_write_checksum: sha1:8e324110c2f1f47798796dc77e4b6b05984ad8ea
@@ -5422,16 +5422,16 @@ trackedFiles:
     pristine_git_object: 6277e8b0d5c8ff14044bae60d2ab83cc9af97150
   src/meitner/models/studentplacement.py:
     id: 9e743a1bee68
-    last_write_checksum: sha1:a74ede9b299376db21779fb885b69b0ac46b2f47
-    pristine_git_object: eef148e97ff5773ef1f22f4c03bfb3a7a3d2e69f
+    last_write_checksum: sha1:5c5fc110c5deb4b97190a844e67da2fbd9280344
+    pristine_git_object: 2746a33031bc5452f5fc300f58400e078f32402b
   src/meitner/models/studentplacementarchiveop.py:
     id: 96ef2353b282
     last_write_checksum: sha1:ab951d15a856dfa6449d13c9baacb57420c3dad8
     pristine_git_object: 6cf278d931e0b1d93c844e59af599b5dd40e86bf
   src/meitner/models/studentplacementcreate.py:
     id: 80d87dfcfaef
-    last_write_checksum: sha1:fcb9497a5266cbe447d972b343d8b64bb0a087eb
-    pristine_git_object: f1b175c0541f9cf9a79f0863aa026ce4c4582c85
+    last_write_checksum: sha1:c6d3b786bdc9eed171cfa775b653175b291c3533
+    pristine_git_object: 5bbccf244820bf928665836ba884d6f11cd0f1ec
   src/meitner/models/studentplacementcreate422responsebody_error.py:
     id: a198aceef4c2
     last_write_checksum: sha1:c1d5171c2ad4fd946f7837f46c608557b7785609
@@ -5446,8 +5446,8 @@ trackedFiles:
     pristine_git_object: 2a851ad0838c75bcae5ecc0b2feddefde2d0d7a8
   src/meitner/models/studentplacementfilter.py:
     id: 7f0a2c87782f
-    last_write_checksum: sha1:ddfd53744eb7a6a33d3cf1b068c85e407c62e941
-    pristine_git_object: f1eeeda8b9dd152f603ae563734c81627d66b942
+    last_write_checksum: sha1:a0bc2fdef2dbddeaa3433111e1faf0775b760c7a
+    pristine_git_object: 4d755145c63c54a78f48463255171d2bf6e940d9
   src/meitner/models/studentplacementgetop.py:
     id: 466a98f2ed30
     last_write_checksum: sha1:9b0d4a11a7ddc215329655c88331fbfeab37151a
@@ -5474,8 +5474,8 @@ trackedFiles:
     pristine_git_object: c969acbdd559221be48b5430d6d4b8942b32e1f1
   src/meitner/models/studentplacementsearch_requestbody.py:
     id: 2572b39eeea5
-    last_write_checksum: sha1:afd4ce7c72e1b650e4e1d97d7f1d57bc4163a87a
-    pristine_git_object: f80ade1c8de35851d091e672c0493d5a0a067513
+    last_write_checksum: sha1:307b606f10aefbd24952bec1ca7731d78fbce391
+    pristine_git_object: 886c2ea0e428dff9c2a143eb07b5355d34a07821
   src/meitner/models/studentplacementsearch_response.py:
     id: dce859ee9ece
     last_write_checksum: sha1:1abb0c5726be90b108dac2fee95d57f112e5f3a9
@@ -5486,8 +5486,8 @@ trackedFiles:
     pristine_git_object: 14d3fc71eb5641a2d272d025232ed3bf1fe10fa6
   src/meitner/models/studentplacementupdate.py:
     id: 2a1948be2584
-    last_write_checksum: sha1:8dcfdcbccd1aa5199421384c8fcf8cb175d7d3ba
-    pristine_git_object: f3c1303a6fc4553041eeb2a3e15cbe45458c9993
+    last_write_checksum: sha1:32f1b4f4584fd8fe7732a05daed96aafbf7bc96c
+    pristine_git_object: 5262dc092937cc9e73bfd4363f6d87ffa6a9bd01
   src/meitner/models/studentplacementupdate422responsebody_error.py:
     id: 6e97b83c7bb5
     last_write_checksum: sha1:d2c096ad624d9cc6175660c096d161644064311c
@@ -5602,8 +5602,8 @@ trackedFiles:
     pristine_git_object: 1df6523df4ba8d27b93adab8b312d7f6b849d28d
   src/meitner/studentplacements.py:
     id: a1eb146cfefb
-    last_write_checksum: sha1:b0f93f9ec256ac53230cbdd2d51caa429cb36360
-    pristine_git_object: 361f46340fd82dac80faf4fb8975bb628499574b
+    last_write_checksum: sha1:9baaaf3c4670f5527535da4d7d3f6de34eca2dd7
+    pristine_git_object: 5615ef6dd0a9e4b1d2e655c7d2da2dbac331e36c
   src/meitner/students.py:
     id: 894f2c33f8f3
     last_write_checksum: sha1:cf85aaa4c98987425c78e3517ea300b1c064db7c
@@ -7358,7 +7358,7 @@ examples:
           offset: 0
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -7382,10 +7382,10 @@ examples:
   StudentPlacementCreate:
     requestExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
         "401":
@@ -7404,13 +7404,13 @@ examples:
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
     responseExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -7428,7 +7428,7 @@ examples:
           application/json: {"error": {"code": "Internal", "message": "An unexpected server error occurred", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
     validationError:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for StudentPlacement Create endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -7439,7 +7439,7 @@ examples:
           limit: 1
           offset: 0
       requestBody:
-        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
+        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
       responses:
         "200":
           application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
@@ -7465,17 +7465,17 @@ examples:
           limit: 1
           offset: 0
       requestBody:
-        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
+        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
           limit: 1
           offset: 0
       requestBody:
-        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
+        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
       responses:
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -7497,7 +7497,7 @@ examples:
           limit: 1
           offset: 0
       requestBody:
-        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
+        application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
       responses:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for StudentPlacement Search endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -7508,7 +7508,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -7573,10 +7573,10 @@ examples:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
         "401":
@@ -7598,16 +7598,16 @@ examples:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "400":
           application/json: {"error": {"code": "BadRequest", "message": "The request contains invalid parameters or malformed data", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -7628,7 +7628,7 @@ examples:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for StudentPlacement Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
@@ -7639,7 +7639,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -7666,7 +7666,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -8481,6 +8481,7 @@ examples:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for Unit Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
+releaseNotes: "## Python SDK Changes:\n* `meitner.student_placements.list()`:  `response.data[].childcare_max_hours` **Added**\n* `meitner.student_placements.create()`: \n  *  `request.childcare_max_hours` **Added**\n  *  `response.childcare_max_hours` **Added**\n* `meitner.student_placements.search()`: \n  *  `request.filter` **Changed**\n  *  `response.data[].childcare_max_hours` **Added**\n* `meitner.student_placements.get()`:  `response.childcare_max_hours` **Added**\n* `meitner.student_placements.update()`: \n  *  `request.childcare_max_hours` **Added**\n  *  `response.childcare_max_hours` **Added**\n* `meitner.student_placements.archive()`:  `response.childcare_max_hours` **Added**\n* `meitner.student_placements.restore()`:  `response.childcare_max_hours` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

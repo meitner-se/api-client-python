@@ -5961,6 +5961,15 @@
             "description": "Whether the student has childcare",
             "default": false
           },
+          "childcareMaxHours": {
+            "type": "integer",
+            "examples": [
+              15,
+              null
+            ],
+            "description": "The maximum number of childcare hours per week for the student at this school",
+            "nullable": true
+          },
           "motherTongue": {
             "type": "string",
             "examples": [
@@ -14013,6 +14022,7 @@
                 "studentID": "123e4567-e89b-12d3-a456-426614174000",
                 "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                 "hasChildcare": true,
+                "childcareMaxHours": 42,
                 "motherTongue": "example",
                 "swedishAsSecondLanguage": true,
                 "motherTongueParticipates": true,
@@ -14050,6 +14060,7 @@
                 "studentID": "123e4567-e89b-12d3-a456-426614174000",
                 "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                 "hasChildcare": true,
+                "childcareMaxHours": 42,
                 "motherTongue": "example",
                 "swedishAsSecondLanguage": true,
                 "motherTongueParticipates": true,
@@ -14077,6 +14088,7 @@
                   "createdAt": "2024-01-15T10:30:00Z",
                   "updatedAt": "2024-01-15T10:30:00Z"
                 },
+                "childcareMaxHours": 42,
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archivedAt": "2024-01-15T10:30:00Z"
@@ -14098,6 +14110,7 @@
                   "createdAt": "2024-01-15T10:30:00Z",
                   "updatedAt": "2024-01-15T10:30:00Z"
                 },
+                "childcareMaxHours": 42,
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archivedAt": "2024-01-15T10:30:00Z"
@@ -14119,6 +14132,7 @@
                   "createdAt": "2024-01-15T10:30:00Z",
                   "updatedAt": "2024-01-15T10:30:00Z"
                 },
+                "childcareMaxHours": 42,
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archivedAt": "2024-01-15T10:30:00Z"
@@ -14140,6 +14154,7 @@
                   "createdAt": "2024-01-15T10:30:00Z",
                   "updatedAt": "2024-01-15T10:30:00Z"
                 },
+                "childcareMaxHours": 42,
                 "startDate": "2024-01-15",
                 "endDate": "2024-01-15",
                 "archivedAt": "2024-01-15T10:30:00Z"
@@ -14184,6 +14199,9 @@
                 ],
                 "hasChildcare": [
                   true
+                ],
+                "childcareMaxHours": [
+                  42
                 ],
                 "motherTongue": [
                   "example"
@@ -14250,6 +14268,9 @@
                 ],
                 "hasChildcare": [
                   true
+                ],
+                "childcareMaxHours": [
+                  42
                 ],
                 "motherTongue": [
                   "example"
@@ -14343,6 +14364,7 @@
                   "source": true
                 },
                 "schoolYear": true,
+                "childcareMaxHours": true,
                 "motherTongue": true,
                 "modernLanguageAlternative": true,
                 "modernLanguageInSchoolChoice": true,
@@ -14374,6 +14396,7 @@
                   "source": true
                 },
                 "schoolYear": true,
+                "childcareMaxHours": true,
                 "motherTongue": true,
                 "modernLanguageAlternative": true,
                 "modernLanguageInSchoolChoice": true,
@@ -14414,6 +14437,7 @@
                     "studentID": "123e4567-e89b-12d3-a456-426614174000",
                     "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                     "hasChildcare": true,
+                    "childcareMaxHours": 42,
                     "motherTongue": "example",
                     "swedishAsSecondLanguage": true,
                     "motherTongueParticipates": true,
@@ -14439,6 +14463,7 @@
                     "studentID": "123e4567-e89b-12d3-a456-426614174000",
                     "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                     "hasChildcare": true,
+                    "childcareMaxHours": 42,
                     "motherTongue": "example",
                     "swedishAsSecondLanguage": true,
                     "motherTongueParticipates": true,
@@ -14454,6 +14479,7 @@
                       "createdAt": "2024-01-15T10:30:00Z",
                       "updatedAt": "2024-01-15T10:30:00Z"
                     },
+                    "childcareMaxHours": 42,
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archivedAt": "2024-01-15T10:30:00Z"
@@ -14463,6 +14489,7 @@
                       "createdAt": "2024-01-15T10:30:00Z",
                       "updatedAt": "2024-01-15T10:30:00Z"
                     },
+                    "childcareMaxHours": 42,
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archivedAt": "2024-01-15T10:30:00Z"
@@ -14472,6 +14499,7 @@
                       "createdAt": "2024-01-15T10:30:00Z",
                       "updatedAt": "2024-01-15T10:30:00Z"
                     },
+                    "childcareMaxHours": 42,
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archivedAt": "2024-01-15T10:30:00Z"
@@ -14481,6 +14509,7 @@
                       "createdAt": "2024-01-15T10:30:00Z",
                       "updatedAt": "2024-01-15T10:30:00Z"
                     },
+                    "childcareMaxHours": 42,
                     "startDate": "2024-01-15",
                     "endDate": "2024-01-15",
                     "archivedAt": "2024-01-15T10:30:00Z"
@@ -14513,6 +14542,9 @@
                     ],
                     "hasChildcare": [
                       true
+                    ],
+                    "childcareMaxHours": [
+                      42
                     ],
                     "motherTongue": [
                       "example"
@@ -14567,6 +14599,9 @@
                     ],
                     "hasChildcare": [
                       true
+                    ],
+                    "childcareMaxHours": [
+                      42
                     ],
                     "motherTongue": [
                       "example"
@@ -14624,6 +14659,7 @@
                       "source": true
                     },
                     "schoolYear": true,
+                    "childcareMaxHours": true,
                     "motherTongue": true,
                     "modernLanguageAlternative": true,
                     "modernLanguageInSchoolChoice": true,
@@ -14643,6 +14679,7 @@
                       "source": true
                     },
                     "schoolYear": true,
+                    "childcareMaxHours": true,
                     "motherTongue": true,
                     "modernLanguageAlternative": true,
                     "modernLanguageInSchoolChoice": true,
@@ -14762,6 +14799,15 @@
               null
             ],
             "description": "Whether the student has childcare",
+            "nullable": true
+          },
+          "childcareMaxHours": {
+            "type": "integer",
+            "examples": [
+              42,
+              null
+            ],
+            "description": "The maximum number of childcare hours per week for the student at this school",
             "nullable": true
           },
           "motherTongue": {
@@ -14886,6 +14932,15 @@
               }
             ],
             "description": "External is a reusable object that can be used to store external information about the student placement from another system, used for third-party integration tracking.",
+            "nullable": true
+          },
+          "childcareMaxHours": {
+            "type": "integer",
+            "examples": [
+              42,
+              null
+            ],
+            "description": "The maximum number of childcare hours per week for the student at this school",
             "nullable": true
           },
           "startDate": {
@@ -15036,6 +15091,18 @@
               "type": "boolean"
             },
             "description": "Whether the student has childcare"
+          },
+          "childcareMaxHours": {
+            "type": "array",
+            "examples": [
+              [
+                42
+              ]
+            ],
+            "items": {
+              "type": "integer"
+            },
+            "description": "The maximum number of childcare hours per week for the student at this school"
           },
           "motherTongue": {
             "type": "array",
@@ -15259,6 +15326,15 @@
               null
             ],
             "description": "The school year the student is placed in",
+            "nullable": true
+          },
+          "childcareMaxHours": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "The maximum number of childcare hours per week for the student at this school",
             "nullable": true
           },
           "motherTongue": {
@@ -22314,6 +22390,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -22390,6 +22467,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -22466,6 +22544,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -22612,6 +22691,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -22758,6 +22838,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -22831,6 +22912,7 @@
                         "schoolType": "GR",
                         "schoolYear": "1",
                         "hasChildcare": true,
+                        "childcareMaxHours": 15,
                         "motherTongue": "SWE",
                         "modernLanguageAlternative": "EN",
                         "swedishAsSecondLanguage": false,
@@ -22892,6 +22974,7 @@
                       "schoolType": "GR",
                       "schoolYear": "1",
                       "hasChildcare": true,
+                      "childcareMaxHours": 15,
                       "motherTongue": "SWE",
                       "modernLanguageAlternative": "EN",
                       "swedishAsSecondLanguage": false,
@@ -22972,6 +23055,7 @@
                         "schoolType": "GR",
                         "schoolYear": "1",
                         "hasChildcare": true,
+                        "childcareMaxHours": 15,
                         "motherTongue": "SWE",
                         "modernLanguageAlternative": "EN",
                         "swedishAsSecondLanguage": false,
@@ -23033,6 +23117,7 @@
                       "schoolType": "GR",
                       "schoolYear": "1",
                       "hasChildcare": true,
+                      "childcareMaxHours": 15,
                       "motherTongue": "SWE",
                       "modernLanguageAlternative": "EN",
                       "swedishAsSecondLanguage": false,
@@ -30581,6 +30666,15 @@
                   "description": "Whether the student has childcare",
                   "default": false
                 },
+                "childcareMaxHours": {
+                  "type": "integer",
+                  "examples": [
+                    15,
+                    null
+                  ],
+                  "description": "The maximum number of childcare hours per week for the student at this school",
+                  "nullable": true
+                },
                 "motherTongue": {
                   "type": "string",
                   "examples": [
@@ -30675,6 +30769,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -30741,6 +30836,15 @@
                   ],
                   "description": "Whether the student has childcare",
                   "default": false
+                },
+                "childcareMaxHours": {
+                  "type": "integer",
+                  "examples": [
+                    15,
+                    null
+                  ],
+                  "description": "The maximum number of childcare hours per week for the student at this school",
+                  "nullable": true
                 },
                 "motherTongue": {
                   "type": "string",
@@ -30832,6 +30936,7 @@
                   "schoolType": "GR",
                   "schoolYear": "1",
                   "hasChildcare": true,
+                  "childcareMaxHours": 15,
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
@@ -30877,6 +30982,7 @@
                         "studentID": "123e4567-e89b-12d3-a456-426614174000",
                         "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                         "hasChildcare": true,
+                        "childcareMaxHours": 42,
                         "motherTongue": "example",
                         "swedishAsSecondLanguage": true,
                         "motherTongueParticipates": true,
@@ -30902,6 +31008,7 @@
                         "studentID": "123e4567-e89b-12d3-a456-426614174000",
                         "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                         "hasChildcare": true,
+                        "childcareMaxHours": 42,
                         "motherTongue": "example",
                         "swedishAsSecondLanguage": true,
                         "motherTongueParticipates": true,
@@ -30917,6 +31024,7 @@
                           "createdAt": "2024-01-15T10:30:00Z",
                           "updatedAt": "2024-01-15T10:30:00Z"
                         },
+                        "childcareMaxHours": 42,
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archivedAt": "2024-01-15T10:30:00Z"
@@ -30926,6 +31034,7 @@
                           "createdAt": "2024-01-15T10:30:00Z",
                           "updatedAt": "2024-01-15T10:30:00Z"
                         },
+                        "childcareMaxHours": 42,
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archivedAt": "2024-01-15T10:30:00Z"
@@ -30935,6 +31044,7 @@
                           "createdAt": "2024-01-15T10:30:00Z",
                           "updatedAt": "2024-01-15T10:30:00Z"
                         },
+                        "childcareMaxHours": 42,
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archivedAt": "2024-01-15T10:30:00Z"
@@ -30944,6 +31054,7 @@
                           "createdAt": "2024-01-15T10:30:00Z",
                           "updatedAt": "2024-01-15T10:30:00Z"
                         },
+                        "childcareMaxHours": 42,
                         "startDate": "2024-01-15",
                         "endDate": "2024-01-15",
                         "archivedAt": "2024-01-15T10:30:00Z"
@@ -30976,6 +31087,9 @@
                         ],
                         "hasChildcare": [
                           true
+                        ],
+                        "childcareMaxHours": [
+                          42
                         ],
                         "motherTongue": [
                           "example"
@@ -31030,6 +31144,9 @@
                         ],
                         "hasChildcare": [
                           true
+                        ],
+                        "childcareMaxHours": [
+                          42
                         ],
                         "motherTongue": [
                           "example"
@@ -31087,6 +31204,7 @@
                           "source": true
                         },
                         "schoolYear": true,
+                        "childcareMaxHours": true,
                         "motherTongue": true,
                         "modernLanguageAlternative": true,
                         "modernLanguageInSchoolChoice": true,
@@ -31106,6 +31224,7 @@
                           "source": true
                         },
                         "schoolYear": true,
+                        "childcareMaxHours": true,
                         "motherTongue": true,
                         "modernLanguageAlternative": true,
                         "modernLanguageInSchoolChoice": true,
@@ -31144,6 +31263,7 @@
                       "studentID": "123e4567-e89b-12d3-a456-426614174000",
                       "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                       "hasChildcare": true,
+                      "childcareMaxHours": 42,
                       "motherTongue": "example",
                       "swedishAsSecondLanguage": true,
                       "motherTongueParticipates": true,
@@ -31169,6 +31289,7 @@
                       "studentID": "123e4567-e89b-12d3-a456-426614174000",
                       "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                       "hasChildcare": true,
+                      "childcareMaxHours": 42,
                       "motherTongue": "example",
                       "swedishAsSecondLanguage": true,
                       "motherTongueParticipates": true,
@@ -31184,6 +31305,7 @@
                         "createdAt": "2024-01-15T10:30:00Z",
                         "updatedAt": "2024-01-15T10:30:00Z"
                       },
+                      "childcareMaxHours": 42,
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archivedAt": "2024-01-15T10:30:00Z"
@@ -31193,6 +31315,7 @@
                         "createdAt": "2024-01-15T10:30:00Z",
                         "updatedAt": "2024-01-15T10:30:00Z"
                       },
+                      "childcareMaxHours": 42,
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archivedAt": "2024-01-15T10:30:00Z"
@@ -31202,6 +31325,7 @@
                         "createdAt": "2024-01-15T10:30:00Z",
                         "updatedAt": "2024-01-15T10:30:00Z"
                       },
+                      "childcareMaxHours": 42,
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archivedAt": "2024-01-15T10:30:00Z"
@@ -31211,6 +31335,7 @@
                         "createdAt": "2024-01-15T10:30:00Z",
                         "updatedAt": "2024-01-15T10:30:00Z"
                       },
+                      "childcareMaxHours": 42,
                       "startDate": "2024-01-15",
                       "endDate": "2024-01-15",
                       "archivedAt": "2024-01-15T10:30:00Z"
@@ -31243,6 +31368,9 @@
                       ],
                       "hasChildcare": [
                         true
+                      ],
+                      "childcareMaxHours": [
+                        42
                       ],
                       "motherTongue": [
                         "example"
@@ -31297,6 +31425,9 @@
                       ],
                       "hasChildcare": [
                         true
+                      ],
+                      "childcareMaxHours": [
+                        42
                       ],
                       "motherTongue": [
                         "example"
@@ -31354,6 +31485,7 @@
                         "source": true
                       },
                       "schoolYear": true,
+                      "childcareMaxHours": true,
                       "motherTongue": true,
                       "modernLanguageAlternative": true,
                       "modernLanguageInSchoolChoice": true,
@@ -31373,6 +31505,7 @@
                         "source": true
                       },
                       "schoolYear": true,
+                      "childcareMaxHours": true,
                       "motherTongue": true,
                       "modernLanguageAlternative": true,
                       "modernLanguageInSchoolChoice": true,
