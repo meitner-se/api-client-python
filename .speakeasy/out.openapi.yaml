@@ -17,7 +17,7 @@
   "servers": [
     {
       "url": "https://api.meitner.se/directory/v1",
-      "description": "Server to use in production",
+      "description": "Server to use in production.",
       "x-speakeasy-server-id": "production"
     },
     {
@@ -6000,12 +6000,20 @@
             "description": "Whether the student has Swedish as their second language",
             "default": false
           },
+          "motherTongueEntitled": {
+            "type": "boolean",
+            "examples": [
+              false
+            ],
+            "description": "Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.",
+            "default": false
+          },
           "motherTongueParticipates": {
             "type": "boolean",
             "examples": [
               false
             ],
-            "description": "Whether the student participates in mother tongue education",
+            "description": "Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.",
             "default": false
           },
           "modernLanguageInSchoolChoice": {
@@ -14025,6 +14033,7 @@
                 "childcareMaxHours": 42,
                 "motherTongue": "example",
                 "swedishAsSecondLanguage": true,
+                "motherTongueEntitled": true,
                 "motherTongueParticipates": true,
                 "modernLanguageInSchoolChoice": "example",
                 "modernLanguageInLanguageChoice": "example",
@@ -14063,6 +14072,7 @@
                 "childcareMaxHours": 42,
                 "motherTongue": "example",
                 "swedishAsSecondLanguage": true,
+                "motherTongueEntitled": true,
                 "motherTongueParticipates": true,
                 "modernLanguageInSchoolChoice": "example",
                 "modernLanguageInLanguageChoice": "example",
@@ -14209,6 +14219,9 @@
                 "swedishAsSecondLanguage": [
                   true
                 ],
+                "motherTongueEntitled": [
+                  true
+                ],
                 "motherTongueParticipates": [
                   true
                 ],
@@ -14276,6 +14289,9 @@
                   "example"
                 ],
                 "swedishAsSecondLanguage": [
+                  true
+                ],
+                "motherTongueEntitled": [
                   true
                 ],
                 "motherTongueParticipates": [
@@ -14440,6 +14456,7 @@
                     "childcareMaxHours": 42,
                     "motherTongue": "example",
                     "swedishAsSecondLanguage": true,
+                    "motherTongueEntitled": true,
                     "motherTongueParticipates": true,
                     "modernLanguageInSchoolChoice": "example",
                     "modernLanguageInLanguageChoice": "example",
@@ -14466,6 +14483,7 @@
                     "childcareMaxHours": 42,
                     "motherTongue": "example",
                     "swedishAsSecondLanguage": true,
+                    "motherTongueEntitled": true,
                     "motherTongueParticipates": true,
                     "modernLanguageInSchoolChoice": "example",
                     "modernLanguageInLanguageChoice": "example",
@@ -14552,6 +14570,9 @@
                     "swedishAsSecondLanguage": [
                       true
                     ],
+                    "motherTongueEntitled": [
+                      true
+                    ],
                     "motherTongueParticipates": [
                       true
                     ],
@@ -14607,6 +14628,9 @@
                       "example"
                     ],
                     "swedishAsSecondLanguage": [
+                      true
+                    ],
+                    "motherTongueEntitled": [
                       true
                     ],
                     "motherTongueParticipates": [
@@ -14837,13 +14861,22 @@
             "description": "Whether the student has Swedish as their second language",
             "nullable": true
           },
+          "motherTongueEntitled": {
+            "type": "boolean",
+            "examples": [
+              true,
+              null
+            ],
+            "description": "Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.",
+            "nullable": true
+          },
           "motherTongueParticipates": {
             "type": "boolean",
             "examples": [
               true,
               null
             ],
-            "description": "Whether the student participates in mother tongue education",
+            "description": "Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.",
             "nullable": true
           },
           "modernLanguageInSchoolChoice": {
@@ -15139,6 +15172,18 @@
             },
             "description": "Whether the student has Swedish as their second language"
           },
+          "motherTongueEntitled": {
+            "type": "array",
+            "examples": [
+              [
+                true
+              ]
+            ],
+            "items": {
+              "type": "boolean"
+            },
+            "description": "Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."
+          },
           "motherTongueParticipates": {
             "type": "array",
             "examples": [
@@ -15149,7 +15194,7 @@
             "items": {
               "type": "boolean"
             },
-            "description": "Whether the student participates in mother tongue education"
+            "description": "Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."
           },
           "modernLanguageInSchoolChoice": {
             "type": "array",
@@ -22394,6 +22439,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -22471,6 +22517,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -22548,6 +22595,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -22695,6 +22743,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -22842,6 +22891,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -22916,6 +22966,7 @@
                         "motherTongue": "SWE",
                         "modernLanguageAlternative": "EN",
                         "swedishAsSecondLanguage": false,
+                        "motherTongueEntitled": false,
                         "motherTongueParticipates": false,
                         "modernLanguageInSchoolChoice": "deu",
                         "modernLanguageInLanguageChoice": "fra",
@@ -22978,6 +23029,7 @@
                       "motherTongue": "SWE",
                       "modernLanguageAlternative": "EN",
                       "swedishAsSecondLanguage": false,
+                      "motherTongueEntitled": false,
                       "motherTongueParticipates": false,
                       "modernLanguageInSchoolChoice": "deu",
                       "modernLanguageInLanguageChoice": "fra",
@@ -23059,6 +23111,7 @@
                         "motherTongue": "SWE",
                         "modernLanguageAlternative": "EN",
                         "swedishAsSecondLanguage": false,
+                        "motherTongueEntitled": false,
                         "motherTongueParticipates": false,
                         "modernLanguageInSchoolChoice": "deu",
                         "modernLanguageInLanguageChoice": "fra",
@@ -23121,6 +23174,7 @@
                       "motherTongue": "SWE",
                       "modernLanguageAlternative": "EN",
                       "swedishAsSecondLanguage": false,
+                      "motherTongueEntitled": false,
                       "motherTongueParticipates": false,
                       "modernLanguageInSchoolChoice": "deu",
                       "modernLanguageInLanguageChoice": "fra",
@@ -30705,12 +30759,20 @@
                   "description": "Whether the student has Swedish as their second language",
                   "default": false
                 },
+                "motherTongueEntitled": {
+                  "type": "boolean",
+                  "examples": [
+                    false
+                  ],
+                  "description": "Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.",
+                  "default": false
+                },
                 "motherTongueParticipates": {
                   "type": "boolean",
                   "examples": [
                     false
                   ],
-                  "description": "Whether the student participates in mother tongue education",
+                  "description": "Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.",
                   "default": false
                 },
                 "modernLanguageInSchoolChoice": {
@@ -30773,6 +30835,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -30876,12 +30939,20 @@
                   "description": "Whether the student has Swedish as their second language",
                   "default": false
                 },
+                "motherTongueEntitled": {
+                  "type": "boolean",
+                  "examples": [
+                    false
+                  ],
+                  "description": "Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.",
+                  "default": false
+                },
                 "motherTongueParticipates": {
                   "type": "boolean",
                   "examples": [
                     false
                   ],
-                  "description": "Whether the student participates in mother tongue education",
+                  "description": "Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.",
                   "default": false
                 },
                 "modernLanguageInSchoolChoice": {
@@ -30940,6 +31011,7 @@
                   "motherTongue": "SWE",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
+                  "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
                   "modernLanguageInSchoolChoice": "deu",
                   "modernLanguageInLanguageChoice": "fra",
@@ -30985,6 +31057,7 @@
                         "childcareMaxHours": 42,
                         "motherTongue": "example",
                         "swedishAsSecondLanguage": true,
+                        "motherTongueEntitled": true,
                         "motherTongueParticipates": true,
                         "modernLanguageInSchoolChoice": "example",
                         "modernLanguageInLanguageChoice": "example",
@@ -31011,6 +31084,7 @@
                         "childcareMaxHours": 42,
                         "motherTongue": "example",
                         "swedishAsSecondLanguage": true,
+                        "motherTongueEntitled": true,
                         "motherTongueParticipates": true,
                         "modernLanguageInSchoolChoice": "example",
                         "modernLanguageInLanguageChoice": "example",
@@ -31097,6 +31171,9 @@
                         "swedishAsSecondLanguage": [
                           true
                         ],
+                        "motherTongueEntitled": [
+                          true
+                        ],
                         "motherTongueParticipates": [
                           true
                         ],
@@ -31152,6 +31229,9 @@
                           "example"
                         ],
                         "swedishAsSecondLanguage": [
+                          true
+                        ],
+                        "motherTongueEntitled": [
                           true
                         ],
                         "motherTongueParticipates": [
@@ -31266,6 +31346,7 @@
                       "childcareMaxHours": 42,
                       "motherTongue": "example",
                       "swedishAsSecondLanguage": true,
+                      "motherTongueEntitled": true,
                       "motherTongueParticipates": true,
                       "modernLanguageInSchoolChoice": "example",
                       "modernLanguageInLanguageChoice": "example",
@@ -31292,6 +31373,7 @@
                       "childcareMaxHours": 42,
                       "motherTongue": "example",
                       "swedishAsSecondLanguage": true,
+                      "motherTongueEntitled": true,
                       "motherTongueParticipates": true,
                       "modernLanguageInSchoolChoice": "example",
                       "modernLanguageInLanguageChoice": "example",
@@ -31378,6 +31460,9 @@
                       "swedishAsSecondLanguage": [
                         true
                       ],
+                      "motherTongueEntitled": [
+                        true
+                      ],
                       "motherTongueParticipates": [
                         true
                       ],
@@ -31433,6 +31518,9 @@
                         "example"
                       ],
                       "swedishAsSecondLanguage": [
+                        true
+                      ],
+                      "motherTongueEntitled": [
                         true
                       ],
                       "motherTongueParticipates": [

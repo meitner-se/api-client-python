@@ -16,7 +16,7 @@ from typing import Callable, Dict, Optional, Tuple, Union
 
 
 SERVER_PRODUCTION = "production"
-r"""Server to use in production"""
+r"""Server to use in production."""
 SERVER_STAGING = "staging"
 r"""Server to use when building and testing the API"""
 SERVERS = {

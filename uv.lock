@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '3.12'",
@@ -157,7 +157,7 @@ wheels = [
 
 [[package]]
 name = "meitner"
-version = "0.8.4"
+version = "0.9.0"
 source = { editable = "." }
 dependencies = [
     { name = "httpcore" },
@@ -178,7 +178,7 @@ requires-dist = [
     { name = "httpcore", specifier = ">=1.0.9" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "jsonpath-python", specifier = ">=1.0.6" },
-    { name = "pydantic", specifier = ">=2.11.2,<2.13" },
+    { name = "pydantic", specifier = ">=2.11.2" },
 ]
 
 [package.metadata.requires-dev]

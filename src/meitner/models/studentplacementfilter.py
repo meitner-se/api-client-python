@@ -5,7 +5,15 @@ from .modernlanguagealternative import ModernLanguageAlternative
 from .schoolyear import SchoolYear
 from .studentplacementschooltype import StudentPlacementSchoolType
 from datetime import date, datetime
-from meitner.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
+from meitner.types import (
+    BaseModel,
+    Nullable,
+    OptionalNullable,
+    UNSET,
+    UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
+)
 import pydantic
 from pydantic import model_serializer
 from typing import List, Literal, Optional
@@ -49,14 +57,20 @@ class StudentPlacementFilterEqualsMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
         nullable_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -95,14 +109,20 @@ class StudentPlacementFilterEqualsExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -186,8 +206,10 @@ class StudentPlacementFilterEqualsTypedDict(TypedDict):
     r"""The modern language alternative for the student"""
     swedish_as_second_language: NotRequired[Nullable[bool]]
     r"""Whether the student has Swedish as their second language"""
+    mother_tongue_entitled: NotRequired[Nullable[bool]]
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
     mother_tongue_participates: NotRequired[Nullable[bool]]
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
     r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
@@ -262,10 +284,15 @@ class StudentPlacementFilterEquals(BaseModel):
     ] = UNSET
     r"""Whether the student has Swedish as their second language"""
 
+    mother_tongue_entitled: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="motherTongueEntitled")
+    ] = UNSET
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
+
     mother_tongue_participates: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="motherTongueParticipates")
     ] = UNSET
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
 
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
@@ -296,6 +323,9 @@ class StudentPlacementFilterEquals(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -311,6 +341,7 @@ class StudentPlacementFilterEquals(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -334,6 +365,7 @@ class StudentPlacementFilterEquals(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -343,11 +375,14 @@ class StudentPlacementFilterEquals(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -402,14 +437,20 @@ class StudentPlacementFilterNotEqualsMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
         nullable_fields = set(["createdAt", "createdBy", "updatedAt", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -448,14 +489,20 @@ class StudentPlacementFilterNotEqualsExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -539,8 +586,10 @@ class StudentPlacementFilterNotEqualsTypedDict(TypedDict):
     r"""The modern language alternative for the student"""
     swedish_as_second_language: NotRequired[Nullable[bool]]
     r"""Whether the student has Swedish as their second language"""
+    mother_tongue_entitled: NotRequired[Nullable[bool]]
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
     mother_tongue_participates: NotRequired[Nullable[bool]]
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
     r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
@@ -615,10 +664,15 @@ class StudentPlacementFilterNotEquals(BaseModel):
     ] = UNSET
     r"""Whether the student has Swedish as their second language"""
 
+    mother_tongue_entitled: Annotated[
+        OptionalNullable[bool], pydantic.Field(alias="motherTongueEntitled")
+    ] = UNSET
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
+
     mother_tongue_participates: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="motherTongueParticipates")
     ] = UNSET
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
 
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
@@ -649,6 +703,9 @@ class StudentPlacementFilterNotEquals(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -664,6 +721,7 @@ class StudentPlacementFilterNotEquals(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -687,6 +745,7 @@ class StudentPlacementFilterNotEquals(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -696,11 +755,14 @@ class StudentPlacementFilterNotEquals(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -741,14 +803,20 @@ class StudentPlacementFilterGreaterThanMeta(BaseModel):
     r"""Timestamp when the resource was last updated"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdAt", "updatedAt"])
         nullable_fields = set(["createdAt", "updatedAt"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -819,6 +887,9 @@ class StudentPlacementFilterGreaterThan(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -840,11 +911,14 @@ class StudentPlacementFilterGreaterThan(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -885,14 +959,20 @@ class StudentPlacementFilterSmallerThanMeta(BaseModel):
     r"""Timestamp when the resource was last updated"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdAt", "updatedAt"])
         nullable_fields = set(["createdAt", "updatedAt"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -963,6 +1043,9 @@ class StudentPlacementFilterSmallerThan(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -984,11 +1067,14 @@ class StudentPlacementFilterSmallerThan(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1029,14 +1115,20 @@ class StudentPlacementFilterGreaterOrEqualMeta(BaseModel):
     r"""Timestamp when the resource was last updated"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdAt", "updatedAt"])
         nullable_fields = set(["createdAt", "updatedAt"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1109,6 +1201,9 @@ class StudentPlacementFilterGreaterOrEqual(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -1130,11 +1225,14 @@ class StudentPlacementFilterGreaterOrEqual(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1175,14 +1273,20 @@ class StudentPlacementFilterSmallerOrEqualMeta(BaseModel):
     r"""Timestamp when the resource was last updated"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdAt", "updatedAt"])
         nullable_fields = set(["createdAt", "updatedAt"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1255,6 +1359,9 @@ class StudentPlacementFilterSmallerOrEqual(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -1276,11 +1383,14 @@ class StudentPlacementFilterSmallerOrEqual(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1317,13 +1427,19 @@ class StudentPlacementFilterContainsMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdBy", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
@@ -1352,13 +1468,19 @@ class StudentPlacementFilterContainsExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
@@ -1395,8 +1517,10 @@ class StudentPlacementFilterContainsTypedDict(TypedDict):
     r"""The modern language alternative for the student"""
     swedish_as_second_language: NotRequired[List[bool]]
     r"""Whether the student has Swedish as their second language"""
+    mother_tongue_entitled: NotRequired[List[bool]]
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
     mother_tongue_participates: NotRequired[List[bool]]
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[List[str]]
     r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[List[str]]
@@ -1463,10 +1587,15 @@ class StudentPlacementFilterContains(BaseModel):
     ] = None
     r"""Whether the student has Swedish as their second language"""
 
+    mother_tongue_entitled: Annotated[
+        Optional[List[bool]], pydantic.Field(alias="motherTongueEntitled")
+    ] = None
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
+
     mother_tongue_participates: Annotated[
         Optional[List[bool]], pydantic.Field(alias="motherTongueParticipates")
     ] = None
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
 
     modern_language_in_school_choice: Annotated[
         Optional[List[str]], pydantic.Field(alias="modernLanguageInSchoolChoice")
@@ -1492,6 +1621,9 @@ class StudentPlacementFilterContains(BaseModel):
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -1507,6 +1639,7 @@ class StudentPlacementFilterContains(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -1516,11 +1649,14 @@ class StudentPlacementFilterContains(BaseModel):
             ]
         )
         nullable_fields = set(["meta", "external"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1557,13 +1693,19 @@ class StudentPlacementFilterNotContainsMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdBy", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
@@ -1592,13 +1734,19 @@ class StudentPlacementFilterNotContainsExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:
@@ -1635,8 +1783,10 @@ class StudentPlacementFilterNotContainsTypedDict(TypedDict):
     r"""The modern language alternative for the student"""
     swedish_as_second_language: NotRequired[List[bool]]
     r"""Whether the student has Swedish as their second language"""
+    mother_tongue_entitled: NotRequired[List[bool]]
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
     mother_tongue_participates: NotRequired[List[bool]]
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[List[str]]
     r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[List[str]]
@@ -1703,10 +1853,15 @@ class StudentPlacementFilterNotContains(BaseModel):
     ] = None
     r"""Whether the student has Swedish as their second language"""
 
+    mother_tongue_entitled: Annotated[
+        Optional[List[bool]], pydantic.Field(alias="motherTongueEntitled")
+    ] = None
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
+
     mother_tongue_participates: Annotated[
         Optional[List[bool]], pydantic.Field(alias="motherTongueParticipates")
     ] = None
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
 
     modern_language_in_school_choice: Annotated[
         Optional[List[str]], pydantic.Field(alias="modernLanguageInSchoolChoice")
@@ -1732,6 +1887,9 @@ class StudentPlacementFilterNotContains(BaseModel):
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -1747,6 +1905,7 @@ class StudentPlacementFilterNotContains(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -1756,11 +1915,14 @@ class StudentPlacementFilterNotContains(BaseModel):
             ]
         )
         nullable_fields = set(["meta", "external"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1807,14 +1969,20 @@ class StudentPlacementFilterLikeExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1879,6 +2047,9 @@ class StudentPlacementFilterLike(BaseModel):
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -1900,11 +2071,14 @@ class StudentPlacementFilterLike(BaseModel):
                 "archiveYear",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -1951,14 +2125,20 @@ class StudentPlacementFilterNotLikeExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2023,6 +2203,9 @@ class StudentPlacementFilterNotLike(BaseModel):
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -2044,11 +2227,14 @@ class StudentPlacementFilterNotLike(BaseModel):
                 "archiveYear",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2096,14 +2282,20 @@ class StudentPlacementFilterNullMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdBy", "updatedAt", "updatedBy"])
         nullable_fields = set(["createdBy", "updatedAt", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2142,14 +2334,20 @@ class StudentPlacementFilterNullExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2247,6 +2445,9 @@ class StudentPlacementFilterNull(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -2278,11 +2479,14 @@ class StudentPlacementFilterNull(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2330,14 +2534,20 @@ class StudentPlacementFilterNotNullMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdBy", "updatedAt", "updatedBy"])
         nullable_fields = set(["createdBy", "updatedAt", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2376,14 +2586,20 @@ class StudentPlacementFilterNotNullExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2481,6 +2697,9 @@ class StudentPlacementFilterNotNull(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -2512,11 +2731,14 @@ class StudentPlacementFilterNotNull(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -2641,6 +2863,9 @@ class StudentPlacementFilter(BaseModel):
     r"""NestedFilters of the StudentPlacement, useful for more complex filters"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -2675,11 +2900,14 @@ class StudentPlacementFilter(BaseModel):
                 "notNull",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields

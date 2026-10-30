@@ -2,7 +2,15 @@
 
 from __future__ import annotations
 from datetime import date, datetime
-from meitner.types import BaseModel, Nullable, OptionalNullable, UNSET, UNSET_SENTINEL
+from meitner.types import (
+    BaseModel,
+    Nullable,
+    OptionalNullable,
+    UNSET,
+    UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
+)
 import pydantic
 from pydantic import model_serializer
 from typing import Literal, Optional
@@ -44,14 +52,20 @@ class StudentPlacementMeta(BaseModel):
     r"""User who last updated the resource"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["createdBy", "updatedAt", "updatedBy"])
         nullable_fields = set(["createdBy", "updatedAt", "updatedBy"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -90,14 +104,20 @@ class StudentPlacementExternal(BaseModel):
     r"""The source of the external information"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["sourceID", "source"])
         nullable_fields = set(["sourceID", "source"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields
@@ -183,8 +203,10 @@ class StudentPlacementTypedDict(TypedDict):
     r"""The modern language alternative for the student"""
     swedish_as_second_language: NotRequired[bool]
     r"""Whether the student has Swedish as their second language"""
+    mother_tongue_entitled: NotRequired[bool]
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
     mother_tongue_participates: NotRequired[bool]
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
     r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
@@ -254,10 +276,15 @@ class StudentPlacement(BaseModel):
     ] = False
     r"""Whether the student has Swedish as their second language"""
 
+    mother_tongue_entitled: Annotated[
+        Optional[bool], pydantic.Field(alias="motherTongueEntitled")
+    ] = False
+    r"""Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false."""
+
     mother_tongue_participates: Annotated[
         Optional[bool], pydantic.Field(alias="motherTongueParticipates")
     ] = False
-    r"""Whether the student participates in mother tongue education"""
+    r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
 
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
@@ -283,6 +310,9 @@ class StudentPlacement(BaseModel):
     r"""The timestamp the placement was archived for the student"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(
             [
@@ -294,6 +324,7 @@ class StudentPlacement(BaseModel):
                 "motherTongue",
                 "modernLanguageAlternative",
                 "swedishAsSecondLanguage",
+                "motherTongueEntitled",
                 "motherTongueParticipates",
                 "modernLanguageInSchoolChoice",
                 "modernLanguageInLanguageChoice",
@@ -316,11 +347,14 @@ class StudentPlacement(BaseModel):
                 "archivedAt",
             ]
         )
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
             is_nullable_and_explicitly_set = (
                 k in nullable_fields

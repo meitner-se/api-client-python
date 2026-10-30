@@ -9,7 +9,12 @@ from .guardiansearch_response import (
     GuardianSearchResponse,
     GuardianSearchResponseTypedDict,
 )
-from meitner.types import BaseModel, UNSET_SENTINEL
+from meitner.types import (
+    BaseModel,
+    UNSET_SENTINEL,
+    current_exclude_none,
+    serialize_with_info,
+)
 from meitner.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
 from pydantic import model_serializer
 from typing import Awaitable, Callable, Dict, List, Optional, Union
@@ -45,13 +50,19 @@ class GuardianSearchRequest(BaseModel):
     r"""The number of Guardians to skip before starting to return results (default: 0) when searching Guardians"""
 
     @model_serializer(mode="wrap")
+    def _serialize_model_with_info(self, handler, info):
+        return serialize_with_info(self.serialize_model, handler, info)
+
     def serialize_model(self, handler):
         optional_fields = set(["limit", "offset"])
+        exclude_none = current_exclude_none()
         serialized = handler(self)
         m = {}
 
         for n, f in type(self).model_fields.items():
-            k = f.alias or n
+            k = f.alias if f.alias is not None else n
+            if k not in serialized and n not in serialized and exclude_none is False:
+                continue
             val = serialized.get(k, serialized.get(n))
 
             if val != UNSET_SENTINEL:

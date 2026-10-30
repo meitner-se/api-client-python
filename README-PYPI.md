@@ -562,7 +562,7 @@ You can override the default server globally by passing a server name to the `se
 
 | Name         | Server                                        | Description                                     |
 | ------------ | --------------------------------------------- | ----------------------------------------------- |
-| `production` | `https://api.meitner.se/directory/v1`         | Server to use in production                     |
+| `production` | `https://api.meitner.se/directory/v1`         | Server to use in production.                    |
 | `staging`    | `https://api.staging.meitner.se/directory/v1` | Server to use when building and testing the API |
 
 #### Example
@@ -698,6 +698,20 @@ class CustomClient(AsyncHttpClient):
 
 s = Meitner(async_client=CustomClient(httpx.AsyncClient()))
 ```
+### httpx2 (Pydantic's httpx fork)
+
+[httpx2](https://httpx2.pydantic.dev/) is Pydantic's maintained fork of `httpx`. To run this SDK on httpx2, call `alias_httpx()` at your program's entry point, before importing the SDK, so every `import httpx` — including the ones inside the SDK — resolves to `httpx2`:
+```python
+import httpx2
+
+httpx2.alias_httpx()
+
+from meitner import Meitner
+
+s = Meitner()
+```
+
+An SDK can also be generated against httpx2 directly, so it depends on the fork instead of `httpx`, by setting `python.httpClientLibrary: httpx2` in `gen.yaml`.
 <!-- End Custom HTTP Client [http-client] -->
 
 <!-- Start Resource Management [resource-management] -->
@@ -721,6 +735,7 @@ def main():
         ),
     ) as m_client:
         # Rest of application here...
+        pass
 
 
 # Or when using async:
@@ -735,6 +750,7 @@ async def amain():
         ),
     ) as m_client:
         # Rest of application here...
+        pass
 ```
 <!-- End Resource Management [resource-management] -->
 
