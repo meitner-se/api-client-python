@@ -19,3 +19,4 @@ value: GradeElementaryUpdateGrade = "A"
 - `"E"`
 - `"F"`
 - `"MISSING"`
+- `"3"`

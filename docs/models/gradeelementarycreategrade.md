@@ -19,3 +19,4 @@ value: GradeElementaryCreateGrade = "A"
 - `"E"`
 - `"F"`
 - `"MISSING"`
+- `"3"`

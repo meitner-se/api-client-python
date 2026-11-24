@@ -4738,7 +4738,7 @@
         ],
         "description": "The modern language alternative for the student"
       },
-      "Grade": {
+      "GradeUpperSecondaryValue": {
         "type": "string",
         "enum": [
           "A",
@@ -4749,7 +4749,21 @@
           "F",
           "MISSING"
         ],
-        "description": "The grade awarded to a student"
+        "description": "The grade awarded to a student in an upper secondary course."
+      },
+      "GradeElementaryValue": {
+        "type": "string",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "MISSING",
+          "3"
+        ],
+        "description": "The grade awarded to a student in an elementary subject (grundskola, anpassad grundskola, specialskola, sameskola)."
       },
       "GradeTerm": {
         "type": "string",
@@ -6283,7 +6297,7 @@
           "grade": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/Grade"
+                "$ref": "#/components/schemas/GradeElementaryValue"
               }
             ],
             "examples": [
@@ -6438,7 +6452,7 @@
           "grade": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/Grade"
+                "$ref": "#/components/schemas/GradeUpperSecondaryValue"
               }
             ],
             "examples": [
@@ -31946,7 +31960,7 @@
                 "grade": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/Grade"
+                      "$ref": "#/components/schemas/GradeElementaryValue"
                     }
                   ],
                   "examples": [
@@ -32110,7 +32124,7 @@
                 "grade": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/Grade"
+                      "$ref": "#/components/schemas/GradeElementaryValue"
                     }
                   ],
                   "examples": [
@@ -32262,7 +32276,7 @@
                 "grade": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/Grade"
+                      "$ref": "#/components/schemas/GradeUpperSecondaryValue"
                     }
                   ],
                   "examples": [
@@ -32466,7 +32480,7 @@
                 "grade": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/Grade"
+                      "$ref": "#/components/schemas/GradeUpperSecondaryValue"
                     }
                   ],
                   "examples": [
