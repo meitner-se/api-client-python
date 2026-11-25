@@ -391,8 +391,8 @@ class StudentPlacements(BaseSDK):
         :param swedish_as_second_language: Whether the student has Swedish as their second language
         :param mother_tongue_entitled: Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.
         :param mother_tongue_participates: Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.
-        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
-        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -591,8 +591,8 @@ class StudentPlacements(BaseSDK):
         :param swedish_as_second_language: Whether the student has Swedish as their second language
         :param mother_tongue_entitled: Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.
         :param mother_tongue_participates: Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.
-        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
-        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1718,8 +1718,8 @@ class StudentPlacements(BaseSDK):
         :param swedish_as_second_language: Whether the student has Swedish as their second language
         :param mother_tongue_entitled: Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.
         :param mother_tongue_participates: Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.
-        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
-        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
@@ -1921,8 +1921,8 @@ class StudentPlacements(BaseSDK):
         :param swedish_as_second_language: Whether the student has Swedish as their second language
         :param mother_tongue_entitled: Whether the student is entitled to mother tongue education. Setting this to false also sets MotherTongueParticipates to false.
         :param mother_tongue_participates: Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true.
-        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).
-        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).
+        :param modern_language_in_school_choice: The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
+        :param modern_language_in_language_choice: The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param end_date: The end date of the placement
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method

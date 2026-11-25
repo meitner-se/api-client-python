@@ -389,7 +389,7 @@ class GradeUpperSecondaries(BaseSDK):
         :param course_code: The national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\" for Mathematics 1a).
         :param include_on_final_grade: Whether this course grade should be included when calculating the student's final grade certificate.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the course is taught in a specific language.
+        :param language_code: The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.
@@ -595,7 +595,7 @@ class GradeUpperSecondaries(BaseSDK):
         :param course_code: The national course code as defined by the Swedish school authorities (e.g. \"MATMAT01a\" for Mathematics 1a).
         :param include_on_final_grade: Whether this course grade should be included when calculating the student's final grade certificate.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the course is taught in a specific language.
+        :param language_code: The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.
@@ -1339,7 +1339,7 @@ class GradeUpperSecondaries(BaseSDK):
         :param id: The unique identifier of the GradeUpperSecondary to update
         :param include_on_final_grade: Whether this course grade should be included when calculating the student's final grade certificate.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the course is taught in a specific language.
+        :param language_code: The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.
@@ -1545,7 +1545,7 @@ class GradeUpperSecondaries(BaseSDK):
         :param id: The unique identifier of the GradeUpperSecondary to update
         :param include_on_final_grade: Whether this course grade should be included when calculating the student's final grade certificate.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the course is taught in a specific language.
+        :param language_code: The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.

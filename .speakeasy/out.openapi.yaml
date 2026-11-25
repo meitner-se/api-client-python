@@ -5987,7 +5987,7 @@
           "motherTongue": {
             "type": "string",
             "examples": [
-              "SWE",
+              "ARA",
               null
             ],
             "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
@@ -6033,19 +6033,19 @@
           "modernLanguageInSchoolChoice": {
             "type": "string",
             "examples": [
-              "deu",
+              "DEU",
               null
             ],
-            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "modernLanguageInLanguageChoice": {
             "type": "string",
             "examples": [
-              "fra",
+              "FRA",
               null
             ],
-            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "startDate": {
@@ -6239,10 +6239,10 @@
           "languageCode": {
             "type": "string",
             "examples": [
-              "SV",
+              "FRA",
               null
             ],
-            "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).",
+            "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "academicYear": {
@@ -6423,10 +6423,10 @@
           "languageCode": {
             "type": "string",
             "examples": [
-              "SV",
+              "FRA",
               null
             ],
-            "description": "The language code for the grade, used when the course is taught in a specific language.",
+            "description": "The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "teacher1EmployeeID": {
@@ -14899,7 +14899,7 @@
               "example",
               null
             ],
-            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "modernLanguageInLanguageChoice": {
@@ -14908,7 +14908,7 @@
               "example",
               null
             ],
-            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "startDate": {
@@ -15220,7 +15220,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."
+            "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."
           },
           "modernLanguageInLanguageChoice": {
             "type": "array",
@@ -15232,7 +15232,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."
           },
           "startDate": {
             "type": "array",
@@ -15318,7 +15318,7 @@
               "example",
               null
             ],
-            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "modernLanguageInLanguageChoice": {
@@ -15327,7 +15327,7 @@
               "example",
               null
             ],
-            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "archiveYear": {
@@ -15420,7 +15420,7 @@
               true,
               null
             ],
-            "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "modernLanguageInLanguageChoice": {
@@ -15429,7 +15429,7 @@
               true,
               null
             ],
-            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+            "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
             "nullable": true
           },
           "endDate": {
@@ -22450,13 +22450,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -22528,13 +22528,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -22606,13 +22606,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -22754,13 +22754,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -22902,13 +22902,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01",
                   "archiveYear": "2024_2025",
@@ -22977,13 +22977,13 @@
                         "schoolYear": "1",
                         "hasChildcare": true,
                         "childcareMaxHours": 15,
-                        "motherTongue": "SWE",
+                        "motherTongue": "ARA",
                         "modernLanguageAlternative": "EN",
                         "swedishAsSecondLanguage": false,
                         "motherTongueEntitled": false,
                         "motherTongueParticipates": false,
-                        "modernLanguageInSchoolChoice": "deu",
-                        "modernLanguageInLanguageChoice": "fra",
+                        "modernLanguageInSchoolChoice": "DEU",
+                        "modernLanguageInLanguageChoice": "FRA",
                         "startDate": "2024-08-01",
                         "endDate": "2025-08-01",
                         "archiveYear": "2024_2025",
@@ -23040,13 +23040,13 @@
                       "schoolYear": "1",
                       "hasChildcare": true,
                       "childcareMaxHours": 15,
-                      "motherTongue": "SWE",
+                      "motherTongue": "ARA",
                       "modernLanguageAlternative": "EN",
                       "swedishAsSecondLanguage": false,
                       "motherTongueEntitled": false,
                       "motherTongueParticipates": false,
-                      "modernLanguageInSchoolChoice": "deu",
-                      "modernLanguageInLanguageChoice": "fra",
+                      "modernLanguageInSchoolChoice": "DEU",
+                      "modernLanguageInLanguageChoice": "FRA",
                       "startDate": "2024-08-01",
                       "endDate": "2025-08-01",
                       "archiveYear": "2024_2025",
@@ -23122,13 +23122,13 @@
                         "schoolYear": "1",
                         "hasChildcare": true,
                         "childcareMaxHours": 15,
-                        "motherTongue": "SWE",
+                        "motherTongue": "ARA",
                         "modernLanguageAlternative": "EN",
                         "swedishAsSecondLanguage": false,
                         "motherTongueEntitled": false,
                         "motherTongueParticipates": false,
-                        "modernLanguageInSchoolChoice": "deu",
-                        "modernLanguageInLanguageChoice": "fra",
+                        "modernLanguageInSchoolChoice": "DEU",
+                        "modernLanguageInLanguageChoice": "FRA",
                         "startDate": "2024-08-01",
                         "endDate": "2025-08-01",
                         "archiveYear": "2024_2025",
@@ -23185,13 +23185,13 @@
                       "schoolYear": "1",
                       "hasChildcare": true,
                       "childcareMaxHours": 15,
-                      "motherTongue": "SWE",
+                      "motherTongue": "ARA",
                       "modernLanguageAlternative": "EN",
                       "swedishAsSecondLanguage": false,
                       "motherTongueEntitled": false,
                       "motherTongueParticipates": false,
-                      "modernLanguageInSchoolChoice": "deu",
-                      "modernLanguageInLanguageChoice": "fra",
+                      "modernLanguageInSchoolChoice": "DEU",
+                      "modernLanguageInLanguageChoice": "FRA",
                       "startDate": "2024-08-01",
                       "endDate": "2025-08-01",
                       "archiveYear": "2024_2025",
@@ -23690,7 +23690,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "subjectCode": "MA",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "academicYear": "2024/2025",
                   "term": "HT",
                   "schoolYear": "9",
@@ -23835,7 +23835,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "subjectCode": "MA",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "academicYear": "2024/2025",
                   "term": "HT",
                   "schoolYear": "9",
@@ -23980,7 +23980,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "subjectCode": "MA",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "academicYear": "2024/2025",
                   "term": "HT",
                   "schoolYear": "9",
@@ -24052,7 +24052,7 @@
                         "studentID": "123e4567-e89b-12d3-a456-426614174000",
                         "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                         "subjectCode": "MA",
-                        "languageCode": "SV",
+                        "languageCode": "FRA",
                         "academicYear": "2024/2025",
                         "term": "HT",
                         "schoolYear": "9",
@@ -24112,7 +24112,7 @@
                       "studentID": "123e4567-e89b-12d3-a456-426614174000",
                       "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                       "subjectCode": "MA",
-                      "languageCode": "SV",
+                      "languageCode": "FRA",
                       "academicYear": "2024/2025",
                       "term": "HT",
                       "schoolYear": "9",
@@ -24194,7 +24194,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "courseCode": "MATMAT01a",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "grade": "A",
@@ -24342,7 +24342,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "courseCode": "MATMAT01a",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "grade": "A",
@@ -24490,7 +24490,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "courseCode": "MATMAT01a",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "grade": "A",
@@ -24565,7 +24565,7 @@
                         "studentID": "123e4567-e89b-12d3-a456-426614174000",
                         "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                         "courseCode": "MATMAT01a",
-                        "languageCode": "SV",
+                        "languageCode": "FRA",
                         "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                         "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                         "grade": "A",
@@ -24628,7 +24628,7 @@
                       "studentID": "123e4567-e89b-12d3-a456-426614174000",
                       "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                       "courseCode": "MATMAT01a",
-                      "languageCode": "SV",
+                      "languageCode": "FRA",
                       "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                       "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                       "grade": "A",
@@ -30746,7 +30746,7 @@
                 "motherTongue": {
                   "type": "string",
                   "examples": [
-                    "SWE",
+                    "ARA",
                     null
                   ],
                   "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
@@ -30792,19 +30792,19 @@
                 "modernLanguageInSchoolChoice": {
                   "type": "string",
                   "examples": [
-                    "deu",
+                    "DEU",
                     null
                   ],
-                  "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "modernLanguageInLanguageChoice": {
                   "type": "string",
                   "examples": [
-                    "fra",
+                    "FRA",
                     null
                   ],
-                  "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "startDate": {
@@ -30846,13 +30846,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01"
                 }
@@ -30926,7 +30926,7 @@
                 "motherTongue": {
                   "type": "string",
                   "examples": [
-                    "SWE",
+                    "ARA",
                     null
                   ],
                   "description": "The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes).",
@@ -30972,19 +30972,19 @@
                 "modernLanguageInSchoolChoice": {
                   "type": "string",
                   "examples": [
-                    "deu",
+                    "DEU",
                     null
                   ],
-                  "description": "The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "description": "The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "modernLanguageInLanguageChoice": {
                   "type": "string",
                   "examples": [
-                    "fra",
+                    "FRA",
                     null
                   ],
-                  "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes).",
+                  "description": "The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "startDate": {
@@ -31022,13 +31022,13 @@
                   "schoolYear": "1",
                   "hasChildcare": true,
                   "childcareMaxHours": 15,
-                  "motherTongue": "SWE",
+                  "motherTongue": "ARA",
                   "modernLanguageAlternative": "EN",
                   "swedishAsSecondLanguage": false,
                   "motherTongueEntitled": false,
                   "motherTongueParticipates": false,
-                  "modernLanguageInSchoolChoice": "deu",
-                  "modernLanguageInLanguageChoice": "fra",
+                  "modernLanguageInSchoolChoice": "DEU",
+                  "modernLanguageInLanguageChoice": "FRA",
                   "startDate": "2024-08-01",
                   "endDate": "2025-08-01"
                 }
@@ -31902,10 +31902,10 @@
                 "languageCode": {
                   "type": "string",
                   "examples": [
-                    "SV",
+                    "FRA",
                     null
                   ],
-                  "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).",
+                  "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "academicYear": {
@@ -32025,7 +32025,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "subjectCode": "MA",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "academicYear": "2024/2025",
                   "term": "HT",
                   "schoolYear": "9",
@@ -32066,10 +32066,10 @@
                 "languageCode": {
                   "type": "string",
                   "examples": [
-                    "SV",
+                    "FRA",
                     null
                   ],
-                  "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).",
+                  "description": "The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "academicYear": {
@@ -32183,7 +32183,7 @@
                   "external": {
                     "sourceID": "12345678"
                   },
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "academicYear": "2024/2025",
                   "term": "HT",
                   "schoolYear": "9",
@@ -32247,10 +32247,10 @@
                 "languageCode": {
                   "type": "string",
                   "examples": [
-                    "SV",
+                    "FRA",
                     null
                   ],
-                  "description": "The language code for the grade, used when the course is taught in a specific language.",
+                  "description": "The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "teacher1EmployeeID": {
@@ -32407,7 +32407,7 @@
                   "studentID": "123e4567-e89b-12d3-a456-426614174000",
                   "schoolID": "123e4567-e89b-12d3-a456-426614174000",
                   "courseCode": "MATMAT01a",
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "grade": "A",
@@ -32451,10 +32451,10 @@
                 "languageCode": {
                   "type": "string",
                   "examples": [
-                    "SV",
+                    "FRA",
                     null
                   ],
-                  "description": "The language code for the grade, used when the course is taught in a specific language.",
+                  "description": "The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes).",
                   "nullable": true
                 },
                 "teacher1EmployeeID": {
@@ -32605,7 +32605,7 @@
                   "external": {
                     "sourceID": "12345678"
                   },
-                  "languageCode": "SV",
+                  "languageCode": "FRA",
                   "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000",
                   "grade": "A",

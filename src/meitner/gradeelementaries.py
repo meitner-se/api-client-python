@@ -384,7 +384,7 @@ class GradeElementaries(BaseSDK):
         :param final_grade: Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate.
         :param is_ended: Whether the grading period has ended for this student in this subject.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).
+        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.
@@ -579,7 +579,7 @@ class GradeElementaries(BaseSDK):
         :param final_grade: Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate.
         :param is_ended: Whether the grading period has ended for this student in this subject.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).
+        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.
@@ -1312,7 +1312,7 @@ class GradeElementaries(BaseSDK):
         :param final_grade: Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate.
         :param is_ended: Whether the grading period has ended for this student in this subject.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).
+        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.
@@ -1507,7 +1507,7 @@ class GradeElementaries(BaseSDK):
         :param final_grade: Whether this is the final grade for the student in this subject. A final grade is the official grade used on the student's grade certificate.
         :param is_ended: Whether the grading period has ended for this student in this subject.
         :param external: ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key.
-        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. mother tongue instruction).
+        :param language_code: The language code for the grade, used when the subject is taught in a specific language (e.g. modern language or mother tongue). Language codes follow the ISO 639-3 standard (three-letter codes).
         :param teacher1_employee_id: The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param teacher2_employee_id: The ID of the secondary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID.
         :param grade: The grade awarded to the student.

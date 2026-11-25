@@ -218,9 +218,9 @@ class StudentPlacementSearchEqualsTypedDict(TypedDict):
     mother_tongue_participates: NotRequired[Nullable[bool]]
     r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -304,12 +304,12 @@ class StudentPlacementSearchEquals(BaseModel):
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
@@ -601,9 +601,9 @@ class StudentPlacementSearchNotEqualsTypedDict(TypedDict):
     mother_tongue_participates: NotRequired[Nullable[bool]]
     r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[Nullable[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[Nullable[date]]
@@ -687,12 +687,12 @@ class StudentPlacementSearchNotEquals(BaseModel):
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[OptionalNullable[date], pydantic.Field(alias="startDate")] = (
         UNSET
@@ -1543,9 +1543,9 @@ class StudentPlacementSearchContainsTypedDict(TypedDict):
     mother_tongue_participates: NotRequired[List[bool]]
     r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[List[str]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[List[str]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[List[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[List[date]]
@@ -1621,12 +1621,12 @@ class StudentPlacementSearchContains(BaseModel):
     modern_language_in_school_choice: Annotated[
         Optional[List[str]], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = None
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         Optional[List[str]], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = None
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[Optional[List[date]], pydantic.Field(alias="startDate")] = (
         None
@@ -1812,9 +1812,9 @@ class StudentPlacementSearchNotContainsTypedDict(TypedDict):
     mother_tongue_participates: NotRequired[List[bool]]
     r"""Whether the student participates in mother tongue education. Setting this to true also sets MotherTongueEntitled to true."""
     modern_language_in_school_choice: NotRequired[List[str]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[List[str]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     start_date: NotRequired[List[date]]
     r"""The start date of the placement"""
     end_date: NotRequired[List[date]]
@@ -1890,12 +1890,12 @@ class StudentPlacementSearchNotContains(BaseModel):
     modern_language_in_school_choice: Annotated[
         Optional[List[str]], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = None
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         Optional[List[str]], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = None
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     start_date: Annotated[Optional[List[date]], pydantic.Field(alias="startDate")] = (
         None
@@ -2036,9 +2036,9 @@ class StudentPlacementSearchLikeTypedDict(TypedDict):
     mother_tongue: NotRequired[Nullable[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     archive_year: NotRequired[Nullable[str]]
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
@@ -2060,12 +2060,12 @@ class StudentPlacementSearchLike(BaseModel):
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     archive_year: Annotated[
         OptionalNullable[str], pydantic.Field(alias="archiveYear")
@@ -2194,9 +2194,9 @@ class StudentPlacementSearchNotLikeTypedDict(TypedDict):
     mother_tongue: NotRequired[Nullable[str]]
     r"""The mother tongue of the student. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_school_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[str]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     archive_year: NotRequired[Nullable[str]]
     r"""The year the placement was archived for the student, in the format YYYY_YYYY where the first year is the autumn and the second year is the spring."""
 
@@ -2218,12 +2218,12 @@ class StudentPlacementSearchNotLike(BaseModel):
     modern_language_in_school_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         OptionalNullable[str], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     archive_year: Annotated[
         OptionalNullable[str], pydantic.Field(alias="archiveYear")
@@ -2412,9 +2412,9 @@ class StudentPlacementSearchNullTypedDict(TypedDict):
     modern_language_alternative: NotRequired[Nullable[bool]]
     r"""The modern language alternative for the student"""
     modern_language_in_school_choice: NotRequired[Nullable[bool]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[bool]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     end_date: NotRequired[Nullable[bool]]
     r"""The end date of the placement"""
     archive_year: NotRequired[Nullable[bool]]
@@ -2455,12 +2455,12 @@ class StudentPlacementSearchNull(BaseModel):
     modern_language_in_school_choice: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     end_date: Annotated[OptionalNullable[bool], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement"""
@@ -2667,9 +2667,9 @@ class StudentPlacementSearchNotNullTypedDict(TypedDict):
     modern_language_alternative: NotRequired[Nullable[bool]]
     r"""The modern language alternative for the student"""
     modern_language_in_school_choice: NotRequired[Nullable[bool]]
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     modern_language_in_language_choice: NotRequired[Nullable[bool]]
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
     end_date: NotRequired[Nullable[bool]]
     r"""The end date of the placement"""
     archive_year: NotRequired[Nullable[bool]]
@@ -2710,12 +2710,12 @@ class StudentPlacementSearchNotNull(BaseModel):
     modern_language_in_school_choice: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="modernLanguageInSchoolChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in school choice (Skolans val). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in school choice (Skolans val, M1, C-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     modern_language_in_language_choice: Annotated[
         OptionalNullable[bool], pydantic.Field(alias="modernLanguageInLanguageChoice")
     ] = UNSET
-    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-2 standard (three-letter codes)."""
+    r"""The language code for the student's modern language in language choice (Språkval, M2, B-språk). Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     end_date: Annotated[OptionalNullable[bool], pydantic.Field(alias="endDate")] = UNSET
     r"""The end date of the placement"""

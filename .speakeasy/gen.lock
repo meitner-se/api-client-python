@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 0b775b94-2d74-4b43-bcab-aeed259347d1
 management:
-  docChecksum: db5551877bdb0f688064aee6d6b5d776
+  docChecksum: 46242a2029bdf72b29d8881452e7c330
   docVersion: v1
   speakeasyVersion: 1.811.0
   generationVersion: 2.968.1
-  releaseVersion: 0.9.1
-  configChecksum: 914ba20fc86cb988f56484db09e4b69e
+  releaseVersion: 0.9.2
+  configChecksum: bc7c47a6eee2dc3cae08084b1045adf3
   repoURL: https://github.com/meitner-se/api-client-python.git
   installationURL: https://github.com/meitner-se/api-client-python.git
   published: true
 persistentEdits:
-  generation_id: 5c8c3781-4925-4401-aa10-fa89752e56cb
-  pristine_commit_hash: 3710705efc9d43e133dd04de17a205620c76b0d1
-  pristine_tree_hash: 1f9601d833b73668ea493d9b0ecf94dce1cc29ab
+  generation_id: e38aa1d3-4dab-4358-93dc-1414acfd4acf
+  pristine_commit_hash: 5a7580af7b5fe6066b300a84c4afc7af04f1a076
+  pristine_tree_hash: 29591d5ce8e1483f42c01f87c79ab4d2856f85fc
 features:
   python:
     additionalDependencies: 1.1.0
@@ -1498,12 +1498,12 @@ trackedFiles:
     pristine_git_object: 5e29fd399994d9efd239549d1bfa764fcb74ff5a
   docs/models/gradeelementary.md:
     id: 0d263d1d9f84
-    last_write_checksum: sha1:80ad9e1bd57ced8162fc41c77d2016e527181748
-    pristine_git_object: f9dddf84b94a78377229a7b26a19ac8c71c5d7b1
+    last_write_checksum: sha1:cfaa56d70c1384e56d411b874e7173f65655d6dd
+    pristine_git_object: fc0850d6b7a544bdd50fed9bcefbcc5d9261c0e7
   docs/models/gradeelementarycreate.md:
     id: fcde44de1bc1
-    last_write_checksum: sha1:3ef3cbba85b380cafb8bf3330befd4d386a10550
-    pristine_git_object: c31665c6ef26db3a4ed63c12ce81544934d0e033
+    last_write_checksum: sha1:f9715a8196b0ea4db6047975494d43a45dc6ddb0
+    pristine_git_object: 640d648177bc0da482f3135c1095bc0482e5146f
   docs/models/gradeelementarycreate422responsebodyerror.md:
     id: 5b8b935e44b2
     last_write_checksum: sha1:80039a2aca6209726826dbe9e4b57ac4cbfb4730
@@ -1554,8 +1554,8 @@ trackedFiles:
     pristine_git_object: ee1e08abf7f706b6665b89d913ecb9d43d1b55c1
   docs/models/gradeelementarylist.md:
     id: f4d817c5ab6e
-    last_write_checksum: sha1:ab7322b5806f95a74b2f03c05a0e0520246f72f8
-    pristine_git_object: fd3c12359fdbaeb4703417e6df9b4bc6ee3a3ce6
+    last_write_checksum: sha1:7b919321a9ad406d48e99693b7c18675ac70d894
+    pristine_git_object: 50cafdf80cb2ae21cf309822b71d23c4adf6c93b
   docs/models/gradeelementarylistpagination.md:
     id: 9c0a2436b1dc
     last_write_checksum: sha1:b7cce9863c2a721624b7ba7ffebf101b4b58ddb2
@@ -1582,8 +1582,8 @@ trackedFiles:
     pristine_git_object: 36755f75db8c9815582d00c4e4d9a82cdb7fdac0
   docs/models/gradeelementaryupdate.md:
     id: f268c41630aa
-    last_write_checksum: sha1:d6d98361611fa2beefc0fb30e257003c6dd98e33
-    pristine_git_object: 3082d6c3a5a9585307d05869fa7f34672ba62e86
+    last_write_checksum: sha1:e9d673f019f0d1ae35458807394252d079b77d73
+    pristine_git_object: 02b6560f3a912edc060a449b351e7e5d3cfc9bec
   docs/models/gradeelementaryupdate422responsebodyerror.md:
     id: e0936109c8b1
     last_write_checksum: sha1:13043810a3be7216973c603d49ae87402be34832
@@ -1614,12 +1614,12 @@ trackedFiles:
     pristine_git_object: b117aa66c122910506eef907dd2aebc193cfe036
   docs/models/gradeuppersecondary.md:
     id: bee51fd30c6c
-    last_write_checksum: sha1:f0b30626aa9d3f98bef39ffdc725fcaf00b7efee
-    pristine_git_object: e43543b924b1354a2b430add22f1e9c0c7877e7b
+    last_write_checksum: sha1:b09e51ecbbeaccb70b6129818f805b31396b35d8
+    pristine_git_object: 4608744b2460bb28ccf2cd18d50b748f5ebbd808
   docs/models/gradeuppersecondarycreate.md:
     id: 33766ba5e778
-    last_write_checksum: sha1:65d49a28012304cf1d908dbe95212015bf139f43
-    pristine_git_object: ec7e106122eba1a494bb0e56e0d1274f9ea45b59
+    last_write_checksum: sha1:dd44b8a0879c3120b9a003cb35897baee188ee10
+    pristine_git_object: 32cbd4f87ea8a400358279dbeadf9bc397e283e6
   docs/models/gradeuppersecondarycreate422responsebodyerror.md:
     id: b77ea26b1233
     last_write_checksum: sha1:7ec873a16e74f4fbe32301b679b018ce987f7b0d
@@ -1678,8 +1678,8 @@ trackedFiles:
     pristine_git_object: 40a4947786ceebc7ba6feb353d77cc4b1080e80f
   docs/models/gradeuppersecondarylist.md:
     id: 68442a0931c2
-    last_write_checksum: sha1:48a49b78aacea363d5a15ee359868c5b979db5dc
-    pristine_git_object: caff96d9673ae6b3308afd5b7d9087f3fed0a6d5
+    last_write_checksum: sha1:e9f6c6f8968058e89bc62b82e193769e928b8109
+    pristine_git_object: 086160e521d8ef791b83ea52991b48048995921b
   docs/models/gradeuppersecondarylistpagination.md:
     id: cd902044f4be
     last_write_checksum: sha1:8ba52267436516971dd285f1dc3ad74aca6a72b0
@@ -1706,8 +1706,8 @@ trackedFiles:
     pristine_git_object: 959fc26ca6c354af551b023fca0b331614f65662
   docs/models/gradeuppersecondaryupdate.md:
     id: 4f258a2342a9
-    last_write_checksum: sha1:39d7ebf550e39619f1751fbe5812a8dea9decf11
-    pristine_git_object: e0ea377e5535f7189ed6fa0c1b75d7ed4bf50b9d
+    last_write_checksum: sha1:fea7ecc37ad67aa924fd8b86214db5094908c359
+    pristine_git_object: ca0c39ccd09c9debc9ad5e050fd3524e0e5d1208
   docs/models/gradeuppersecondaryupdate422responsebodyerror.md:
     id: c7d3678e481a
     last_write_checksum: sha1:9bb31951c48823172b3424794a09b2d97128edfa
@@ -3426,8 +3426,8 @@ trackedFiles:
     pristine_git_object: 9682a6c3b9a713ca8f48800b17dff3538ae6b969
   docs/models/studentplacement.md:
     id: cb273b9096cb
-    last_write_checksum: sha1:5f5a8d557789856361b3952ca3200ed76b0453e9
-    pristine_git_object: 0f7503b6387fc17e0a306ce1e79cc954c5e5949e
+    last_write_checksum: sha1:b2e3d364137d9581c9709a2faa94c499e24c9239
+    pristine_git_object: c3d4356bf05737b0d6e22e03cd48bb3bcc96a26b
   docs/models/studentplacementarchiverequest.md:
     id: ec67f2b408a1
     last_write_checksum: sha1:aa62a519ca5dcc6fc9a91fa4a2e1ad007761290c
@@ -3438,8 +3438,8 @@ trackedFiles:
     pristine_git_object: 0b2435b7cb1a66d02871aa616348e44815694da3
   docs/models/studentplacementcreate.md:
     id: 4362087b2f32
-    last_write_checksum: sha1:e7384451595a913efda3e90e13e7086a4cd46e3b
-    pristine_git_object: 921af8944497c8d7379da41bd4e9c5b509a8c45d
+    last_write_checksum: sha1:8af9ca8f68fc1b9c176ff7be703b4e8858c7bfbf
+    pristine_git_object: 87f086f030027c559e0e66589a5ab8f64be1429c
   docs/models/studentplacementcreate422responsebodyerror.md:
     id: 3153c255d294
     last_write_checksum: sha1:e167c863290cf7f0afd1b9344c5a2fa9a88dd5a8
@@ -3482,8 +3482,8 @@ trackedFiles:
     pristine_git_object: 1c9ae9a5c38d5ebe15d714a2a4de2d3158ac2f80
   docs/models/studentplacementfiltercontains.md:
     id: 6b519b3e7476
-    last_write_checksum: sha1:ab5264f99bb888979d013082220ab377a4c6c11a
-    pristine_git_object: b44a477f5977fd2c7a220e11d4a7360a90730195
+    last_write_checksum: sha1:122c0606a251951fcc63a77a4dbce21bd434adec
+    pristine_git_object: a8d648da0fbd86117d68bb38404c8e7fd779be71
   docs/models/studentplacementfiltercontainsexternal.md:
     id: de7c8e861a3c
     last_write_checksum: sha1:8765fa0046e7ed668e714044e75dfdb7f061c3da
@@ -3494,8 +3494,8 @@ trackedFiles:
     pristine_git_object: a39bdcbb265c97de1c2310cc5bf8bade6d422217
   docs/models/studentplacementfilterequals.md:
     id: 2c4166531a90
-    last_write_checksum: sha1:43ce570ef776edba7967ceb31b7d1bc006b4729f
-    pristine_git_object: da3393a19f00f5fa23c66a39f15d0a8c9c9cb5dc
+    last_write_checksum: sha1:434cbc4f081aaabbc7d2b52be86fee394830e161
+    pristine_git_object: 999d7155b520a72e9b4ab5daa5061226ba50f21f
   docs/models/studentplacementfilterequalsexternal.md:
     id: 23c274e9efed
     last_write_checksum: sha1:d294f1e08e91d281aa0aa019b0ce3fa1263b42bd
@@ -3542,8 +3542,8 @@ trackedFiles:
     pristine_git_object: 04ceaef9df4c72170c9abb7e73cc630d5ec146fe
   docs/models/studentplacementfilterlike.md:
     id: 6fc942bfb07e
-    last_write_checksum: sha1:5deb8f9f61191e745796fc91311fe2e14dad7148
-    pristine_git_object: ee8a9d70c6b51d01565823f14d870a8777e8103f
+    last_write_checksum: sha1:d485a8000272ddce1de40a25b9debc3c3b0cd1f8
+    pristine_git_object: 4856d2d718fca3574e0689c92785bbf5dd562a32
   docs/models/studentplacementfilterlikeexternal.md:
     id: 353808b94874
     last_write_checksum: sha1:7c5ecf6e081dab3b41ed5efe23b8bd7dd0333538
@@ -3554,8 +3554,8 @@ trackedFiles:
     pristine_git_object: 8596dc54aafa8bfb9f13a71fad344ec8f92336f8
   docs/models/studentplacementfilternotcontains.md:
     id: 1db893db8b99
-    last_write_checksum: sha1:a4b82e61b953cf9571149185fe72f6f9e1e9cf89
-    pristine_git_object: 1394b4801cb3f9a9e7fa475f4df450ce480d1092
+    last_write_checksum: sha1:fd32a98f4da3d2cc71dcdc52e47885ced49b371e
+    pristine_git_object: f2d79cd43c65f008091d41b9512c4e8a86d5227b
   docs/models/studentplacementfilternotcontainsexternal.md:
     id: b02e6468463f
     last_write_checksum: sha1:6af0814addf75279bd8730246e0c7d50de25fb2f
@@ -3566,8 +3566,8 @@ trackedFiles:
     pristine_git_object: ec93c00b9e8b6e932b3dfca1e7097eae061b124c
   docs/models/studentplacementfilternotequals.md:
     id: 950ed0f7d232
-    last_write_checksum: sha1:307e86be40e91dd735ae7ea91e7f4ed1ee37d4fb
-    pristine_git_object: 7812c7e6443e598c3be0ea94162e1e5e9ce61311
+    last_write_checksum: sha1:e9e2c1ddbc67f1bfd467afa417d1a8c44850bc6c
+    pristine_git_object: 02c011684f4d731badba2a0143ef059905110387
   docs/models/studentplacementfilternotequalsexternal.md:
     id: 5594dc87c59f
     last_write_checksum: sha1:543e8ba25beca28b81fd0370c0075f338263a271
@@ -3590,8 +3590,8 @@ trackedFiles:
     pristine_git_object: c5d8eb38334f637e26c5b6b14c7cc315abe2e805
   docs/models/studentplacementfilternotlike.md:
     id: 3aedefa00a47
-    last_write_checksum: sha1:df97bd8ff98986c3185510c8ef9a61f8dcc6d6b0
-    pristine_git_object: 93a151e241602a5f2f49c49bf4a66c991aeeca37
+    last_write_checksum: sha1:8bcf95607b767adaec5aff48acf9ff6f15c90b00
+    pristine_git_object: 8f6ac0f6e733118c3276ce0efaf4dfc6ee2b3074
   docs/models/studentplacementfilternotlikeexternal.md:
     id: 097f0a017a54
     last_write_checksum: sha1:872eaa68c8cdde3b580da477a34799a7d3be542f
@@ -3602,8 +3602,8 @@ trackedFiles:
     pristine_git_object: dbe19bf43bd2ca6d4c86fe6985e9e361ab167c22
   docs/models/studentplacementfilternotnull.md:
     id: d4a9daa11040
-    last_write_checksum: sha1:17ab0080ff1e077015b48b7978d1bf76d436a6fd
-    pristine_git_object: 379e74cd285571e1d246f85b00aebb1aa5ed1bca
+    last_write_checksum: sha1:30d3c8a01b597c483ce9114868c7114b56b2b038
+    pristine_git_object: a9800b95fbda7017143a8f765777cd239d0c6544
   docs/models/studentplacementfilternotnullexternal.md:
     id: a288ec7ea173
     last_write_checksum: sha1:cfd8863fec1e22cc6192da997edece929edb84d3
@@ -3614,8 +3614,8 @@ trackedFiles:
     pristine_git_object: b0151875298bba4f8c7070d7990ce9a51ca4c4fa
   docs/models/studentplacementfilternull.md:
     id: 389336981dbb
-    last_write_checksum: sha1:82fc72cd801a7de7ea87108c735df94722eccfb4
-    pristine_git_object: 8a5b7982008099131139a1313f1c15b641416558
+    last_write_checksum: sha1:15778aee228d1413c1c1f6ad3bfdfe9b1a946c4a
+    pristine_git_object: 180a8887e970b310af3c6685a5ec29d0c6aa8416
   docs/models/studentplacementfilternullexternal.md:
     id: 8d0458e2e6d5
     last_write_checksum: sha1:c5db7affc17d882824aeb80e310f7b5212377742
@@ -3658,8 +3658,8 @@ trackedFiles:
     pristine_git_object: c69d49b028f1b2fe7bab7af9e37353f377f24176
   docs/models/studentplacementlist.md:
     id: ad7d969032ab
-    last_write_checksum: sha1:360b2908dfe8275a94b6ad2011d1a601ce453656
-    pristine_git_object: 81ae04a8f9b0ddb7862573491c188cd53e5996a9
+    last_write_checksum: sha1:02ffeb46a1209fa039636431479a6fbd2816156c
+    pristine_git_object: 1b39c3fe17a33d9ea08f7c56fcea34bc94952937
   docs/models/studentplacementlistpagination.md:
     id: 0de09a3d850c
     last_write_checksum: sha1:45c958a6d18f589ea252e82370b8f9ee1a6ed66d
@@ -3706,8 +3706,8 @@ trackedFiles:
     pristine_git_object: d981f03c6789fe74d9e228957f41a67533f0e92b
   docs/models/studentplacementsearchcontains.md:
     id: 72e672944399
-    last_write_checksum: sha1:b9206bd8bcbae5c9c0737516e1068bb9613e41d9
-    pristine_git_object: 878ddc029f6bf6e4ccc7fa3130c428c3779430b8
+    last_write_checksum: sha1:a16378dfba556ddeaff8493c7a820ab2d1a62151
+    pristine_git_object: c2bc699d20ab7535bfbc187b3dc66957ad5c845b
   docs/models/studentplacementsearchcontainsexternal.md:
     id: abba5a3e65db
     last_write_checksum: sha1:a3c22c75b67f98578c5128e4e3f9032868032ed2
@@ -3718,8 +3718,8 @@ trackedFiles:
     pristine_git_object: 7ccc67194ce721a2feab9d00391500ca9f07ecc8
   docs/models/studentplacementsearchequals.md:
     id: 30892acab4d4
-    last_write_checksum: sha1:78442658d722ecaa5fca2b9efae6ee442627cee1
-    pristine_git_object: c14a80ee68169c745103da6dd95766f3c1af751b
+    last_write_checksum: sha1:1b6f7f7a1395cbe9782d6911c83ba505c94e0167
+    pristine_git_object: 4aceb98722cb418e9a5bc1bd0ff8b18e4e6c2db3
   docs/models/studentplacementsearchequalsexternal.md:
     id: abb17101a971
     last_write_checksum: sha1:0a2e4d3f1d5f030b86f97a4ddda457d784d5eb6b
@@ -3770,8 +3770,8 @@ trackedFiles:
     pristine_git_object: 79a6f92259725a123293790f1710da29006efebb
   docs/models/studentplacementsearchlike.md:
     id: e8ace64d5a0c
-    last_write_checksum: sha1:b25b1d32a1cb0b7c62f4ee7224a5b9b5b368c4e5
-    pristine_git_object: 006ad6b8bb3acd9d3624e93bf4cc1413a07f7b84
+    last_write_checksum: sha1:01691372c538cfe1a18183c6683fc28d52abea8e
+    pristine_git_object: 1aac2bb86d813abc4b3a9396411d17c4a23398b2
   docs/models/studentplacementsearchlikeexternal.md:
     id: 665f9b0c7b0d
     last_write_checksum: sha1:88dd1276ef08af482912167e1c683f1a5a4d8bf3
@@ -3782,8 +3782,8 @@ trackedFiles:
     pristine_git_object: a05ec26335fee92152216c4b76e39dbd44eed405
   docs/models/studentplacementsearchnotcontains.md:
     id: 1a9628da32dc
-    last_write_checksum: sha1:2e4be54dbbb290156d58881c70320590ac667788
-    pristine_git_object: c463928c389eba8b9a436e2ef75ebd5fa50d38d1
+    last_write_checksum: sha1:67c31bfd8631b8bbf53f142f149d7a99a621dc5c
+    pristine_git_object: 1408c34be1d55a1584246869b50ae89e7cf01af0
   docs/models/studentplacementsearchnotcontainsexternal.md:
     id: dc97d8730e95
     last_write_checksum: sha1:8c4449c462d164adfb5277ccc82c00ff238d8bc6
@@ -3794,8 +3794,8 @@ trackedFiles:
     pristine_git_object: 4d7b720fb5526c0714c2d30fb30e6619969e7944
   docs/models/studentplacementsearchnotequals.md:
     id: 67f0b18f1e4d
-    last_write_checksum: sha1:511ad932684b771ee7794f9fdbc4b923ad5bd629
-    pristine_git_object: 213796ca7d63fce3298c79b87159b99233e14b5b
+    last_write_checksum: sha1:144ecdef31f975f33748d751bd0ce89701780246
+    pristine_git_object: 8aca31ec150531f3ee2a52a5e0c0c2b2c0a76df7
   docs/models/studentplacementsearchnotequalsexternal.md:
     id: 3ca8c5f84dd4
     last_write_checksum: sha1:41f06a43440a52aa526461779a367d6a2ca6c93d
@@ -3818,8 +3818,8 @@ trackedFiles:
     pristine_git_object: 2a4a61adf402bc95ffe77fd9d8621ddc97f5b8be
   docs/models/studentplacementsearchnotlike.md:
     id: e6649c600118
-    last_write_checksum: sha1:3dafa1b332af5446a3955411d70ad07d301c9a4b
-    pristine_git_object: 5658af1cbf0ca7aa391e93071eff7258f8319a38
+    last_write_checksum: sha1:20d896e4dedb64b6cbd22289c3e1b5237a2bc7c8
+    pristine_git_object: faedeec2faa6720e5c674d92363edbd81830bbb6
   docs/models/studentplacementsearchnotlikeexternal.md:
     id: d5dfc466ac0e
     last_write_checksum: sha1:e21d68e605f727d98ecdfbfaac57d46ba770b948
@@ -3830,8 +3830,8 @@ trackedFiles:
     pristine_git_object: 636a2e20cf0a4e1bcb83b323f8fe86e392a39678
   docs/models/studentplacementsearchnotnull.md:
     id: 02a76b69c9cd
-    last_write_checksum: sha1:c550c44f3cac8a994d5ec3934e46fb138a7861f4
-    pristine_git_object: 3069a0fa2782cf4cd8698851c29853bebcaaada5
+    last_write_checksum: sha1:2ad2860255698c59f51ec409033efc6e2d140ab5
+    pristine_git_object: 64f225f49252af45a5b7cad51741ee0e7c5c2119
   docs/models/studentplacementsearchnotnullexternal.md:
     id: 5f43de481e06
     last_write_checksum: sha1:56218ed72a726b37ca90426edf18af076681c4b2
@@ -3842,8 +3842,8 @@ trackedFiles:
     pristine_git_object: 3fb8038000c91a8c15dd08e1f126287557fb4ef7
   docs/models/studentplacementsearchnull.md:
     id: 21ec06d3901c
-    last_write_checksum: sha1:b6fef346499fb3be06d24626d2954f9dc17afeea
-    pristine_git_object: a42887cb343a8e30812e06061cbd64b1f8b8cf00
+    last_write_checksum: sha1:8b2f93c8da7ab4e7fb72199c71acef8c42ffc532
+    pristine_git_object: b2ab7c9d0df670603c0da9f0a28e901f098f5344
   docs/models/studentplacementsearchnullexternal.md:
     id: "497348943153"
     last_write_checksum: sha1:b4e1aaad145e8c506909390aa05cac93ac0ee701
@@ -3866,8 +3866,8 @@ trackedFiles:
     pristine_git_object: 5b82b421c26f87fe5c1ca9c575d34daed608dc34
   docs/models/studentplacementsearchresponse.md:
     id: a5362a85fe52
-    last_write_checksum: sha1:0ef84c91f28a09a90728e50f49476f67965914a4
-    pristine_git_object: 236d3aeb0b856dbe41f27e5e4ba3d19aa887b632
+    last_write_checksum: sha1:cee387f64ae9d53d030f21a5d82648b5a1e95ab9
+    pristine_git_object: 1771774cc82b0410728ba2cbfdf61e51cc4c5a9f
   docs/models/studentplacementsearchresponseresponse.md:
     id: d22620dc2d1b
     last_write_checksum: sha1:54426e2975118e44aa935d62e590558fe3dda7f7
@@ -3898,8 +3898,8 @@ trackedFiles:
     pristine_git_object: 3e6f0c7584b3f86353b76496aa21b7377cf1a9a6
   docs/models/studentplacementupdate.md:
     id: afe6e6a32107
-    last_write_checksum: sha1:c2823f9ad1502264bc440ae5810afe290dc02de9
-    pristine_git_object: 055f7942b1c8d87a4621b012cc163c845adfaa63
+    last_write_checksum: sha1:45960ef597937f10001c6f877afadc33dcbca316
+    pristine_git_object: 582290c5ba773c8d2116fdead14e1e06aa8a41df
   docs/models/studentplacementupdate422responsebodyerror.md:
     id: d555a0bcfbca
     last_write_checksum: sha1:7d8c89d2995030ba8960dc2ae1c59cd603829c28
@@ -4594,12 +4594,12 @@ trackedFiles:
     pristine_git_object: 74eb56eab8a1ddf8a01a58ba2216da28d830caff
   docs/sdks/gradeelementaries/README.md:
     id: 34bc39354f0d
-    last_write_checksum: sha1:bc9ca0e294b76d8657c40f8431fe28c2bdaea014
-    pristine_git_object: 5fff50acb1b21d319358ada7097c5244986f9389
+    last_write_checksum: sha1:2900ca9376160ad9cde7554e0418083d3fe6ae11
+    pristine_git_object: 4a25645dd9f694c850479367f146f798f911d869
   docs/sdks/gradeuppersecondaries/README.md:
     id: 44cd7e1bd86a
-    last_write_checksum: sha1:dd11925f117db5afa6dfadc138c135fdc37bf304
-    pristine_git_object: 0313f5af73d574695888f6e90bc6a1d3628aeaa1
+    last_write_checksum: sha1:1d5dc0f01baf8a7fdf643ac5f059406e6df47d29
+    pristine_git_object: fa72f358ce4a2391af462413282dc8d9d1795e98
   docs/sdks/groups/README.md:
     id: 3336939a71e4
     last_write_checksum: sha1:d3229784418639d2c700c22072fee03c66a08002
@@ -4614,8 +4614,8 @@ trackedFiles:
     pristine_git_object: 77b79c42553bd0685fcd847e1a45dec53ff75d03
   docs/sdks/studentplacements/README.md:
     id: 93e93f975717
-    last_write_checksum: sha1:546b966bd3ffa8ca3241f170a4221a6ce2441676
-    pristine_git_object: c0496b4058b49181b7f0a941264ca91f110277ed
+    last_write_checksum: sha1:d719f71a0eb3c60b11ea85c5b9356a517fa04dba
+    pristine_git_object: ed29cc2ecae0f5b35d675ce2f6b23c618cdf23fa
   docs/sdks/students/README.md:
     id: 2511b9d05d46
     last_write_checksum: sha1:80196645e47b6af5fcc26b621a16b247e9ce1aaf
@@ -4634,8 +4634,8 @@ trackedFiles:
     pristine_git_object: f456032107a9387ba6c98afd1c981df2f4b3d636
   pyproject.toml:
     id: 5d07e7d72637
-    last_write_checksum: sha1:6eef6d0e8c280d7598da5154ea85a46465814c56
-    pristine_git_object: 12e1c5168c9676dff2d2c73e411ce0bec4c93f6b
+    last_write_checksum: sha1:8b2bae93503b0fc40f0ded9d2761766254e95139
+    pristine_git_object: d6b34e47724acc691149c2c54bf0c1a2d16b759b
   scripts/prepare_readme.py:
     id: e0c5957a6035
     last_write_checksum: sha1:8f2e96afadb77d46883beda8d7b6affc1e5b1e51
@@ -4666,8 +4666,8 @@ trackedFiles:
     pristine_git_object: 8f0a78cffff08a495d3df48ad86b350392c71ea9
   src/meitner/_version.py:
     id: d8bcd4ba1c28
-    last_write_checksum: sha1:e54ae9fd155085b237ebf540f31d2faab1fa1626
-    pristine_git_object: 9aa92e5062fff27e68a16d726d77424d816dba06
+    last_write_checksum: sha1:b11a4bee92b4c8bb3670bb40008d0d30f6ada02e
+    pristine_git_object: 36c53970e2a148ba171330f9995c369092269a36
   src/meitner/auditevents.py:
     id: f53a1d6b892b
     last_write_checksum: sha1:8e324110c2f1f47798796dc77e4b6b05984ad8ea
@@ -4850,12 +4850,12 @@ trackedFiles:
     pristine_git_object: e91ec13a1292302467fb14872bd410899f311f82
   src/meitner/gradeelementaries.py:
     id: 2ba139f9920b
-    last_write_checksum: sha1:d3c3172ac93c3c165ca46dc24f46ccc8a3628923
-    pristine_git_object: b813919136a601b6bf3d5995669b163202eef79c
+    last_write_checksum: sha1:a952590cde5843e17880d05c1c522e0277e13388
+    pristine_git_object: adb105861bd0fa607a2f5ac7f22d7e1c5343cd4c
   src/meitner/gradeuppersecondaries.py:
     id: a429462ea780
-    last_write_checksum: sha1:405652778a423cbdb3d8790d27053703e7c09246
-    pristine_git_object: d41d17ea64e010f7f70ebb4e7d311320681002ef
+    last_write_checksum: sha1:461893f4cb9d9361cfacddb3233ad77d66751e7d
+    pristine_git_object: 8a8beaa6a1595cdbdfc299256d79019c5755aa9f
   src/meitner/groups.py:
     id: c3084147b722
     last_write_checksum: sha1:f5c15828e86a3406449ef82cd5b237837e43189d
@@ -5086,12 +5086,12 @@ trackedFiles:
     pristine_git_object: ff71c13d6062bb452b851a905033988f9e6cabae
   src/meitner/models/gradeelementary.py:
     id: 3179d7a1b595
-    last_write_checksum: sha1:17609d8457e84e5096c7ed8f7752ee3de69fb7db
-    pristine_git_object: 16863f288f56decfc8450fea43edf193b14b94ac
+    last_write_checksum: sha1:a6382b44d92b64f97fc359ff1996b1f938ff4d68
+    pristine_git_object: c9d228a3682494ff1eb59af1d9e03ba329733a26
   src/meitner/models/gradeelementarycreate.py:
     id: e3f4a016ab6d
-    last_write_checksum: sha1:9f07a9c6e855041467e2995790c1cf81d8833426
-    pristine_git_object: 75431d745473d51528a72d3487360cc4c7e59a4e
+    last_write_checksum: sha1:7a26a26662d5157f93696a21d16b4bf3c775450f
+    pristine_git_object: 93018bb9354cd3973ae2d2302f72e6632b6e582b
   src/meitner/models/gradeelementarycreate422responsebody_error.py:
     id: 919b52630601
     last_write_checksum: sha1:9959774108650487fb6986a3f5f31868ebed084e
@@ -5118,8 +5118,8 @@ trackedFiles:
     pristine_git_object: c4d3ba08380ef1cc0318c2d49f22a3eaeb8fff32
   src/meitner/models/gradeelementaryupdate.py:
     id: fa62fd922f8a
-    last_write_checksum: sha1:b51a5e754d3dc23a98fef93d04f22a778167e7f3
-    pristine_git_object: de959ee192233d16caeb0960e4e9f17235b48eac
+    last_write_checksum: sha1:5b08530f6b196423c677291115914fd9b3a29687
+    pristine_git_object: ba5ae4b59aea7404c36c82fd10f820d1852f08cc
   src/meitner/models/gradeelementaryupdate422responsebody_error.py:
     id: 6b2d300bd271
     last_write_checksum: sha1:978ffb0c44b9656424bd16b758d1538d10bf897d
@@ -5130,12 +5130,12 @@ trackedFiles:
     pristine_git_object: 574f506c5cf215d35a5b6f7561bcc906ba5bcf5e
   src/meitner/models/gradeuppersecondary.py:
     id: d4cf4fadda68
-    last_write_checksum: sha1:c4ce3bef32bbc3b0e0198de8dc576978d10c6f9d
-    pristine_git_object: eac5e0856f8b2626c83377ed90da5ee1f6e8ab85
+    last_write_checksum: sha1:ea4ec68d5b11edd7cb0d8072cf167cf008915839
+    pristine_git_object: 17bd378de3d2d5bbf384fbd0d4f59610f3fff103
   src/meitner/models/gradeuppersecondarycreate.py:
     id: bf2e7f1ba156
-    last_write_checksum: sha1:d3d2589e1d0de07c6bed5aebe67d618ad84b5710
-    pristine_git_object: d55d6fcbf6378b51526be57b130cdfc339bb8bb8
+    last_write_checksum: sha1:07f224f9f86ab3ae66832dfc0b5806ad835f8392
+    pristine_git_object: 88590736e466f3bf482e66b42886ad3bb2716596
   src/meitner/models/gradeuppersecondarycreate422responsebody_error.py:
     id: 49eef7ec3a94
     last_write_checksum: sha1:1b58135cba84bae2051d43204711283eceb53f2f
@@ -5162,8 +5162,8 @@ trackedFiles:
     pristine_git_object: 065c970d30f846ca979f0877c877bc0a04605b69
   src/meitner/models/gradeuppersecondaryupdate.py:
     id: 4dc8c54c8f21
-    last_write_checksum: sha1:6d540c3e06b5438dcc1f692d5d01000548e508ad
-    pristine_git_object: da49baf3c9438fb2ac754321e33e01abe703f310
+    last_write_checksum: sha1:d88d64fa7824da4bca274bd22d91fb7d20fc1bd1
+    pristine_git_object: 549561c8b68d69e8856cdedab3cc00f7dfc435b3
   src/meitner/models/gradeuppersecondaryupdate422responsebody_error.py:
     id: edce2e798cfa
     last_write_checksum: sha1:34b21df6e6aa28dd3a4cb26b51152bad3923b727
@@ -5422,16 +5422,16 @@ trackedFiles:
     pristine_git_object: 91a4bba9d3d3daab7a8a01ea4b074ad6ead571b2
   src/meitner/models/studentplacement.py:
     id: 9e743a1bee68
-    last_write_checksum: sha1:164e4f364cc55ad021516f6d4ff177ea01c4f63e
-    pristine_git_object: d25d2be09695e2cce0ccf1aa25442e5f1d57b36f
+    last_write_checksum: sha1:ffb8a699bb1da9872c714b68a4bee5f6dfa04ad9
+    pristine_git_object: 4fc52f6d4d7a66e70070b150de7b051a9f7ef845
   src/meitner/models/studentplacementarchiveop.py:
     id: 96ef2353b282
     last_write_checksum: sha1:ab951d15a856dfa6449d13c9baacb57420c3dad8
     pristine_git_object: 6cf278d931e0b1d93c844e59af599b5dd40e86bf
   src/meitner/models/studentplacementcreate.py:
     id: 80d87dfcfaef
-    last_write_checksum: sha1:6cc65f5c92d166629ca1cc05ee65c11af6bec8f3
-    pristine_git_object: bb2b567f58dba657a60a02da51cde578a295ca31
+    last_write_checksum: sha1:d334f754cca8cf6f2c813f4fa45a15930a35d612
+    pristine_git_object: de3809980d332c6ac37dfb0510f56d8350e013be
   src/meitner/models/studentplacementcreate422responsebody_error.py:
     id: a198aceef4c2
     last_write_checksum: sha1:c1d5171c2ad4fd946f7837f46c608557b7785609
@@ -5446,8 +5446,8 @@ trackedFiles:
     pristine_git_object: 2a851ad0838c75bcae5ecc0b2feddefde2d0d7a8
   src/meitner/models/studentplacementfilter.py:
     id: 7f0a2c87782f
-    last_write_checksum: sha1:224e3dd76fbd7d2c4cce25f37c04abe6142663c1
-    pristine_git_object: 31dc89cd5f6941965ade9653d94188d9c9d26a0b
+    last_write_checksum: sha1:74aed18fa1ff2e3edf4a374d7b6b30fa49f281db
+    pristine_git_object: c6fc2f6fae3fde4627ef9218530443d5335b840a
   src/meitner/models/studentplacementgetop.py:
     id: 466a98f2ed30
     last_write_checksum: sha1:9b0d4a11a7ddc215329655c88331fbfeab37151a
@@ -5474,8 +5474,8 @@ trackedFiles:
     pristine_git_object: c969acbdd559221be48b5430d6d4b8942b32e1f1
   src/meitner/models/studentplacementsearch_requestbody.py:
     id: 2572b39eeea5
-    last_write_checksum: sha1:9689f77e6a4b296f8eee8603cae84e6cc3d40815
-    pristine_git_object: c081d8e44624b627d94b030fe8d4227b2d5adadf
+    last_write_checksum: sha1:fb556514fed99558f9b2f3c5b89c17b6cb77b7ff
+    pristine_git_object: 0461fe0b98f4132731e72f0811c6bcced70b4f77
   src/meitner/models/studentplacementsearch_response.py:
     id: dce859ee9ece
     last_write_checksum: sha1:614be60729442ad9366d13697379a810b07e61c9
@@ -5486,8 +5486,8 @@ trackedFiles:
     pristine_git_object: dd22870f3eaa8bc23569090d805e502d05b5b6a0
   src/meitner/models/studentplacementupdate.py:
     id: 2a1948be2584
-    last_write_checksum: sha1:0c47db9ca15897bc649779a84fa9ba32c2ac268a
-    pristine_git_object: 0de42b9d0a37addab372d391f9764421844f2364
+    last_write_checksum: sha1:1500efcd281a35d1624adcef981e8ddabf3797da
+    pristine_git_object: e3b0889b0bcadba0bd2667d2686da2444a0d9c8f
   src/meitner/models/studentplacementupdate422responsebody_error.py:
     id: 6e97b83c7bb5
     last_write_checksum: sha1:d2c096ad624d9cc6175660c096d161644064311c
@@ -5602,8 +5602,8 @@ trackedFiles:
     pristine_git_object: a43592b08cb567f8c18ddfd66344aea67c1a7939
   src/meitner/studentplacements.py:
     id: a1eb146cfefb
-    last_write_checksum: sha1:bb7c9da985786df5a63816642325ce6ea589e491
-    pristine_git_object: b827acd43d0579710f179be00636c751f2716b63
+    last_write_checksum: sha1:57012e2104e547da10bec2ce2d66155e0bd17a41
+    pristine_git_object: 201fdf46fea4d157849e3102bee7ff8ab5d8d64b
   src/meitner/students.py:
     id: 894f2c33f8f3
     last_write_checksum: sha1:cf85aaa4c98987425c78e3517ea300b1c064db7c
@@ -7358,7 +7358,7 @@ examples:
           offset: 0
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -7382,7 +7382,7 @@ examples:
   StudentPlacementCreate:
     requestExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "201":
           application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
@@ -7407,7 +7407,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       requestBody:
         application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
@@ -7468,7 +7468,7 @@ examples:
         application/json: {"filter": {"equals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueEntitled": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "notEquals": {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "123e4567-e89b-12d3-a456-426614174000", "updatedAt": "2024-01-15T10:30:00Z", "updatedBy": "123e4567-e89b-12d3-a456-426614174000"}, "external": {"sourceID": "example", "source": "example"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "hasChildcare": true, "childcareMaxHours": 42, "motherTongue": "example", "swedishAsSecondLanguage": true, "motherTongueEntitled": true, "motherTongueParticipates": true, "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "startDate": "2024-01-15", "endDate": "2024-01-15", "archiveYear": "example", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerThan": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "greaterOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "smallerOrEqual": {"meta": {"createdAt": "2024-01-15T10:30:00Z", "updatedAt": "2024-01-15T10:30:00Z"}, "childcareMaxHours": 42, "startDate": "2024-01-15", "endDate": "2024-01-15", "archivedAt": "2024-01-15T10:30:00Z"}, "contains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueEntitled": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "notContains": {"id": ["123e4567-e89b-12d3-a456-426614174000"], "meta": {"createdBy": ["123e4567-e89b-12d3-a456-426614174000"], "updatedBy": ["123e4567-e89b-12d3-a456-426614174000"]}, "external": {"sourceID": ["example"], "source": ["example"]}, "studentID": ["123e4567-e89b-12d3-a456-426614174000"], "schoolID": ["123e4567-e89b-12d3-a456-426614174000"], "hasChildcare": [true], "childcareMaxHours": [42], "motherTongue": ["example"], "swedishAsSecondLanguage": [true], "motherTongueEntitled": [true], "motherTongueParticipates": [true], "modernLanguageInSchoolChoice": ["example"], "modernLanguageInLanguageChoice": ["example"], "startDate": ["2024-01-15"], "endDate": ["2024-01-15"], "archiveYear": ["example"]}, "like": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "notLike": {"external": {"sourceID": "example", "source": "example"}, "motherTongue": "example", "modernLanguageInSchoolChoice": "example", "modernLanguageInLanguageChoice": "example", "archiveYear": "example"}, "null": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "notNull": {"meta": {"createdBy": true, "updatedAt": true, "updatedBy": true}, "external": {"sourceID": true, "source": true}, "schoolYear": true, "childcareMaxHours": true, "motherTongue": true, "modernLanguageAlternative": true, "modernLanguageInSchoolChoice": true, "modernLanguageInLanguageChoice": true, "endDate": true, "archiveYear": true, "archivedAt": true}, "orCondition": true}}
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -7508,7 +7508,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -7573,7 +7573,7 @@ examples:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
+        application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "200":
           application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
@@ -7601,7 +7601,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01"}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -7639,7 +7639,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -7666,7 +7666,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "SWE", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "deu", "modernLanguageInLanguageChoice": "fra", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "schoolType": "GR", "schoolYear": "1", "hasChildcare": true, "childcareMaxHours": 15, "motherTongue": "ARA", "modernLanguageAlternative": "EN", "swedishAsSecondLanguage": false, "motherTongueEntitled": false, "motherTongueParticipates": false, "modernLanguageInSchoolChoice": "DEU", "modernLanguageInLanguageChoice": "FRA", "startDate": "2024-08-01", "endDate": "2025-08-01", "archiveYear": "2024_2025", "archivedAt": "2024-08-01T00:00:00Z"}
     errorExample:
       parameters:
         path:
@@ -7819,7 +7819,7 @@ examples:
           offset: 0
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "FRA", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -7843,7 +7843,7 @@ examples:
   GradeElementaryCreate:
     requestExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "FRA", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
       responses:
         "201":
           application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
@@ -7868,7 +7868,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "FRA", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
     errorExample:
       requestBody:
         application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
@@ -7900,7 +7900,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "FRA", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
     errorExample:
       parameters:
         path:
@@ -7965,7 +7965,7 @@ examples:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "FRA", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
       responses:
         "200":
           application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
@@ -7993,7 +7993,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "SV", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "subjectCode": "MA", "languageCode": "FRA", "academicYear": "2024/2025", "term": "HT", "schoolYear": "9", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "finalGrade": true, "isEnded": true, "schoolComment": "Utmärkt arbete under hela terminen."}
     errorExample:
       parameters:
         path:
@@ -8032,7 +8032,7 @@ examples:
           offset: 0
       responses:
         "200":
-          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
+          application/json: {"data": [{"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "FRA", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}], "pagination": {"offset": 0, "limit": 1, "total": 100}}
     errorExample:
       parameters:
         query:
@@ -8056,7 +8056,7 @@ examples:
   GradeUpperSecondaryCreate:
     requestExample:
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+        application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "FRA", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
       responses:
         "201":
           application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
@@ -8081,7 +8081,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
       responses:
         "201":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "FRA", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
     errorExample:
       requestBody:
         application/json: {"external": {"sourceID": "12345678"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
@@ -8113,7 +8113,7 @@ examples:
           id: "123e4567-e89b-12d3-a456-426614174000"
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "FRA", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
     errorExample:
       parameters:
         path:
@@ -8178,7 +8178,7 @@ examples:
         path:
           id: "123e4567-e89b-12d3-a456-426614174000"
       requestBody:
-        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+        application/json: {"external": {"sourceID": "12345678"}, "languageCode": "FRA", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
       responses:
         "200":
           application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
@@ -8206,7 +8206,7 @@ examples:
         application/json: {"external": {"sourceID": "12345678"}, "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
       responses:
         "200":
-          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "SV", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
+          application/json: {"id": "123e4567-e89b-12d3-a456-426614174000", "meta": {"createdAt": "2024-01-15T10:30:00Z", "createdBy": "987fcdeb-51a2-43d1-b567-123456789abc", "updatedAt": "2024-01-15T14:45:00Z", "updatedBy": "987fcdeb-51a2-43d1-b567-123456789abc"}, "external": {"sourceID": "12345678", "source": "ExternalIntegrationAPI"}, "studentID": "123e4567-e89b-12d3-a456-426614174000", "schoolID": "123e4567-e89b-12d3-a456-426614174000", "courseCode": "MATMAT01a", "languageCode": "FRA", "teacher1EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "teacher2EmployeeID": "123e4567-e89b-12d3-a456-426614174000", "grade": "A", "gradeDate": "2025-01-15", "gradeComment": "Eleven har visat goda kunskaper i algebra.", "extent": "Normal", "schoolYear": "2", "section": "Program", "teacherComment": "Eleven deltar aktivt och visar stort engagemang.", "includeOnFinalGrade": true, "programTitle": "Teknikprogrammet", "startDate": "2024-08-19", "endDate": "2025-01-17"}
     errorExample:
       parameters:
         path:
@@ -8481,7 +8481,6 @@ examples:
         "422":
           application/json: {"error": {"code": "UnprocessableEntity", "message": "Validation failed for Unit Update endpoint", "requestID": "550e8400-e29b-41d4-a716-446655440000"}}
 examplesVersion: 1.0.2
-releaseNotes: "## Python SDK Changes:\n* `meitner.grade_elementaries.list()`:  `response.data[].grade.enum(3)` **Added** (Breaking ⚠️)\n* `meitner.grade_elementaries.create()`: \n  *  `request.grade.enum(3)` **Added**\n  *  `response.grade.enum(3)` **Added** (Breaking ⚠️)\n* `meitner.grade_elementaries.get()`:  `response.grade.enum(3)` **Added** (Breaking ⚠️)\n* `meitner.grade_elementaries.update()`: \n  *  `request.grade.enum(3)` **Added**\n  *  `response.grade.enum(3)` **Added** (Breaking ⚠️)\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json

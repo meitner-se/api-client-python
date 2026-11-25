@@ -80,7 +80,7 @@ class GradeUpperSecondaryUpdateTypedDict(TypedDict):
     external: NotRequired[GradeUpperSecondaryUpdateExternalTypedDict]
     r"""ExternalRequest is the External-object used on Create and Update operations. Only SourceID can be set — the Source field is derived from the API key."""
     language_code: NotRequired[Nullable[str]]
-    r"""The language code for the grade, used when the course is taught in a specific language."""
+    r"""The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes)."""
     teacher1_employee_id: NotRequired[Nullable[str]]
     r"""The ID of the primary teacher responsible for the grade. Must reference an Employee who has an active placement at the school referenced by SchoolID."""
     teacher2_employee_id: NotRequired[Nullable[str]]
@@ -119,7 +119,7 @@ class GradeUpperSecondaryUpdate(BaseModel):
     language_code: Annotated[
         OptionalNullable[str], pydantic.Field(alias="languageCode")
     ] = UNSET
-    r"""The language code for the grade, used when the course is taught in a specific language."""
+    r"""The language code for the grade, used when the course is taught in a specific language. Language codes follow the ISO 639-3 standard (three-letter codes)."""
 
     teacher1_employee_id: Annotated[
         OptionalNullable[str], pydantic.Field(alias="teacher1EmployeeID")
